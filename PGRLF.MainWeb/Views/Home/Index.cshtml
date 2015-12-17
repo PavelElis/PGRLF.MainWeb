@@ -1,0 +1,25 @@
+﻿@model List<PGRLF.AzureStorageProvider.TableEntities.Form>
+
+@{
+    ViewBag.Title = "Portál pro elektronické podání žádostí o podporu";
+}
+<noscript>
+    <p style="color: red; font-weight: bold">
+        Pro zabezpečení korektní funkcionality musíte mít v prohlížeči zapnutý JavaScript
+    </p> 
+</noscript>
+
+<img src="~/Content/images/pgrlf.png" />
+<h2>Portál pro elektronické podání žádostí o podporu</h2>
+@foreach (var form in Model)
+{
+    <div class="listLinks">
+        <span>
+            @Html.ActionLink(form.Name, "Show", "Form", new { id = form.Id }, null)
+        </span>
+        <span style="margin-left: 60px;">
+            <a href="@form.LinkToDescription">Vše o programu</a>
+        </span>
+    </div>
+    <div>&nbsp;</div>
+}

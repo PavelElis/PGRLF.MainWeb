@@ -1,0 +1,441 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="PodporaZemedelec_ViewModel_StrukturaChovanychZvirat_Popište_strukturu_chovaných_zvířat" xml:space="preserve">
+    <value>Popište strukturu chovaných zvířat</value>
+  </data>
+  <data name="PodporaZemedelec_ViewModel_StrukturaPestovanychPlodin_Popište_strukturu_pěstovaných_plodin" xml:space="preserve">
+    <value>Popište strukturu pěstovaných plodin</value>
+  </data>
+  <data name="PodporaZemedelec_ViewModel_TPUlice_Zadejte_název_ulice_trvalého_bydliště_žadatele" xml:space="preserve">
+    <value>Zadejte název ulice trvalého bydliště žadatele</value>
+  </data>
+  <data name="PodporaZemedelec_Telefon_2" xml:space="preserve">
+    <value>Telefon 2</value>
+  </data>
+  <data name="PodporaZemedelec_PrijmeniZadatele" xml:space="preserve">
+    <value>Zadejte příjmení žadatele</value>
+  </data>
+  <data name="PodporaZemedelec_PscABydliste" xml:space="preserve">
+    <value>Zadejte poštovní směrovací číslo trvalého bydliště žadatele</value>
+  </data>
+  <data name="PodporaZemedelec_NazevObce" xml:space="preserve">
+    <value>Zadejte název obce (včetně místní části) trvalého bydliště žadatele</value>
+  </data>
+  <data name="PodporaZemedelec_KrajZadatele" xml:space="preserve">
+    <value>Vyberte kraj trvalého bydliště žadatele</value>
+  </data>
+  <data name="PodporaZemedelec_ViewModel_TPEmail_Zadejte_kontaktní_e_mail_žadatele_KontaktniEmail" xml:space="preserve">
+    <value>Zadejte kontaktní e-mail žadatele. Zadávejte prosím živou a prověřenou e-mailovou adresu pro primární komunikaci s PGRLF</value>
+  </data>
+  <data name="PodporaZemedelec_ViewModel_PopisneCislo" xml:space="preserve">
+    <value>Zadejte číslo popisné (uváděné v katastru nemovitostí) trvalého bydliště žadatele</value>
+  </data>
+  <data name="PodporaZemedelec_OrientacniCisloBydliste" xml:space="preserve">
+    <value>Zadejte číslo orientační trvalého bydliště žadatele</value>
+  </data>
+  <data name="PodporaZemedelec_PopisneCislo" xml:space="preserve">
+    <value>Popisné číslo</value>
+  </data>
+  <data name="PodporaZemedelec_PopisneCisloPravnickejOsoby" xml:space="preserve">
+    <value>Zadejte číslo popisné (uváděné v katastru nemovitostí) sídla právnické osoby</value>
+  </data>
+  <data name="PodporaZemedelec_OrientaceCisloSidlaPravnickejOsoby" xml:space="preserve">
+    <value>Zadejte číslo orientační sídla právnické osoby</value>
+  </data>
+  <data name="PodporaZemedelec_SouhlasSPoskytnutimOsobnichUdaju" xml:space="preserve">
+    <value>Souhlas s poskytnutím osobních údajů</value>
+  </data>
+  <data name="PodporaZemedelec_CestneVyhlasenie" xml:space="preserve">
+    <value>Čestné prohlášení</value>
+  </data>
+  <data name="PodporaZemedelec_SplneniePodmienok" xml:space="preserve">
+    <value>Splnění podmínek</value>
+  </data>
+  <data name="PodporaZemedelec_ZadajteNazovBanky" xml:space="preserve">
+    <value>Zadejte název banky bankovního spojení žadatele</value>
+  </data>
+  <data name="PodporaZemedelec_BankovniSpojeni" xml:space="preserve">
+    <value>Bankovní spojení (název, adresa)</value>
+  </data>
+  <data name="PodporaZemedelec_CisloBankovnihoUctu" xml:space="preserve">
+    <value>Zadejte číslo bankovního účtu žadatele</value>
+  </data>
+  <data name="PodporaZemedelec_ZadejteMesicARokProdeje" xml:space="preserve">
+    <value>Zadejte měsíc a rok, ve kterém plánujete prodat zemědělský podnik</value>
+  </data>
+  <data name="PodporaZemedelec_ZadajteMesicARokUkoncenia" xml:space="preserve">
+    <value>Zadejte měsíc a rok, ve kterém plánujete ukončit zemědělskou činnost</value>
+  </data>
+  <data name="PodporaZemedelec_Datum_prodeje" xml:space="preserve">
+    <value>Datum prodeje</value>
+  </data>
+  <data name="PodporaZemedelec_CisloUctu" xml:space="preserve">
+    <value>Číslo účtu</value>
+  </data>
+  <data name="PodporaZemedelec_DatumUkonceni" xml:space="preserve">
+    <value>Datum ukončení</value>
+  </data>
+  <data name="PodporaZemedelec_ZadajteDatumVydaniaOsvedcenia" xml:space="preserve">
+    <value>Zadejte datum vydání osvědčení zemědělského podnikatele</value>
+  </data>
+  <data name="PodporaZemedelec_DatumVydaniOsvedceni" xml:space="preserve">
+    <value>Datum vydání osvědčení o zápisu do evidence zemědělského podnikatele</value>
+  </data>
+  <data name="PodporaZemedelec_ZadajteDatumZapisuPravnickejOsoby" xml:space="preserve">
+    <value>Zadejte datum zápisu právnické osoby do obchodního rejstříku</value>
+  </data>
+  <data name="PodporaZemedelec_ZadajteEvidenciZemedelskehoPodnikatele" xml:space="preserve">
+    <value>Zadejte evidenci zemědělského podnikatele</value>
+  </data>
+  <data name="PodporaZemedelec_EvidenceZemedelskehoPodnikatele" xml:space="preserve">
+    <value>Evidence zemědělského podnikatele u</value>
+  </data>
+  <data name="PodporaZemedelec_KodBankyVyberteBanku" xml:space="preserve">
+    <value>Kód banky (Vyberte banku)</value>
+  </data>
+  <data name="PodporaZemedelec_PlanujiProdatPodnik" xml:space="preserve">
+    <value>Plánuji prodat podnik</value>
+  </data>
+  <data name="PodporaZemedelec_PlanujuUkoncitZemedelskouCinnost" xml:space="preserve">
+    <value>Plánuji ukončit zemědělskou činnost</value>
+  </data>
+  <data name="PodporaZemedelec_ZadejteSoud" xml:space="preserve">
+    <value>Zadejte soud, u kterého je právnická osoba vedena</value>
+  </data>
+  <data name="PodporaZemedelec_Vydal" xml:space="preserve">
+    <value>Vydal</value>
+  </data>
+  <data name="PodporaZemedelec_ZadejteSpisovouZnackuVypisuZRejstriku" xml:space="preserve">
+    <value>Zadejte Spisovou značku z výpisu z obchodního rejstříku</value>
+  </data>
+  <data name="PodporaZemedelec_ZapisDoObchodnihoRejstriku" xml:space="preserve">
+    <value>Zápis do obchodního rejstříku</value>
+  </data>
+  <data name="PodporaZemedelec_JeNutneZadatPopis" xml:space="preserve">
+    <value>Je nutné zadat popis</value>
+  </data>
+  <data name="PodporaZemedelec_VyberteJednuMoznost" xml:space="preserve">
+    <value>Vyberte jednu možnost</value>
+  </data>
+  <data name="PodporaZemedelec_UdajJePovinny" xml:space="preserve">
+    <value>Údaj je povinný.</value>
+  </data>
+  <data name="PodporaZemedelec_Cinnost" xml:space="preserve">
+    <value>Činnost (viz. z OR)</value>
+  </data>
+  <data name="PodporaZemedelec_RokZahajeniCinnosti" xml:space="preserve">
+    <value>Rok zahájení činnosti</value>
+  </data>
+  <data name="PodporaZemedelec_NavyseniProMladehoZemedelce" xml:space="preserve">
+    <value>Navýšení pro mladého zemědělce (do 40 let)</value>
+  </data>
+  <data name="PodporaZemedelec_PlatceDPH" xml:space="preserve">
+    <value>Plátce DPH</value>
+  </data>
+  <data name="PodporaZemedelec_DatumNarozeni" xml:space="preserve">
+    <value>Datum narození</value>
+  </data>
+  <data name="PodporaZemedelec_ZadejteDatumNarozeniZadatele" xml:space="preserve">
+    <value>Zadejte datum narození žadatele</value>
+  </data>
+  <data name="PodporaZemedelec_Dic" xml:space="preserve">
+    <value>DIČ</value>
+  </data>
+  <data name="PodporaZemedelec_ZadejteIcFyzickeOsoby" xml:space="preserve">
+    <value>Zadejte IČ žadatele - fyzické osoby</value>
+  </data>
+  <data name="PodporaZemedelec_KrestniJmeno" xml:space="preserve">
+    <value>Jméno</value>
+  </data>
+  <data name="PodporaZemedelec_ZadejteKrestniJmeno" xml:space="preserve">
+    <value>Zadejte křestní jméno žadatele</value>
+  </data>
+  <data name="PodporaZemedelec_Prijmeni" xml:space="preserve">
+    <value>Příjmení</value>
+  </data>
+  <data name="PodporaZemedelec_ZadejteRodneCislo" xml:space="preserve">
+    <value>Zadejte rodné číslo dddddd/ddd anebo dddddd/dddd</value>
+  </data>
+  <data name="PodporaZemedelec_RodneCislo" xml:space="preserve">
+    <value>Rodné číslo</value>
+  </data>
+  <data name="PodporaZemedelec_ZadejteRodneCisloZadatele" xml:space="preserve">
+    <value>Zadejte rodné číslo žadatele</value>
+  </data>
+  <data name="PodporaZemedelec_TitulPredJmenem" xml:space="preserve">
+    <value>Titul před jménem</value>
+  </data>
+  <data name="PodporaZemedelec_TitulZaJmenem" xml:space="preserve">
+    <value>Titul za jménem</value>
+  </data>
+  <data name="PodporaZemedelec_OrientacniCislo" xml:space="preserve">
+    <value>Orientační číslo</value>
+  </data>
+  <data name="PodporaZemedelec_Kraj" xml:space="preserve">
+    <value>Kraj</value>
+  </data>
+  <data name="PodporaZemedelec_Obec" xml:space="preserve">
+    <value>Obec</value>
+  </data>
+  <data name="PodporaZemedelec_Psc" xml:space="preserve">
+    <value>PSČ</value>
+  </data>
+  <data name="PodporaZemedelec_Ulice" xml:space="preserve">
+    <value>Ulice</value>
+  </data>
+  <data name="PodporaZemedelec_Telefon1" xml:space="preserve">
+    <value>Telefon 1</value>
+  </data>
+  <data name="PodporaZemedelec_DicZadatelePravnickaOsoba" xml:space="preserve">
+    <value>Zadejte DIČ žadatele - právnické osoby</value>
+  </data>
+  <data name="PodporaZemedelec_IcZadatelePravnickaOsoba" xml:space="preserve">
+    <value>Zadejte IČ žadatele - právnické osoby</value>
+  </data>
+  <data name="PodporaZemedelec_Ic" xml:space="preserve">
+    <value>IČ</value>
+  </data>
+  <data name="PodporaZemedelec_ObchodniJmenoPravnickaOsoba" xml:space="preserve">
+    <value>Zadejte obchodní jméno právnické osoby žadatele</value>
+  </data>
+  <data name="PodporaZemedelec_ObchodniJmeno" xml:space="preserve">
+    <value>Obchodní jméno</value>
+  </data>
+  <data name="PodporaZemedelec_TypSpolocnosti" xml:space="preserve">
+    <value>Typ společnosti</value>
+  </data>
+  <data name="PodporaZemedelec_Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="PodporaZemedelec_Fax" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="PodporaZemedelec_ZadejteNazovObcePravnickeOsoby" xml:space="preserve">
+    <value>Zadejte název obce (včetně místní části) sídla právnické osoby</value>
+  </data>
+  <data name="PodporaZemedelec_PscSidlaPravnickaOsoba" xml:space="preserve">
+    <value>Zadejte poštovní směrovací číslo sídla právnické osoby</value>
+  </data>
+  <data name="PodporaZemedelec_ZadejteTelefonniCisloZadatele" xml:space="preserve">
+    <value>Zadejte kontaktní telefonní číslo žadatele</value>
+  </data>
+  <data name="PodporaZemedelec_ZadejteNazevUliceSidlaPravnickaOsoba" xml:space="preserve">
+    <value>Zadejte název ulice sídla právnické osoby</value>
+  </data>
+  <data name="PodporaZemedelec_VyberteFunkciPravnickaOsoba" xml:space="preserve">
+    <value>Vyberte funkci odpovědného zástupce právnické osoby</value>
+  </data>
+  <data name="PodporaZemedelec_ZadejteJmenoZastupceOsoby" xml:space="preserve">
+    <value>Zadejte jméno odpovědného zástupce právnické osoby</value>
+  </data>
+  <data name="PodporaZemedelec_ZadejtePrijmeniZastupcePravnickaOsoba" xml:space="preserve">
+    <value>Zadejte příjmení odpovědného zástupce právnické osoby</value>
+  </data>
+  <data name="PodporaZemedelec_Funkce" xml:space="preserve">
+    <value>Funkce</value>
+  </data>
+  <data name="PodporaZemedelec_Jmeno" xml:space="preserve">
+    <value>Jméno</value>
+  </data>
+  <data name="PodporaZemedelec_Povolené_znaky" xml:space="preserve">
+    <value>Povolené znaky: + 1234567890</value>
+  </data>
+  <data name="PodporaZemedelec_Povolené_znaky_Cislo_Uctu" xml:space="preserve">
+    <value>Povolené znaky: 1234567890-/</value>
+  </data>
+  <data name="Helpers_PrependEmptyItem__Text" xml:space="preserve">
+    <value>  </value>
+  </data>
+  <data name="PredmetPodnikani__Zadejte_činnost_vykonávanou_při_podnikání" xml:space="preserve">
+    <value>Zadejte činnost vykonávanou při podnikání</value>
+  </data>
+  <data name="PodporaZemedelec_JinaVyroba" xml:space="preserve">
+    <value>Jiná výroba</value>
+  </data>
+  <data name="PodporaZemedelec_RostlinnaVyroba" xml:space="preserve">
+    <value>Rostlinná výroba</value>
+  </data>
+  <data name="PodporaZemedelec_ZivocisnaVyroba" xml:space="preserve">
+    <value>Živočišná výroba</value>
+  </data>
+  <data name="PodporaZemedelec_Titul" xml:space="preserve">
+    <value>Titul</value>
+  </data>
+  <data name="PodporaZemedelec_ZakladniKapital" xml:space="preserve">
+    <value>Základní kapitál</value>
+  </data>
+  <data name="PodporaZemedelec_PocetSpolecniku" xml:space="preserve">
+    <value>Počet společníků</value>
+  </data>
+  <data name="PodporaZemedelec_ZadejtePocetSpolocniku" xml:space="preserve">
+    <value>Počet společníku</value>
+  </data>
+  <data name="PodporaZemedelec_ZadejteZakladniKapital" xml:space="preserve">
+    <value>Základní kapitál (tis. Kč)</value>
+  </data>
+  <data name="PodporaZemedelec_ViewModel_Zadejte_kraj" xml:space="preserve">
+    <value>Zadejte kraj</value>
+  </data>
+  <data name="PodporaZemedelec_InvZamer" xml:space="preserve">
+    <value>Vyberte investiční záměr</value>
+  </data>
+  <data name="VyberVariant" xml:space="preserve">
+    <value>Vyberete z uvedených variant</value>
+  </data>
+  <data name="CZNACE" xml:space="preserve">
+    <value>CZ-NACE (hlavní činnosti)</value>
+  </data>
+  <data name="DeMinimisIC" xml:space="preserve">
+    <value>IČ / Datum narození</value>
+  </data>
+  <data name="DeMinimisName" xml:space="preserve">
+    <value>Obchodní jméno / Jméno žadatele</value>
+  </data>
+  <data name="DeMinimisSidlo" xml:space="preserve">
+    <value>Sídlo / Adresa žadatele</value>
+  </data>
+  <data name="DobaPodnikani" xml:space="preserve">
+    <value>Doba podnikání v letech</value>
+  </data>
+  <data name="Nevyplneno" xml:space="preserve">
+    <value>Požadovaná hodnota není vyplnľna</value>
+  </data>
+  <data name="Ucet1" xml:space="preserve">
+    <value>Aktuální ukončené období (čtvrtletí, měsíc) s doloženými účetními výkazy</value>
+  </data>
+  <data name="Ucet2" xml:space="preserve">
+    <value>Odhad realizovaných tržeb ke konci aktuálního období (v % ročních tržeb)</value>
+  </data>
+  <data name="Ucet3" xml:space="preserve">
+    <value>Průměrný počet zaměstnanců od počátku roku k aktuálnímu ukončenému období</value>
+  </data>
+  <data name="Ucet4" xml:space="preserve">
+    <value>Podíl největšího odběratele na celkové produkci (v %) k aktuálnímu období</value>
+  </data>
+  <data name="Ucet5" xml:space="preserve">
+    <value>za aktuální ukončené období</value>
+  </data>
+  <data name="Ucet6" xml:space="preserve">
+    <value>ke konci minulého roku</value>
+  </data>
+  <data name="Ucet7" xml:space="preserve">
+    <value>ke konci předminulého roku</value>
+  </data>
+</root>

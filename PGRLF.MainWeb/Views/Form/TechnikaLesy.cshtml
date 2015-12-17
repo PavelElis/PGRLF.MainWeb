@@ -1,0 +1,23 @@
+﻿@model PGRLF.MainWeb.Forms.FormClasses.TechnikaLesy_ViewModel
+
+@{
+    ViewBag.Title = "TechnikaLesy";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+
+<strong>Program Podpora nákupu techniky pro hospodaření v lesích</strong>
+<p>(* - Údaje označené hvězdičkou je nutné vyplnit.)</p>
+
+<form>
+    <fieldset>
+        <legend>Právní forma</legend>
+        <div class="row">
+            <div class="switch">
+                @Html.RadioButtonFor(m => m.JePravnickaOsoba, false, new { @checked = "checked", @id = "rbFO" })
+                <input id="exampleCheckboxSwitch" type="checkbox">
+                <label for="exampleCheckboxSwitch"></label>
+            </div>
+        </div>
+    </fieldset>
+</form>
+

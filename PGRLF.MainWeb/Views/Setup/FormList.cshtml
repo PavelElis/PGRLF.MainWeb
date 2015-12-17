@@ -1,0 +1,60 @@
+﻿@using System.Threading
+@using PGRLF.AzureStorageProvider.TableEntities
+@using Telerik.Web.Mvc.UI
+
+@{
+    ViewBag.Title = "Zoznam formularov";
+    
+}
+
+<h2>Zoznam Formularov</h2>
+
+    @(Html.Telerik().Grid<Form>()
+          .Name("Grid")
+          .DataKeys(keys => keys.Add(p => p.Id))
+          .ToolBar(commands => commands.Insert().ButtonType(GridButtonType.Text).ImageHtmlAttributes(new {style="margin-left:0"}))
+          .DataBinding(dataBinding => dataBinding.Ajax().Enabled(true)
+                                          .Select("_SelectAjaxEditing", "Setup")
+                                          .Insert("_InsertAjaxEditing", "Setup")
+                                          .Update("_SaveAjaxEditing", "Setup")
+                                          .Delete("_DeleteAjaxEditing", "Setup"))
+          .Columns(columns =>
+                       {
+                           columns.Bound(p => p.Name).Width(500);
+                           columns.Bound(p => p.TechName).Width(210);
+                           columns.Bound(p => p.LinkToDescription).Width(210);
+                           columns.Bound(p => p.ValidFrom).Width(100).Format("{0:d.M.yyyy}");
+                           columns.Bound(p => p.ValidTo).Width(100).Format("{0:d.M.yyyy}");
+                           columns.Command(commands =>
+                                               {
+                                                   commands.Edit().ButtonType(GridButtonType.Text);
+                                                   commands.Delete().ButtonType(GridButtonType.Text);
+                                               }).Width(160).Title("Commands");
+                       })
+          .Editable(editing => editing.Mode(GridEditMode.InLine).InsertRowPosition(GridInsertRowPosition.Bottom))
+          .Pageable()
+          .Scrollable()
+          .Sortable())
+
+@section Scripts
+{
+    @(Html.Telerik().ScriptRegistrar().jQuery(true).Globalization(true).DefaultGroup(group => group.Combined(true).Compress(true)))
+    
+    <script type="text/javascript">
+        $.validator.addMethod('date',
+    function (value, element) {
+        return true; // since MVC4 data-val-date is put on EVERY vm date property. Default implementation does not allow for multiple cultures...
+    });
+    </script>
+}   
+@section HeadContent {
+    
+
+     @(Html.Telerik().StyleSheetRegistrar()
+           .DefaultGroup(group => group
+                                      .Add("telerik.common.css")
+                                      .Add("telerik." + "simple" + ".css")
+                                      .Add("telerik.rtl.css")
+                                      .Combined(true)
+                                      .Compress(true)))
+}

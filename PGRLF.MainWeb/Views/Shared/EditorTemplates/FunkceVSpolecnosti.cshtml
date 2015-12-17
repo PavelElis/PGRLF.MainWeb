@@ -1,0 +1,12 @@
+﻿@using PGRLF.MainWeb
+@using PGRLF.MainWeb.Forms.Enums
+@{
+    var list = FunkceVSpolecnosti.GetList();
+    var selectListItems = list.PrependEmptyItem();
+    if (selectListItems.Any(x => x.Value == Model))
+    {
+        selectListItems.First(x => x.Value == Model).Selected = true;
+    }
+}
+
+@Html.DropDownListFor(m => m, selectListItems, new { @class = "medium" })

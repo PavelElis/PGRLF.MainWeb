@@ -1,0 +1,14 @@
+﻿@using PGRLF.MainWeb
+@model string
+@{
+    const int startYear = 1950;
+    @Html.DropDownListFor(m => m, Enumerable.Range(startYear, DateTime.Now.Year - startYear + 1)
+        .Reverse()
+        .Select(year => new SelectListItem()
+    {
+        Text = year.ToString(),
+        Value = year.ToString(),
+        Selected = year.ToString() == Model
+    })
+    .PrependEmptyItem())
+}

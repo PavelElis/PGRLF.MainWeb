@@ -1,0 +1,208 @@
+﻿body {
+    font-size: .85em;
+    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+}
+
+header, footer, nav, section {
+    display: block;
+}
+
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+fieldset {
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+fieldset .RadioButtonListItem {
+    padding-bottom: 5px;
+    }
+
+    fieldset .RadioButtonListItem label {
+        display: inline;
+    }
+
+    fieldset .RadioButtonListItem input {
+        display: inline;
+    }
+
+    fieldset .RadioButtonListItem span {
+        display: inline;
+    }
+
+
+
+fieldset .rbl input.text-box {
+    width: 450px;
+    margin-left: 20px;
+}
+
+
+form.custom .custom.radio {
+ 
+    width: 30px;
+    height: 30px;
+    margin: 0px 0 0 0px;
+    background: #f2f2f2;
+    cursor: pointer;
+
+
+}
+
+form.custom .custom.radio.checked {
+        background: url(/Content/images/ok.png) no-repeat;
+        color: #222222;
+    }
+
+
+
+form.custom .custom.checkbox {
+    width: 30px;
+    height: 30px;
+    margin: 0px 0 0 0px;
+    background: #f2f2f2;
+    cursor: pointer;
+
+}
+
+    form.custom .custom.checkbox.checked:before {
+        width: 30px;
+        height: 30px;
+        top: 0 !important;
+        left: 0 !important;
+        content: "" !important;
+        background: url(/Content/images/ok.png) no-repeat;
+        color: #222222;
+        position: absolute;
+        margin-top: 2px !important;
+        margin-left: 2px !important;
+        
+    }
+
+
+
+
+.red input[type="text"] {
+    background-color: darksalmon;
+}
+.blue input[type="text"] {
+    background-color: lightskyblue;
+}
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+
+/* PGRLF Form styles
+-----------------------------------------------------------*/
+
+.formbody {
+    padding: 10px;
+    float: left;
+    width: 70%;
+}
+
+.formmenu {
+    padding: 10px;
+    float: left;
+    width: 30%;
+}
+
+.recaptchatable {
+    width: 318px;
+}
+
+    .recaptchatable tr,
+    .recaptchatable td {
+        padding: 0;
+        margin: 0;
+    }
+
+    .recaptchatable input[type="text"] {
+        padding: 2px;
+        width: 130px;
+        font-size: 12px;
+    }
+
+.pouceni {
+    margin-left: 40px;
+    list-style: none;
+}
+
+.uniformWidth {
+    width: 26ex;
+}
+
+.formListing .listLinks {
+    position: relative;
+}
+
+.formListing a {
+    margin-top: 3ex;
+}
+
+.row {
+    text-align: justify;
+}
+
+.checkbox_val {
+    clear: both;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.checkbox_val .checkbox {
+    margin-left: 10px !important;
+}
+
+.checkbox_label {
+    display: inline-block;
+    float: none;
+}
+.checkbox_label span {
+    padding-top: 10px;
+    padding-left: 10px;
+    text-align: left;
+    display: inline-block
+}

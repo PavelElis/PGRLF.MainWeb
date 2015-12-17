@@ -1,0 +1,3 @@
+﻿@model DateTime
+@using Telerik.Web.Mvc.UI
+@Html.Telerik().DatePickerFor(m => m).Format("d.M.yyyy").OpenOnFocus(true).Min(DateTime.Now.AddYears(-100)).Max(DateTime.Now.AddYears(100))

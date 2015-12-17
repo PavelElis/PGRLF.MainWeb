@@ -1,0 +1,21 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "Zadejte soubor s formulářem";
+    
+}
+
+<div class="large-3 columns">
+    <h2>Zadejte soubor s formulářem</h2>
+    
+    @if (ViewBag.InvalidFile != null && ViewBag.InvalidFile)
+    {
+        <div class="error error-message">Nahraný soubor je neplatný. Prosím zvolte jiný.</div>
+    }
+
+    @using (Html.BeginForm("Load", "Form", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input type="file" name="file" value="Zvolte soubor" />
+        <input type="submit" value="Nahrát" />
+    }
+</div>

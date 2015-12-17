@@ -1,0 +1,13 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="PGRLF.AzureStorageProvider.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="m000PGRLFStorageAccountConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;DefaultEndpointsProtocol=https;AccountName=m000pgrlf;AccountKey=I2XWOOlGhoutO34mIFaAr9yX4dMLeoBn8WSw9nD5K+b41iJy2ucCthDagU/uWQC6JiUDzT2ZGn8tJ9qXYdqQ+g==&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">DefaultEndpointsProtocol=https;AccountName=m000pgrlf;AccountKey=I2XWOOlGhoutO34mIFaAr9yX4dMLeoBn8WSw9nD5K+b41iJy2ucCthDagU/uWQC6JiUDzT2ZGn8tJ9qXYdqQ+g==</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

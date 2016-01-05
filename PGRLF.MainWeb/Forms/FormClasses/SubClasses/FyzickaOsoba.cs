@@ -86,7 +86,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses.SubClasses
 
         //Adresa místa podnikání
 
-        [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "JeMistoPodnikaniStejne")]
+        [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "JeMistoPodnikaniStejneFo")]
         public bool FOJeMistoPodnikaniStejne { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "Ulice")]

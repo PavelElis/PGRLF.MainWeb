@@ -438,4 +438,112 @@
   <data name="Ucet7" xml:space="preserve">
     <value>ke konci předminulého roku</value>
   </data>
+  <data name="Chyba_PSC" xml:space="preserve">
+    <value>PSČ musí obsahovat 5 číslic</value>
+  </data>
+  <data name="Chyba_RodneCislo" xml:space="preserve">
+    <value>Rodné číslo musí být ve tvaru ------/---- a smí obsahovat pouze číslice</value>
+  </data>
+  <data name="CisloOrientacni" xml:space="preserve">
+    <value>Orientační číslo</value>
+  </data>
+  <data name="CisloPopisne" xml:space="preserve">
+    <value>Číslo popisné</value>
+  </data>
+  <data name="DatumNarozeni" xml:space="preserve">
+    <value>Datum narození</value>
+  </data>
+  <data name="DIC" xml:space="preserve">
+    <value>Daňové identifikační číslo</value>
+  </data>
+  <data name="IC" xml:space="preserve">
+    <value>Identifikační číslo osoby</value>
+  </data>
+  <data name="JeMistoPodnikaniStejneFo" xml:space="preserve">
+    <value>Je místo podnikání stejné jako "Adresa trvalého bydliště"?</value>
+  </data>
+  <data name="Kraj" xml:space="preserve">
+    <value>Kraj</value>
+  </data>
+  <data name="KrestniJmeno" xml:space="preserve">
+    <value>Křestní jméno</value>
+  </data>
+  <data name="Nevyplneno_CisloPopisne" xml:space="preserve">
+    <value>Není vyplněno číslo popisné</value>
+  </data>
+  <data name="Nevyplneno_DatumNarozeni" xml:space="preserve">
+    <value>Není vyplněno datum narození</value>
+  </data>
+  <data name="Nevyplneno_IC" xml:space="preserve">
+    <value>Není vyplněno identifikační číslo osoby</value>
+  </data>
+  <data name="Nevyplneno_Jmeno" xml:space="preserve">
+    <value>Není vyplněno jméno</value>
+  </data>
+  <data name="Nevyplneno_Kraj" xml:space="preserve">
+    <value>Není zvolen kraj</value>
+  </data>
+  <data name="Nevyplneno_Obec" xml:space="preserve">
+    <value>Není vyplněná obec</value>
+  </data>
+  <data name="Nevyplneno_Prijmeni" xml:space="preserve">
+    <value>Není vyplněno přijímení</value>
+  </data>
+  <data name="Nevyplneno_PSC" xml:space="preserve">
+    <value>Není vyplněno poštovní směrovací číslo</value>
+  </data>
+  <data name="Nevyplneno_RodneCislo" xml:space="preserve">
+    <value>Není vyplněno rodné číslo</value>
+  </data>
+  <data name="Obec" xml:space="preserve">
+    <value>Obec</value>
+  </data>
+  <data name="Prijmeni" xml:space="preserve">
+    <value>Příjmení</value>
+  </data>
+  <data name="PSC" xml:space="preserve">
+    <value>PSČ</value>
+  </data>
+  <data name="RodneCislo" xml:space="preserve">
+    <value>Rodné číslo</value>
+  </data>
+  <data name="TitulPredJmenem" xml:space="preserve">
+    <value>Titul před jménem</value>
+  </data>
+  <data name="TitulZaJmenem" xml:space="preserve">
+    <value>Titul za jménem</value>
+  </data>
+  <data name="Ulice" xml:space="preserve">
+    <value>Ulice</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>Email</value>
+  </data>
+  <data name="Fax" xml:space="preserve">
+    <value>Fax</value>
+  </data>
+  <data name="JeMistoPodnikaniStejnePo" xml:space="preserve">
+    <value>Je místo podnikání stejné jako "Adresa sídla společnosti"?</value>
+  </data>
+  <data name="ObchodniJmeno" xml:space="preserve">
+    <value>Obchodní jméno</value>
+  </data>
+  <data name="PocetSpolecniku" xml:space="preserve">
+    <value>Počet společníků</value>
+  </data>
+  <data name="Telefon1" xml:space="preserve">
+    <value>Telefon</value>
+  </data>
+  <data name="Telefon2" xml:space="preserve">
+    <value>Druhý telefon</value>
+  </data>
+  <data name="TypSpolecnosti" xml:space="preserve">
+    <value>Typ společnosti</value>
+  </data>
+  <data name="ZakladniKapital" xml:space="preserve">
+    <value>Základní kapitál</value>
+  </data>
+  <data name="Chyba_DatumNarozeni" xml:space="preserve">
+    <value />
+  </data>
 </root>

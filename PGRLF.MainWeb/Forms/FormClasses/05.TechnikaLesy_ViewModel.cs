@@ -14,21 +14,23 @@ namespace PGRLF.MainWeb.Forms.FormClasses
     {
         public TechnikaLesy_ViewModel()
         {
-
+            FyzickaOsoba = new FyzickaOsoba();
+            PravnickaOsoba = new PravnickaOsoba();
+            Kontakt = new Kontakt();
         }
 
         public bool JePravnickaOsoba { get; set; }
-        public bool JeSvazekObec { get; set; }
+        public bool JeObec { get; set; }
 
-        public FyzickaOsoba fyzickaOsoba { get; set; }
-        public PravnickaOsoba pravnickaOsoba { get; set; }
-        public Kontakt kontakt { get; set; }
+        public FyzickaOsoba FyzickaOsoba { get; set; }
+        public PravnickaOsoba PravnickaOsoba { get; set; }
+        public Kontakt Kontakt { get; set; }
 
         public override string ApplicantEmail
         {
             get
             {
-                return kontakt.Email;
+                return Kontakt.Email;
             }
         }
 
@@ -36,13 +38,13 @@ namespace PGRLF.MainWeb.Forms.FormClasses
         {
             if (JePravnickaOsoba)
             {
-                fyzickaOsoba.nullovani();
-                pravnickaOsoba.nastavMistoPodnikani();
+                FyzickaOsoba.nullovani();
+                PravnickaOsoba.nastavMistoPodnikani();
             }
             else
             {
-                pravnickaOsoba.nullovani();
-                fyzickaOsoba.nastavMistoPodnikani();
+                PravnickaOsoba.nullovani();
+                FyzickaOsoba.nastavMistoPodnikani();
             }
 
             if (Identifikator == null || Identifikator == Guid.Empty)
@@ -58,68 +60,68 @@ namespace PGRLF.MainWeb.Forms.FormClasses
             MemoryStream ms = new MemoryStream();
             Dictionary<string, string> formValues = new Dictionary<string, string>();
 
-            formValues.Add("FORodneCislo", (fyzickaOsoba.FORodneCislo ?? "").Replace("/", ""));
-            formValues.Add("FODatumNarozeni", fyzickaOsoba.FODatumNarozeni != null ? fyzickaOsoba.FODatumNarozeni.Value.ToString("ddMMyyyy") : "");
-            formValues.Add("FOIC", fyzickaOsoba.FOIC ?? "");
-            formValues.Add("FODIC", fyzickaOsoba.FODIC ?? "");
-            formValues.Add("FOTitulPredJmenem", fyzickaOsoba.FOTitulPredMenom ?? "");
-            formValues.Add("FOPrijmeni", fyzickaOsoba.FOPrijmeni ?? "");
-            formValues.Add("FOTitulZaJmenem", fyzickaOsoba.FOTitulZaMenom ?? "");
-            formValues.Add("FOJmeno", fyzickaOsoba.FOJmeno ?? "");
-            formValues.Add("TPUlice", fyzickaOsoba.FOTPUlice ?? "");
-            formValues.Add("TPCisloPopisne", fyzickaOsoba.FOTPCisloPopisne ?? "");
-            formValues.Add("TPPSC", fyzickaOsoba.FOTPPSC ?? "");
-            formValues.Add("TPCisloOrientacni", fyzickaOsoba.FOTPCisloOrientacni ?? "");
-            formValues.Add("TPObec", fyzickaOsoba.FOTPObec ?? "");
-            formValues.Add("MistoPodnikani", !String.IsNullOrEmpty(fyzickaOsoba.FOMPPSC)
+            formValues.Add("FORodneCislo", (FyzickaOsoba.FORodneCislo ?? "").Replace("/", ""));
+            formValues.Add("FODatumNarozeni", FyzickaOsoba.FODatumNarozeni != null ? FyzickaOsoba.FODatumNarozeni.Value.ToString("ddMMyyyy") : "");
+            formValues.Add("FOIC", FyzickaOsoba.FOIC ?? "");
+            formValues.Add("FODIC", FyzickaOsoba.FODIC ?? "");
+            formValues.Add("FOTitulPredJmenem", FyzickaOsoba.FOTitulPredMenom ?? "");
+            formValues.Add("FOPrijmeni", FyzickaOsoba.FOPrijmeni ?? "");
+            formValues.Add("FOTitulZaJmenem", FyzickaOsoba.FOTitulZaMenom ?? "");
+            formValues.Add("FOJmeno", FyzickaOsoba.FOJmeno ?? "");
+            formValues.Add("TPUlice", FyzickaOsoba.FOTPUlice ?? "");
+            formValues.Add("TPCisloPopisne", FyzickaOsoba.FOTPCisloPopisne ?? "");
+            formValues.Add("TPPSC", FyzickaOsoba.FOTPPSC ?? "");
+            formValues.Add("TPCisloOrientacni", FyzickaOsoba.FOTPCisloOrientacni ?? "");
+            formValues.Add("TPObec", FyzickaOsoba.FOTPObec ?? "");
+            formValues.Add("MistoPodnikani", !String.IsNullOrEmpty(FyzickaOsoba.FOMPPSC)
                     ? String.Format(
                         "{0}, {1}, {2}, {3}, {4}, {5}",
-                        fyzickaOsoba.FOMPUlice,
-                        fyzickaOsoba.FOMPCisloPopisne,
-                        fyzickaOsoba.FOMPCisloOrientacni,
-                        fyzickaOsoba.FOMPPSC,
-                        fyzickaOsoba.FOMPObec,
-                        fyzickaOsoba.FOMPKraj)
+                        FyzickaOsoba.FOMPUlice,
+                        FyzickaOsoba.FOMPCisloPopisne,
+                        FyzickaOsoba.FOMPCisloOrientacni,
+                        FyzickaOsoba.FOMPPSC,
+                        FyzickaOsoba.FOMPObec,
+                        FyzickaOsoba.FOMPKraj)
                     : "");
-            formValues.Add("TPTelefon1", kontakt.Telefon1 ?? "");
-            formValues.Add("TPTelefon2", kontakt.Telefon2 ?? "");
-            formValues.Add("TPFax", kontakt.Fax ?? "");
-            formValues.Add("TPEmail", kontakt.Email ?? "");
+            formValues.Add("TPTelefon1", Kontakt.Telefon1 ?? "");
+            formValues.Add("TPTelefon2", Kontakt.Telefon2 ?? "");
+            formValues.Add("TPFax", Kontakt.Fax ?? "");
+            formValues.Add("TPEmail", Kontakt.Email ?? "");
 
-            formValues.Add("POObchodneJmeno", pravnickaOsoba.POObchodniJmeno ?? "");
-            formValues.Add("POIC", pravnickaOsoba.POIC ?? "");
-            formValues.Add("PODIC", pravnickaOsoba.PODIC ?? "");
+            formValues.Add("POObchodneJmeno", PravnickaOsoba.POObchodniJmeno ?? "");
+            formValues.Add("POIC", PravnickaOsoba.POIC ?? "");
+            formValues.Add("PODIC", PravnickaOsoba.PODIC ?? "");
             var zodpovedneosoby = "";
-            foreach(ZodpovednaOsoba zodpovednaOsoba in pravnickaOsoba.POZodpovedneOsoby)
+            foreach(ZodpovednaOsoba zodpovednaOsoba in PravnickaOsoba.POZodpovedneOsoby)
             {
                 zodpovedneosoby += String.Format("{0}{1} {2}{3} - {4}", string.IsNullOrEmpty(zodpovednaOsoba.POZOTitulPredJmenem) ? "" : zodpovednaOsoba.POZOTitulPredJmenem + " ", zodpovednaOsoba.POZOJmeno, zodpovednaOsoba.POZOPrijmeni, string.IsNullOrEmpty(zodpovednaOsoba.POZOTitulZaJmenem) ? "" : " " + zodpovednaOsoba.POZOTitulZaJmenem, zodpovednaOsoba.POZOFunkce);
             }
 
             formValues.Add("POZodpovedneOsoby", zodpovedneosoby);
-            formValues.Add("POMistoPodnikani", !String.IsNullOrEmpty(pravnickaOsoba.POMPPSC)
+            formValues.Add("POMistoPodnikani", !String.IsNullOrEmpty(PravnickaOsoba.POMPPSC)
                     ? String.Format(
                         "{0}, {1}, {2}, {3}, {4}, {5}",
-                        pravnickaOsoba.POMPUlice,
-                        pravnickaOsoba.POMPCisloPopisne,
-                        pravnickaOsoba.POMPCisloOrientacni,
-                        pravnickaOsoba.POMPPSC,
-                        pravnickaOsoba.POMPObec,
-                        pravnickaOsoba.POMPKraj)
+                        PravnickaOsoba.POMPUlice,
+                        PravnickaOsoba.POMPCisloPopisne,
+                        PravnickaOsoba.POMPCisloOrientacni,
+                        PravnickaOsoba.POMPPSC,
+                        PravnickaOsoba.POMPObec,
+                        PravnickaOsoba.POMPKraj)
                     : "");
-            if (pravnickaOsoba.POPocetSpolecniku != 0)
-                formValues.Add("POPocetSpolecniku", pravnickaOsoba.POPocetSpolecniku.ToString("D"));
-            if (pravnickaOsoba.POZakladniKapital != 0)
-                formValues.Add("POZakladniKapital", pravnickaOsoba.POZakladniKapital.ToString("D"));
+            if (PravnickaOsoba.POPocetSpolecniku != 0)
+                formValues.Add("POPocetSpolecniku", PravnickaOsoba.POPocetSpolecniku.ToString("D"));
+            if (PravnickaOsoba.POZakladniKapital != 0)
+                formValues.Add("POZakladniKapital", PravnickaOsoba.POZakladniKapital.ToString("D"));
 
-            formValues.Add("SSUlice", pravnickaOsoba.POSSUlice ?? "");
-            formValues.Add("SSPSC", pravnickaOsoba.POSSPSC ?? "");
-            formValues.Add("SSCisloPopisne", pravnickaOsoba.POSSCisloPopisne ?? "");
-            formValues.Add("SSCisloOrientacni", pravnickaOsoba.POSSCisloOrientacni ?? "");
-            formValues.Add("SSObec", pravnickaOsoba.POSSObec ?? "");
-            formValues.Add("SSTelefon1", kontakt.Telefon1 ?? "");
-            formValues.Add("SSTelefon2", kontakt.Telefon2 ?? "");
-            formValues.Add("SSFax", kontakt.Fax ?? "");
-            formValues.Add("SSEmail", kontakt.Email ?? "");
+            formValues.Add("SSUlice", PravnickaOsoba.POSSUlice ?? "");
+            formValues.Add("SSPSC", PravnickaOsoba.POSSPSC ?? "");
+            formValues.Add("SSCisloPopisne", PravnickaOsoba.POSSCisloPopisne ?? "");
+            formValues.Add("SSCisloOrientacni", PravnickaOsoba.POSSCisloOrientacni ?? "");
+            formValues.Add("SSObec", PravnickaOsoba.POSSObec ?? "");
+            formValues.Add("SSTelefon1", Kontakt.Telefon1 ?? "");
+            formValues.Add("SSTelefon2", Kontakt.Telefon2 ?? "");
+            formValues.Add("SSFax", Kontakt.Fax ?? "");
+            formValues.Add("SSEmail", Kontakt.Email ?? "");
 
             form.FillForm(formValues, ms);
             form.CloseForm();

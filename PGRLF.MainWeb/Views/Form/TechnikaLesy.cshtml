@@ -5,19 +5,124 @@
     Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
 
-<strong>Program Podpora nákupu techniky pro hospodaření v lesích</strong>
+<div class="text-center">
+    <h2><strong>Program Podpora nákupu techniky pro hospodaření v lesích</strong></h2>
+</div>
 <p>(* - Údaje označené hvězdičkou je nutné vyplnit.)</p>
 
 <form>
     <fieldset>
         <legend>Právní forma</legend>
         <div class="row">
-            <div class="switch">
-                @Html.RadioButtonFor(m => m.JePravnickaOsoba, false, new { @checked = "checked", @id = "rbFO" })
-                <input id="exampleCheckboxSwitch" type="checkbox">
-                <label for="exampleCheckboxSwitch"></label>
+            <div class="large-4 columns">
+                Obec, svazek obcí
+            </div>
+            <div class="large-4 large-offset-4 columns">
+                <div class="switch">
+                    @Html.RadioButtonFor(m => m.JeObec, false, new { @checked = "checked", @id = "rbFOPO" })
+                    <label>Ne</label>
+                    @Html.RadioButtonFor(m => m.JeObec, true, new { @id = "rbObec" })
+                    <label>Ano</label>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-4 columns">
+                Fyzická / právnická osoba
+            </div>
+            <div class="large-4 large-offset-4 columns">
+                <div class="switch">
+                    @Html.RadioButtonFor(m => m.JePravnickaOsoba, false, new { @checked = "checked", @id = "rbFO" })
+                    <label>Fyzická osoba</label>
+                    @Html.RadioButtonFor(m => m.JePravnickaOsoba, true, new { @id = "rbPO" })
+                    <label>Právnická osoba</label>
+                    <span></span>
+                </div>
             </div>
         </div>
     </fieldset>
+
+    <div @if (Model.JePravnickaOsoba) { @Html.Raw("style=\"display:none;\"") ; }>
+        @Html.Partial("Partial/FyzickaOsoba", Model.FyzickaOsoba);
+    </div>
+    
 </form>
 
+@section scripts
+{
+    <script type="text/javascript">
+
+        function isChecked(idx) {
+            return idx.hasClass('checked');
+        }
+
+        function switchElement(element, value) {
+            if (value == false) {
+                $(element).hide(100);
+            } else {
+                $(element).show(100);
+            }
+        }
+
+        function switchFP(pravnicka) {
+            if (pravnicka == true) {
+                $("#fsFyzickaOsoba").hide(100);
+                $("#fsPravnickaOsoba").show(100);
+            } else {
+                $("#fsFyzickaOsoba").show(100);
+                $("#fsPravnickaOsoba").hide(100);
+            }
+        }
+
+        $(document).ready(function () {
+            $('#rbMistoFoOff').change(function () {
+                switchElement('#misto_fo', true);
+            });
+            $('#rbMistoFoOn').change(function () {
+                switchElement('#misto_fo', false);
+            });
+            $('#rbMistoPoOff').change(function () {
+                switchElement('#misto_po', true);
+            });
+            $('#rbMistoPoOn').change(function () {
+                switchElement('#misto_po', false);
+            });
+            $('#rbSpecOff').change(function () {
+                switchElement('#poistSpec', false);
+            });
+            $('#rbSpecOn').change(function () {
+                switchElement('#poistSpec', true);
+            });
+            $('#rbOstOff').change(function () {
+                switchElement('#poistOst', false);
+            });
+            $('#rbOstOn').change(function () {
+                switchElement('#poistOst', true);
+            });
+            $('#rbHospOff').change(function () {
+                switchElement('#poistHosp', false);
+            });
+            $('#rbHospOn').change(function () {
+                switchElement('#poistHosp', true);
+            });
+
+            $('#rbFO').change(function () {
+                switchFP(false);
+            });
+            $('#rbPO').change(function () {
+                switchFP(true);
+            });
+
+            $('#POTypPO').change(function () {
+                nastavFunkceProTypSpolecnosti($('#POTypPO').val(), "ZO1Funkce");
+                nastavFunkceProTypSpolecnosti($('#POTypPO').val(), "ZO2Funkce");
+                nastavFunkceProTypSpolecnosti($('#POTypPO').val(), "ZO3Funkce");
+            });
+            nastavFunkceProTypSpolecnosti($('#POTypPO').val(), "ZO1Funkce");
+            nastavFunkceProTypSpolecnosti($('#POTypPO').val(), "ZO2Funkce");
+            nastavFunkceProTypSpolecnosti($('#POTypPO').val(), "ZO3Funkce");
+        });
+
+    </script>
+}

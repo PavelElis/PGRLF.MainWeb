@@ -61,11 +61,65 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to .
+        /// </summary>
+        public static string Chyba_DatumNarozeni {
+            get {
+                return ResourceManager.GetString("Chyba_DatumNarozeni", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PSČ musí obsahovat 5 číslic.
+        /// </summary>
+        public static string Chyba_PSC {
+            get {
+                return ResourceManager.GetString("Chyba_PSC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rodné číslo musí být ve tvaru ------/---- a smí obsahovat pouze číslice.
+        /// </summary>
+        public static string Chyba_RodneCislo {
+            get {
+                return ResourceManager.GetString("Chyba_RodneCislo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Orientační číslo.
+        /// </summary>
+        public static string CisloOrientacni {
+            get {
+                return ResourceManager.GetString("CisloOrientacni", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Číslo popisné.
+        /// </summary>
+        public static string CisloPopisne {
+            get {
+                return ResourceManager.GetString("CisloPopisne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to CZ-NACE (hlavní činnosti).
         /// </summary>
         public static string CZNACE {
             get {
                 return ResourceManager.GetString("CZNACE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Datum narození.
+        /// </summary>
+        public static string DatumNarozeni {
+            get {
+                return ResourceManager.GetString("DatumNarozeni", resourceCulture);
             }
         }
         
@@ -97,11 +151,38 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Daňové identifikační číslo.
+        /// </summary>
+        public static string DIC {
+            get {
+                return ResourceManager.GetString("DIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Doba podnikání v letech.
         /// </summary>
         public static string DobaPodnikani {
             get {
                 return ResourceManager.GetString("DobaPodnikani", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email.
+        /// </summary>
+        public static string Email {
+            get {
+                return ResourceManager.GetString("Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fax.
+        /// </summary>
+        public static string Fax {
+            get {
+                return ResourceManager.GetString("Fax", resourceCulture);
             }
         }
         
@@ -115,11 +196,164 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Identifikační číslo osoby.
+        /// </summary>
+        public static string IC {
+            get {
+                return ResourceManager.GetString("IC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Je místo podnikání stejné jako &quot;Adresa trvalého bydliště&quot;?.
+        /// </summary>
+        public static string JeMistoPodnikaniStejneFo {
+            get {
+                return ResourceManager.GetString("JeMistoPodnikaniStejneFo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Je místo podnikání stejné jako &quot;Adresa sídla společnosti&quot;?.
+        /// </summary>
+        public static string JeMistoPodnikaniStejnePo {
+            get {
+                return ResourceManager.GetString("JeMistoPodnikaniStejnePo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Kraj.
+        /// </summary>
+        public static string Kraj {
+            get {
+                return ResourceManager.GetString("Kraj", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Křestní jméno.
+        /// </summary>
+        public static string KrestniJmeno {
+            get {
+                return ResourceManager.GetString("KrestniJmeno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Požadovaná hodnota není vyplnľna.
         /// </summary>
         public static string Nevyplneno {
             get {
                 return ResourceManager.GetString("Nevyplneno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněno číslo popisné.
+        /// </summary>
+        public static string Nevyplneno_CisloPopisne {
+            get {
+                return ResourceManager.GetString("Nevyplneno_CisloPopisne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněno datum narození.
+        /// </summary>
+        public static string Nevyplneno_DatumNarozeni {
+            get {
+                return ResourceManager.GetString("Nevyplneno_DatumNarozeni", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněno identifikační číslo osoby.
+        /// </summary>
+        public static string Nevyplneno_IC {
+            get {
+                return ResourceManager.GetString("Nevyplneno_IC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněno jméno.
+        /// </summary>
+        public static string Nevyplneno_Jmeno {
+            get {
+                return ResourceManager.GetString("Nevyplneno_Jmeno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není zvolen kraj.
+        /// </summary>
+        public static string Nevyplneno_Kraj {
+            get {
+                return ResourceManager.GetString("Nevyplneno_Kraj", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněná obec.
+        /// </summary>
+        public static string Nevyplneno_Obec {
+            get {
+                return ResourceManager.GetString("Nevyplneno_Obec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněno přijímení.
+        /// </summary>
+        public static string Nevyplneno_Prijmeni {
+            get {
+                return ResourceManager.GetString("Nevyplneno_Prijmeni", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněno poštovní směrovací číslo.
+        /// </summary>
+        public static string Nevyplneno_PSC {
+            get {
+                return ResourceManager.GetString("Nevyplneno_PSC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněno rodné číslo.
+        /// </summary>
+        public static string Nevyplneno_RodneCislo {
+            get {
+                return ResourceManager.GetString("Nevyplneno_RodneCislo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Obchodní jméno.
+        /// </summary>
+        public static string ObchodniJmeno {
+            get {
+                return ResourceManager.GetString("ObchodniJmeno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Obec.
+        /// </summary>
+        public static string Obec {
+            get {
+                return ResourceManager.GetString("Obec", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Počet společníků.
+        /// </summary>
+        public static string PocetSpolecniku {
+            get {
+                return ResourceManager.GetString("PocetSpolecniku", resourceCulture);
             }
         }
         
@@ -956,6 +1190,78 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Příjmení.
+        /// </summary>
+        public static string Prijmeni {
+            get {
+                return ResourceManager.GetString("Prijmeni", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to PSČ.
+        /// </summary>
+        public static string PSC {
+            get {
+                return ResourceManager.GetString("PSC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rodné číslo.
+        /// </summary>
+        public static string RodneCislo {
+            get {
+                return ResourceManager.GetString("RodneCislo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Telefon.
+        /// </summary>
+        public static string Telefon1 {
+            get {
+                return ResourceManager.GetString("Telefon1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Druhý telefon.
+        /// </summary>
+        public static string Telefon2 {
+            get {
+                return ResourceManager.GetString("Telefon2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Titul před jménem.
+        /// </summary>
+        public static string TitulPredJmenem {
+            get {
+                return ResourceManager.GetString("TitulPredJmenem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Titul za jménem.
+        /// </summary>
+        public static string TitulZaJmenem {
+            get {
+                return ResourceManager.GetString("TitulZaJmenem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Typ společnosti.
+        /// </summary>
+        public static string TypSpolecnosti {
+            get {
+                return ResourceManager.GetString("TypSpolecnosti", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Aktuální ukončené období (čtvrtletí, měsíc) s doloženými účetními výkazy.
         /// </summary>
         public static string Ucet1 {
@@ -1019,11 +1325,29 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ulice.
+        /// </summary>
+        public static string Ulice {
+            get {
+                return ResourceManager.GetString("Ulice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Vyberete z uvedených variant.
         /// </summary>
         public static string VyberVariant {
             get {
                 return ResourceManager.GetString("VyberVariant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Základní kapitál.
+        /// </summary>
+        public static string ZakladniKapital {
+            get {
+                return ResourceManager.GetString("ZakladniKapital", resourceCulture);
             }
         }
     }

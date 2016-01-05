@@ -750,6 +750,7 @@
     <Content Include="Content\FormTemplates\ZoPPPGRLF.pdf" />
     <Content Include="Content\FormTemplates\ProgramZemedelecNew.pdf" />
     <Content Include="Content\FormTemplates\RTest.pdf" />
+    <Content Include="ConnectionStrings.config" />
     <None Include="Properties\PublishProfiles\disk.pubxml" />
     <None Include="Properties\PublishProfiles\pgrlf - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\pgrlf - Web Deploy %282%29.pubxml" />
@@ -842,6 +843,7 @@
     <Content Include="Views\Form\Puda.cshtml" />
     <Content Include="Views\Form\TechnikaLesy.cshtml" />
     <Content Include="Views\Form\Partial\FyzickaOsoba.cshtml" />
+    <Content Include="AppSettings.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

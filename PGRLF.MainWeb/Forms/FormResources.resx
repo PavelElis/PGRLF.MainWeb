@@ -546,4 +546,37 @@
   <data name="Chyba_DatumNarozeni" xml:space="preserve">
     <value />
   </data>
+  <data name="Nevyplneno_DIC" xml:space="preserve">
+    <value>Není vyplněno daňové identifikační číslo</value>
+  </data>
+  <data name="Nevyplneno_ObchodniJmeno" xml:space="preserve">
+    <value>Není vyplněno obchodní jméno</value>
+  </data>
+  <data name="Chyba_CisloUctu" xml:space="preserve">
+    <value>Číslo účtu obsahuje nepovolené znaky nebo je ve špatném formátu</value>
+  </data>
+  <data name="Chyba_Telefon" xml:space="preserve">
+    <value>Telefonní číslo nebo fax musí obsahovat 9 číslic</value>
+  </data>
+  <data name="CisloUctu" xml:space="preserve">
+    <value>Číslo účtu</value>
+  </data>
+  <data name="KodBanky" xml:space="preserve">
+    <value>Kód banky</value>
+  </data>
+  <data name="Nevyplneno_CisloUctu" xml:space="preserve">
+    <value>Není vyplněno číslo účtu</value>
+  </data>
+  <data name="Nevyplneno_Email" xml:space="preserve">
+    <value>Není vyplněn kontaktní email</value>
+  </data>
+  <data name="Nevyplneno_KodBanky" xml:space="preserve">
+    <value>Není zvolena banka</value>
+  </data>
+  <data name="Nevyplneno_Telefon" xml:space="preserve">
+    <value>Není vyplněn kontaktní telefon</value>
+  </data>
+  <data name="Nevyplneno_TypSpolecnosti" xml:space="preserve">
+    <value>Není zvolen typ společnosti</value>
+  </data>
 </root>

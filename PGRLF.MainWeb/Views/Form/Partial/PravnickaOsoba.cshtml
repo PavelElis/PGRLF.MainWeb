@@ -1,0 +1,121 @@
+﻿@model PGRLF.MainWeb.Forms.FormClasses.Partial.PravnickaOsoba
+
+<fieldset>
+    <legend>Právnická osoba</legend>
+    <div class="row">
+        <div class="large-8 columns">
+            @Html.LabelWithAsterixFor(m => m.POObchodniJmeno)
+            @Html.EditorFor(m => m.POObchodniJmeno)
+            @Html.ValidationMessageFor(m => m.POObchodniJmeno)
+        </div>
+        <div class="large-4 columns"> 
+            @Html.LabelWithAsterixFor(m => m.POTypPO)
+            @Html.EditorFor(m => m.POTypPO)
+            @Html.ValidationMessageFor(m => m.POTypPO)
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-6 columns">
+            @Html.LabelWithAsterixFor(m => m.POIC)
+            @Html.EditorFor(m => m.POIC)
+            @Html.ValidationMessageFor(m => m.POIC)
+        </div>
+        <div class="large-6 columns">
+            @Html.LabelWithAsterixFor(m => m.PODIC)
+            @Html.EditorFor(m => m.PODIC)
+            @Html.ValidationMessageFor(m => m.PODIC)
+        </div>
+    </div>
+
+    <h5>Adresa sídla společnosti</h5>
+    <div class="row">
+        <div class="large-8 columns">
+            @Html.LabelWithAsterixFor(m => m.POSSUlice)
+            @Html.EditorFor(m => m.POSSUlice)
+            @Html.ValidationMessageFor(m => m.POSSUlice)
+        </div>
+        <div class="large-4 columns red">
+            @Html.LabelWithAsterixFor(m => m.POSSCisloPopisne)
+            @Html.EditorFor(m => m.POSSCisloPopisne)
+            @Html.ValidationMessageFor(m => m.POSSCisloPopisne)
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-8 columns">
+            @Html.LabelWithAsterixFor(m => m.POSSObec)
+            @Html.EditorFor(m => m.POSSObec)
+            @Html.ValidationMessageFor(m => m.POSSObec)
+        </div>
+        <div class="large-4 columns blue">
+            @Html.LabelWithAsterixFor(m => m.POSSCisloOrientacni)
+            @Html.EditorFor(m => m.POSSCisloOrientacni)
+            @Html.ValidationMessageFor(m => m.POSSCisloOrientacni)
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-4 columns">
+            @Html.LabelWithAsterixFor(m => m.POSSPSC)
+            @Html.EditorFor(m => m.POSSPSC)
+            @Html.ValidationMessageFor(m => m.POSSPSC)
+        </div>
+        <div class="large-8 columns">
+            @Html.LabelWithAsterixFor(m => m.POSSKraj)
+            @Html.EditorFor(m => m.POSSKraj)
+            @Html.ValidationMessageFor(m => m.POSSKraj)
+        </div>
+    </div>
+
+    <h5>Místo podnikání</h5>
+    <div class="row">
+        <div class="large-6 columns">
+            @Html.LabelWithAsterixFor(m => m.POJeMistoPodnikaniStejne)
+        </div>
+        <div class="large-2 columns">
+            <div class="switch">
+                @Html.RadioButtonFor(m => m.POJeMistoPodnikaniStejne, false, new { @checked = "checked", @id = "rbMistoPoOff" })
+                <label>Ne</label>
+                @Html.RadioButtonFor(m => m.POJeMistoPodnikaniStejne, true, new { @id = "rbMistoPoOn" })
+                <label>Ano</label>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <div id="misto_fo" @if (Model.POJeMistoPodnikaniStejne) { @Html.Raw("style=\"display:none;\"") ; }>
+        <div class="row">
+            <div class="large-8 columns">
+                @Html.LabelWithAsterixFor(m => m.POMPUlice)
+                @Html.EditorFor(m => m.POMPUlice)
+                @Html.ValidationMessageFor(m => m.POMPUlice)
+            </div>
+            <div class="large-4 columns red">
+                @Html.LabelWithAsterixFor(m => m.POMPCisloPopisne)
+                @Html.EditorFor(m => m.POMPCisloPopisne)
+                @Html.ValidationMessageFor(m => m.POMPCisloPopisne)
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-8 columns">
+                @Html.LabelWithAsterixFor(m => m.POMPObec)
+                @Html.EditorFor(m => m.POMPObec)
+                @Html.ValidationMessageFor(m => m.POMPObec)
+            </div>
+            <div class="large-4 columns blue">
+                @Html.LabelWithAsterixFor(m => m.POMPCisloOrientacni)
+                @Html.EditorFor(m => m.POMPCisloOrientacni)
+                @Html.ValidationMessageFor(m => m.POMPCisloOrientacni)
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-4 columns">
+                @Html.LabelWithAsterixFor(m => m.POMPPSC)
+                @Html.EditorFor(m => m.POMPPSC)
+                @Html.ValidationMessageFor(m => m.POMPPSC)
+            </div>
+            <div class="large-8 columns">
+                @Html.LabelWithAsterixFor(m => m.POMPKraj)
+                @Html.EditorFor(m => m.POMPKraj)
+                @Html.ValidationMessageFor(m => m.POMPKraj)
+            </div>
+        </div>
+    </div>
+</fieldset>

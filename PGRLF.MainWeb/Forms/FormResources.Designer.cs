@@ -61,6 +61,15 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Číslo účtu obsahuje nepovolené znaky nebo je ve špatném formátu.
+        /// </summary>
+        public static string Chyba_CisloUctu {
+            get {
+                return ResourceManager.GetString("Chyba_CisloUctu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to .
         /// </summary>
         public static string Chyba_DatumNarozeni {
@@ -88,6 +97,15 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Telefonní číslo nebo fax musí obsahovat 9 číslic.
+        /// </summary>
+        public static string Chyba_Telefon {
+            get {
+                return ResourceManager.GetString("Chyba_Telefon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Orientační číslo.
         /// </summary>
         public static string CisloOrientacni {
@@ -102,6 +120,15 @@ namespace PGRLF.MainWeb.Forms {
         public static string CisloPopisne {
             get {
                 return ResourceManager.GetString("CisloPopisne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Číslo účtu.
+        /// </summary>
+        public static string CisloUctu {
+            get {
+                return ResourceManager.GetString("CisloUctu", resourceCulture);
             }
         }
         
@@ -223,6 +250,15 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Kód banky.
+        /// </summary>
+        public static string KodBanky {
+            get {
+                return ResourceManager.GetString("KodBanky", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Kraj.
         /// </summary>
         public static string Kraj {
@@ -259,11 +295,38 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Není vyplněno číslo účtu.
+        /// </summary>
+        public static string Nevyplneno_CisloUctu {
+            get {
+                return ResourceManager.GetString("Nevyplneno_CisloUctu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Není vyplněno datum narození.
         /// </summary>
         public static string Nevyplneno_DatumNarozeni {
             get {
                 return ResourceManager.GetString("Nevyplneno_DatumNarozeni", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněno daňové identifikační číslo.
+        /// </summary>
+        public static string Nevyplneno_DIC {
+            get {
+                return ResourceManager.GetString("Nevyplneno_DIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněn kontaktní email.
+        /// </summary>
+        public static string Nevyplneno_Email {
+            get {
+                return ResourceManager.GetString("Nevyplneno_Email", resourceCulture);
             }
         }
         
@@ -286,11 +349,29 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Není zvolena banka.
+        /// </summary>
+        public static string Nevyplneno_KodBanky {
+            get {
+                return ResourceManager.GetString("Nevyplneno_KodBanky", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Není zvolen kraj.
         /// </summary>
         public static string Nevyplneno_Kraj {
             get {
                 return ResourceManager.GetString("Nevyplneno_Kraj", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněno obchodní jméno.
+        /// </summary>
+        public static string Nevyplneno_ObchodniJmeno {
+            get {
+                return ResourceManager.GetString("Nevyplneno_ObchodniJmeno", resourceCulture);
             }
         }
         
@@ -327,6 +408,24 @@ namespace PGRLF.MainWeb.Forms {
         public static string Nevyplneno_RodneCislo {
             get {
                 return ResourceManager.GetString("Nevyplneno_RodneCislo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněn kontaktní telefon.
+        /// </summary>
+        public static string Nevyplneno_Telefon {
+            get {
+                return ResourceManager.GetString("Nevyplneno_Telefon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není zvolen typ společnosti.
+        /// </summary>
+        public static string Nevyplneno_TypSpolecnosti {
+            get {
+                return ResourceManager.GetString("Nevyplneno_TypSpolecnosti", resourceCulture);
             }
         }
         

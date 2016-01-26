@@ -1,0 +1,15 @@
+﻿@model PGRLF.MainWeb.Forms.FormClasses.Partial.BankovniSpojeni
+
+<h5>Bankovní spojení</h5>
+<div class="row">
+    <div class="large-8 columns">
+        @Html.LabelWithAsterixFor(m => m.CisloUctu)
+        @Html.EditorFor(m => m.CisloUctu)
+        @Html.ValidationMessageFor(m => m.CisloUctu)
+    </div>
+    <div class="large-4 columns">
+        @Html.LabelWithAsterixFor(m => m.KodBanky)
+        @Html.EditorFor(m => m.KodBanky)
+        @Html.ValidationMessageFor(m => m.KodBanky)
+    </div>
+</div>

@@ -117,6 +117,10 @@
       <HintPath>..\packages\AzureSDK2.2DLLs.1.0.0\lib\Microsoft.WindowsAzure.StorageClient.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="MVC Foolproof Validation, Version=0.9.4517.16477, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\foolproof.0.9.4517\lib\MVC Foolproof Validation.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.7.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
@@ -438,6 +442,7 @@
     <Compile Include="Forms\FormClasses\02.Pojisteni_ViewModel.cs" />
     <Compile Include="Forms\FormClasses\01.Zemedelec_ViewModel.cs" />
     <Compile Include="Forms\FormClasses\fo.cs" />
+    <Compile Include="Forms\FormClasses\Partial\BankovniSpojeni.cs" />
     <Compile Include="Forms\FormClasses\PodporaZemedelec_ViewModel.cs" />
     <Compile Include="Forms\FormClasses\Pojistovna.cs" />
     <Compile Include="Forms\FormClasses\DruhVyroby.cs" />
@@ -446,11 +451,11 @@
     <Compile Include="Forms\FormClasses\DMList3.cs" />
     <Compile Include="Forms\FormClasses\PredmetPodnikani.cs" />
     <Compile Include="Forms\FormClasses\RTest_ViewModel.cs" />
-    <Compile Include="Forms\FormClasses\SubClasses\FyzickaOsoba.cs" />
-    <Compile Include="Forms\FormClasses\SubClasses\Kontakt.cs" />
-    <Compile Include="Forms\FormClasses\SubClasses\SvazekObci.cs" />
-    <Compile Include="Forms\FormClasses\SubClasses\PravnickaOsoba.cs" />
-    <Compile Include="Forms\FormClasses\SubClasses\ZodpovednaOsoba.cs" />
+    <Compile Include="Forms\FormClasses\Partial\FyzickaOsoba.cs" />
+    <Compile Include="Forms\FormClasses\Partial\Kontakt.cs" />
+    <Compile Include="Forms\FormClasses\Partial\SvazekObci.cs" />
+    <Compile Include="Forms\FormClasses\Partial\PravnickaOsoba.cs" />
+    <Compile Include="Forms\FormClasses\Partial\ZodpovednaOsoba.cs" />
     <Compile Include="Forms\FormClasses\ZoPPPGRLF_ViewModel.cs" />
     <Compile Include="Forms\FormControllerFactory.cs" />
     <Compile Include="Forms\FormResources.Designer.cs">
@@ -799,6 +804,9 @@
     <Content Include="Scripts\knockout-3.4.0.debug.js" />
     <Content Include="Scripts\knockout-3.4.0.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\mvcfoolproof.unobtrusive.min.js" />
+    <Content Include="Scripts\MvcFoolproofJQueryValidation.min.js" />
+    <Content Include="Scripts\MvcFoolproofValidation.min.js" />
     <Content Include="Scripts\zepto.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
@@ -844,6 +852,9 @@
     <Content Include="Views\Form\TechnikaLesy.cshtml" />
     <Content Include="Views\Form\Partial\FyzickaOsoba.cshtml" />
     <Content Include="AppSettings.config" />
+    <Content Include="Views\Form\Partial\PravnickaOsoba.cshtml" />
+    <Content Include="Views\Form\Partial\Kontakt.cshtml" />
+    <Content Include="Views\Form\Partial\BankovniSpojeni.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,24 +1,24 @@
-﻿using PGRLF.MainWeb.Forms.Validation;
+﻿using Foolproof;
+using PGRLF.MainWeb.Forms.Validation;
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace PGRLF.MainWeb.Forms.FormClasses.SubClasses
+namespace PGRLF.MainWeb.Forms.FormClasses.Partial
 {
     public class FyzickaOsoba
     {
+
         //Osobní údaje
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "TitulPredJmenem")]
         public string FOTitulPredMenom { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "KrestniJmeno")]
-        [RequiredIfFieldHasValue("JePravnickaOsoba", false, ErrorMessageResourceType = typeof(FormResources),
-            ErrorMessageResourceName = "Nevyplneno_Jmeno")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Jmeno")]
         public string FOJmeno { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "Prijmeni")]
-        [RequiredIfFieldHasValue("JePravnickaOsoba", false, ErrorMessageResourceType = typeof(FormResources),
-            ErrorMessageResourceName = "Nevyplneno_Prijmeni")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Prijmeni")]
         public string FOPrijmeni { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "TitulZaJmenem")]
@@ -26,11 +26,8 @@ namespace PGRLF.MainWeb.Forms.FormClasses.SubClasses
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "DatumNarozeni")]
         [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
-        [DataType(DataType.Date,
-            ErrorMessageResourceType = typeof(FormResources),
-            ErrorMessageResourceName = "Chyba_DatumNarozeni")]
-        [RequiredIfFieldHasValue("JePravnickaOsoba", false, ErrorMessageResourceType = typeof(FormResources),
-            ErrorMessageResourceName = "Nevyplneno_DatumNarozeni")]
+        [DataType(DataType.Date, ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Chyba_DatumNarozeni")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_DatumNarozeni")]
         public DateTime? FODatumNarozeni { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "RodneCislo")]
@@ -38,13 +35,11 @@ namespace PGRLF.MainWeb.Forms.FormClasses.SubClasses
         [RegularExpression("(\\d)(\\d)(\\d)(\\d)(\\d)(\\d)(\\/)(\\d)(\\d)(\\d)(\\d)?",
             ErrorMessageResourceType = typeof(FormResources),
             ErrorMessageResourceName = "Chyba_RodneCislo")]
-        [RequiredIfFieldHasValue("JePravnickaOsoba", false, ErrorMessageResourceType = typeof(FormResources),
-            ErrorMessageResourceName = "Nevyplneno_RodneCislo")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_RodneCislo")]
         public string FORodneCislo { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "IC")]
-        [RequiredIfFieldHasValue("JePravnickaOsoba", false, ErrorMessageResourceType = typeof(FormResources),
-            ErrorMessageResourceName = "Nevyplneno_IC")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_IC")]
         public string FOIC { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "DIC")]
@@ -57,30 +52,25 @@ namespace PGRLF.MainWeb.Forms.FormClasses.SubClasses
         public string FOTPUlice { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "CisloPopisne")]
-        [RequiredIfFieldHasValue("JePravnickaOsoba", false, ErrorMessageResourceType = typeof(FormResources),
-            ErrorMessageResourceName = "Nevyplneno_CisloPopisne")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_CisloPopisne")]
         public string FOTPCisloPopisne { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "CisloOrientacni")]
         public string FOTPCisloOrientacni { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "Obec")]
-        [RequiredIfFieldHasValue("JePravnickaOsoba", false, ErrorMessageResourceType = typeof(FormResources),
-            ErrorMessageResourceName = "Nevyplneno_Obec")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Obec")]
         public string FOTPObec { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "PSC")]
         [DisplayFormat(DataFormatString = "{0:### ##}", ApplyFormatInEditMode = true)]
-        [RegularExpression("[0-9]{5}", ErrorMessageResourceType = typeof(FormResources),
-            ErrorMessageResourceName = "Chyba_PSC")]
-        [RequiredIfFieldHasValue("JePravnickaOsoba", false, ErrorMessageResourceType = typeof(FormResources),
-            ErrorMessageResourceName = "Nevyplneno_PSC")]
+        [RegularExpression("[0-9]{5}", ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Chyba_PSC")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_PSC")]
         public string FOTPPSC { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "Kraj")]
         [DataType("Kraj")]
-        [RequiredIfFieldHasValue("IsPravnickaOsoba", false, ErrorMessageResourceType = typeof(FormResources),
-            ErrorMessageResourceName = "Nevyplneno_Kraj")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Kraj")]
         public string FOTPKraj { get; set; }
 
 
@@ -93,30 +83,26 @@ namespace PGRLF.MainWeb.Forms.FormClasses.SubClasses
         public string FOMPUlice { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "CisloPopisne")]
-        [RequiredIfFieldsHaveValue(new[] { "JePravnickaOsoba", "FOJeMistoPodnikaniStejne" }, new object[] { false, false },
-            ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_CisloPopisne")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_CisloPopisne")]
         public string FOMPCisloPopisne { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "CisloOrientacni")]
         public string FOMPCisloOrientacni { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "Obec")]
-        [RequiredIfFieldsHaveValue(new[] { "JePravnickaOsoba", "FOJeMistoPodnikaniStejne" }, new object[] { false, false },
-            ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Obec")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Obec")]
         public string FOMPObec { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "PSC")]
         [DisplayFormat(DataFormatString = "{0:### ##}", ApplyFormatInEditMode = true)]
         [RegularExpression("[0-9]{5}", ErrorMessageResourceType = typeof(FormResources),
             ErrorMessageResourceName = "Chyba_PSC")]
-        [RequiredIfFieldsHaveValue(new[] { "JePravnickaOsoba", "FOJeMistoPodnikaniStejne" }, new object[] { false, false },
-            ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_PSC")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_PSC")]
         public string FOMPPSC { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "Kraj")]
         [DataType("Kraj")]
-        [RequiredIfFieldsHaveValue(new[] { "JePravnickaOsoba", "FOJeMistoPodnikaniStejne" }, new object[] { false, false },
-            ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Kraj")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Kraj")]
         public string FOMPKraj { get; set; }
 
         public void nullovani()

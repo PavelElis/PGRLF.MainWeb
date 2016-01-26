@@ -5,7 +5,7 @@ using System.IO;
 using System.Web;
 using System.Web.UI.WebControls;
 using PGRLF.MainWeb.Forms.Validation;
-using PGRLF.MainWeb.Forms.FormClasses.SubClasses;
+using PGRLF.MainWeb.Forms.FormClasses.Partial;
 
 namespace PGRLF.MainWeb.Forms.FormClasses
 {
@@ -17,14 +17,17 @@ namespace PGRLF.MainWeb.Forms.FormClasses
             FyzickaOsoba = new FyzickaOsoba();
             PravnickaOsoba = new PravnickaOsoba();
             Kontakt = new Kontakt();
+            BankovniSpojeni = new BankovniSpojeni();
         }
 
         public bool JePravnickaOsoba { get; set; }
+
         public bool JeObec { get; set; }
 
         public FyzickaOsoba FyzickaOsoba { get; set; }
         public PravnickaOsoba PravnickaOsoba { get; set; }
         public Kontakt Kontakt { get; set; }
+        public BankovniSpojeni BankovniSpojeni { get; set; }
 
         public override string ApplicantEmail
         {

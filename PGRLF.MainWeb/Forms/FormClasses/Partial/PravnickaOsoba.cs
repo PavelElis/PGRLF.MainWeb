@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace PGRLF.MainWeb.Forms.FormClasses.SubClasses
+namespace PGRLF.MainWeb.Forms.FormClasses.Partial
 {
     public class PravnickaOsoba
     {
@@ -16,22 +16,23 @@ namespace PGRLF.MainWeb.Forms.FormClasses.SubClasses
         //Obecné údaje
 
         [Display(GroupName = "pravnickaOsoba", ResourceType = typeof(FormResources), Name = "ObchodniJmeno")]
-        [RequiredIfFieldHasValue("JePravnickaOsoba", true, ErrorMessageResourceType = typeof(FormResources),
+        [Required(ErrorMessageResourceType = typeof(FormResources),
             ErrorMessageResourceName = "Nevyplneno_ObchodniJmeno")]
         public string POObchodniJmeno { get; set; }
 
         [Display(GroupName = "JePravnickaOsoba", ResourceType = typeof(FormResources), Name = "TypSpolecnosti")]
         [DataType("TypSpolecnosti")]
-        //Required?
+        [Required(ErrorMessageResourceType = typeof(FormResources),
+            ErrorMessageResourceName = "Nevyplneno_TypSpolecnosti")]
         public string POTypPO { get; set; }
 
         [Display(GroupName = "pravnickaOsoba", ResourceType = typeof(FormResources), Name = "IC")]
-        [RequiredIfFieldHasValue("JePravnickaOsoba", true, ErrorMessageResourceType = typeof(FormResources),
+        [Required(ErrorMessageResourceType = typeof(FormResources),
             ErrorMessageResourceName = "Nevyplneno_IC")]
         public string POIC { get; set; }
 
         [Display(GroupName = "pravnickaOsoba", ResourceType = typeof(FormResources), Name = "DIC")]
-        [RequiredIfFieldHasValue("JePravnickaOsoba", true, ErrorMessageResourceType = typeof(FormResources),
+        [Required(ErrorMessageResourceType = typeof(FormResources),
             ErrorMessageResourceName = "Nevyplneno_DIC")]
         public string PODIC { get; set; }
 

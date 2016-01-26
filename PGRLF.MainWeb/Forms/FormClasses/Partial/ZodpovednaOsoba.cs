@@ -2,7 +2,7 @@
 using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace PGRLF.MainWeb.Forms.FormClasses
+namespace PGRLF.MainWeb.Forms.FormClasses.Partial
 {
     public class ZodpovednaOsoba
     {

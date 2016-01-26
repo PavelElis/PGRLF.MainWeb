@@ -1,0 +1,27 @@
+﻿@model PGRLF.MainWeb.Forms.FormClasses.Partial.Kontakt
+
+<h5>Kontakt</h5>
+<div class="row">
+    <div class="large-4 columns">
+        @Html.LabelWithAsterixFor(m => m.Telefon1)
+        @Html.EditorFor(m => m.Telefon1)
+        @Html.ValidationMessageFor(m => m.Telefon1)
+    </div>
+    <div class="large-4 columns">
+        @Html.LabelWithAsterixFor(m => m.Telefon2)
+        @Html.EditorFor(m => m.Telefon2)
+        @Html.ValidationMessageFor(m => m.Telefon2)
+    </div>
+    <div class="large-4 columns">
+        @Html.LabelWithAsterixFor(m => m.Fax)
+        @Html.EditorFor(m => m.Fax)
+        @Html.ValidationMessageFor(m => m.Fax)
+    </div>
+</div>
+<div class="row">
+    <div class="large-12 columns">
+        @Html.LabelWithAsterixFor(m => m.Email)
+        @Html.EditorFor(m => m.Email)
+        @Html.ValidationMessageFor(m => m.Email)
+    </div>
+</div>

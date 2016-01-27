@@ -850,11 +850,11 @@
     <Content Include="Views\Form\ProdukceSkolek.cshtml" />
     <Content Include="Views\Form\Puda.cshtml" />
     <Content Include="Views\Form\TechnikaLesy.cshtml" />
-    <Content Include="Views\Form\Partial\FyzickaOsoba.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\FyzickaOsoba.cshtml" />
     <Content Include="AppSettings.config" />
-    <Content Include="Views\Form\Partial\PravnickaOsoba.cshtml" />
-    <Content Include="Views\Form\Partial\Kontakt.cshtml" />
-    <Content Include="Views\Form\Partial\BankovniSpojeni.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\PravnickaOsoba.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\Kontakt.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\BankovniSpojeni.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -579,4 +579,13 @@
   <data name="Nevyplneno_TypSpolecnosti" xml:space="preserve">
     <value>Není zvolen typ společnosti</value>
   </data>
+  <data name="Nevyplneno_PocetSpolecniku" xml:space="preserve">
+    <value>Není vyplněn počet společníků</value>
+  </data>
+  <data name="Nevyplneno_Ulice" xml:space="preserve">
+    <value>Není vyplněná ulice</value>
+  </data>
+  <data name="Nevyplneno_ZakladniKapital" xml:space="preserve">
+    <value>Není vyplněn základní kapitál</value>
+  </data>
 </root>

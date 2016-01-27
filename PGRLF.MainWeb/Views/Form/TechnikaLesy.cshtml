@@ -43,16 +43,16 @@
 </fieldset>
 
 <div id="fsFyzickaOsoba" @if (Model.JePravnickaOsoba) { @Html.Raw("style=\"display:none;\"")   ; }>
-    @Html.Partial("Partial/FyzickaOsoba", Model.FyzickaOsoba);
+    @Html.EditorFor(m => m.FyzickaOsoba);
 </div>
 <div id="fsPravnickaOsoba" @if (!Model.JePravnickaOsoba) { @Html.Raw("style=\"display:none;\"")    ; }>
-    @Html.Partial("Partial/PravnickaOsoba", Model.PravnickaOsoba);
+    @Html.EditorFor(m => m.PravnickaOsoba);
 </div>
 
 <fieldset>
     <legend>Společná část</legend>
-    @Html.Partial("Partial/Kontakt", Model.Kontakt);
-    @Html.Partial("Partial/BankovniSpojeni", Model.BankovniSpojeni);
+    @Html.EditorFor(m => m.Kontakt);
+    @Html.EditorFor(m => m.BankovniSpojeni);
 </fieldset>
 
 @section scripts

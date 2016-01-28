@@ -42,20 +42,20 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Partial
         //Sídlo společnosti
 
         [Display(GroupName = "pravnickaOsoba", ResourceType = typeof(FormResources), Name = "Ulice")]
-        public string POSSUlice { get; set; }
+        public string POUlice { get; set; }
 
         [Display(GroupName = "pravnickaOsoba", ResourceType = typeof(FormResources), Name = "CisloPopisne")]
-        [RequiredIfFieldHasValue("JePravnickaOsoba", true, ErrorMessageResourceType = typeof(FormResources),
+        [Required(ErrorMessageResourceType = typeof(FormResources),
             ErrorMessageResourceName = "Nevyplneno_CisloPopisne")]
-        public string POSSCisloPopisne { get; set; }
+        public string POCisloPopisne { get; set; }
 
         [Display(GroupName = "pravnickaOsoba", ResourceType = typeof(FormResources), Name = "CisloOrientacni")]
-        public string POSSCisloOrientacni { get; set; }
+        public string POCisloOrientacni { get; set; }
 
         [Display(GroupName = "pravnickaOsoba", ResourceType = typeof(FormResources), Name = "Obec")]
         [RequiredIfFieldHasValue("JePravnickaOsoba", true, ErrorMessageResourceType = typeof(FormResources),
             ErrorMessageResourceName = "Nevyplneno_Obec")]
-        public string POSSObec { get; set; }
+        public string POObec { get; set; }
 
         [Display(GroupName = "pravnickaOsoba", ResourceType = typeof(FormResources), Name = "PSC")]
         [DisplayFormat(DataFormatString = "{0:### ##}", ApplyFormatInEditMode = true)]
@@ -63,13 +63,13 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Partial
             ErrorMessageResourceName = "Chyba_PSC")]
         [RequiredIfFieldHasValue("JePravnickaOsoba", false, ErrorMessageResourceType = typeof(FormResources),
             ErrorMessageResourceName = "Nevyplneno_PSC")]
-        public string POSSPSC { get; set; }
+        public string POPSC { get; set; }
 
         [Display(GroupName = "pravnickaOsoba", ResourceType = typeof(FormResources), Name = "Kraj")]
         [DataType("Kraj")]
         [RequiredIfFieldHasValue("JePravnickaOsoba", true, ErrorMessageResourceType = typeof(FormResources),
             ErrorMessageResourceName = "Nevyplneno_Kraj")]
-        public string POSSKraj { get; set; }
+        public string POKraj { get; set; }
 
         [Display(GroupName = "pravnickaOsoba", ResourceType = typeof(FormResources), Name = "PocetSpolecniku")]
         [RequiredIfFieldHasValue("JePravnickaOsoba", true, ErrorMessageResourceType = typeof(FormResources),
@@ -124,12 +124,12 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Partial
             POIC = null;
             PODIC = null;
 
-            POSSUlice = null;
-            POSSCisloPopisne = null;
-            POSSCisloOrientacni = null;
-            POSSObec = null;
-            POSSPSC = null;
-            POSSKraj = null;
+            POUlice = null;
+            POCisloPopisne = null;
+            POCisloOrientacni = null;
+            POObec = null;
+            POPSC = null;
+            POKraj = null;
 
             POMPUlice = null;
             POMPCisloPopisne = null;
@@ -143,12 +143,12 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Partial
         {
             if (POJeMistoPodnikaniStejne)
             {
-                POMPUlice = POSSUlice;
-                POMPCisloPopisne = POSSCisloPopisne;
-                POMPCisloOrientacni = POSSCisloOrientacni;
-                POMPObec = POSSObec;
-                POMPPSC = POSSPSC;
-                POMPKraj = POSSKraj;
+                POMPUlice = POUlice;
+                POMPCisloPopisne = POCisloPopisne;
+                POMPCisloOrientacni = POCisloOrientacni;
+                POMPObec = POObec;
+                POMPPSC = POPSC;
+                POMPKraj = POKraj;
             }
         }
     }

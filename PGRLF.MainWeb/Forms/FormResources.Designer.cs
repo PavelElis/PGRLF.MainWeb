@@ -385,6 +385,15 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Není vyplněn počet společníků.
+        /// </summary>
+        public static string Nevyplneno_PocetSpolecniku {
+            get {
+                return ResourceManager.GetString("Nevyplneno_PocetSpolecniku", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Není vyplněno přijímení.
         /// </summary>
         public static string Nevyplneno_Prijmeni {
@@ -426,6 +435,24 @@ namespace PGRLF.MainWeb.Forms {
         public static string Nevyplneno_TypSpolecnosti {
             get {
                 return ResourceManager.GetString("Nevyplneno_TypSpolecnosti", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněná ulice.
+        /// </summary>
+        public static string Nevyplneno_Ulice {
+            get {
+                return ResourceManager.GetString("Nevyplneno_Ulice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněn základní kapitál.
+        /// </summary>
+        public static string Nevyplneno_ZakladniKapital {
+            get {
+                return ResourceManager.GetString("Nevyplneno_ZakladniKapital", resourceCulture);
             }
         }
         

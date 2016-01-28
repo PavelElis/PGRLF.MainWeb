@@ -116,11 +116,11 @@ namespace PGRLF.MainWeb.Forms.FormClasses
             if (PravnickaOsoba.POZakladniKapital != 0)
                 formValues.Add("POZakladniKapital", PravnickaOsoba.POZakladniKapital.ToString("D"));
 
-            formValues.Add("SSUlice", PravnickaOsoba.POSSUlice ?? "");
-            formValues.Add("SSPSC", PravnickaOsoba.POSSPSC ?? "");
-            formValues.Add("SSCisloPopisne", PravnickaOsoba.POSSCisloPopisne ?? "");
-            formValues.Add("SSCisloOrientacni", PravnickaOsoba.POSSCisloOrientacni ?? "");
-            formValues.Add("SSObec", PravnickaOsoba.POSSObec ?? "");
+            formValues.Add("SSUlice", PravnickaOsoba.POUlice ?? "");
+            formValues.Add("SSPSC", PravnickaOsoba.POPSC ?? "");
+            formValues.Add("SSCisloPopisne", PravnickaOsoba.POCisloPopisne ?? "");
+            formValues.Add("SSCisloOrientacni", PravnickaOsoba.POCisloOrientacni ?? "");
+            formValues.Add("SSObec", PravnickaOsoba.POObec ?? "");
             formValues.Add("SSTelefon1", Kontakt.Telefon1 ?? "");
             formValues.Add("SSTelefon2", Kontakt.Telefon2 ?? "");
             formValues.Add("SSFax", Kontakt.Fax ?? "");

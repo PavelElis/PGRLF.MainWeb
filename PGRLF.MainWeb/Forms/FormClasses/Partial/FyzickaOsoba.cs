@@ -43,12 +43,14 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Partial
         public string FOIC { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "DIC")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_DIC")]
         public string FODIC { get; set; }
 
 
         //Adresa trvalého pobytu
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "Ulice")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Ulice")]
         public string FOTPUlice { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "CisloPopisne")]
@@ -80,6 +82,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Partial
         public bool FOJeMistoPodnikaniStejne { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "Ulice")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Ulice")]
         public string FOMPUlice { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "CisloPopisne")]

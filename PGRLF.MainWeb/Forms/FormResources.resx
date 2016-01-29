@@ -633,4 +633,10 @@
   <data name="Chyba_UkonceniCinnostiDatum" xml:space="preserve">
     <value>Datum je v chybném formátu</value>
   </data>
+  <data name="Funkce" xml:space="preserve">
+    <value>Funkce</value>
+  </data>
+  <data name="Nevyplneno_Funkce" xml:space="preserve">
+    <value>Není vyplněna funkce</value>
+  </data>
 </root>

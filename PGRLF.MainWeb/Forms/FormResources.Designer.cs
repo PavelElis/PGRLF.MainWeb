@@ -241,6 +241,15 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Funkce.
+        /// </summary>
+        public static string Funkce {
+            get {
+                return ResourceManager.GetString("Funkce", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to   .
         /// </summary>
         public static string Helpers_PrependEmptyItem__Text {
@@ -345,6 +354,15 @@ namespace PGRLF.MainWeb.Forms {
         public static string Nevyplneno_Email {
             get {
                 return ResourceManager.GetString("Nevyplneno_Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněna funkce.
+        /// </summary>
+        public static string Nevyplneno_Funkce {
+            get {
+                return ResourceManager.GetString("Nevyplneno_Funkce", resourceCulture);
             }
         }
         

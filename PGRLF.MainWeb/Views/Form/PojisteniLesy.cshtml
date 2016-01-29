@@ -1,0 +1,190 @@
+﻿@model PGRLF.MainWeb.Forms.FormClasses.PojisteniLesy_ViewModel
+
+@{
+    ViewBag.Title = "PojisteniLesy";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+
+<div class="text-center">
+    <h2><strong>Program "Pojištění lesních porostů"</strong></h2>
+</div>
+<p>(* - Údaje označené hvězdičkou je nutné vyplnit.)</p>
+
+<fieldset>
+    <legend>Právní forma</legend>
+    <div class="row">
+        <div class="large-8 columns">
+            <label for="swFOPO" class="left inline">Fyzická / právnická osoba</label>
+        </div>
+        <div class="large-4 columns">
+            <div class="switch" id="swFOPO">
+                @Html.RadioButtonFor(m => m.JePravnickaOsoba, false, new { @id = "rbFO" })
+                <label>Fyzická osoba</label>
+                @Html.RadioButtonFor(m => m.JePravnickaOsoba, true, new { @id = "rbPO" })
+                <label>Právnická osoba</label>
+                <span></span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-8 columns">
+            <label for="swSO" class="left inline">Obec / svazek obcí</label>
+        </div>
+        <div class="large-4 columns">
+            <div class="switch" id="swSO">
+                @Html.RadioButtonFor(m => m.JeSvazekObci, false, new { @id = "rbFOPO" })
+                <label>Ne</label>
+                @Html.RadioButtonFor(m => m.JeSvazekObci, true, new { @id = "rbSO" })
+                <label>Ano</label>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</fieldset>
+
+<div id="fsFyzickaOsoba" @if (Model.JePravnickaOsoba) { @Html.Raw("style=\"display:none;\"") ; }>
+    @Html.EditorFor(m => m.FyzickaOsoba);
+</div>
+<div id="fsPravnickaOsoba" @if (!Model.JePravnickaOsoba) { @Html.Raw("style=\"display:none;\"") ; }>
+    @Html.EditorFor(m => m.PravnickaOsoba);
+</div>
+<div id="fsSvazekObci" @if (!Model.JePravnickaOsoba || !Model.JeSvazekObci) { @Html.Raw("style=\"display:none;\"") ; }>
+    @Html.EditorFor(m => m.SvazekObci);
+</div>
+
+<fieldset>
+    <legend>Společná část</legend>
+    @Html.EditorFor(m => m.Kontakt);
+    @Html.EditorFor(m => m.BankovniSpojeni);
+    <div id="divObchodniRejstrik" @if (Model.JeSvazekObci) { @Html.Raw("style=\"display:none;\"") ; }>
+        @Html.EditorFor(m => m.ObchodniRejstrik);
+
+        <h6>Plánované skončení</h6>
+        <div class="row">
+            <div class="large-4 columns">
+                @Html.LabelFor(m => m.ProdejPodniku)
+                <div class="switch">
+                    @Html.RadioButtonFor(m => m.ProdejPodniku, false, new { @id = "rbProdejPodnikuOff" })
+                    <label>Ne</label>
+                    @Html.RadioButtonFor(m => m.ProdejPodniku, true, new { @id = "rbProdejPodnikuOn" })
+                    <label>Ano</label>
+                    <span></span>
+                </div>
+            </div>
+            <div id="divProdejPodnikuDatum" class="large-4 large-offset-4 columns" @if (!Model.ProdejPodniku) { @Html.Raw("style=\"display:none;\"") ; }>
+                @Html.LabelWithAsterixFor(m => m.ProdejPodnikuDatum)
+                @Html.EditorFor(m => m.ProdejPodnikuDatum)
+                @Html.ValidationMessageFor(m => m.ProdejPodnikuDatum)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="large-4 columns">
+                @Html.LabelFor(m => m.UkonceniCinnosti)
+                <div class="switch">
+                    @Html.RadioButtonFor(m => m.UkonceniCinnosti, false, new { @id = "rbUkonceniCinnostiOff" })
+                    <label>Ne</label>
+                    @Html.RadioButtonFor(m => m.UkonceniCinnosti, true, new { @id = "rbUkonceniCinnostiOn" })
+                    <label>Ano</label>
+                    <span></span>
+                </div>
+            </div>
+            <div id="divUkonceniCinnostiDatum" class="large-4 large-offset-4 columns" @if (!Model.UkonceniCinnosti) { @Html.Raw("style=\"display:none;\"") ; }>
+                @Html.LabelWithAsterixFor(m => m.UkonceniCinnostiDatum)
+                @Html.EditorFor(m => m.UkonceniCinnostiDatum)
+                @Html.ValidationMessageFor(m => m.UkonceniCinnostiDatum)
+            </div>
+        </div>
+
+    </div>
+</fieldset>
+
+@section scripts
+{
+    <script type="text/javascript">
+
+        function hideElement(element) {
+            $(element).hide(100);
+        }
+
+        function showElement(element) {
+            $(element).show(100);
+        }
+
+        $(document).ready(function () {
+
+            $("input[name='JePravnickaOsoba']").click(function () {
+                if ($("input[name='JePravnickaOsoba']:checked").val() == "True") {
+                    $('#rbPO').prop("checked", true);
+                    hideElement('#fsFyzickaOsoba');
+                    showElement('#fsPravnickaOsoba');
+                    showElement('#divObchodniRejstrik');
+                } else {
+                    $('#rbFO').prop("checked", true);
+                    $('#rbFOPO').prop("checked", true);
+                    hideElement('#fsPravnickaOsoba');
+                    hideElement('#fsSvazekObci');
+                    showElement('#fsFyzickaOsoba');
+                    showElement('#divObchodniRejstrik');
+                }
+            });
+
+            $("input[name='JeSvazekObci']").click(function () {
+                if ($("input[name='JeSvazekObci']:checked").val() == "True") {
+                    $('#rbSO').prop("checked", true);
+                    $('#rbPO').prop("checked", true);
+                    hideElement('#fsFyzickaOsoba');
+                    hideElement('#fsPravnickaOsoba');
+                    hideElement('#divObchodniRejstrik');
+                    showElement('#fsSvazekObci');
+                } else {
+                    $('#rbFOPO').prop("checked", true);
+                    hideElement('#fsSvazekObci');
+                    showElement('#fsPravnickaOsoba');
+                    showElement('#divObchodniRejstrik');
+                }
+            });
+
+            $("input[name='FyzickaOsoba.FOJeMistoPodnikaniStejne']").click(function () {
+                if ($("input[name='FyzickaOsoba.FOJeMistoPodnikaniStejne']:checked").val() == "True") {
+                    $('#rbFOMPOn').prop("checked", true);
+                    hideElement('#divFOMistoPodnikani');
+                } else {
+                    $('#rbFOMPOff').prop("checked", true);
+                    showElement('#divFOMistoPodnikani');
+                }
+            });
+
+            $("input[name='PravnickaOsoba.POJeMistoPodnikaniStejne']").click(function () {
+                if ($("input[name='PravnickaOsoba.POJeMistoPodnikaniStejne']:checked").val() == "True") {
+                    $('#rbPOMPOn').prop("checked", true);
+                    hideElement('#divPOMistoPodnikani');
+                } else {
+                    $('#rbPOMPOff').prop("checked", true);
+                    showElement('#divPOMistoPodnikani');
+                }
+            });
+
+            $("input[name='ProdejPodniku']").click(function () {
+                if ($("input[name='ProdejPodniku']:checked").val() == "True") {
+                    $('#rbProdejPodnikuOn').prop("checked", true);
+                    showElement('#divProdejPodnikuDatum');
+                } else {
+                    $('#rbProdejPodnikuOff').prop("checked", true);
+                    hideElement('#divProdejPodnikuDatum');
+                }
+            });
+
+            $("input[name='UkonceniCinnosti']").click(function () {
+                if ($("input[name='UkonceniCinnosti']:checked").val() == "True") {
+                    $('#rbUkonceniCinnostiOn').prop("checked", true);
+                    showElement('#divUkonceniCinnostiDatum');
+                } else {
+                    $('#rbUkonceniCinnostiOff').prop("checked", true);
+                    hideElement('#divUkonceniCinnostiDatum');
+                }
+            });
+        });
+
+    </script>
+}

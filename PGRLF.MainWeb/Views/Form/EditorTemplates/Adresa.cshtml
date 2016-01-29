@@ -1,0 +1,36 @@
+﻿@model PGRLF.MainWeb.Forms.FormClasses.Partial.Adresa
+
+<div class="row">
+    <div class="large-6 columns">
+        @Html.LabelWithAsterixFor(m => m.Ulice)
+        @Html.EditorFor(m => m.Ulice)
+        @Html.ValidationMessageFor(m => m.Ulice)
+    </div>
+    <div class="large-3 columns red">
+        @Html.LabelWithAsterixFor(m => m.CisloPopisne)
+        @Html.EditorFor(m => m.CisloPopisne)
+        @Html.ValidationMessageFor(m => m.CisloPopisne)
+    </div>
+    <div class="large-3 columns blue">
+        @Html.LabelWithAsterixFor(m => m.CisloOrientacni)
+        @Html.EditorFor(m => m.CisloOrientacni)
+        @Html.ValidationMessageFor(m => m.CisloOrientacni)
+    </div>
+</div>
+<div class="row">
+    <div class="large-6 columns">
+        @Html.LabelWithAsterixFor(m => m.Obec)
+        @Html.EditorFor(m => m.Obec)
+        @Html.ValidationMessageFor(m => m.Obec)
+    </div>
+    <div class="large-2 columns">
+        @Html.LabelWithAsterixFor(m => m.PSC)
+        @Html.EditorFor(m => m.PSC)
+        @Html.ValidationMessageFor(m => m.PSC)
+    </div>
+    <div class="large-4 columns">
+        @Html.LabelWithAsterixFor(m => m.Kraj)
+        @Html.EditorFor(m => m.Kraj)
+        @Html.ValidationMessageFor(m => m.Kraj)
+    </div>
+</div>

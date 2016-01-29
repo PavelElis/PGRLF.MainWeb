@@ -442,7 +442,9 @@
     <Compile Include="Forms\FormClasses\02.Pojisteni_ViewModel.cs" />
     <Compile Include="Forms\FormClasses\01.Zemedelec_ViewModel.cs" />
     <Compile Include="Forms\FormClasses\fo.cs" />
+    <Compile Include="Forms\FormClasses\Partial\Adresa.cs" />
     <Compile Include="Forms\FormClasses\Partial\BankovniSpojeni.cs" />
+    <Compile Include="Forms\FormClasses\Partial\ObchodniRejstrik.cs" />
     <Compile Include="Forms\FormClasses\PodporaZemedelec_ViewModel.cs" />
     <Compile Include="Forms\FormClasses\Pojistovna.cs" />
     <Compile Include="Forms\FormClasses\DruhVyroby.cs" />
@@ -455,7 +457,6 @@
     <Compile Include="Forms\FormClasses\Partial\Kontakt.cs" />
     <Compile Include="Forms\FormClasses\Partial\SvazekObci.cs" />
     <Compile Include="Forms\FormClasses\Partial\PravnickaOsoba.cs" />
-    <Compile Include="Forms\FormClasses\Partial\ZodpovednaOsoba.cs" />
     <Compile Include="Forms\FormClasses\ZoPPPGRLF_ViewModel.cs" />
     <Compile Include="Forms\FormControllerFactory.cs" />
     <Compile Include="Forms\FormResources.Designer.cs">
@@ -756,6 +757,7 @@
     <Content Include="Content\FormTemplates\ProgramZemedelecNew.pdf" />
     <Content Include="Content\FormTemplates\RTest.pdf" />
     <Content Include="ConnectionStrings.config" />
+    <Content Include="Content\FormTemplates\PojisteniLesy.pdf" />
     <None Include="Properties\PublishProfiles\disk.pubxml" />
     <None Include="Properties\PublishProfiles\pgrlf - FTP %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\pgrlf - Web Deploy %282%29.pubxml" />
@@ -855,6 +857,10 @@
     <Content Include="Views\Form\EditorTemplates\PravnickaOsoba.cshtml" />
     <Content Include="Views\Form\EditorTemplates\Kontakt.cshtml" />
     <Content Include="Views\Form\EditorTemplates\BankovniSpojeni.cshtml" />
+    <Content Include="Views\Form\PojisteniLesy.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\Adresa.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\SvazekObci.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\ObchodniRejstrik.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

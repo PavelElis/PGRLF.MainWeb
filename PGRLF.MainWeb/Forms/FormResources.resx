@@ -459,9 +459,6 @@
   <data name="IC" xml:space="preserve">
     <value>Identifikační číslo osoby</value>
   </data>
-  <data name="JeMistoPodnikaniStejneFo" xml:space="preserve">
-    <value>Je místo podnikání stejné jako "Adresa trvalého bydliště"?</value>
-  </data>
   <data name="Kraj" xml:space="preserve">
     <value>Kraj</value>
   </data>
@@ -522,9 +519,6 @@
   <data name="Fax" xml:space="preserve">
     <value>Fax</value>
   </data>
-  <data name="JeMistoPodnikaniStejnePo" xml:space="preserve">
-    <value>Je místo podnikání stejné jako "Adresa sídla společnosti"?</value>
-  </data>
   <data name="ObchodniJmeno" xml:space="preserve">
     <value>Obchodní jméno</value>
   </data>
@@ -544,7 +538,7 @@
     <value>Základní kapitál</value>
   </data>
   <data name="Chyba_DatumNarozeni" xml:space="preserve">
-    <value />
+    <value>Datum je v chybném formátu</value>
   </data>
   <data name="Nevyplneno_DIC" xml:space="preserve">
     <value>Není vyplněno daňové identifikační číslo</value>
@@ -587,5 +581,56 @@
   </data>
   <data name="Nevyplneno_ZakladniKapital" xml:space="preserve">
     <value>Není vyplněn základní kapitál</value>
+  </data>
+  <data name="NazevSvazkuObci" xml:space="preserve">
+    <value>Název obce / svazku obcí</value>
+  </data>
+  <data name="Nevyplneno_NazevSvazkuObci" xml:space="preserve">
+    <value>Není uveden název obce / svazku obcí</value>
+  </data>
+  <data name="Nevyplneno_ORDatum" xml:space="preserve">
+    <value>Není vyplněn datum zápisu</value>
+  </data>
+  <data name="Nevyplneno_ORVydal" xml:space="preserve">
+    <value>Není vyplněn soud, který provedl zápis</value>
+  </data>
+  <data name="Nevyplneno_ORZapis" xml:space="preserve">
+    <value>Není vyplněn zápis do obchodního rejstříku</value>
+  </data>
+  <data name="ORDatum" xml:space="preserve">
+    <value>Datum vydání</value>
+  </data>
+  <data name="ORVydal" xml:space="preserve">
+    <value>Vydal</value>
+  </data>
+  <data name="ORZapis" xml:space="preserve">
+    <value>Zápis do obchodního rejstříku</value>
+  </data>
+  <data name="Nevyplneno_ProdejPodnikuDatum" xml:space="preserve">
+    <value>Není vyplněno datum prodeje podniku</value>
+  </data>
+  <data name="Nevyplneno_UkonceniCinnostiDatum" xml:space="preserve">
+    <value>Není vyplněno datum ukončení činnosti</value>
+  </data>
+  <data name="ProdejPodniku" xml:space="preserve">
+    <value>Prodej podniku</value>
+  </data>
+  <data name="ProdejPodnikuDatum" xml:space="preserve">
+    <value>Datum prodeje</value>
+  </data>
+  <data name="UkonceniCinnosti" xml:space="preserve">
+    <value>Ukončení činnosti</value>
+  </data>
+  <data name="UkonceniCinnostiDatum" xml:space="preserve">
+    <value>Datum ukončení</value>
+  </data>
+  <data name="Chyba_ORDatum" xml:space="preserve">
+    <value>Datum je v chybném formátu</value>
+  </data>
+  <data name="Chyba_ProdejPodnikuDatum" xml:space="preserve">
+    <value>Datum je v chybném formátu</value>
+  </data>
+  <data name="Chyba_UkonceniCinnostiDatum" xml:space="preserve">
+    <value>Datum je v chybném formátu</value>
   </data>
 </root>

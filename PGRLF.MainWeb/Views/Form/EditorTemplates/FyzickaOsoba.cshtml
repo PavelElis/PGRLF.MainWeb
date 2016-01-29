@@ -4,142 +4,72 @@
     <legend>Fyzická osoba</legend>
     <div class="row">
         <div class="large-4 columns">
-            @Html.LabelWithAsterixFor(m => m.FOTitulPredMenom)
-            @Html.EditorFor(m => m.FOTitulPredMenom)
-            @Html.ValidationMessageFor(m => m.FOTitulPredMenom)
+            @Html.LabelWithAsterixFor(m => m.TitulPredJmenem)
+            @Html.EditorFor(m => m.TitulPredJmenem)
+            @Html.ValidationMessageFor(m => m.TitulPredJmenem)
         </div>
         <div class="large-8 columns">
-            @Html.LabelWithAsterixFor(m => m.FOJmeno)
-            @Html.EditorFor(m => m.FOJmeno)
-            @Html.ValidationMessageFor(m => m.FOJmeno)
+            @Html.LabelWithAsterixFor(m => m.Jmeno)
+            @Html.EditorFor(m => m.Jmeno)
+            @Html.ValidationMessageFor(m => m.Jmeno)
         </div>
     </div>
     <div class="row">
         <div class="large-8 columns">
-            @Html.LabelWithAsterixFor(m => m.FOPrijmeni)
-            @Html.EditorFor(m => m.FOPrijmeni)
-            @Html.ValidationMessageFor(m => m.FOPrijmeni)
+            @Html.LabelWithAsterixFor(m => m.Prijmeni)
+            @Html.EditorFor(m => m.Prijmeni)
+            @Html.ValidationMessageFor(m => m.Prijmeni)
         </div>
         <div class="large-4 columns">
-            @Html.LabelWithAsterixFor(m => m.FOTitulZaMenom)
-            @Html.EditorFor(m => m.FOTitulZaMenom)
-            @Html.ValidationMessageFor(m => m.FOTitulZaMenom)
+            @Html.LabelWithAsterixFor(m => m.TitulZaJmenem)
+            @Html.EditorFor(m => m.TitulZaJmenem)
+            @Html.ValidationMessageFor(m => m.TitulZaJmenem)
         </div>
     </div>
     <div class="row">
         <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.FOIC)
-            @Html.EditorFor(m => m.FOIC)
-            @Html.ValidationMessageFor(m => m.FOIC)
+            @Html.LabelWithAsterixFor(m => m.IC)
+            @Html.EditorFor(m => m.IC)
+            @Html.ValidationMessageFor(m => m.IC)
         </div>
         <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.FODIC)
-            @Html.EditorFor(m => m.FODIC)
-            @Html.ValidationMessageFor(m => m.FODIC)
+            @Html.LabelWithAsterixFor(m => m.DIC)
+            @Html.EditorFor(m => m.DIC)
+            @Html.ValidationMessageFor(m => m.DIC)
         </div>
     </div>
     <div class="row">
         <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.FODatumNarozeni)
-            @Html.EditorFor(m => m.FODatumNarozeni)
-            @Html.ValidationMessageFor(m => m.FODatumNarozeni)
+            @Html.LabelWithAsterixFor(m => m.DatumNarozeni)
+            @Html.EditorFor(m => m.DatumNarozeni)
+            @Html.ValidationMessageFor(m => m.DatumNarozeni)
         </div>
         <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.FORodneCislo)
-            @Html.EditorFor(m => m.FORodneCislo)
-            @Html.ValidationMessageFor(m => m.FORodneCislo)
+            @Html.LabelWithAsterixFor(m => m.RodneCislo)
+            @Html.EditorFor(m => m.RodneCislo)
+            @Html.ValidationMessageFor(m => m.RodneCislo)
         </div>
     </div>
 
-    <h5>Adresa trvalého pobytu</h5>
-    <div class="row">
-        <div class="large-8 columns">
-            @Html.LabelWithAsterixFor(m => m.FOTPUlice)
-            @Html.EditorFor(m => m.FOTPUlice)
-            @Html.ValidationMessageFor(m => m.FOTPUlice)
-        </div>
-        <div class="large-4 columns red">
-            @Html.LabelWithAsterixFor(m => m.FOTPCisloPopisne)
-            @Html.EditorFor(m => m.FOTPCisloPopisne)
-            @Html.ValidationMessageFor(m => m.FOTPCisloPopisne)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-8 columns">
-            @Html.LabelWithAsterixFor(m => m.FOTPObec)
-            @Html.EditorFor(m => m.FOTPObec)
-            @Html.ValidationMessageFor(m => m.FOTPObec)
-        </div>
-        <div class="large-4 columns blue">
-            @Html.LabelWithAsterixFor(m => m.FOTPCisloOrientacni)
-            @Html.EditorFor(m => m.FOTPCisloOrientacni)
-            @Html.ValidationMessageFor(m => m.FOTPCisloOrientacni)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-4 columns">
-            @Html.LabelWithAsterixFor(m => m.FOTPPSC)
-            @Html.EditorFor(m => m.FOTPPSC)
-            @Html.ValidationMessageFor(m => m.FOTPPSC)
-        </div>
-        <div class="large-8 columns">
-            @Html.LabelWithAsterixFor(m => m.FOTPKraj)
-            @Html.EditorFor(m => m.FOTPKraj)
-            @Html.ValidationMessageFor(m => m.FOTPKraj)
-        </div>
-    </div>
+    <h6>Adresa trvalého pobytu</h6>
+    @Html.EditorFor(m => m.TrvalyPobyt);
 
-    <h5>Místo podnikání</h5>
+    <h6>Místo podnikání</h6>
     <div class="row">
         <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.FOJeMistoPodnikaniStejne)
+            <label for="swFOMP" class="left inline">Je místo podnikání stejné jako "Adresa trvalého pobytu"?</label>
         </div>
         <div class="large-2 columns">
-            <div class="switch">
-                @Html.RadioButtonFor(m => m.FOJeMistoPodnikaniStejne, false, new { @checked = "checked", @id = "rbMistoFoOff" })
+            <div class="switch" id="swFOMP">
+                @Html.RadioButtonFor(m => m.FOJeMistoPodnikaniStejne, false, new { @id = "rbFOMPOff" })
                 <label>Ne</label>
-                @Html.RadioButtonFor(m => m.FOJeMistoPodnikaniStejne, true, new { @id = "rbMistoFoOn" })
+                @Html.RadioButtonFor(m => m.FOJeMistoPodnikaniStejne, true, new { @id = "rbFOMPOn" })
                 <label>Ano</label>
                 <span></span>
             </div>
         </div>
     </div>
-    <div id="misto_fo" @if (Model.FOJeMistoPodnikaniStejne) { @Html.Raw("style=\"display:none;\"") ; }>
-        <div class="row">
-            <div class="large-8 columns">
-                @Html.LabelWithAsterixFor(m => m.FOMPUlice)
-                @Html.EditorFor(m => m.FOMPUlice)
-                @Html.ValidationMessageFor(m => m.FOMPUlice)
-            </div>
-            <div class="large-4 columns red">
-                @Html.LabelWithAsterixFor(m => m.FOMPCisloPopisne)
-                @Html.EditorFor(m => m.FOMPCisloPopisne)
-                @Html.ValidationMessageFor(m => m.FOMPCisloPopisne)
-            </div>
-        </div>
-        <div class="row">
-            <div class="large-8 columns">
-                @Html.LabelWithAsterixFor(m => m.FOMPObec)
-                @Html.EditorFor(m => m.FOMPObec)
-                @Html.ValidationMessageFor(m => m.FOMPObec)
-            </div>
-            <div class="large-4 columns blue">
-                @Html.LabelWithAsterixFor(m => m.FOMPCisloOrientacni)
-                @Html.EditorFor(m => m.FOMPCisloOrientacni)
-                @Html.ValidationMessageFor(m => m.FOMPCisloOrientacni)
-            </div>
-        </div>
-        <div class="row">
-            <div class="large-4 columns">
-                @Html.LabelWithAsterixFor(m => m.FOMPPSC)
-                @Html.EditorFor(m => m.FOMPPSC)
-                @Html.ValidationMessageFor(m => m.FOMPPSC)
-            </div>
-            <div class="large-8 columns">
-                @Html.LabelWithAsterixFor(m => m.FOMPKraj)
-                @Html.EditorFor(m => m.FOMPKraj)
-                @Html.ValidationMessageFor(m => m.FOMPKraj)
-            </div>
-        </div>
+    <div id="divFOMistoPodnikani" @if (Model.FOJeMistoPodnikaniStejne) { @Html.Raw("style=\"display:none;\"")  ; }>
+        @Html.EditorFor(m => m.MistoPodnikani);
     </div>
 </fieldset>

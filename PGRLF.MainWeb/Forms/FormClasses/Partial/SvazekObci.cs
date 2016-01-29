@@ -11,48 +11,34 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Partial
         [Display(GroupName = "pravnickaOsoba", ResourceType = typeof(FormResources), Name = "NazevSvazkuObci")]
         [Required(ErrorMessageResourceType = typeof(FormResources),
             ErrorMessageResourceName = "Nevyplneno_NazevSvazkuObci")]
-        public string SONazevSvazkuObci { get; set; }
+        public string NazevSvazkuObci { get; set; }
 
         [Display(GroupName = "svazekObci", ResourceType = typeof(FormResources), Name = "IC")]
         [Required(ErrorMessageResourceType = typeof(FormResources),
            ErrorMessageResourceName = "Nevyplneno_IC")]
-        public string SOIC { get; set; }
+        public string IC { get; set; }
 
         [Display(GroupName = "svazekObci", ResourceType = typeof(FormResources), Name = "DIC")]
         [Required(ErrorMessageResourceType = typeof(FormResources),
             ErrorMessageResourceName = "Nevyplneno_DIC")]
-        public string SODIC { get; set; }
+        public string DIC { get; set; }
+
+        [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "TitulPredJmenem")]
+        public string TitulPredJmenem { get; set; }
+
+        [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "KrestniJmeno")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Jmeno")]
+        public string Jmeno { get; set; }
+
+        [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "Prijmeni")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Prijmeni")]
+        public string Prijmeni { get; set; }
+
+        [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "TitulZaJmenem")]
+        public string TitulZaJmenem { get; set; }
 
         //Adresa svazku obce
 
-        [Display(GroupName = "pravnickaOsoba", ResourceType = typeof(FormResources), Name = "Ulice")]
-        public string SOUlice { get; set; }
-
-        [Display(GroupName = "pravnickaOsoba", ResourceType = typeof(FormResources), Name = "CisloPopisne")]
-        [Required(ErrorMessageResourceType = typeof(FormResources),
-            ErrorMessageResourceName = "Nevyplneno_CisloPopisne")]
-        public string SOCisloPopisne { get; set; }
-
-        [Display(GroupName = "pravnickaOsoba", ResourceType = typeof(FormResources), Name = "CisloOrientacni")]
-        public string SOCisloOrientacni { get; set; }
-
-        [Display(GroupName = "pravnickaOsoba", ResourceType = typeof(FormResources), Name = "Obec")]
-        [Required(ErrorMessageResourceType = typeof(FormResources),
-            ErrorMessageResourceName = "Nevyplneno_Obec")]
-        public string POSSObec { get; set; }
-
-        [Display(GroupName = "pravnickaOsoba", ResourceType = typeof(FormResources), Name = "PSC")]
-        [DisplayFormat(DataFormatString = "{0:### ##}", ApplyFormatInEditMode = true)]
-        [RegularExpression("[0-9]{5}", ErrorMessageResourceType = typeof(FormResources),
-            ErrorMessageResourceName = "Chyba_PSC")]
-        [Required(ErrorMessageResourceType = typeof(FormResources),
-            ErrorMessageResourceName = "Nevyplneno_PSC")]
-        public string POSSPSC { get; set; }
-
-        [Display(GroupName = "pravnickaOsoba", ResourceType = typeof(FormResources), Name = "Kraj")]
-        [DataType("Kraj")]
-        [Required(ErrorMessageResourceType = typeof(FormResources),
-            ErrorMessageResourceName = "Nevyplneno_Kraj")]
-        public string POSSKraj { get; set; }
+        public Adresa SidloSvazkuObci { get; set; }
     }
 }

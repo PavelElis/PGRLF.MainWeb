@@ -1,0 +1,22 @@
+﻿@model PGRLF.MainWeb.Forms.FormClasses.Partial.ObchodniRejstrik
+
+<h6>Obchodní rejstřík</h6>
+<div class="row">
+    <div class="large-12 columns">
+        @Html.LabelWithAsterixFor(m => m.ORZapis)
+        @Html.EditorFor(m => m.ORZapis)
+        @Html.ValidationMessageFor(m => m.ORZapis)
+    </div>
+</div>
+<div class="row">
+    <div class="large-8 columns">
+        @Html.LabelWithAsterixFor(m => m.ORVydal)
+        @Html.EditorFor(m => m.ORVydal)
+        @Html.ValidationMessageFor(m => m.ORVydal)
+    </div>
+    <div class="large-4 columns">
+        @Html.LabelWithAsterixFor(m => m.ORDatum)
+        @Html.EditorFor(m => m.ORDatum)
+        @Html.ValidationMessageFor(m => m.ORDatum)
+    </div>
+</div>

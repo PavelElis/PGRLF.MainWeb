@@ -39,16 +39,14 @@ namespace PGRLF.MainWeb.Forms.FormClasses
 
         public override void Process()
         {
-            if (JePravnickaOsoba)
+            /*if (JePravnickaOsoba)
             {
-                FyzickaOsoba.nullovani();
                 PravnickaOsoba.nastavMistoPodnikani();
             }
             else
             {
-                PravnickaOsoba.nullovani();
                 FyzickaOsoba.nastavMistoPodnikani();
-            }
+            }*/
 
             if (Identifikator == null || Identifikator == Guid.Empty)
             {
@@ -63,7 +61,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses
             MemoryStream ms = new MemoryStream();
             Dictionary<string, string> formValues = new Dictionary<string, string>();
 
-            formValues.Add("FORodneCislo", (FyzickaOsoba.FORodneCislo ?? "").Replace("/", ""));
+            /*formValues.Add("FORodneCislo", (FyzickaOsoba.FORodneCislo ?? "").Replace("/", ""));
             formValues.Add("FODatumNarozeni", FyzickaOsoba.FODatumNarozeni != null ? FyzickaOsoba.FODatumNarozeni.Value.ToString("ddMMyyyy") : "");
             formValues.Add("FOIC", FyzickaOsoba.FOIC ?? "");
             formValues.Add("FODIC", FyzickaOsoba.FODIC ?? "");
@@ -126,7 +124,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses
             formValues.Add("SSFax", Kontakt.Fax ?? "");
             formValues.Add("SSEmail", Kontakt.Email ?? "");
 
-            form.FillForm(formValues, ms);
+            form.FillForm(formValues, ms);*/
             form.CloseForm();
 
             return ms.ToArray();

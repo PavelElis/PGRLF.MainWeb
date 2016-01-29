@@ -8,27 +8,39 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Partial
     public class FyzickaOsoba
     {
 
+        public FyzickaOsoba()
+        {
+            TitulPredJmenem = null;
+            Jmeno = null;
+            Prijmeni = null;
+            TitulZaJmenem = null;
+            DatumNarozeni = null;
+            RodneCislo = null;
+            IC = null;
+            DIC = null;
+        }
+
         //Osobní údaje
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "TitulPredJmenem")]
-        public string FOTitulPredMenom { get; set; }
+        public string TitulPredJmenem { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "KrestniJmeno")]
         [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Jmeno")]
-        public string FOJmeno { get; set; }
+        public string Jmeno { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "Prijmeni")]
         [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Prijmeni")]
-        public string FOPrijmeni { get; set; }
+        public string Prijmeni { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "TitulZaJmenem")]
-        public string FOTitulZaMenom { get; set; }
+        public string TitulZaJmenem { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "DatumNarozeni")]
         [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
         [DataType(DataType.Date, ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Chyba_DatumNarozeni")]
         [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_DatumNarozeni")]
-        public DateTime? FODatumNarozeni { get; set; }
+        public DateTime? DatumNarozeni { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "RodneCislo")]
         [DisplayFormat(NullDisplayText = "------/--", ConvertEmptyStringToNull = true)]
@@ -36,115 +48,33 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Partial
             ErrorMessageResourceType = typeof(FormResources),
             ErrorMessageResourceName = "Chyba_RodneCislo")]
         [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_RodneCislo")]
-        public string FORodneCislo { get; set; }
+        public string RodneCislo { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "IC")]
         [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_IC")]
-        public string FOIC { get; set; }
+        public string IC { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "DIC")]
         [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_DIC")]
-        public string FODIC { get; set; }
+        public string DIC { get; set; }
 
+        public Adresa TrvalyPobyt { get; set; }
 
-        //Adresa trvalého pobytu
-
-        [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "Ulice")]
-        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Ulice")]
-        public string FOTPUlice { get; set; }
-
-        [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "CisloPopisne")]
-        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_CisloPopisne")]
-        public string FOTPCisloPopisne { get; set; }
-
-        [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "CisloOrientacni")]
-        public string FOTPCisloOrientacni { get; set; }
-
-        [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "Obec")]
-        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Obec")]
-        public string FOTPObec { get; set; }
-
-        [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "PSC")]
-        [DisplayFormat(DataFormatString = "{0:### ##}", ApplyFormatInEditMode = true)]
-        [RegularExpression("[0-9]{5}", ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Chyba_PSC")]
-        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_PSC")]
-        public string FOTPPSC { get; set; }
-
-        [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "Kraj")]
-        [DataType("Kraj")]
-        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Kraj")]
-        public string FOTPKraj { get; set; }
-
-
-        //Adresa místa podnikání
-
-        [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "JeMistoPodnikaniStejneFo")]
         public bool FOJeMistoPodnikaniStejne { get; set; }
 
-        [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "Ulice")]
-        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Ulice")]
-        public string FOMPUlice { get; set; }
+        public Adresa MistoPodnikani { get; set; }
 
-        [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "CisloPopisne")]
-        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_CisloPopisne")]
-        public string FOMPCisloPopisne { get; set; }
-
-        [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "CisloOrientacni")]
-        public string FOMPCisloOrientacni { get; set; }
-
-        [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "Obec")]
-        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Obec")]
-        public string FOMPObec { get; set; }
-
-        [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "PSC")]
-        [DisplayFormat(DataFormatString = "{0:### ##}", ApplyFormatInEditMode = true)]
-        [RegularExpression("[0-9]{5}", ErrorMessageResourceType = typeof(FormResources),
-            ErrorMessageResourceName = "Chyba_PSC")]
-        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_PSC")]
-        public string FOMPPSC { get; set; }
-
-        [Display(GroupName = "fyzickaOsoba", ResourceType = typeof(FormResources), Name = "Kraj")]
-        [DataType("Kraj")]
-        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Kraj")]
-        public string FOMPKraj { get; set; }
-
-        public void nullovani()
-        {
-            FOTitulPredMenom = null;
-            FOJmeno = null;
-            FOPrijmeni = null;
-            FOTitulZaMenom = null;
-            FODatumNarozeni = null;
-            FORodneCislo = null;
-            FOIC = null;
-            FODIC = null;
-
-            FOTPUlice = null;
-            FOTPCisloPopisne = null;
-            FOTPCisloOrientacni = null;
-            FOTPObec = null;
-            FOTPPSC = null;
-            FOTPKraj = null;
-
-            FOMPUlice = null;
-            FOMPCisloPopisne = null;
-            FOMPCisloOrientacni = null;
-            FOMPObec = null;
-            FOMPPSC = null;
-            FOMPKraj = null;
-        }
-
-        public void nastavMistoPodnikani()
+        /*public void nastavMistoPodnikani()
         {
             if (FOJeMistoPodnikaniStejne)
             {
-                FOMPUlice = FOTPUlice;
-                FOMPCisloPopisne = FOTPCisloPopisne;
-                FOMPPSC = FOTPPSC;
-                FOMPCisloOrientacni = FOTPCisloOrientacni;
-                FOMPObec = FOTPObec;
-                FOMPKraj = FOTPKraj;
+                MistoPodnikani.Ulice = TrvalyPobyt.Ulice;
+                MistoPodnikani.CisloPopisne = TrvalyPobyt.CisloPopisne;
+                MistoPodnikani.CisloOrientacni = TrvalyPobyt.CisloOrientacni;
+                MistoPodnikani.Obec = TrvalyPobyt.Obec;
+                MistoPodnikani.PSC = TrvalyPobyt.PSC;
+                MistoPodnikani.Kraj = TrvalyPobyt.Kraj;
             }
-        }
+        }*/
     }
 }

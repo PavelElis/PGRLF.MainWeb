@@ -61,6 +61,17 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Prohlašuji, že údaje uvedené v této žádosti o podporu Podpůrného garančního rolnického a lesnického fondu, a.s. a v jejích přílohách jsou pravdivé a že splňují všechny obecné podmínky pro poskytnutí Podpory. Jsem si vědom/vědoma právních následků případného uvedení nepravdivých nebo neúplných údajů.
+        ///&lt;br&gt;&lt;br&gt;
+        ///Prohlašuji, že k níže uvedenému datu nemá žadatel nedoplatky vůči Státnímu zemědělskému intervenčnímu fondu, Ministerstvu zemědělství nebo vůči Státnímu pozemkovému úřadu. Svým podpisem zároveň poskyt [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string CestneProhlaseni {
+            get {
+                return ResourceManager.GetString("CestneProhlaseni", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Číslo účtu obsahuje nepovolené znaky nebo je ve špatném formátu.
         /// </summary>
         public static string Chyba_CisloUctu {
@@ -174,6 +185,35 @@ namespace PGRLF.MainWeb.Forms {
         public static string DatumNarozeni {
             get {
                 return ResourceManager.GetString("DatumNarozeni", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Žadatel o podporu se považuje za propojený** s jinými podniky, pokud i tyto subjekty mezi sebou mají některý z následujících vztahů: 
+        ///&lt;br&gt;
+        ///a) jeden subjekt vlastní více než 50 % hlasovacích práv, která náležejí akcionářům nebo společníkům, v jiném subjektu; 
+        ///&lt;br&gt;
+        ///b) jeden subjekt má právo jmenovat nebo odvolat více než 50 % členů správního, řídícího nebo dozorčího orgánu jiného subjektu; 
+        ///&lt;br&gt;
+        ///c) jeden subjekt má právo uplatňovat více než 50% vliv v jiném subjektu podle smlouvy uzavřené s daným subjek [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string DeMinimis2 {
+            get {
+                return ResourceManager.GetString("DeMinimis2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to potvrzuje, že výše uvedené údaje jsou přesné a pravdivé a jsou poskytovány dobrovolně;
+        ///&lt;br&gt;&lt;br&gt;
+        ///se zavazuje k tomu, že v případě změny předmětných údajů v průběhu administrativního procesu poskytnutí podpory de minimis bude neprodleně informovat poskytovatele dané podpory o změnách, které u něj nastaly;
+        ///&lt;br&gt;&lt;br&gt;
+        ///&lt;b&gt;Prohlášení ke zpracování osobních údajů&lt;b&gt;
+        ///Souhlasím se zpracováním osobních údajů obsažených v tomto prohlášení ve smyslu zákona č. 101/2000 Sb., o ochraně osobních údajů, ve znění p. p., z [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string DeMinimis5 {
+            get {
+                return ResourceManager.GetString("DeMinimis5", resourceCulture);
             }
         }
         
@@ -1474,6 +1514,16 @@ namespace PGRLF.MainWeb.Forms {
         public static string RodneCislo {
             get {
                 return ResourceManager.GetString("RodneCislo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I. Žadatel o poskytnutí podpory, jakožto fyzická osoba (dále jen jako „žadatel-fyzická osoba“),
+        ///tímto dává společnosti Podpůrný a garanční rolnický a lesnický fond, a.s., IČ: 492 41 494, se sídlem Praha 8 – Karlín, Za Poříčskou branou 6/č.p. 256, PSČ 186 00 (dále jen jako „Správce“), v souladu se zákonem č. 101/2000 Sb., o ochraně osobních údajů a o změně některých zákonů, ve znění pozdějších předpisů (dále jen jako „ZOOÚ“), souhlas k tomu, aby Správce zpracovával ve své databázi veškeré jeho osobní údaje, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string SouhlasSeZpracovanim {
+            get {
+                return ResourceManager.GetString("SouhlasSeZpracovanim", resourceCulture);
             }
         }
         

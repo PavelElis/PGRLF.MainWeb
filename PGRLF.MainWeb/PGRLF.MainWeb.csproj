@@ -474,7 +474,6 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers.cs" />
-    <Compile Include="Models\ReCaptcha.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\DigestAuthorizationAttribute.cs" />
   </ItemGroup>
@@ -722,6 +721,10 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="RecaptchaNet.Readme.txt" />
+    <None Include="Resources\CestneProhlaseni.txt" />
+    <None Include="Resources\DeMinimis2.txt" />
+    <None Include="Resources\DeMinimis5.txt" />
+    <None Include="Resources\SouhlasSeZpracovanim.txt" />
     <Content Include="Scripts\2013.2.611\jquery-1.7.1.min.js" />
     <Content Include="Scripts\2013.2.611\jquery.validate.min.js" />
     <Content Include="Scripts\2013.2.611\telerik.all.min.js" />
@@ -862,6 +865,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Content\fonts\" />
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

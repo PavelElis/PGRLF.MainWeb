@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Web;
+using PGRLF.MainWeb.Forms.FormClasses.Templates;
 using PGRLF.MainWeb.Forms.Validation;
 
 namespace PGRLF.MainWeb.Forms.FormClasses
@@ -102,17 +103,17 @@ namespace PGRLF.MainWeb.Forms.FormClasses
 
         [RequiredIfFieldHasValue("IsPravnickaOsoba", false, ErrorMessage = "Zadejte příjmení žadatele")]
         [Display(GroupName = "fyzickaOsoba", Name = "Telefon 1")]
-        [RegularExpression(Helpers.PhoneNumberFormat, ErrorMessageResourceType = typeof(FormResources),
+        [RegularExpression(Helpers.Helpers.PhoneNumberFormat, ErrorMessageResourceType = typeof(FormResources),
             ErrorMessageResourceName = "PodporaZemedelec_Povolené_znaky")]
         public string TPTelefon1 { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", Name = "Telefon 2")]
-        [RegularExpression(Helpers.PhoneNumberFormat, ErrorMessageResourceType = typeof(FormResources),
+        [RegularExpression(Helpers.Helpers.PhoneNumberFormat, ErrorMessageResourceType = typeof(FormResources),
             ErrorMessageResourceName = "PodporaZemedelec_Povolené_znaky")]
         public string TPTelefon2 { get; set; }
 
         [Display(GroupName = "fyzickaOsoba", Name = "Fax")]
-        [RegularExpression(Helpers.PhoneNumberFormat, ErrorMessageResourceType = typeof(FormResources),
+        [RegularExpression(Helpers.Helpers.PhoneNumberFormat, ErrorMessageResourceType = typeof(FormResources),
             ErrorMessageResourceName = "PodporaZemedelec_Povolené_znaky")]
         public string TPFax { get; set; }
 
@@ -292,17 +293,17 @@ namespace PGRLF.MainWeb.Forms.FormClasses
 
         [RequiredIfFieldHasValue("IsPravnickaOsoba", true, ErrorMessage = "Zadejte kontaktní telefonní číslo žadatele")]
         [Display(GroupName = "sidloSpolecnosti", Name = "Telefon 1")]
-        [RegularExpression(Helpers.PhoneNumberFormat, ErrorMessageResourceType = typeof(FormResources),
+        [RegularExpression(Helpers.Helpers.PhoneNumberFormat, ErrorMessageResourceType = typeof(FormResources),
             ErrorMessageResourceName = "PodporaZemedelec_Povolené_znaky")]
         public string SSTelefon1 { get; set; }
 
         [Display(GroupName = "sidloSpolecnosti", Name = "Telefon 2")]
-        [RegularExpression(Helpers.PhoneNumberFormat, ErrorMessageResourceType = typeof(FormResources),
+        [RegularExpression(Helpers.Helpers.PhoneNumberFormat, ErrorMessageResourceType = typeof(FormResources),
             ErrorMessageResourceName = "PodporaZemedelec_Povolené_znaky")]
         public string SSTelefon2 { get; set; }
 
         [Display(GroupName = "sidloSpolecnosti", Name = "Fax")]
-        [RegularExpression(Helpers.PhoneNumberFormat, ErrorMessageResourceType = typeof(FormResources),
+        [RegularExpression(Helpers.Helpers.PhoneNumberFormat, ErrorMessageResourceType = typeof(FormResources),
             ErrorMessageResourceName = "PodporaZemedelec_Povolené_znaky")]
         public string SSFax { get; set; }
 
@@ -370,7 +371,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses
 
         [Required(ErrorMessage = "Zadejte číslo bankovního účtu žadatele")]
         [Display(GroupName = "spolecnaCast", Name = "Číslo účtu")]
-        [RegularExpression(Helpers.AccountNumberFormat, ErrorMessageResourceType = typeof(FormResources),
+        [RegularExpression(Helpers.Helpers.AccountNumberFormat, ErrorMessageResourceType = typeof(FormResources),
             ErrorMessageResourceName = "PodporaZemedelec_Povolené_znaky_Cislo_Uctu")]
         public string CisloUctu { get; set; }
 

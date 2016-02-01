@@ -5,8 +5,7 @@ using System.IO;
 using System.Web;
 using System.Web.UI.WebControls;
 using PGRLF.MainWeb.Forms.Validation;
-using PGRLF.MainWeb.Forms.FormClasses.Partial;
-using Foolproof;
+using PGRLF.MainWeb.Forms.FormClasses.Templates;
 
 namespace PGRLF.MainWeb.Forms.FormClasses
 {

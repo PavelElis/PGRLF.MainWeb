@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Web;
 using System.Web.UI.WebControls;
+using PGRLF.MainWeb.Forms.FormClasses.Templates;
 using PGRLF.MainWeb.Forms.Validation;
-using PGRLF.MainWeb.Forms.FormClasses.Partial;
 
 namespace PGRLF.MainWeb.Forms.FormClasses
 {

@@ -89,36 +89,12 @@
       <Private>True</Private>
       <HintPath>..\packages\EWS-Api-2.0.1.0.1\lib\net35\Microsoft.Exchange.WebServices.dll</HintPath>
     </Reference>
-    <Reference Include="Microsoft.WindowsAzure.CloudDrive, Version=1.8.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Microsoft SDKs\Windows Azure\.NET SDK\v2.2\ref\Microsoft.WindowsAzure.CloudDrive.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.WindowsAzure.Configuration, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.WindowsAzure.ConfigurationManager.3.2.0\lib\net40\Microsoft.WindowsAzure.Configuration.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Microsoft.WindowsAzure.Diagnostics, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\AzureSDK2.2DLLs.1.0.0\lib\Microsoft.WindowsAzure.Diagnostics.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.WindowsAzure.Diagnostics.StorageUtility, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Microsoft SDKs\Windows Azure\.NET SDK\v2.2\ref\Microsoft.WindowsAzure.Diagnostics.StorageUtility.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.WindowsAzure.ServiceRuntime, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\AzureSDK2.2DLLs.1.0.0\lib\Microsoft.WindowsAzure.ServiceRuntime.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="Microsoft.WindowsAzure.Storage, Version=6.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\WindowsAzure.Storage.6.2.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Microsoft.WindowsAzure.StorageClient, Version=1.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\AzureSDK2.2DLLs.1.0.0\lib\Microsoft.WindowsAzure.StorageClient.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="MVC Foolproof Validation, Version=0.9.4517.16477, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\foolproof.0.9.4517\lib\MVC Foolproof Validation.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
@@ -424,10 +400,6 @@
     <Compile Include="Forms\Enums\Pojistovny.cs" />
     <Compile Include="Forms\Enums\TypySpolecnosti.cs" />
     <Compile Include="Forms\Enums\Kraje.cs" />
-    <Compile Include="Forms\Exchange\CertificateCallback.cs" />
-    <Compile Include="Forms\Exchange\Service.cs" />
-    <Compile Include="Forms\Exchange\TextFileTraceListener.cs" />
-    <Compile Include="Forms\Exchange\UserData.cs" />
     <Compile Include="Forms\FormClasses\11.UveryPuda_ViewModel.cs" />
     <Compile Include="Forms\FormClasses\12.SnizeniJistiny_ViewModel.cs" />
     <Compile Include="Forms\FormClasses\13.ZajisteniUveru_ViewModel.cs" />
@@ -441,20 +413,17 @@
     <Compile Include="Forms\FormClasses\03.ProdukceSkolek_ViewModel.cs" />
     <Compile Include="Forms\FormClasses\02.Pojisteni_ViewModel.cs" />
     <Compile Include="Forms\FormClasses\01.Zemedelec_ViewModel.cs" />
-    <Compile Include="Forms\FormClasses\Partial\Adresa.cs" />
-    <Compile Include="Forms\FormClasses\Partial\BankovniSpojeni.cs" />
-    <Compile Include="Forms\FormClasses\Partial\ObchodniRejstrik.cs" />
     <Compile Include="Forms\FormClasses\PodporaZemedelec_ViewModel.cs" />
-    <Compile Include="Forms\FormClasses\Pojistovna.cs" />
-    <Compile Include="Forms\FormClasses\DruhVyroby.cs" />
-    <Compile Include="Forms\FormClasses\DMList1.cs" />
-    <Compile Include="Forms\FormClasses\DMList2.cs" />
-    <Compile Include="Forms\FormClasses\DMList3.cs" />
-    <Compile Include="Forms\FormClasses\PredmetPodnikani.cs" />
-    <Compile Include="Forms\FormClasses\Partial\FyzickaOsoba.cs" />
-    <Compile Include="Forms\FormClasses\Partial\Kontakt.cs" />
-    <Compile Include="Forms\FormClasses\Partial\SvazekObci.cs" />
-    <Compile Include="Forms\FormClasses\Partial\PravnickaOsoba.cs" />
+    <Compile Include="Forms\FormClasses\Templates\Adresa.cs" />
+    <Compile Include="Forms\FormClasses\Templates\BankovniSpojeni.cs" />
+    <Compile Include="Forms\FormClasses\Templates\DruhVyroby.cs" />
+    <Compile Include="Forms\FormClasses\Templates\FyzickaOsoba.cs" />
+    <Compile Include="Forms\FormClasses\Templates\Kontakt.cs" />
+    <Compile Include="Forms\FormClasses\Templates\ObchodniRejstrik.cs" />
+    <Compile Include="Forms\FormClasses\Templates\Pojistovna.cs" />
+    <Compile Include="Forms\FormClasses\Templates\PravnickaOsoba.cs" />
+    <Compile Include="Forms\FormClasses\Templates\PredmetPodnikani.cs" />
+    <Compile Include="Forms\FormClasses\Templates\SvazekObci.cs" />
     <Compile Include="Forms\FormClasses\ZoPPPGRLF_ViewModel.cs" />
     <Compile Include="Forms\FormControllerFactory.cs" />
     <Compile Include="Forms\FormResources.Designer.cs">
@@ -473,7 +442,11 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers.cs" />
+    <Compile Include="Helpers\Helpers.cs" />
+    <Compile Include="Models\Exchange\CertificateCallback.cs" />
+    <Compile Include="Models\Exchange\Service.cs" />
+    <Compile Include="Models\Exchange\TextFileTraceListener.cs" />
+    <Compile Include="Models\Exchange\UserData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\DigestAuthorizationAttribute.cs" />
   </ItemGroup>
@@ -717,14 +690,12 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
-    <Content Include="Foundation_readme.txt" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <None Include="Resources\CestneProhlaseni.txt" />
     <None Include="Resources\DeMinimis2.txt" />
     <None Include="Resources\DeMinimis5.txt" />
     <None Include="Resources\SouhlasSeZpracovanim.txt" />
-    <Content Include="RecaptchaNet.Readme.txt" />
     <Content Include="Scripts\2013.2.611\jquery-1.7.1.min.js" />
     <Content Include="Scripts\2013.2.611\jquery.validate.min.js" />
     <Content Include="Scripts\2013.2.611\telerik.all.min.js" />
@@ -764,10 +735,6 @@
     <None Include="Properties\PublishProfiles\pgrlf - Web Deploy %282%29.pubxml" />
     <None Include="Properties\PublishProfiles\pgrlf-test - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\pgrlf-test - Web Deploy.pubxml" />
-    <Content Include="Scripts\cldr.js" />
-    <Content Include="Scripts\cldr\event.js" />
-    <Content Include="Scripts\cldr\supplemental.js" />
-    <Content Include="Scripts\cldr\unresolved.js" />
     <Content Include="Scripts\foundation\foundation.abide.js" />
     <Content Include="Scripts\foundation\foundation.alerts.js" />
     <Content Include="Scripts\foundation\foundation.clearing.js" />
@@ -784,13 +751,6 @@
     <Content Include="Scripts\foundation\foundation.section.js" />
     <Content Include="Scripts\foundation\foundation.tooltips.js" />
     <Content Include="Scripts\foundation\foundation.topbar.js" />
-    <Content Include="Scripts\globalize.js" />
-    <Content Include="Scripts\globalize\currency.js" />
-    <Content Include="Scripts\globalize\date.js" />
-    <Content Include="Scripts\globalize\message.js" />
-    <Content Include="Scripts\globalize\number.js" />
-    <Content Include="Scripts\globalize\plural.js" />
-    <Content Include="Scripts\globalize\relative-time.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.js" />
     <Content Include="Scripts\jquery-ui-1.11.4.min.js" />
     <Content Include="Scripts\jquery.js" />
@@ -801,14 +761,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\knockout-3.4.0.debug.js" />
-    <Content Include="Scripts\knockout-3.4.0.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\mvcfoolproof.unobtrusive.min.js" />
-    <Content Include="Scripts\MvcFoolproofJQueryValidation.min.js" />
-    <Content Include="Scripts\MvcFoolproofValidation.min.js" />
     <Content Include="Scripts\zepto.js" />
-    <Content Include="Scripts\_references.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -860,8 +814,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\fonts\" />
-    <Folder Include="Models\" />
+    <Folder Include="Helpers\Validation\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

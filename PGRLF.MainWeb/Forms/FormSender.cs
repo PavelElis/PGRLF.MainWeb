@@ -3,8 +3,8 @@ using System.Configuration;
 using System.Globalization;
 using Microsoft.Exchange.WebServices.Data;
 using PGRLF.AzureStorageProvider.TableEntities;
-using PGRLF.MainWeb.Forms.Exchange;
 using System.Web;
+using PGRLF.MainWeb.Models.Exchange;
 
 
 namespace PGRLF.MainWeb.Forms

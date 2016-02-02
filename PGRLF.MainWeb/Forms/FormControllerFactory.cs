@@ -19,7 +19,7 @@ namespace PGRLF.MainWeb.Forms
                 //override for typed form controller with viewModel
                 var formId = new Guid(requestContext.RouteData.GetRequiredString("id"));
                 var form = azureStorage.GetForm(formId);
-                var viewModelType = Type.GetType("PGRLF.MainWeb.Forms.FormClasses." + form.TechName + "_ViewModel");
+                var viewModelType = Type.GetType("PGRLF.MainWeb.Forms.FormClasses." + form.TechName);
 
                 var controllerType = typeof (FormController<>);
 

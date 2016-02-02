@@ -2,27 +2,23 @@
 <html>
 <head>
     <meta charset="utf-8" />
-
-    @*Set the viewport width to device width for mobile *@
     <meta name="viewport" content="width=device-width" />
-
-    <title>@ViewBag.Title - Welcome to Foundation</title>
+    <title>@ViewBag.Title - PGRLF, a.s.</title>
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
     @Styles.Render("~/Content/foundation/css")
+    @Styles.Render("~/Content/jqueryui/css")
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    @RenderSection("HeadContent", required:false)
 </head>
 <body style="padding-left:30px;">
     @RenderBody()
 
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/jquery.globalize")
-       @Scripts.Render("~/bundles/foundation")
+    @Scripts.Render("~/bundles/foundation")
+    @Scripts.Render("~/bundles/jqueryui")
     <script>
         $(document).foundation();
     </script>
-    @RenderSection("scripts", required: false)
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

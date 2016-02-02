@@ -3,20 +3,22 @@
 @using Recaptcha.Web.Mvc;
 @using Telerik.Web.Mvc.UI
 @using CaptchaMvc;
+@using PGRLF.MainWeb.App_Start.Bundles
 
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
-    @RenderSection("HeadContent", required: false)
+    <title>@ViewBag.Title - PGRLF, a.s.</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     @Styles.Render("~/Content/foundation/css")
-    @Styles.Render("~/Content/themes/base/css")
+    @Styles.Render("~/Content/jqueryui/css")
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/foundation")
     @Scripts.Render("~/bundles/jqueryui")
 </head>
     <body>
@@ -25,10 +27,8 @@
                 Pro zabezpečení korektní funkcionality musíte mít v prohlížeči zapnutý JavaScript
             </p> 
         </noscript>
-        @using (Html.BeginForm("Submit", "Form", FormMethod.Post, /*new { enctype = "multipart/form-data" },*/ new { @class = "form-inline custom", enctype = "multipart/form-data" }))
+        @using (Html.BeginForm("Submit", "Form", FormMethod.Post, /*new { enctype = "multipart/form-data" },*/ new {@class = "form-inline custom", enctype = "multipart/form-data"}))
         {
-            Html.EnableUnobtrusiveJavaScript(true);
-            Html.EnableClientValidation(true);
             <div>
                 <div class="formbody">
                     @RenderBody()
@@ -36,27 +36,26 @@
                 <div class="formmenu">
                     <div style="position: static;">
                         <div>
-                            <img src="~/Content/images/pgrlf.png" />
+                            <img src="~/Content/images/pgrlf.png"/>
                             @Html.ValidationSummary()
-
                         </div>
                         <div class="form-actions" style="top: 100px;">
-                            <button id="save" class="btn cancel uniformWidth">Uložit koncept</button><br />
-                            <button id="pdfPreview" class="btn cancel uniformWidth">Náhled žádosti</button><br />
-                            <button id="load" class="btn cancel uniformWidth">Nahrát žádost</button><br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            <br />
-                            @if (ViewBag.IsValidationSuccessful != null 
+                            <button id="save" class="btn cancel uniformWidth">Uložit koncept</button><br/>
+                            <button id="pdfPreview" class="btn cancel uniformWidth">Náhled žádosti</button><br/>
+                            <button id="load" class="btn cancel uniformWidth">Nahrát žádost</button><br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            <br/>
+                            @if (ViewBag.IsValidationSuccessful != null
                                  && ViewBag.IsValidationSuccessful)
                             {
-                                @:<p>Validace proběhla úspěšně</p>
+                                @:
+                                <p>Validace proběhla úspěšně</p>
                             }
                             <button id="validate" class="btn uniformWidth">Zkontrolovat žádost</button>
 
-                            @{/*Html.Recaptcha(theme: Recaptcha.Web.RecaptchaTheme.Clean, language: "cz)*/}
                             <div class="uniformWidth">
                                 @Html.Captcha("Nový kód", "Zadejte kód", 5)
                             </div>
@@ -66,105 +65,100 @@
                     </div>
                 </div>
             </div>
-            
-            @Scripts.Render("~/bundles/foundation")
-            <script>
-                $(document).foundation();
-            </script>
-            @RenderSection("scripts", required: false)
-        
-            <script type="text/javascript">
-                $("button#validate").click(function () {
-                    var form = $("form");
-                    form.attr("action", "/Form/Validate/@ViewBag.FormID");
-                    form.submit(function () {
-                        return true;
-                    });
-                });
-
-                $("button#send").click(function () {
-                    var form = $("form");
-                    form.attr("action", "/Form/Submit/@ViewBag.FormID");
-                    form.submit(function () {
-                        return true;
-                    });
-                });
-
-                $("button#save").click(function () {
-                    var form = $("form");
-                    form.attr("action", "/Form/Save/@ViewBag.FormID");
-                    form.attr("target", "_blank");
-                    form.submit(function () {
-                        return true;
-                    });
-                });
-                $("button#pdfPreview").click(function () {
-                    var form = $("form");
-                    form.attr("action", "/Form/PdfPreview/@ViewBag.FormID");
-                    form.attr("target", "_blank");
-                    form.submit(function () {
-                        return true;
-                    });
-                });
-                $("button#load").click(function () {
-                    window.location.href = "/Form/Load/@ViewBag.FormID";
-                    return false;
-                });
-            </script>
-   
-            <script type="text/javascript">
-                $().ready(function () {
-                    $.datepicker.regional['cs'] = {
-                        closeText: 'Zavřít',
-                        prevText: 'Dříve',
-                        nextText: 'Později',
-                        currentText: 'Nyní',
-                        monthNames: ['leden', 'únor', 'březen', 'duben', 'květen', 'červen',
-                            'červenec', 'srpen', 'září', 'říjen', 'listopad', 'prosinec'],
-                        monthNamesShort: ['led', 'úno', 'bře', 'dub', 'kvě', 'čer',
-                            'čvc', 'srp', 'zář', 'říj', 'lis', 'pro'],
-                        dayNames: ['neděle', 'pondělí', 'úterý', 'středa', 'čtvrtek', 'pátek', 'sobota'],
-                        dayNamesShort: ['ne', 'po', 'út', 'st', 'čt', 'pá', 'so'],
-                        dayNamesMin: ['ne', 'po', 'út', 'st', 'čt', 'pá', 'so'],
-                        weekHeader: 'Týd',
-                        dateFormat: 'dd.mm.yy',
-                        changeMonth: true,
-                        changeYear: true,
-                        yearRange: "c-100:c+100",
-                        minDate: "-100Y",
-                        maxDate: "+100Y",
-                        firstDay: 1,
-                        isRTL: false,
-                        showMonthAfterYear: false,
-                        yearSuffix: ''
-                    };
-
-                    $.datepicker.setDefaults($.datepicker.regional['cs']);
-
-                    //Globalize.culture('cs-CZ');
-                    $.validator.methods.date = function (value, element) {
-                        var check = false;
-                        var re = /^\d{1,2}\.\d{1,2}\.\d{4}$/;
-                        if (re.test(value)) {
-                            var adata = value.split('.');
-                            var dd = parseInt(adata[0], 10);
-                            var mm = parseInt(adata[1], 10);
-                            var yyyy = parseInt(adata[2], 10);
-                            var xdata = new Date(yyyy, mm - 1, dd);
-                            if ((xdata.getFullYear() == yyyy) && (xdata.getMonth() == mm - 1) && (xdata.getDate() == dd))
-                                check = true;
-                            else
-                                check = false;
-                        } else
-                            check = false;
-                        return this.optional(element) || check;
-                    };
-                    $(".calendar").datepicker();
-
-                    $(document).foundation();
-                });
-
-            </script>
         }
+ 
+    <script>
+        
+        $().ready(function () {
+            $.datepicker.regional['cs'] = {
+                closeText: 'Zavřít',
+                prevText: 'Dříve',
+                nextText: 'Později',
+                currentText: 'Nyní',
+                monthNames: ['leden', 'únor', 'březen', 'duben', 'květen', 'červen',
+                    'červenec', 'srpen', 'září', 'říjen', 'listopad', 'prosinec'],
+                monthNamesShort: ['led', 'úno', 'bře', 'dub', 'kvě', 'čer',
+                    'čvc', 'srp', 'zář', 'říj', 'lis', 'pro'],
+                dayNames: ['neděle', 'pondělí', 'úterý', 'středa', 'čtvrtek', 'pátek', 'sobota'],
+                dayNamesShort: ['ne', 'po', 'út', 'st', 'čt', 'pá', 'so'],
+                dayNamesMin: ['ne', 'po', 'út', 'st', 'čt', 'pá', 'so'],
+                weekHeader: 'Týd',
+                dateFormat: 'dd.mm.yy',
+                changeMonth: true,
+                changeYear: true,
+                yearRange: "c-100:c+100",
+                minDate: "-100Y",
+                maxDate: "+100Y",
+                firstDay: 1,
+                isRTL: false,
+                showMonthAfterYear: false,
+                yearSuffix: ''
+            };
+
+            $.datepicker.setDefaults($.datepicker.regional['cs']);
+
+            //Globalize.culture('cs-CZ');
+            $.validator.methods.date = function (value, element) {
+                var check = false;
+                var re = /^\d{1,2}\.\d{1,2}\.\d{4}$/;
+                if (re.test(value)) {
+                    var adata = value.split('.');
+                    var dd = parseInt(adata[0], 10);
+                    var mm = parseInt(adata[1], 10);
+                    var yyyy = parseInt(adata[2], 10);
+                    var xdata = new Date(yyyy, mm - 1, dd);
+                    if ((xdata.getFullYear() == yyyy) && (xdata.getMonth() == mm - 1) && (xdata.getDate() == dd))
+                        check = true;
+                    else
+                        check = false;
+                } else
+                    check = false;
+                return this.optional(element) || check;
+            };
+            $(".calendar").datepicker();
+
+            $(document).foundation();
+        });
+
+        $("button#validate").click(function() {
+            var form = $("form");
+            form.attr("action", "/Form/Validate/@ViewBag.FormID");
+            form.submit(function() {
+                return true;
+            });
+        });
+
+        $("button#send").click(function() {
+            var form = $("form");
+            form.attr("action", "/Form/Submit/@ViewBag.FormID");
+            form.submit(function() {
+                return true;
+            });
+        });
+
+        $("button#save").click(function() {
+            var form = $("form");
+            form.attr("action", "/Form/Save/@ViewBag.FormID");
+            form.attr("target", "_blank");
+            form.submit(function() {
+                return true;
+            });
+        });
+        $("button#pdfPreview").click(function() {
+            var form = $("form");
+            form.attr("action", "/Form/PdfPreview/@ViewBag.FormID");
+            form.attr("target", "_blank");
+            form.submit(function() {
+                return true;
+            });
+        });
+        $("button#load").click(function() {
+            window.location.href = "/Form/Load/@ViewBag.FormID";
+            return false;
+        });
+
+    </script>
+
+    @RenderSection("Scripts", required: false)
     </body>
 </html>

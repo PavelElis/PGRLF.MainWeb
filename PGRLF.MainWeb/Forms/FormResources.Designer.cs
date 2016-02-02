@@ -90,6 +90,24 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Špatný formát DIČ.
+        /// </summary>
+        public static string Chyba_DIC {
+            get {
+                return ResourceManager.GetString("Chyba_DIC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Špatný formát IČ.
+        /// </summary>
+        public static string Chyba_IC {
+            get {
+                return ResourceManager.GetString("Chyba_IC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Datum je v chybném formátu.
         /// </summary>
         public static string Chyba_ORDatum {
@@ -208,8 +226,8 @@ namespace PGRLF.MainWeb.Forms {
         ///&lt;br&gt;&lt;br&gt;
         ///se zavazuje k tomu, že v případě změny předmětných údajů v průběhu administrativního procesu poskytnutí podpory de minimis bude neprodleně informovat poskytovatele dané podpory o změnách, které u něj nastaly;
         ///&lt;br&gt;&lt;br&gt;
-        ///&lt;b&gt;Prohlášení ke zpracování osobních údajů&lt;b&gt;
-        ///Souhlasím se zpracováním osobních údajů obsažených v tomto prohlášení ve smyslu zákona č. 101/2000 Sb., o ochraně osobních údajů, ve znění p. p., z [rest of string was truncated]&quot;;.
+        ///&lt;b&gt;Prohlášení ke zpracování osobních údajů&lt;/b&gt;
+        ///Souhlasím se zpracováním osobních údajů obsažených v tomto prohlášení ve smyslu zákona č. 101/2000 Sb., o ochraně osobních údajů, ve znění p. p.,  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DeMinimis5 {
             get {
@@ -1518,8 +1536,9 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to I. Žadatel o poskytnutí podpory, jakožto fyzická osoba (dále jen jako „žadatel-fyzická osoba“),
-        ///tímto dává společnosti Podpůrný a garanční rolnický a lesnický fond, a.s., IČ: 492 41 494, se sídlem Praha 8 – Karlín, Za Poříčskou branou 6/č.p. 256, PSČ 186 00 (dále jen jako „Správce“), v souladu se zákonem č. 101/2000 Sb., o ochraně osobních údajů a o změně některých zákonů, ve znění pozdějších předpisů (dále jen jako „ZOOÚ“), souhlas k tomu, aby Správce zpracovával ve své databázi veškeré jeho osobní údaje, [rest of string was truncated]&quot;;.
+        ///   Looks up a localized string similar to &lt;b&gt;I. Žadatel o poskytnutí podpory, jakožto fyzická osoba (dále jen jako „žadatel-fyzická osoba“),&lt;/b&gt;
+        ///&lt;br&gt;&lt;br&gt;
+        ///tímto dává společnosti Podpůrný a garanční rolnický a lesnický fond, a.s., IČ: 492 41 494, se sídlem Praha 8 – Karlín, Za Poříčskou branou 6/č.p. 256, PSČ 186 00 (dále jen jako „Správce“), v souladu se zákonem č. 101/2000 Sb., o ochraně osobních údajů a o změně některých zákonů, ve znění pozdějších předpisů (dále jen jako „ZOOÚ“), souhlas k tomu, aby Správce zpracovával ve své databázi veškeré j [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SouhlasSeZpracovanim {
             get {

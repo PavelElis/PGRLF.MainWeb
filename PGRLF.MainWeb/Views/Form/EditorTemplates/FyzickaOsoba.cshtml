@@ -52,7 +52,7 @@
     </div>
 
     <h6>Adresa trvalého pobytu</h6>
-    @Html.EditorFor(m => m.TrvalyPobyt);
+    @Html.EditorFor(m => m.TrvalyPobyt)
 
     <h6>Místo podnikání</h6>
     <div class="row">
@@ -69,7 +69,7 @@
             </div>
         </div>
     </div>
-    <div id="divFOMistoPodnikani" @if (Model.FOJeMistoPodnikaniStejne) { @Html.Raw("style=\"display:none;\"")  ; }>
-        @Html.EditorFor(m => m.MistoPodnikani);
+    <div id="divFOMistoPodnikani" @if (Model.FOJeMistoPodnikaniStejne) { @Html.Raw("style=\"display:none;\"") }>
+        @Html.EditorFor(m => m.MistoPodnikani)
     </div>
 </fieldset>

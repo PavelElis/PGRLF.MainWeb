@@ -1,0 +1,36 @@
+﻿@model PGRLF.MainWeb.Forms.FormClasses.Templates.PlanovaneUkonceni
+
+<h6>Plánované skončení</h6>
+<div class="row">
+    <div class="large-4 columns">
+        @Html.LabelFor(m => m.ProdejPodniku, new {@class="left inline"})
+    </div>
+    <div class="large-2 columns">
+        <div class="switch">
+            @Html.CheckBoxFor(m => m.ProdejPodniku, new {@id="cbProdejPodniku"})
+            <label for="cbProdejPodniku"></label>
+        </div>
+    </div>
+    <div id="divProdejPodnikuDatum" class="large-4 columns" style="display:none">
+        @Html.LabelWithAsterixFor(m => m.ProdejPodnikuDatum)
+        @Html.EditorFor(m => m.ProdejPodnikuDatum)
+        @Html.ValidationMessageFor(m => m.ProdejPodnikuDatum)
+    </div>
+</div>
+
+<div class="row">
+    <div class="large-4 columns">
+        @Html.LabelFor(m => m.UkonceniCinnosti)
+    </div>
+    <div class="large-2 columns">
+        <div class="switch">
+            @Html.CheckBoxFor(m => m.UkonceniCinnosti)
+            <label></label>
+        </div>
+    </div>
+    <div id="divUkoceniCinnostiDatum" class="large-4 columns" style="display: none">
+        @Html.LabelWithAsterixFor(m => m.UkonceniCinnostiDatum)
+        @Html.EditorFor(m => m.UkonceniCinnostiDatum)
+        @Html.ValidationMessageFor(m => m.UkonceniCinnostiDatum)
+    </div>
+</div>

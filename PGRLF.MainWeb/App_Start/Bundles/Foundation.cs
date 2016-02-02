@@ -1,25 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
 using System.Web.Optimization;
 
-namespace PGRLF.MainWeb
+namespace PGRLF.MainWeb.App_Start.Bundles
 {
-    public static class Foundation
+    public class Foundation
     {
+
         public static Bundle Styles()
         {
             return new StyleBundle("~/Content/foundation/css").Include(
-                       "~/Content/foundation/foundation.css",
-                       "~/Content/foundation/foundation.mvc.css",
-                       "~/Content/foundation/app.css");
+                "~/Content/foundation/app.css",
+                "~/Content/foundation/foundation-flex.css"
+                );
         }
 
         public static Bundle Scripts()
         {
             return new ScriptBundle("~/bundles/foundation").Include(
-                      "~/Scripts/foundation/fastclick.js",
-                      "~/Scripts/jquery.cookie.js",
-                      "~/Scripts/foundation/foundation.js",
-                      "~/Scripts/foundation/foundation.*",
-                      "~/Scripts/foundation/app.js");
+                //"~/Scripts/foundation/vendor/jquery.min.js",
+                //"~/Scripts/foundation/vendor/what-input.min.js",
+                "~/Scripts/foundation/app.js",
+                "~/Scripts/foundation/foundation.js"
+                );
         }
     }
 }

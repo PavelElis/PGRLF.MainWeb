@@ -308,6 +308,15 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Fyzická osoba.
+        /// </summary>
+        public static string FyzickaOsoba {
+            get {
+                return ResourceManager.GetString("FyzickaOsoba", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to   .
         /// </summary>
         public static string Helpers_PrependEmptyItem__Text {
@@ -1482,6 +1491,15 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Právnická osoba.
+        /// </summary>
+        public static string PravnickaOsoba {
+            get {
+                return ResourceManager.GetString("PravnickaOsoba", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Zadejte činnost vykonávanou při podnikání.
         /// </summary>
         public static string PredmetPodnikani__Zadejte_činnost_vykonávanou_při_podnikání {
@@ -1543,6 +1561,15 @@ namespace PGRLF.MainWeb.Forms {
         public static string SouhlasSeZpracovanim {
             get {
                 return ResourceManager.GetString("SouhlasSeZpracovanim", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Obec / svazek obcí.
+        /// </summary>
+        public static string SvazekObci {
+            get {
+                return ResourceManager.GetString("SvazekObci", resourceCulture);
             }
         }
         

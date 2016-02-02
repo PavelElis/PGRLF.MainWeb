@@ -658,4 +658,13 @@
   <data name="Chyba_IC" xml:space="preserve">
     <value>Špatný formát IČ</value>
   </data>
+  <data name="FyzickaOsoba" xml:space="preserve">
+    <value>Fyzická osoba</value>
+  </data>
+  <data name="PravnickaOsoba" xml:space="preserve">
+    <value>Právnická osoba</value>
+  </data>
+  <data name="SvazekObci" xml:space="preserve">
+    <value>Obec / svazek obcí</value>
+  </data>
 </root>

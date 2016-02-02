@@ -1,6 +1,6 @@
 ﻿@model PGRLF.MainWeb.Forms.FormClasses.Templates.FyzickaOsoba
 
-<fieldset>
+<fieldset class="fieldset">
     <legend>Fyzická osoba</legend>
     <div class="row">
         <div class="large-4 columns">
@@ -56,16 +56,16 @@
 
     <h6>Místo podnikání</h6>
     <div class="row">
-        <div class="large-6 columns">
-            <label for="swFOMP" class="left inline">Je místo podnikání stejné jako "Adresa trvalého pobytu"?</label>
+        <div class="large-10 columns">
+            <label for="FOJeMistoPodnikaniStejne">Je místo podnikání stejné jako "Adresa trvalého pobytu"?</label>
         </div>
         <div class="large-2 columns">
-            <div class="switch" id="swFOMP">
-                @Html.RadioButtonFor(m => m.FOJeMistoPodnikaniStejne, false, new { @id = "rbFOMPOff" })
-                <label>Ne</label>
-                @Html.RadioButtonFor(m => m.FOJeMistoPodnikaniStejne, true, new { @id = "rbFOMPOn" })
-                <label>Ano</label>
-                <span></span>
+            <div class="switch large">
+                @Html.CheckBoxFor(m => m.FOJeMistoPodnikaniStejne, new { @class = "switch-input", @id = "cbFOJeMistoPodnikaniStejne" })
+                <label class="switch-paddle" for="FOJeMistoPodnikaniStejne">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
             </div>
         </div>
     </div>

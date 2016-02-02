@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.IO;
 using System.Web;
 using System.Web.UI.WebControls;
+using PGRLF.MainWeb.Forms.Enums;
 using PGRLF.MainWeb.Forms.Validation;
 using PGRLF.MainWeb.Forms.FormClasses.Templates;
 
@@ -12,9 +13,10 @@ namespace PGRLF.MainWeb.Forms.FormClasses
     [Serializable]
     public class PojisteniLesnichPorostu : AbstractForm
     {
+
         public PojisteniLesnichPorostu()
         {
-            PravniForma = "FyzickaOsoba";
+            PravniForma = PravniForma.FyzickaOsoba;
             FyzickaOsoba = new FyzickaOsoba();
             PravnickaOsoba = new PravnickaOsoba();
             SvazekObci = new SvazekObci();
@@ -23,7 +25,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses
             ObchodniRejstrik = new ObchodniRejstrik();
         }
 
-        public string PravniForma { get; set; }
+        public PravniForma PravniForma { get; set; }
 
         public FyzickaOsoba FyzickaOsoba { get; set; }
         public PravnickaOsoba PravnickaOsoba { get; set; }

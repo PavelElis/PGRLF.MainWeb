@@ -1,4 +1,5 @@
-﻿@model PGRLF.MainWeb.Forms.FormClasses.PojisteniLesnichPorostu
+﻿@using PGRLF.MainWeb.Forms.Enums
+@model PGRLF.MainWeb.Forms.FormClasses.PojisteniLesnichPorostu
 
 @{
     ViewBag.Title = "Pojištění lesních porostů";
@@ -6,47 +7,51 @@
 }
 
 <div class="text-center">
-    <h2><strong>Program "Pojištění lesních porostů"</strong></h2>
+    <h1>Program "Pojištění lesních porostů"</h1>
 </div>
 <p>(* - Údaje označené hvězdičkou je nutné vyplnit.)</p>
 
-<div class="switch">
-    <input id="exampleCheckboxSwitch" type="checkbox">
-    <label for="exampleCheckboxSwitch"></label>
-</div> 
-
-<fieldset>
+<fieldset class="fieldset">
     <legend>Právní forma</legend>
     <div class="row">
         <div class="large-10 columns">
-            <label for="rbFyzickaOsoba" class="left inline">Fyzická osoba</label>
+            <label for="rbFyzickaOsoba">Fyzická osoba</label>
         </div>
-        <div class="large-1 columns">
-            <div class="switch">
-                @Html.RadioButtonFor(m => m.PravniForma, "FyzickaOsoba", new { id = "rbFyzickaOsoba" })
-                @Html.LabelFor(m => m.PravniForma)
+        <div class="large-2 columns">
+            <div class="switch large">
+                @Html.RadioButtonFor(m => m.PravniForma, PravniForma.FyzickaOsoba, new { @class = "switch-input", @id = "rbFyzickaOsoba" })
+                <label class="switch-paddle" for="rbFyzickaOsoba">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label for="rbPravnickaOsoba" class="left inline">Právnická osoba</label>
+            <label for="rbPravnickaOsoba">Právnická osoba</label>
         </div>
-        <div class="large-1 columns">
-            <div class="switch">
-                @Html.RadioButtonFor(m => m.PravniForma, "PravnickaOsoba", new { id = "rbPravnickaOsoba" })
-                @Html.LabelFor(m => m.PravniForma)
+        <div class="large-2 columns">
+            <div class="switch large">
+                @Html.RadioButtonFor(m => m.PravniForma, PravniForma.PravnickaOsoba, new { @class = "switch-input", @id = "rbPravnickaOsoba" })
+                <label class="switch-paddle" for="rbPravnickaOsoba">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label for="rbSvazekObci" class="left inline">Obec / svazek obcí</label>
+            <label for="rbSvazekObci">Obec / svazek obcí</label>
         </div>
-        <div class="large-1 columns">
-            <div class="switch">
-                @Html.RadioButtonFor(m => m.PravniForma, "SvazekObci", new { id = "rbSvazekObci" })
-                @Html.LabelFor(m => m.PravniForma)
+        <div class="large-2 columns">
+            <div class="switch large">
+                @Html.RadioButtonFor(m => m.PravniForma, PravniForma.SvazekObci, new { @class = "switch-input", @id = "rbSvazekObci" })
+                <label class="switch-paddle" for="rbSvazekObci">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
             </div>
         </div>
     </div>
@@ -605,17 +610,16 @@
             $(element).show(100);
         }
 
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             $(".switch").click(function () {
                 var input = $(this).children("input[id]");
-                switch (input.prop("type")) {
+                switch ($(input).prop("type")) {
                     case "radio":
-                        input.prop("checked", true).change();
+                        $(input).prop("checked", true).change();
                         break;
                     case "checkbox":
-                        debugger;
-                        input.prop("checked") ? input.prop("checked", true).change() : input.prop("checked", false).change();
+                        $(input).prop("checked") ? input.prop("checked", false).change() : input.prop("checked", true).change();
                         break;
                 }               
             });
@@ -644,14 +648,21 @@
                 showElement('#divSvazekObci');
             });
 
-            /*$("input[id='rbProdejPodniku']").change(function () {
+            $("input[id='cbFOJeMistoPodnikaniStejne']").change(function () {
+                $('#divFOMistoPodnikani').toggle();
+            });
+
+            $("input[id='cbPOJeMistoPodnikaniStejne']").change(function () {
+                $('#divPOMistoPodnikani').toggle();
+            });
+
+            $("input[id='cbProdejPodniku']").change(function () {
                 $('#divProdejPodnikuDatum').toggle();
-            });*/
+            });
 
-
-            /*$("input[id='rbUkonceniCinnosti']").change(function () {
+            $("input[id='cbUkonceniCinnosti']").change(function () {
                 $('#divUkoceniCinnostiDatum').toggle();
-            });*/
+            });
 
         });
 

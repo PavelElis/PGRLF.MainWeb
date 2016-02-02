@@ -1,14 +1,17 @@
 ﻿@model PGRLF.MainWeb.Forms.FormClasses.Templates.PlanovaneUkonceni
 
 <h6>Plánované skončení</h6>
-<div class="row">
+<div class="row align-stretch">
     <div class="large-4 columns">
         @Html.LabelFor(m => m.ProdejPodniku, new {@class="left inline"})
     </div>
-    <div class="large-2 columns">
-        <div class="switch">
-            @Html.CheckBoxFor(m => m.ProdejPodniku, new {@id="cbProdejPodniku"})
-            <label for="cbProdejPodniku"></label>
+    <div class="large-2 align-bottom columns">
+        <div class="switch large ">
+            @Html.CheckBoxFor(m => m.ProdejPodniku, new { @class = "switch-input", @id = "cbProdejPodniku" })
+            <label class="switch-paddle" for="cbProdejPodniku">
+                <span class="switch-active" aria-hidden="true">Ano</span>
+                <span class="switch-inactive" aria-hidden="true">Ne</span>
+            </label>
         </div>
     </div>
     <div id="divProdejPodnikuDatum" class="large-4 columns" style="display:none">
@@ -18,14 +21,17 @@
     </div>
 </div>
 
-<div class="row">
+<div class="row align-stretch">
     <div class="large-4 columns">
         @Html.LabelFor(m => m.UkonceniCinnosti)
     </div>
-    <div class="large-2 columns">
-        <div class="switch">
-            @Html.CheckBoxFor(m => m.UkonceniCinnosti)
-            <label></label>
+    <div class="large-2 align-bottom columns">
+        <div class="switch large">
+            @Html.CheckBoxFor(m => m.UkonceniCinnosti, new { @class = "switch-input", @id = "cbUkonceniCinnosti" })
+            <label class="switch-paddle" for="cbUkonceniCinnosti">
+                <span class="switch-active" aria-hidden="true">Ano</span>
+                <span class="switch-inactive" aria-hidden="true">Ne</span>
+            </label>
         </div>
     </div>
     <div id="divUkoceniCinnostiDatum" class="large-4 columns" style="display: none">

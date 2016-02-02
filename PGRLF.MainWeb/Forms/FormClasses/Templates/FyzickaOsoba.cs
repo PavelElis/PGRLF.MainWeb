@@ -36,7 +36,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
 
         [Display(ResourceType = typeof(FormResources), Name = "RodneCislo")]
         [DisplayFormat(NullDisplayText = "------/--", ConvertEmptyStringToNull = true)]
-        [RegularExpression("\\d{6}'/'\\d{3,4}",
+        [RegularExpression("(\\d{6})(\\/)(\\d{3,4})",
             ErrorMessageResourceType = typeof(FormResources),
             ErrorMessageResourceName = "Chyba_RodneCislo")]
         [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_RodneCislo")]

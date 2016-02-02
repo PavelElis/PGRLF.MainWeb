@@ -7,6 +7,9 @@ using CaptchaMvc.Attributes;
 using CaptchaMvc.HtmlHelpers;
 using PGRLF.AzureStorageProvider;
 using PGRLF.MainWeb.Forms;
+using PGRLF.MainWeb.Helpers;
+using Recaptcha.Web;
+using Recaptcha.Web.Mvc;
 
 namespace PGRLF.MainWeb.Controllers
 {
@@ -42,6 +45,8 @@ namespace PGRLF.MainWeb.Controllers
         [HttpPost]
         public ActionResult Submit(T viewModel, HttpPostedFileBase[] files)
         {
+            
+
 
             ViewBag.FormID = FormID.ToString();
             ViewBag.FormName = FormName;
@@ -50,7 +55,17 @@ namespace PGRLF.MainWeb.Controllers
             ModelState.Clear();
             TryValidateModel(viewModel);
 
-            bool valid = this.IsCaptchaValid("Kontrolní kód je nesprávný");
+            //bool valid = this.IsCaptchaValid("Kontrolní kód je nesprávný");
+
+            string EncodedResponse = Request.Form["g-Recaptcha-Response"];
+            bool IsCaptchaValid = ReCaptcha.Validate(EncodedResponse) == "True";
+
+            if (!IsCaptchaValid)
+            {
+                ModelState.AddModelError("", "Invalid Captcha Code!");
+            }
+
+            TryValidateModel(viewModel);
 
             try
             {
@@ -102,15 +117,10 @@ namespace PGRLF.MainWeb.Controllers
                 }
                 catch
                 {
-
                 }
                 return View("Sent", viewModel);
             }
-
-            else
-            {
-                return View(ViewName, viewModel);
-            }
+            return View(ViewName, viewModel);
 
         }
 

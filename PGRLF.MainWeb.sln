@@ -6,8 +6,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGRLF.MainWeb", "PGRLF.Main
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PGRLF.AzureStorageProvider", "PGRLF.AzureStorageProvider\PGRLF.AzureStorageProvider.csproj", "{65B094EA-10EC-4C14-AB54-1FDD20351380}"
 EndProject
-Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "NodejsApp1", "..\NodejsApp1.njsproj", "{042A79AC-1983-4780-A490-C245E6E04E69}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,10 +20,6 @@ Global
 		{65B094EA-10EC-4C14-AB54-1FDD20351380}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{65B094EA-10EC-4C14-AB54-1FDD20351380}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{65B094EA-10EC-4C14-AB54-1FDD20351380}.Release|Any CPU.Build.0 = Release|Any CPU
-		{042A79AC-1983-4780-A490-C245E6E04E69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{042A79AC-1983-4780-A490-C245E6E04E69}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{042A79AC-1983-4780-A490-C245E6E04E69}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{042A79AC-1983-4780-A490-C245E6E04E69}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

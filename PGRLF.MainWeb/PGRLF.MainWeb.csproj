@@ -419,6 +419,7 @@
     <Compile Include="Forms\FormClasses\PodporaZemedelec_ViewModel.cs" />
     <Compile Include="Forms\FormClasses\Templates\Adresa.cs" />
     <Compile Include="Forms\FormClasses\Templates\BankovniSpojeni.cs" />
+    <Compile Include="Forms\FormClasses\Templates\DeMinimis.cs" />
     <Compile Include="Forms\FormClasses\Templates\DruhVyroby.cs" />
     <Compile Include="Forms\FormClasses\Templates\FyzickaOsoba.cs" />
     <Compile Include="Forms\FormClasses\Templates\Kontakt.cs" />
@@ -447,6 +448,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Helpers.cs" />
+    <Compile Include="Helpers\ReCaptcha.cs" />
     <Compile Include="Models\Exchange\CertificateCallback.cs" />
     <Compile Include="Models\Exchange\Service.cs" />
     <Compile Include="Models\Exchange\TextFileTraceListener.cs" />
@@ -788,6 +790,7 @@
     <Content Include="Views\Form\EditorTemplates\SvazekObci.cshtml" />
     <Content Include="Views\Form\EditorTemplates\ObchodniRejstrik.cshtml" />
     <Content Include="Views\Form\EditorTemplates\PlanovaneUkonceni.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\DeMinimis.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,12 +1,12 @@
 ﻿@model PGRLF.MainWeb.Forms.FormClasses.Templates.PlanovaneUkonceni
 
 <h6>Plánované skončení</h6>
-<div class="row align-stretch">
-    <div class="large-4 columns">
-        @Html.LabelFor(m => m.ProdejPodniku, new {@class="left inline"})
+<div class="row data-equalizer">
+    <div class="large-4 columns data-equalizer-watch">
+        <label for="cbProdejPodniku" class="middle">Prodej podniku</label>
     </div>
-    <div class="large-2 align-bottom columns">
-        <div class="switch large ">
+    <div class="large-2 columns align-bottom data-equalizer-watch">
+        <div class="switch">
             @Html.CheckBoxFor(m => m.ProdejPodniku, new { @class = "switch-input", @id = "cbProdejPodniku" })
             <label class="switch-paddle" for="cbProdejPodniku">
                 <span class="switch-active" aria-hidden="true">Ano</span>
@@ -14,19 +14,19 @@
             </label>
         </div>
     </div>
-    <div id="divProdejPodnikuDatum" class="large-4 columns" style="display:none">
+    <div id="divProdejPodnikuDatum" class="large-4 columns align-bottom data-equalizer-watch" style="display:none">
         @Html.LabelWithAsterixFor(m => m.ProdejPodnikuDatum)
         @Html.EditorFor(m => m.ProdejPodnikuDatum)
         @Html.ValidationMessageFor(m => m.ProdejPodnikuDatum)
     </div>
 </div>
 
-<div class="row align-stretch">
-    <div class="large-4 columns">
+<div class="row data-equalizer">
+    <div class="large-4 columns data-equalizer-watch">
         @Html.LabelFor(m => m.UkonceniCinnosti)
     </div>
-    <div class="large-2 align-bottom columns">
-        <div class="switch large">
+    <div class="large-2 columns align-bottom data-equalizer-watch">
+        <div class="switch">
             @Html.CheckBoxFor(m => m.UkonceniCinnosti, new { @class = "switch-input", @id = "cbUkonceniCinnosti" })
             <label class="switch-paddle" for="cbUkonceniCinnosti">
                 <span class="switch-active" aria-hidden="true">Ano</span>
@@ -34,7 +34,7 @@
             </label>
         </div>
     </div>
-    <div id="divUkoceniCinnostiDatum" class="large-4 columns" style="display: none">
+    <div id="divUkoceniCinnostiDatum" class="large-4 columns align-bottom data-equalizer-watch" style="display: none">
         @Html.LabelWithAsterixFor(m => m.UkonceniCinnostiDatum)
         @Html.EditorFor(m => m.UkonceniCinnostiDatum)
         @Html.ValidationMessageFor(m => m.UkonceniCinnostiDatum)

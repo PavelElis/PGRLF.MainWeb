@@ -1,10 +1,28 @@
 ﻿body {
 }
 
-.switch.large .switch-paddle {
-    width: 5.5rem;
+input[type=checkbox]:checked + input + label > .switch-active {
+    display: block;
 }
 
-.switch.large .switch-paddle::after {
-    width: 2.5rem;
+input[type=checkbox]:checked + label > .switch-inactive {
+    display: none; }
+
+[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],
+textarea {
+    height: 2rem;
+    padding: 0.3rem;
+}
+
+select {
+    height: 2rem;
+    padding: 0.3rem;
+}
+
+label {
+    cursor: pointer
+}
+
+.ui-widget {
+    font-size: 0.8em;
 }

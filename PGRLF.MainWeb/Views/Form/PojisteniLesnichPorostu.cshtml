@@ -69,7 +69,7 @@
 
 
 
-<fieldset>
+<fieldset class="fieldset">
     <legend>Společná část</legend>
     @Html.EditorFor(m => m.Kontakt)
     @Html.EditorFor(m => m.BankovniSpojeni)
@@ -83,49 +83,51 @@
 
 
 
-<fieldset>
+<fieldset class="fieldset">
     <legend>Čestné prohlášení</legend>
     <div class="row">
         <div class="large-12 columns">
-            @Html.Raw(@PGRLF.MainWeb.Forms.FormResources.CestneProhlaseni)
+            <div class="callout primary">
+                @Html.Raw(@PGRLF.MainWeb.Forms.FormResources.CestneProhlaseni)
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label for="swCP1" class="left inline">Souhlasím</label>
+            <label for="cbCestneProhlaseni" class="middle">Souhlasím</label>
         </div>
         <div class="large-2 columns">
-            <div class="switch" id="swCP1">
-                @Html.RadioButtonFor(m => m.CestneProhlaseni, false, new {@id = "rbCestneProhlaseniOff"})
-                <label>Ne</label>
-                @Html.RadioButtonFor(m => m.CestneProhlaseni, true, new {@id = "rbCestneProhlaseniOn" })
-                <label>Ano</label>
-                <span></span>
+            <div class="switch large">
+                @Html.CheckBoxFor(m => m.CestneProhlaseni, new { @class = "switch-input", @id = "cbCestneProhlaseni" })
+                <label class="switch-paddle" for="cbCestneProhlaseni">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
             </div>
         </div>
     </div>
 </fieldset>
 
-<fieldset>
+<fieldset class="fieldset">
     <legend>Souhlas se zpracováním údajů</legend>
     <div class="row">
         <div class="large-12 columns">
-            <fieldset>
+            <div class="callout primary">
                 @Html.Raw(@PGRLF.MainWeb.Forms.FormResources.SouhlasSeZpracovanim)
-            </fieldset>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label for="swSouhlasSeZpracovanim" class="left inline">Souhlasím</label>
+            <label for="cbSouhlasSeZpracovanim" class="middle">Souhlasím</label>
         </div>
         <div class="large-2 columns">
-            <div class="switch" id="swSouhlasSeZpracovanim">
-                @Html.RadioButtonFor(m => m.SouhlasSeZpracovanim, false, new {@id = "rbSouhlasSeZpracovanimOff"})
-                <label>Ne</label>
-                @Html.RadioButtonFor(m => m.SouhlasSeZpracovanim, true, new {@id = "rbSouhlasSeZpracovanimOn"})
-                <label>Ano</label>
-                <span></span>
+            <div class="switch large">
+                @Html.CheckBoxFor(m => m.SouhlasSeZpracovanim, new { @class = "switch-input", @id = "cbSouhlasSeZpracovanim" })
+                <label class="switch-paddle" for="cbSouhlasSeZpracovanim">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
             </div>
         </div>
     </div>

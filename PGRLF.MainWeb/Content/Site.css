@@ -1,7 +1,4 @@
-﻿body {
-}
-
-input[type=checkbox]:checked + input + label > .switch-active {
+﻿input[type=checkbox]:checked + input + label > .switch-active {
     display: block;
 }
 
@@ -14,6 +11,12 @@ textarea {
     padding: 0.3rem;
 }
 
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+
 select {
     height: 2rem;
     padding: 0.3rem;
@@ -25,4 +28,16 @@ label {
 
 .ui-widget {
     font-size: 0.8em;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.field-validation-error {
+    font-size: 0.8rem;
+    color: #f00;
+    position: relative;
+    top: -1rem;
 }

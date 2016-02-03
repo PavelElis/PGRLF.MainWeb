@@ -128,20 +128,20 @@
 
     <h6>Místo podnikání</h6>
     <div class="row">
-        <div class="large-6 columns">
-            <label for="swPOMP" class="left inline">Je místo podnikání stejné jako "Adresa sídla společnosti"?</label>
+        <div class="large-10 columns">
+            <label for="cbPOJeMistoPodnikaniStejne" class="middle">Je místo podnikání stejné jako "Adresa sídla společnosti"?</label>
         </div>
         <div class="large-2 columns">
-            <div class="switch" id="swPOMP">
-                @Html.RadioButtonFor(m => m.POJeMistoPodnikaniStejne, false, new { @id = "rbPOMPOff" })
-                <label>Ne</label>
-                @Html.RadioButtonFor(m => m.POJeMistoPodnikaniStejne, true, new { @id = "rbPOMPOn" })
-                <label>Ano</label>
-                <span></span>
+            <div class="switch large">
+                @Html.CheckBoxFor(m => m.POJeMistoPodnikaniStejne, new { @class = "switch-input", @id = "cbPOJeMistoPodnikaniStejne" })
+                <label class="switch-paddle" for="FOJeMistoPodnikaniStejne">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
             </div>
         </div>
     </div>
     <div id="divPOMistoPodnikani" @if (Model.POJeMistoPodnikaniStejne) { @Html.Raw("style=\"display:none;\"") ; }>
-        @Html.EditorFor(m => m.MistoPodnikani);
+        @Html.EditorFor(m => m.MistoPodnikani)
     </div>
 </fieldset>

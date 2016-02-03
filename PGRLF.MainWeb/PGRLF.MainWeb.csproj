@@ -398,6 +398,11 @@
       <DependentUpon>EmailResources.resx</DependentUpon>
     </Compile>
     <Compile Include="Forms\Enums\Banky.cs" />
+    <Compile Include="Forms\Enums\DM3Spojeni.cs" />
+    <Compile Include="Forms\Enums\DM1UcetniObdobi.cs" />
+    <Compile Include="Forms\Enums\DM2Propojeni.cs" />
+    <Compile Include="Forms\Enums\DM4Rozdeleni.cs" />
+    <Compile Include="Forms\Enums\DMCentralniRegistr.cs" />
     <Compile Include="Forms\Enums\FunkceVSpolecnosti.cs" />
     <Compile Include="Forms\Enums\Pojistovny.cs" />
     <Compile Include="Forms\Enums\PravniForma.cs" />

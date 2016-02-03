@@ -67,8 +67,6 @@
     @Html.EditorFor(m => m.SvazekObci)
 </div>
 
-
-
 <fieldset class="fieldset">
     <legend>Společná část</legend>
     @Html.EditorFor(m => m.Kontakt)
@@ -80,8 +78,6 @@
         @Html.EditorFor(m => m.PlanovaneUkonceni)
     </div>
 </fieldset>
-
-
 
 <fieldset class="fieldset">
     <legend>Čestné prohlášení</legend>
@@ -107,6 +103,8 @@
         </div>
     </div>
 </fieldset>
+
+@Html.EditorFor(m => m.DeMinimis)
 
 <fieldset class="fieldset">
     <legend>Souhlas se zpracováním údajů</legend>

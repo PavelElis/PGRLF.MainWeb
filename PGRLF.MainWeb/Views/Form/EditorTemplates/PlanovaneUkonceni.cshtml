@@ -3,7 +3,7 @@
 <h6>Plánované skončení</h6>
 <div class="row">
     <div class="large-4 columns">
-        <label for="cbProdejPodniku">Prodej podniku</label>
+        @Html.LabelFor(m => m.ProdejPodniku)
         <div class="switch">
             @Html.CheckBoxFor(m => m.ProdejPodniku, new { @class = "switch-input", @id = "cbProdejPodniku" })
             <label class="switch-paddle" for="cbProdejPodniku">

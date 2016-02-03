@@ -23,6 +23,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses
             Kontakt = new Kontakt();
             BankovniSpojeni = new BankovniSpojeni();
             ObchodniRejstrik = new ObchodniRejstrik();
+            DeMinimis = new DeMinimis();
         }
 
         public PravniForma PravniForma { get; set; }
@@ -35,6 +36,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses
         public ObchodniRejstrik ObchodniRejstrik { get; set; }
         public PlanovaneUkonceni PlanovaneUkonceni { get; set; }
 
+        public DeMinimis DeMinimis { get; set; }
         
         [MustBeTrue(ErrorMessage = "Musí být zaškrtnuto")]
         public bool CestneProhlaseni { get; set; }

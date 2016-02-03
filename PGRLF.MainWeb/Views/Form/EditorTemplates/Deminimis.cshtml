@@ -1,7 +1,11 @@
-﻿@model PGRLF.MainWeb.Forms.FormClasses.Templates.DeMinimis
+﻿@using PGRLF.MainWeb.Forms.Enums
 
-<fieldset>
-    <legend>Čestné prohlášení "de minimis"</legend>
+@model PGRLF.MainWeb.Forms.FormClasses.Templates.DeMinimis
+
+<fieldset class="fieldset">
+    <legend>Čestné prohlášení <i>de minimis</i></legend>
+
+    <!--část 1-->
     <div class="row">
         <div class="large-6 columns">
             @Html.LabelWithAsterixFor(m => m.DMJmeno)
@@ -24,54 +28,55 @@
 
     <div class="row">
         <div class="large-12 columns">
-            <h6>1) Žadatel prohlašuje, že jako účetní období používá</h6>
+            <p>1) Žadatel prohlašuje, že jako účetní období používá</p>
         </div>
     </div>
     <div class="row">
-        <div class="large-4 columns end">
-            @Html.LabelWithAsterixFor(m => m.DM1KalendarniRok)
-            <div class="switch" id="swDM1KalendarniRok">
-                @Html.RadioButtonFor(m => m.DM1KalendarniRok, false, new { @id = "rbDM1KalendarniRokOff" })
-                <label>Ne</label>
-                @Html.RadioButtonFor(m => m.DM1KalendarniRok, true, new { @id = "rbDM1KalendarniRokOn" })
-                <label>Ano</label>
-                <span></span>
+        <div class="large-4 columns">
+            <label for="rbDM1UcetniObdobiKR">Kalendářní rok</label>
+            <div class="switch">
+                @Html.RadioButtonFor(m => m.DM1UcetniObdobi, DM1UcetniObdobi.KalendarniRok, new { @class = "switch-input", @id = "rbDM1UcetniObdobiKR" })
+                <label class="switch-paddle" for="rbDM1UcetniObdobiKR">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="large-4 columns">
-            @Html.LabelWithAsterixFor(m => m.DM1HospodarskyRok)
-            <div class="switch" id="swDM1HospodarskyRok">
-                @Html.RadioButtonFor(m => m.DM1HospodarskyRok, false, new { @id = "rbDM1HospodarskyRokOff" })
-                <label>Ne</label>
-                @Html.RadioButtonFor(m => m.DM1HospodarskyRok, true, new { @id = "rbDM1HospodarskyRokOn" })
-                <label>Ano</label>
-                <span></span>
+            <label for="rbDM1UcetniObdobiHR">Hospodářský rok</label>
+            <div class="switch">
+                @Html.RadioButtonFor(m => m.DM1UcetniObdobi, DM1UcetniObdobi.HospodarskyRok, new { @class = "switch-input", @id = "rbDM1UcetniObdobiHR" })
+                <label class="switch-paddle" for="rbDM1UcetniObdobiHR">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
             </div>
         </div>
-        <div class="large-4 columns">
+        <div class="large-4 columns" id="divDM1UcetniObdobi">
             @Html.LabelWithAsterixFor(m => m.DM1HRZacatek)
             @Html.EditorFor(m => m.DM1HRZacatek)
             @Html.ValidationMessageFor(m => m.DM1HRZacatek)
         </div>
-        <div class="large-4 columns">
+        <div class="large-4 columns" id="divDM1UcetniObdobi">
             @Html.LabelWithAsterixFor(m => m.DM1HRKonec)
             @Html.EditorFor(m => m.DM1HRKonec)
             @Html.ValidationMessageFor(m => m.DM1HRKonec)
         </div>
     </div>
 
+    <!--část 2-->
     <div class="row">
         <div class="large-12 columns">
-            <h6>2) Podniky propojené s žadatelem o podporu</h6>
+            <p>2) Podniky propojené s žadatelem o podporu</p>
         </div>
     </div>
     <div class="row">
         <div class="large-12 columns">
-            <fieldset>
+            <div class="callout secondary">
                 @Html.Raw(@PGRLF.MainWeb.Forms.FormResources.DeMinimis2)
-            </fieldset>
+            </div>
         </div>
     </div>
     <div class="row">
@@ -82,90 +87,94 @@
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label for="swDM2NeniPropojen" class="left inline">není ve výše uvedeném smyslu propojen s jiným podnikem</label>
+            <label for="rbDM2NeniPropojen" class="middle">není ve výše uvedeném smyslu propojen s jiným podnikem</label>
         </div>
         <div class="large-2 columns">
-            <div class="switch" id="swDM2NeniPropojen">
-                @Html.RadioButtonFor(m => m.DM2NeniPropojen, false, new { @id = "rbDM2NeniPropojenOff" })
-                <label>Ne</label>
-                @Html.RadioButtonFor(m => m.DM2NeniPropojen, true, new { @id = "rbDM2NeniPropojenOn" })
-                <label>Ano</label>
-                <span></span>
+            <div class="switch large">
+                @Html.RadioButtonFor(m => m.DM2Propojeni, DM2Propojeni.NeniPropojen ,new { @class = "switch-input", @id = "rbDM2NeniPropojen" })
+                <label class="switch-paddle" for="rbDM2NeniPropojen">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label for="swDM2JePropojen" class="left inline">je ve výše uvedeném smyslu propojen s následujícími podniky</label>
+            <label for="rbDM2JePropojen" class="middle">je ve výše uvedeném smyslu propojen s následujícími podniky</label>
         </div>
         <div class="large-2 columns">
-            <div class="switch" id="DM2JePropojen">
-                @Html.RadioButtonFor(m => m.DM2JePropojen, false, new { @id = "rbDM2JePropojenOff" })
-                <label>Ne</label>
-                @Html.RadioButtonFor(m => m.DM2JePropojen, true, new { @id = "rbDM2JePropojenOn" })
-                <label>Ano</label>
-                <span></span>
+            <div class="switch large">
+                @Html.RadioButtonFor(m => m.DM2Propojeni, DM2Propojeni.JePropojen, new { @class = "switch-input", @id = "rbDM2JePropojen" })
+                <label class="switch-paddle" for="rbDM2JePropojen">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DM2Jmeno1)
-            @Html.EditorFor(m => m.DM2Jmeno1)
-            @Html.ValidationMessageFor(m => m.DM2Jmeno1)
+
+    <div id="divDM2JePropojen">
+        <div class="row">
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.DM2Jmeno1)
+                @Html.EditorFor(m => m.DM2Jmeno1)
+                @Html.ValidationMessageFor(m => m.DM2Jmeno1)
+            </div>
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.DM2IC1)
+                @Html.EditorFor(m => m.DM2IC1)
+                @Html.ValidationMessageFor(m => m.DM2IC1)
+            </div>
         </div>
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DM2IC1)
-            @Html.EditorFor(m => m.DM2IC1)
-            @Html.ValidationMessageFor(m => m.DM2IC1)
+        <div class="row">
+            <div class="large-12 columns">
+                @Html.LabelWithAsterixFor(m => m.DM2Adresa1)
+                @Html.EditorFor(m => m.DM2Adresa1)
+                @Html.ValidationMessageFor(m => m.DM2Adresa1)
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
-            @Html.LabelWithAsterixFor(m => m.DM2Adresa1)
-            @Html.EditorFor(m => m.DM2Adresa1)
-            @Html.ValidationMessageFor(m => m.DM2Adresa1)
+        <div class="row">
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.DM2Jmeno2)
+                @Html.EditorFor(m => m.DM2Jmeno2)
+                @Html.ValidationMessageFor(m => m.DM2Jmeno2)
+            </div>
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.DM2IC2)
+                @Html.EditorFor(m => m.DM2IC2)
+                @Html.ValidationMessageFor(m => m.DM2IC2)
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DM2Jmeno2)
-            @Html.EditorFor(m => m.DM2Jmeno2)
-            @Html.ValidationMessageFor(m => m.DM2Jmeno2)
+        <div class="row">
+            <div class="large-12 columns">
+                @Html.LabelWithAsterixFor(m => m.DM2Adresa2)
+                @Html.EditorFor(m => m.DM2Adresa2)
+                @Html.ValidationMessageFor(m => m.DM2Adresa2)
+            </div>
         </div>
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DM2IC2)
-            @Html.EditorFor(m => m.DM2IC2)
-            @Html.ValidationMessageFor(m => m.DM2IC2)
+        <div class="row">
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.DM2Jmeno3)
+                @Html.EditorFor(m => m.DM2Jmeno3)
+                @Html.ValidationMessageFor(m => m.DM2Jmeno3)
+            </div>
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.DM2IC3)
+                @Html.EditorFor(m => m.DM2IC3)
+                @Html.ValidationMessageFor(m => m.DM2IC3)
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
-            @Html.LabelWithAsterixFor(m => m.DM2Adresa2)
-            @Html.EditorFor(m => m.DM2Adresa2)
-            @Html.ValidationMessageFor(m => m.DM2Adresa2)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DM2Jmeno3)
-            @Html.EditorFor(m => m.DM2Jmeno3)
-            @Html.ValidationMessageFor(m => m.DM2Jmeno3)
-        </div>
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DM2IC3)
-            @Html.EditorFor(m => m.DM2IC3)
-            @Html.ValidationMessageFor(m => m.DM2IC3)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
-            @Html.LabelWithAsterixFor(m => m.DM2Adresa3)
-            @Html.EditorFor(m => m.DM2Adresa3)
-            @Html.ValidationMessageFor(m => m.DM2Adresa3)
+        <div class="row">
+            <div class="large-12 columns">
+                @Html.LabelWithAsterixFor(m => m.DM2Adresa3)
+                @Html.EditorFor(m => m.DM2Adresa3)
+                @Html.ValidationMessageFor(m => m.DM2Adresa3)
+            </div>
         </div>
     </div>
 
+    <!--část 3-->
     <div class="row">
         <div class="large-12 columns">
             <h6>3) Žadatel prohlašuje, že podnik (žadatel) v současném a 2 předcházejících účetních obdobích</h6>
@@ -173,29 +182,43 @@
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label for="swDM3NevzniklSpojenim" class="left inline">nevznikl spojením podniků či nabytím podniku</label>
+            <label for="rbDM3NevzniklSpojenim" class="middle">nevznikl spojením podniků či nabytím podniku</label>
         </div>
         <div class="large-2 columns">
-            <div class="switch" id="swDM3NevzniklSpojenim">
-                @Html.RadioButtonFor(m => m.DM3NevzniklSpojenim, false, new { @id = "rbDM3NevzniklSpojenimOff" })
-                <label>Ne</label>
-                @Html.RadioButtonFor(m => m.DM3NevzniklSpojenim, true, new { @id = "rbDM3NevzniklSpojenimOn" })
-                <label>Ano</label>
-                <span></span>
+            <div class="switch large">
+                @Html.RadioButtonFor(m => m.DM3Spojeni, DM3Spojeni.NevzniklSpojenim, new { @class = "switch-input", @id = "rbDM3NevzniklSpojenim" })
+                <label class="switch-paddle" for="rbDM3NevzniklSpojenim">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label for="swDM3VzniklSpojenim" class="left inline">vznikl spojením (fúzí splynutím *) níže uvedených podniků:</label>
+            <label for="rbDM3VzniklSpojenim" class="middle">vznikl spojením (fúzí splynutím *) níže uvedených podniků:</label>
         </div>
         <div class="large-2 columns">
-            <div class="switch" id="swDM3VzniklSpojenim">
-                @Html.RadioButtonFor(m => m.DM3VzniklSpojenim, false, new { @id = "rbDM3VzniklSpojenimOff" })
-                <label>Ne</label>
-                @Html.RadioButtonFor(m => m.DM3VzniklSpojenim, true, new { @id = "rbDM3VzniklSpojenimOn" })
-                <label>Ano</label>
-                <span></span>
+            <div class="switch large">
+                @Html.RadioButtonFor(m => m.DM3Spojeni, DM3Spojeni.VzniklSpojenim, new { @class = "switch-input", @id = "rbDM3VzniklSpojenim" })
+                <label class="switch-paddle" for="rbDM3VzniklSpojenim">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-10 columns">
+            <label for="rbDM3Prevzal" class="middle">nabytím (fúzí sloučením **) převzal jmění níže uvedeného/ých podniku/ů:</label>
+        </div>
+        <div class="large-2 columns">
+            <div class="switch large">
+                @Html.RadioButtonFor(m => m.DM3Spojeni, DM3Spojeni.Prevzal, new { @class = "switch-input", @id = "rbDM3Prevzal" })
+                <label class="switch-paddle" for="rbDM3Prevzal">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
             </div>
         </div>
     </div>
@@ -264,33 +287,34 @@
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label for="swDM3JeCentralniRegistr" class="left inline">nevznikl spojením podniků či nabytím podniku</label>
+            <label for="rbDM3CRNeniZohledneno" class="middle">nejsou zohledněny v Centrálním registru podpor malého rozsahu.</label>
         </div>
         <div class="large-2 columns">
-            <div class="switch" id="swDM3JeCentralniRegistr">
-                @Html.RadioButtonFor(m => m.DM3JeCentralniRegistr, false, new { @id = "rbDM3JeCentralniRegistrOff" })
-                <label>Ne</label>
-                @Html.RadioButtonFor(m => m.DM3JeCentralniRegistr, true, new { @id = "rbDM3JeCentralniRegistrOn" })
-                <label>Ano</label>
-                <span></span>
+            <div class="switch large">
+                @Html.RadioButtonFor(m => m.DM3CentralniRegistr, DMCentralniRegistr.NeniZohledneno, new { @class = "switch-input", @id = "rbDM3CRNeniZohledneno" })
+                <label class="switch-paddle" for="rbDM3CRNeniZohledneno">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label for="swDM3NeniCentralniRegistr" class="left inline">vznikl spojením (fúzí splynutím *) níže uvedených podniků:</label>
+            <label for="rbDM3CRJeZohledneno" class="middle">jsou již zohledněny v Centrálním registru podpor malého rozsahu.</label>
         </div>
         <div class="large-2 columns">
-            <div class="switch" id="swDM3NeniCentralniRegistr">
-                @Html.RadioButtonFor(m => m.DM3NeniCentralniRegistr, false, new { @id = "rbDM3NeniCentralniRegistrOff" })
-                <label>Ne</label>
-                @Html.RadioButtonFor(m => m.DM3NeniCentralniRegistr, true, new { @id = "rbDM3NeniCentralniRegistrOn" })
-                <label>Ano</label>
-                <span></span>
+            <div class="switch large">
+                @Html.RadioButtonFor(m => m.DM3CentralniRegistr, DMCentralniRegistr.JeZohledneno, new { @class = "switch-input", @id = "rbDM3CRJeZohledneno" })
+                <label class="switch-paddle" for="rbDM3CRJeZohledneno">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
             </div>
         </div>
     </div>
 
+    <!--část 4-->
     <div class="row">
         <div class="large-12 columns">
             <h6>4) Žadatel prohlašuje, že podnik (žadatel) v současném a 2 předcházejících účetních obdobích</h6>
@@ -298,29 +322,29 @@
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label for="swDM4NevzniklRozdelenim" class="left inline">nevznikl rozdělením (rozštěpením nebo odštěpením ***) podniku</label>
+            <label for="rbDM4NevniklRozdelenim" class="middle">nevznikl rozdělením (rozštěpením nebo odštěpením ***) podniku. </label>
         </div>
         <div class="large-2 columns">
-            <div class="switch" id="swDM4NevzniklRozdelenim">
-                @Html.RadioButtonFor(m => m.DM4NevzniklRozdelenim, false, new { @id = "rbDM4NevzniklRozdelenimOff" })
-                <label>Ne</label>
-                @Html.RadioButtonFor(m => m.DM4NevzniklRozdelenim, true, new { @id = "rbDM4NevzniklRozdelenimOn" })
-                <label>Ano</label>
-                <span></span>
+            <div class="switch large">
+                @Html.RadioButtonFor(m => m.DM4Rozdeleni, DM4Rozdeleni.NevniklRozdelenim, new { @class = "switch-input", @id = "rbDM4NevniklRozdelenim" })
+                <label class="switch-paddle" for="rbDM4NevniklRozdelenim">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label for="swDM4VzniklRozelenim" class="left inline">vznikl rozdělením níže uvedeného podniku</label>
+            <label for="rbDM4VniklRozdelenim" class="middle">vznikl rozdělením níže uvedeného podniku</label>
         </div>
         <div class="large-2 columns">
-            <div class="switch" id="swDM4VzniklRozelenim">
-                @Html.RadioButtonFor(m => m.DM4VzniklRozelenim, false, new { @id = "rbDM4VzniklRozelenimOff" })
-                <label>Ne</label>
-                @Html.RadioButtonFor(m => m.DM4VzniklRozelenim, true, new { @id = "rbDM4VzniklRozelenimOn" })
-                <label>Ano</label>
-                <span></span>
+            <div class="switch large">
+                @Html.RadioButtonFor(m => m.DM4Rozdeleni, DM4Rozdeleni.VzniklRozdelenim, new { @class = "switch-input", @id = "rbDM4VniklRozdelenim" })
+                <label class="switch-paddle" for="rbDM4VniklRozdelenim">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
             </div>
         </div>
     </div>
@@ -408,33 +432,34 @@
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label for="swDM4JeCentralniRegistr" class="left inline">vznikl rozdělením níže uvedeného podniku</label>
+            <label for="rbDM4CRNeniZohledneno" class="middle">nejsou zohledněny v Centrálním registru podpor malého rozsahu.</label>
         </div>
         <div class="large-2 columns">
-            <div class="switch" id="sw">
-                @Html.RadioButtonFor(m => m.DM4JeCentralniRegistr, false, new { @id = "rbDM4JeCentralniRegistr" })
-                <label>Ne</label>
-                @Html.RadioButtonFor(m => m.DM4JeCentralniRegistr, true, new { @id = "rb" })
-                <label>Ano</label>
-                <span></span>
+            <div class="switch large">
+                @Html.RadioButtonFor(m => m.DM4CentralniRegistr, DMCentralniRegistr.NeniZohledneno, new { @class = "switch-input", @id = "rbDM4CRNeniZohledneno" })
+                <label class="switch-paddle" for="rbDM4CRNeniZohledneno">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label for="swDM4NeniCentralniRegistr" class="left inline">vznikl rozdělením níže uvedeného podniku</label>
+            <label for="rbDM4CRJeZohledneno" class="middle">jsou již zohledněny v Centrálním registru podpor malého rozsahu.</label>
         </div>
         <div class="large-2 columns">
-            <div class="switch" id="swDM4NeniCentralniRegistr">
-                @Html.RadioButtonFor(m => m.DM4NeniCentralniRegistr, false, new { @id = "rbDM4NeniCentralniRegistr" })
-                <label>Ne</label>
-                @Html.RadioButtonFor(m => m.DM4NeniCentralniRegistr, true, new { @id = "rb" })
-                <label>Ano</label>
-                <span></span>
+            <div class="switch large">
+                @Html.RadioButtonFor(m => m.DM4CentralniRegistr, DMCentralniRegistr.JeZohledneno, new { @class = "switch-input", @id = "rbDM4CRJeZohledneno" })
+                <label class="switch-paddle" for="rbDM4CRJeZohledneno">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
             </div>
         </div>
     </div>
 
+    <!--část 5-->
     <div class="row">
         <div class="large-12 columns">
             <h6>5) Žadatel níže svým podpisem</h6>
@@ -442,22 +467,22 @@
     </div>
     <div class="row">
         <div class="large-12 columns">
-            <fieldset>
+            <div class="callout secondary">
                 @Html.Raw(@PGRLF.MainWeb.Forms.FormResources.DeMinimis5)
-            </fieldset>
+            </div>
         </div>
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label for="swDMCestneProhlaseni" class="left inline">Souhlasím</label>
+            <label for="cbDMCestneProhlaseni">Souhlasím</label>
         </div>
         <div class="large-2 columns">
-            <div class="switch" id="swDMCestneProhlaseni">
-                @Html.RadioButtonFor(m => m.DMCestneProhlaseni, false, new { @id = "rbDMCestneProhlaseni" })
-                <label>Ne</label>
-                @Html.RadioButtonFor(m => m.DMCestneProhlaseni, true, new { @id = "rbDMCestneProhlaseni" })
-                <label>Ano</label>
-                <span></span>
+            <div class="switch large">
+                @Html.CheckBoxFor(m => m.DMCestneProhlaseni, new { @class = "switch-input", @id = "cbDMCestneProhlaseni" })
+                <label class="switch-paddle" for="cbDMCestneProhlaseni">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
             </div>
         </div>
     </div>

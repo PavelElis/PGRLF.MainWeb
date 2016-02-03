@@ -1,4 +1,5 @@
-﻿using PGRLF.MainWeb.Forms.Validation;
+﻿using PGRLF.MainWeb.Forms.Enums;
+using PGRLF.MainWeb.Forms.Validation;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -9,6 +10,15 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
 {
     public class DeMinimis
     {
+        public DeMinimis()
+        {
+            DM1UcetniObdobi = DM1UcetniObdobi.KalendarniRok;
+            DM2Propojeni = DM2Propojeni.NeniPropojen;
+            DM3Spojeni = DM3Spojeni.NevzniklSpojenim;
+            DM3CentralniRegistr = DMCentralniRegistr.NeniZohledneno;
+            DM4Rozdeleni = DM4Rozdeleni.NevniklRozdelenim;
+            DM4CentralniRegistr = DMCentralniRegistr.NeniZohledneno;
+        }
 
         [Required(ErrorMessage = "Musí být vyplněno")]
         public string DMJmeno { get; set; }
@@ -18,13 +28,12 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
         public string DMIC { get; set; }
 
         #region DM1
-        [MustBeTrueIfFieldHasValue("DM1HospodarskyRok", false, ErrorMessage = "Musí být zvoleno")]
-        public bool DM1KalendarniRok { get; set; }
-        [MustBeTrueIfFieldHasValue("DM1KalendarniRok", false, ErrorMessage = "Musí být zvoleno")]
-        public bool DM1HospodarskyRok { get; set; }
+        public DM1UcetniObdobi DM1UcetniObdobi { get; set; }
+
         [Required(ErrorMessage = "Musí být vyplněno")]
         [DataType(DataType.Date, ErrorMessage = "Chybný datum")]
         public DateTime? DM1HRZacatek { get; set; }
+
         [DataType(DataType.Date, ErrorMessage = "Chybný datum")]
         [Required(ErrorMessage = "Musí být vyplněno")]
         public DateTime? DM1HRKonec { get; set; }
@@ -32,17 +41,13 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
         #endregion
 
         #region DM2
+        public DM2Propojeni DM2Propojeni { get; set; }
 
-        [MustBeTrueIfFieldHasValue("DM2NeniPropojen", false, ErrorMessage = "Musí být zvoleno")]
-        public bool DM2NeniPropojen { get; set; }
-        [MustBeTrueIfFieldHasValue("DM2JePropojen", false, ErrorMessage = "Musí být zvoleno")]
-        public bool DM2JePropojen { get; set; }
-
-        [RequiredIfFieldHasValue("DM2JePropojen", true, ErrorMessage = "Musí být vyplněno")]
+        [RequiredIfFieldHasValue("DM2Propojeni", DM2Propojeni.JePropojen, ErrorMessage = "Musí být vyplněno")]
         public string DM2Jmeno1 { get; set; }
-        [RequiredIfFieldHasValue("DM2JePropojen", true, ErrorMessage = "Musí být vyplněno")]
+        [RequiredIfFieldHasValue("DM2Propojeni", DM2Propojeni.JePropojen, ErrorMessage = "Musí být vyplněno")]
         public string DM2Adresa1 { get; set; }
-        [RequiredIfFieldHasValue("DM2JePropojen", true, ErrorMessage = "Musí být vyplněno")]
+        [RequiredIfFieldHasValue("DM2Propojeni", DM2Propojeni.JePropojen, ErrorMessage = "Musí být vyplněno")]
         public string DM2IC1 { get; set; }
 
         public string DM2Jmeno2 { get; set; }
@@ -57,11 +62,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
 
         #region DM3
 
-        [MustBeTrueIfFieldHasValue("DM3VzniklSpojenim", false, ErrorMessage = "Musí být zvoleno")]
-        public bool DM3NevzniklSpojenim { get; set; }
-        [MustBeTrueIfFieldHasValue("DM3NevzniklSpojenim", false, ErrorMessage = "Musí být zvoleno")]
-        public bool DM3VzniklSpojenim { get; set; }
-        //public bool DM3PrevzalJmeni { get; set; }
+        public DM3Spojeni DM3Spojeni { get; set; }
 
         [RequiredIfFieldHasValue("DM3VzniklSpojenim", true, ErrorMessage = "Musí být vyplněno")]
         public string DM3Jmeno1 { get; set; }
@@ -78,19 +79,13 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
         public string DM3Adresa3 { get; set; }
         public string DM3IC3 { get; set; }
 
-        [MustBeTrueIfFieldHasValue("DM3NeniCentralniRegistr", false, ErrorMessage = "Musí být zvoleno")]
-        public bool DM3JeCentralniRegistr { get; set; }
-        [MustBeTrueIfFieldHasValue("DM3JeCentralniRegistr", false, ErrorMessage = "Musí být zvoleno")]
-        public bool DM3NeniCentralniRegistr { get; set; }
+        public DMCentralniRegistr DM3CentralniRegistr { get; set; }
 
         #endregion
 
         #region DM4
 
-        [MustBeTrueIfFieldHasValue("DM4VzniklRozelenim", false, ErrorMessage = "Musí být zvoleno")]
-        public bool DM4NevzniklRozdelenim { get; set; }
-        [MustBeTrueIfFieldHasValue("DM4NevzniklRozdelenim", false, ErrorMessage = "Musí být zvoleno")]
-        public bool DM4VzniklRozelenim { get; set; }
+        public DM4Rozdeleni DM4Rozdeleni { get; set; }
 
         [RequiredIfFieldHasValue("DM4VzniklRozelenim", true, ErrorMessage = "Musí být vyplněno")]
         public string DM41Jmeno { get; set; }
@@ -114,14 +109,10 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
         public string DM42Poskytovatel3 { get; set; }
         public string DM42Castka3 { get; set; }
 
-        [MustBeTrueIfFieldHasValue("DM4NeniCentralniRegistr", false, ErrorMessage = "Musí být zvoleno")]
-        public bool DM4JeCentralniRegistr { get; set; }
-        [MustBeTrueIfFieldHasValue("DM4JeCentralniRegistr", false, ErrorMessage = "Musí být zvoleno")]
-        public bool DM4NeniCentralniRegistr { get; set; }
+        public DMCentralniRegistr DM4CentralniRegistr { get; set; }
 
         #endregion
 
-        [MustBeTrue(ErrorMessage = "Musí být zaškrtnuto")]
         public bool DMCestneProhlaseni { get; set; }
 
     }

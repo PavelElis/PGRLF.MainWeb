@@ -408,20 +408,8 @@
     <Compile Include="Forms\Enums\PravniForma.cs" />
     <Compile Include="Forms\Enums\TypySpolecnosti.cs" />
     <Compile Include="Forms\Enums\Kraje.cs" />
-    <Compile Include="Forms\FormClasses\11.UveryPuda_ViewModel.cs" />
-    <Compile Include="Forms\FormClasses\12.SnizeniJistiny_ViewModel.cs" />
-    <Compile Include="Forms\FormClasses\13.ZajisteniUveru_ViewModel.cs" />
-    <Compile Include="Forms\FormClasses\10.Socialni_ViewModel.cs" />
     <Compile Include="Forms\FormClasses\PojisteniLesnichPorostu.cs" />
-    <Compile Include="Forms\FormClasses\08.Zpracovatel_ViewModel.cs" />
-    <Compile Include="Forms\FormClasses\07.Skolky_ViewModel.cs" />
-    <Compile Include="Forms\FormClasses\06.Drevozpracujuci_ViewModel.cs" />
     <Compile Include="Forms\FormClasses\05.TechnikaLesy_ViewModel.cs" />
-    <Compile Include="Forms\FormClasses\04.Puda_ViewModel.cs" />
-    <Compile Include="Forms\FormClasses\03.ProdukceSkolek_ViewModel.cs" />
-    <Compile Include="Forms\FormClasses\02.Pojisteni_ViewModel.cs" />
-    <Compile Include="Forms\FormClasses\01.Zemedelec_ViewModel.cs" />
-    <Compile Include="Forms\FormClasses\PodporaZemedelec_ViewModel.cs" />
     <Compile Include="Forms\FormClasses\Templates\Adresa.cs" />
     <Compile Include="Forms\FormClasses\Templates\BankovniSpojeni.cs" />
     <Compile Include="Forms\FormClasses\Templates\DeMinimis.cs" />
@@ -434,7 +422,7 @@
     <Compile Include="Forms\FormClasses\Templates\PravnickaOsoba.cs" />
     <Compile Include="Forms\FormClasses\Templates\PredmetPodnikani.cs" />
     <Compile Include="Forms\FormClasses\Templates\SvazekObci.cs" />
-    <Compile Include="Forms\FormClasses\ZoPPPGRLF_ViewModel.cs" />
+    <Compile Include="Forms\FormClasses\Templates\ZodpovednaOsoba.cs" />
     <Compile Include="Forms\FormControllerFactory.cs" />
     <Compile Include="Forms\FormResources.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -445,15 +433,12 @@
     <Compile Include="Forms\IForm.cs" />
     <Compile Include="Forms\PDFForm.cs" />
     <Compile Include="Forms\Validation\LabelExtensions.cs" />
-    <Compile Include="Forms\Validation\MustBeTrueAttribute.cs" />
-    <Compile Include="Forms\Validation\MustBeTrueIfFieldHasValueAttribute.cs" />
-    <Compile Include="Forms\Validation\RequiredIfFieldHasValueAttribute.cs" />
-    <Compile Include="Forms\Validation\RequiredIfFieldsHaveValueAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Helpers\ReCaptcha.cs" />
+    <Compile Include="Forms\Validation\MustBeTrue.cs" />
     <Compile Include="Models\Exchange\CertificateCallback.cs" />
     <Compile Include="Models\Exchange\Service.cs" />
     <Compile Include="Models\Exchange\TextFileTraceListener.cs" />
@@ -665,6 +650,8 @@
     <Content Include="Content\foundation\app.css" />
     <Content Include="Content\foundation\foundation-flex.css" />
     <Content Include="Content\foundation\foundation.css" />
+    <Content Include="Content\foundation\foundation-icons.css" />
+    <Content Include="Content\foundation\foundation-icons.svg" />
     <Content Include="Content\images\ok.png" />
     <Content Include="Content\images\pgrlf.png" />
     <Content Include="Content\images\ui-bg_glass_45_0078ae_1x400.png" />
@@ -690,6 +677,9 @@
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
     <Content Include="Content\SiteBackup.css" />
+    <Content Include="Content\foundation\foundation-icons.eot" />
+    <Content Include="Content\foundation\foundation-icons.ttf" />
+    <Content Include="Content\foundation\foundation-icons.woff" />
     <None Include="Resources\CestneProhlaseni.txt" />
     <None Include="Resources\DeMinimis2.txt" />
     <None Include="Resources\DeMinimis5.txt" />
@@ -764,7 +754,6 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Setup\Index.cshtml" />
-    <Content Include="Views\Form\ZoPPPGRLF.cshtml" />
     <Content Include="Views\Setup\FormList.cshtml" />
     <Content Include="Views\Shared\_LayoutForm.cshtml" />
     <Content Include="Views\Form\Sent.cshtml" />
@@ -776,14 +765,9 @@
     <Content Include="Views\Shared\EditorTemplates\TypSpolecnosti.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Pojistovna.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Banka.cshtml" />
-    <Content Include="Views\Form\PodporaZemedelec.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Enum.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Textarea.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Year.cshtml" />
-    <Content Include="Views\Form\Zemedelec.cshtml" />
-    <Content Include="Views\Form\UveryPuda.cshtml" />
-    <Content Include="Views\Form\ProdukceSkolek.cshtml" />
-    <Content Include="Views\Form\Puda.cshtml" />
     <Content Include="Views\Form\TechnikaLesy.cshtml" />
     <Content Include="Views\Form\EditorTemplates\FyzickaOsoba.cshtml" />
     <Content Include="AppSettings.config" />
@@ -796,10 +780,10 @@
     <Content Include="Views\Form\EditorTemplates\ObchodniRejstrik.cshtml" />
     <Content Include="Views\Form\EditorTemplates\PlanovaneUkonceni.cshtml" />
     <Content Include="Views\Form\EditorTemplates\DeMinimis.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\ZodpovednaOsoba.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Helpers\Validation\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

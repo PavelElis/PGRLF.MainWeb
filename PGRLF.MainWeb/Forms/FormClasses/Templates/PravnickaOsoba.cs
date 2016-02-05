@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using iTextSharp.text;
 
 namespace PGRLF.MainWeb.Forms.FormClasses.Templates
 {
@@ -8,6 +10,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
         {
             SidloSpolecnosti = new Adresa();
             MistoPodnikani = new Adresa();
+            ZodpovednaOsoba = new List<ZodpovednaOsoba>() { new ZodpovednaOsoba()};
         }
 
         //Obecné údaje
@@ -39,56 +42,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
         [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_ZakladniKapital")]
         public int? ZakladniKapital { get; set; }
 
-        [Display(ResourceType = typeof(FormResources), Name = "TitulPredJmenem")]
-        public string ZO1TitulPredJmenem { get; set; }
-
-        [Display(ResourceType = typeof(FormResources), Name = "KrestniJmeno")]
-        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Jmeno")]
-        public string ZO1Jmeno { get; set; }
-
-        [Display(ResourceType = typeof(FormResources), Name = "Prijmeni")]
-        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Prijmeni")]
-        public string ZO1Prijmeni { get; set; }
-
-        [Display(ResourceType = typeof(FormResources), Name = "TitulZaJmenem")]
-        public string ZO1TitulZaJmenem { get; set; }
-
-        [Display(ResourceType = typeof(FormResources), Name = "Funkce")]
-        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Funkce")]
-        [DataType("FunkceVSpolecnosti")]
-        public string ZO1Funkce { get; set; }
-
-        [Display(ResourceType = typeof(FormResources), Name = "TitulPredJmenem")]
-        public string ZO2TitulPredJmenem { get; set; }
-
-        [Display(ResourceType = typeof(FormResources), Name = "KrestniJmeno")]
-        public string ZO2Jmeno { get; set; }
-
-        [Display(ResourceType = typeof(FormResources), Name = "Prijmeni")]
-        public string ZO2Prijmeni { get; set; }
-
-        [Display(ResourceType = typeof(FormResources), Name = "TitulZaJmenem")]
-        public string ZO2TitulZaJmenem { get; set; }
-
-        [Display(ResourceType = typeof(FormResources), Name = "Funkce")]
-        [DataType("FunkceVSpolecnosti")]
-        public string ZO2Funkce { get; set; }
-
-        [Display(ResourceType = typeof(FormResources), Name = "TitulPredJmenem")]
-        public string ZO3TitulPredJmenem { get; set; }
-
-        [Display(ResourceType = typeof(FormResources), Name = "KrestniJmeno")]
-        public string ZO3Jmeno { get; set; }
-
-        [Display(ResourceType = typeof(FormResources), Name = "Prijmeni")]
-        public string ZO3Prijmeni { get; set; }
-
-        [Display(ResourceType = typeof(FormResources), Name = "TitulZaJmenem")]
-        public string ZO3TitulZaJmenem { get; set; }
-
-        [Display(ResourceType = typeof(FormResources), Name = "Funkce")]
-        [DataType("FunkceVSpolecnosti")]
-        public string ZO3Funkce { get; set; }
+        public List<ZodpovednaOsoba> ZodpovednaOsoba { get; set; }
 
         public Adresa SidloSpolecnosti { get; set; }
 

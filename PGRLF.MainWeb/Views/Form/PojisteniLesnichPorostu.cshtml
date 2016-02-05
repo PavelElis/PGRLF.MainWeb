@@ -1,4 +1,5 @@
-﻿@using PGRLF.MainWeb.Forms.Enums
+﻿@using System.Web.UI.WebControls
+@using PGRLF.MainWeb.Forms.Enums
 @model PGRLF.MainWeb.Forms.FormClasses.PojisteniLesnichPorostu
 
 @{
@@ -20,7 +21,7 @@
         <div class="large-2 columns">
             <div class="switch large">
                 @Html.RadioButtonFor(m => m.PravniForma, PravniForma.FyzickaOsoba, new { @class = "switch-input", @id = "rbFyzickaOsoba" })
-                <label class="switch-paddle" for="rbFyzickaOsoba">
+                <label class="switch-paddle">
                     <span class="switch-active" aria-hidden="true">Ano</span>
                     <span class="switch-inactive" aria-hidden="true">Ne</span>
                 </label>
@@ -34,7 +35,7 @@
         <div class="large-2 columns">
             <div class="switch large">
                 @Html.RadioButtonFor(m => m.PravniForma, PravniForma.PravnickaOsoba, new { @class = "switch-input", @id = "rbPravnickaOsoba" })
-                <label class="switch-paddle" for="rbPravnickaOsoba">
+                <label class="switch-paddle">
                     <span class="switch-active" aria-hidden="true">Ano</span>
                     <span class="switch-inactive" aria-hidden="true">Ne</span>
                 </label>
@@ -48,7 +49,7 @@
         <div class="large-2 columns">
             <div class="switch large">
                 @Html.RadioButtonFor(m => m.PravniForma, PravniForma.SvazekObci, new { @class = "switch-input", @id = "rbSvazekObci" })
-                <label class="switch-paddle" for="rbSvazekObci">
+                <label class="switch-paddle">
                     <span class="switch-active" aria-hidden="true">Ano</span>
                     <span class="switch-inactive" aria-hidden="true">Ne</span>
                 </label>
@@ -60,10 +61,10 @@
 <div id="divFyzickaOsoba">
     @Html.EditorFor(m => m.FyzickaOsoba)
 </div>
-<div id="divPravnickaOsoba" style="display:none">
+<div id="divPravnickaOsoba" style="display: none">
     @Html.EditorFor(m => m.PravnickaOsoba)
 </div>
-<div id="divSvazekObci" style="display:none">
+<div id="divSvazekObci" style="display: none">
     @Html.EditorFor(m => m.SvazekObci)
 </div>
 
@@ -89,8 +90,11 @@
         </div>
     </div>
     <div class="row">
-        <div class="large-10 columns">
+        <div class="large-6 columns">
             <label for="cbCestneProhlaseni" class="middle">Souhlasím</label>
+        </div>
+        <div class="large-4 columns">
+            <label class="middle">@Html.ValidationMessageFor(m => m.CestneProhlaseni, string.Empty, new {@class="switch-validation-error"})</label>
         </div>
         <div class="large-2 columns">
             <div class="switch large">
@@ -116,8 +120,11 @@
         </div>
     </div>
     <div class="row">
-        <div class="large-10 columns">
+        <div class="large-6 columns">
             <label for="cbSouhlasSeZpracovanim" class="middle">Souhlasím</label>
+        </div>
+        <div class="large-4 columns">
+            <label class="middle">@Html.ValidationMessageFor(m => m.SouhlasSeZpracovanim, string.Empty, new { @class = "switch-validation-error" })</label>
         </div>
         <div class="large-2 columns">
             <div class="switch large">
@@ -138,28 +145,36 @@
     <script>
 
         function hideElement(element) {
-            $(element).hide(100);
+            $(element).hide();
         }
 
         function showElement(element) {
-            $(element).show(100);
+            $(element).show();
         }
 
-        $(document).ready(function () {
+        $.validator.addMethod("mustbetrue", function (value) {
+            return value;
+        });
 
-            $(".switch").click(function () {
+        $.validator.unobtrusive.adapters.addBool("mustbetrue");
+
+
+        $(document).ready(function () {
+            
+
+            $(".switch").click(function() {
                 var input = $(this).children("input[id]");
                 switch ($(input).prop("type")) {
-                    case "radio":
-                        $(input).prop("checked", true).change();
-                        break;
-                    case "checkbox":
-                        $(input).prop("checked") ? input.prop("checked", false).change() : input.prop("checked", true).change();
-                        break;
-                }               
+                case "radio":
+                    $(input).prop("checked", true).change();
+                    break;
+                case "checkbox":
+                    $(input).prop("checked") ? input.prop("checked", false).change() : input.prop("checked", true).change();
+                    break;
+                }
             });
 
-            $("input[id='rbFyzickaOsoba']").change(function () {
+            $("input[id='rbFyzickaOsoba']").change(function() {
                 hideElement('#divPravnickaOsoba');
                 hideElement('#divSvazekObci');
                 showElement('#divFyzickaOsoba');
@@ -167,7 +182,7 @@
                 showElement('#divPlanovaneukonceni');
             });
 
-            $("input[id='rbPravnickaOsoba']").change(function () {
+            $("input[id='rbPravnickaOsoba']").change(function() {
                 hideElement('#divFyzickaOsoba');
                 hideElement('#divSvazekObci');
                 showElement('#divPravnickaOsoba');
@@ -175,7 +190,7 @@
                 showElement('#divPlanovaneukonceni');
             });
 
-            $("input[id='rbSvazekObci']").change(function () {
+            $("input[id='rbSvazekObci']").change(function() {
                 hideElement('#divFyzickaOsoba');
                 hideElement('#divPravnickaOsoba');
                 hideElement('#divObchodniRejstrik');
@@ -197,6 +212,43 @@
 
             $("input[id='cbUkonceniCinnosti']").change(function () {
                 $('#divUkoceniCinnostiDatum').toggle();
+            });
+
+
+            //DeMinims
+
+            $("input[id='rbDM1UcetniObdobiKR']").change(function () {
+                $('#divDM1UcetniObdobiZacatek').hide();
+                $('#divDM1UcetniObdobiKonec').hide();
+            });
+
+            $("input[id='rbDM1UcetniObdobiHR']").change(function () {
+                $('#divDM1UcetniObdobiZacatek').show();
+                $('#divDM1UcetniObdobiKonec').show();
+            });
+            
+            $("input[id='rbDM2NeniPropojen']").change(function () {
+                $('#divDM2Propojen').hide();
+            });
+
+            $("input[id='rbDM2JePropojen']").change(function () {
+                $('#divDM2Propojen').show();
+            });
+            
+            $("input[id='rbDM3NevzniklSpojenim']").change(function () {
+                $('#divDM3Spojen').hide();
+            });
+
+            $("input[id='rbDM3Prevzal'], input[id='rbDM3VzniklSpojenim']").change(function () {
+                $('#divDM3Spojen').show();
+            });
+
+            $("input[id='rbDM4NevzniklRozdelenim']").change(function () {
+                $('#divDM4Vznikl').hide();
+            });
+
+            $("input[id='rbDM4VzniklRozdelenim']").change(function () {
+                $('#divDM4Vznikl').show();
             });
 
         });

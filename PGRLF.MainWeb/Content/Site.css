@@ -1,14 +1,11 @@
-﻿input[type=checkbox]:checked + input + label > .switch-active {
-    display: block;
-}
-
-input[type=checkbox]:checked + label > .switch-inactive {
-    display: none; }
-
-[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],
-textarea {
+﻿[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],
+textarea, select {
     height: 2rem;
     padding: 0.3rem;
+}
+
+.ui-widget {
+    font-size: 0.8em;
 }
 
 legend {
@@ -16,28 +13,63 @@ legend {
     font-weight: bold;
 }
 
-
-select {
-    height: 2rem;
-    padding: 0.3rem;
-}
-
 label {
-    cursor: pointer
+    cursor: pointer;
 }
 
-.ui-widget {
-    font-size: 0.8em;
+.switch.large .switch-paddle {
+    width: inherit;
+    display: block;
+}
+
+.switch.large input:checked ~ .switch-paddle:after {
+    left: 3.25rem;
+}
+
+input[type=checkbox]:checked + input + label > .switch-active {
+    display: block;
+}
+
+input[type=checkbox]:checked + label > .switch-inactive {
+    display: none; }
+
+
+.label {
+    cursor: pointer;
+    position:absolute
+}
+
+.add {
+    background-color: #3adb76;
+    right: 0.9375rem
+}
+
+.remove {
+    background-color: #ec5840;
+    bottom: 1rem;
+    right: 0.9375rem
 }
 
 .input-validation-error {
-    border: 1px solid #f00;
+    border: 1px solid #ec5840;
     background-color: #fee;
+}
+
+.switch-input.input-validation-error ~ label {
+    background: #ec5840;
 }
 
 .field-validation-error {
     font-size: 0.8rem;
-    color: #f00;
+    color: #ec5840;
     position: relative;
-    top: -1rem;
+    top: -1rem;  
+   
+}    
+
+.field-validation-error.switch-validation-error {
+    top: 0;
+    display: block;
+    text-align: right;
 }
+

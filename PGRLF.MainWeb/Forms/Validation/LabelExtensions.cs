@@ -26,9 +26,9 @@ namespace PGRLF.MainWeb.Forms.Validation
             // ReSharper disable once AssignNullToNotNullAttribute
             var propertyInfo = metadata.ContainerType.GetProperty(metadata.PropertyName);
 
-            bool isConditionalyRequired = propertyInfo.CustomAttributes.Any(x => x.AttributeType == typeof(RequiredIfFieldHasValueAttribute) || x.AttributeType == typeof(RequiredIfFieldsHaveValueAttribute));
+            //bool isConditionalyRequired = propertyInfo.CustomAttributes.Any(x => x.AttributeType == typeof(RequiredIfFieldHasValueAttribute) || x.AttributeType == typeof(RequiredIfFieldsHaveValueAttribute));
             bool isRequired = propertyInfo.CustomAttributes.Any(x => x.AttributeType == typeof(RequiredAttribute));
-            if (isRequired || isConditionalyRequired) labelText += " *";
+            if (isRequired/* || isConditionalyRequired*/) labelText += " *";
             
 
             TagBuilder tag = new TagBuilder("label");

@@ -667,4 +667,7 @@
   <data name="SvazekObci" xml:space="preserve">
     <value>Obec / svazek obcí</value>
   </data>
+  <data name="Nevyplneno_Souhlas" xml:space="preserve">
+    <value>Je potřeba souhlasit</value>
+  </data>
 </root>

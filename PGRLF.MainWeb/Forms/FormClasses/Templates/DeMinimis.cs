@@ -43,11 +43,8 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
         #region DM2
         public DM2Propojeni DM2Propojeni { get; set; }
 
-        [RequiredIfFieldHasValue("DM2Propojeni", DM2Propojeni.JePropojen, ErrorMessage = "Musí být vyplněno")]
         public string DM2Jmeno1 { get; set; }
-        [RequiredIfFieldHasValue("DM2Propojeni", DM2Propojeni.JePropojen, ErrorMessage = "Musí být vyplněno")]
         public string DM2Adresa1 { get; set; }
-        [RequiredIfFieldHasValue("DM2Propojeni", DM2Propojeni.JePropojen, ErrorMessage = "Musí být vyplněno")]
         public string DM2IC1 { get; set; }
 
         public string DM2Jmeno2 { get; set; }
@@ -64,11 +61,8 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
 
         public DM3Spojeni DM3Spojeni { get; set; }
 
-        [RequiredIfFieldHasValue("DM3VzniklSpojenim", true, ErrorMessage = "Musí být vyplněno")]
         public string DM3Jmeno1 { get; set; }
-        [RequiredIfFieldHasValue("DM3VzniklSpojenim", true, ErrorMessage = "Musí být vyplněno")]
         public string DM3Adresa1 { get; set; }
-        [RequiredIfFieldHasValue("DM3VzniklSpojenim", true, ErrorMessage = "Musí být vyplněno")]
         public string DM3IC1 { get; set; }
 
         public string DM3Jmeno2 { get; set; }
@@ -87,11 +81,8 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
 
         public DM4Rozdeleni DM4Rozdeleni { get; set; }
 
-        [RequiredIfFieldHasValue("DM4VzniklRozelenim", true, ErrorMessage = "Musí být vyplněno")]
         public string DM41Jmeno { get; set; }
-        [RequiredIfFieldHasValue("DM4VzniklRozelenim", true, ErrorMessage = "Musí být vyplněno")]
         public string DM41Adresa { get; set; }
-        [RequiredIfFieldHasValue("DM4VzniklRozelenim", true, ErrorMessage = "Musí být vyplněno")]
         public string DM41IC { get; set; }
 
         [DataType(DataType.Date, ErrorMessage = "Chybný datum")]
@@ -113,6 +104,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
 
         #endregion
 
+        [MustBeTrue(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Souhlas")]
         public bool DMCestneProhlaseni { get; set; }
 
     }

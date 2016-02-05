@@ -54,12 +54,12 @@
                 </label>
             </div>
         </div>
-        <div class="large-4 columns" id="divDM1UcetniObdobi">
+        <div class="large-4 columns" id="divDM1UcetniObdobiZacatek" style="display: none">
             @Html.LabelWithAsterixFor(m => m.DM1HRZacatek)
             @Html.EditorFor(m => m.DM1HRZacatek)
             @Html.ValidationMessageFor(m => m.DM1HRZacatek)
         </div>
-        <div class="large-4 columns" id="divDM1UcetniObdobi">
+        <div class="large-4 columns" id="divDM1UcetniObdobiKonec" style="display: none">
             @Html.LabelWithAsterixFor(m => m.DM1HRKonec)
             @Html.EditorFor(m => m.DM1HRKonec)
             @Html.ValidationMessageFor(m => m.DM1HRKonec)
@@ -69,6 +69,7 @@
     <!--část 2-->
     <div class="row">
         <div class="large-12 columns">
+            <br />
             <p>2) Podniky propojené s žadatelem o podporu</p>
         </div>
     </div>
@@ -114,7 +115,7 @@
         </div>
     </div>
 
-    <div id="divDM2JePropojen">
+    <div id="divDM2Propojen" style="display: none">
         <div class="row">
             <div class="large-6 columns">
                 @Html.LabelWithAsterixFor(m => m.DM2Jmeno1)
@@ -177,7 +178,8 @@
     <!--část 3-->
     <div class="row">
         <div class="large-12 columns">
-            <h6>3) Žadatel prohlašuje, že podnik (žadatel) v současném a 2 předcházejících účetních obdobích</h6>
+            <br />
+            <p>3) Žadatel prohlašuje, že podnik (žadatel) v současném a 2 předcházejících účetních obdobích</p>
         </div>
     </div>
     <div class="row">
@@ -214,7 +216,7 @@
         </div>
         <div class="large-2 columns">
             <div class="switch large">
-                @Html.RadioButtonFor(m => m.DM3Spojeni, DM3Spojeni.Prevzal, new { @class = "switch-input", @id = "rbDM3Prevzal" })
+                @Html.RadioButtonFor(m => m.DM3Spojeni, DM3Spojeni.Prevzal, new {@class = "switch-input", @id = "rbDM3Prevzal"})
                 <label class="switch-paddle" for="rbDM3Prevzal">
                     <span class="switch-active" aria-hidden="true">Ano</span>
                     <span class="switch-inactive" aria-hidden="true">Ne</span>
@@ -222,94 +224,96 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DM3Jmeno1)
-            @Html.EditorFor(m => m.DM3Jmeno1)
-            @Html.ValidationMessageFor(m => m.DM3Jmeno1)
-        </div>
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DM3IC1)
-            @Html.EditorFor(m => m.DM3IC1)
-            @Html.ValidationMessageFor(m => m.DM3IC1)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
-            @Html.LabelWithAsterixFor(m => m.DM3Adresa1)
-            @Html.EditorFor(m => m.DM3Adresa1)
-            @Html.ValidationMessageFor(m => m.DM3Adresa1)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DM3Jmeno2)
-            @Html.EditorFor(m => m.DM3Jmeno2)
-            @Html.ValidationMessageFor(m => m.DM3Jmeno2)
-        </div>
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DM3IC2)
-            @Html.EditorFor(m => m.DM3IC2)
-            @Html.ValidationMessageFor(m => m.DM3IC2)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
-            @Html.LabelWithAsterixFor(m => m.DM3Adresa2)
-            @Html.EditorFor(m => m.DM3Adresa2)
-            @Html.ValidationMessageFor(m => m.DM3Adresa2)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DM3Jmeno3)
-            @Html.EditorFor(m => m.DM3Jmeno3)
-            @Html.ValidationMessageFor(m => m.DM3Jmeno3)
-        </div>
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DM3IC3)
-            @Html.EditorFor(m => m.DM3IC3)
-            @Html.ValidationMessageFor(m => m.DM3IC3)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
-            @Html.LabelWithAsterixFor(m => m.DM3Adresa3)
-            @Html.EditorFor(m => m.DM3Adresa3)
-            @Html.ValidationMessageFor(m => m.DM3Adresa3)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
-            Výše uvedené změny spočívající ve spojení či nabytí podniků
-            <br><br>
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-10 columns">
-            <label for="rbDM3CRNeniZohledneno" class="middle">nejsou zohledněny v Centrálním registru podpor malého rozsahu.</label>
-        </div>
-        <div class="large-2 columns">
-            <div class="switch large">
-                @Html.RadioButtonFor(m => m.DM3CentralniRegistr, DMCentralniRegistr.NeniZohledneno, new { @class = "switch-input", @id = "rbDM3CRNeniZohledneno" })
-                <label class="switch-paddle" for="rbDM3CRNeniZohledneno">
-                    <span class="switch-active" aria-hidden="true">Ano</span>
-                    <span class="switch-inactive" aria-hidden="true">Ne</span>
-                </label>
+    <div id="divDM3Spojen" style="display: none">
+        <div class="row">
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.DM3Jmeno1)
+                @Html.EditorFor(m => m.DM3Jmeno1)
+                @Html.ValidationMessageFor(m => m.DM3Jmeno1)
+            </div>
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.DM3IC1)
+                @Html.EditorFor(m => m.DM3IC1)
+                @Html.ValidationMessageFor(m => m.DM3IC1)
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="large-10 columns">
-            <label for="rbDM3CRJeZohledneno" class="middle">jsou již zohledněny v Centrálním registru podpor malého rozsahu.</label>
+        <div class="row">
+            <div class="large-12 columns">
+                @Html.LabelWithAsterixFor(m => m.DM3Adresa1)
+                @Html.EditorFor(m => m.DM3Adresa1)
+                @Html.ValidationMessageFor(m => m.DM3Adresa1)
+            </div>
         </div>
-        <div class="large-2 columns">
-            <div class="switch large">
-                @Html.RadioButtonFor(m => m.DM3CentralniRegistr, DMCentralniRegistr.JeZohledneno, new { @class = "switch-input", @id = "rbDM3CRJeZohledneno" })
-                <label class="switch-paddle" for="rbDM3CRJeZohledneno">
-                    <span class="switch-active" aria-hidden="true">Ano</span>
-                    <span class="switch-inactive" aria-hidden="true">Ne</span>
-                </label>
+        <div class="row">
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.DM3Jmeno2)
+                @Html.EditorFor(m => m.DM3Jmeno2)
+                @Html.ValidationMessageFor(m => m.DM3Jmeno2)
+            </div>
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.DM3IC2)
+                @Html.EditorFor(m => m.DM3IC2)
+                @Html.ValidationMessageFor(m => m.DM3IC2)
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                @Html.LabelWithAsterixFor(m => m.DM3Adresa2)
+                @Html.EditorFor(m => m.DM3Adresa2)
+                @Html.ValidationMessageFor(m => m.DM3Adresa2)
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.DM3Jmeno3)
+                @Html.EditorFor(m => m.DM3Jmeno3)
+                @Html.ValidationMessageFor(m => m.DM3Jmeno3)
+            </div>
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.DM3IC3)
+                @Html.EditorFor(m => m.DM3IC3)
+                @Html.ValidationMessageFor(m => m.DM3IC3)
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                @Html.LabelWithAsterixFor(m => m.DM3Adresa3)
+                @Html.EditorFor(m => m.DM3Adresa3)
+                @Html.ValidationMessageFor(m => m.DM3Adresa3)
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                Výše uvedené změny spočívající ve spojení či nabytí podniků
+                <br><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-10 columns">
+                <label for="rbDM3CRNeniZohledneno" class="middle">nejsou zohledněny v Centrálním registru podpor malého rozsahu.</label>
+            </div>
+            <div class="large-2 columns">
+                <div class="switch large">
+                    @Html.RadioButtonFor(m => m.DM3CentralniRegistr, DMCentralniRegistr.NeniZohledneno, new { @class = "switch-input", @id = "rbDM3CRNeniZohledneno" })
+                    <label class="switch-paddle" for="rbDM3CRNeniZohledneno">
+                        <span class="switch-active" aria-hidden="true">Ano</span>
+                        <span class="switch-inactive" aria-hidden="true">Ne</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-10 columns">
+                <label for="rbDM3CRJeZohledneno" class="middle">jsou již zohledněny v Centrálním registru podpor malého rozsahu.</label>
+            </div>
+            <div class="large-2 columns">
+                <div class="switch large">
+                    @Html.RadioButtonFor(m => m.DM3CentralniRegistr, DMCentralniRegistr.JeZohledneno, new {@class = "switch-input", @id = "rbDM3CRJeZohledneno"})
+                    <label class="switch-paddle" for="rbDM3CRJeZohledneno">
+                        <span class="switch-active" aria-hidden="true">Ano</span>
+                        <span class="switch-inactive" aria-hidden="true">Ne</span>
+                    </label>
+                </div>
             </div>
         </div>
     </div>
@@ -317,17 +321,18 @@
     <!--část 4-->
     <div class="row">
         <div class="large-12 columns">
-            <h6>4) Žadatel prohlašuje, že podnik (žadatel) v současném a 2 předcházejících účetních obdobích</h6>
+            <br />
+            <p>4) Žadatel prohlašuje, že podnik (žadatel) v současném a 2 předcházejících účetních obdobích</p>
         </div>
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label for="rbDM4NevniklRozdelenim" class="middle">nevznikl rozdělením (rozštěpením nebo odštěpením ***) podniku. </label>
+            <label for="rbDM4NevzniklRozdelenim" class="middle">nevznikl rozdělením (rozštěpením nebo odštěpením ***) podniku. </label>
         </div>
         <div class="large-2 columns">
             <div class="switch large">
-                @Html.RadioButtonFor(m => m.DM4Rozdeleni, DM4Rozdeleni.NevniklRozdelenim, new { @class = "switch-input", @id = "rbDM4NevniklRozdelenim" })
-                <label class="switch-paddle" for="rbDM4NevniklRozdelenim">
+                @Html.RadioButtonFor(m => m.DM4Rozdeleni, DM4Rozdeleni.NevniklRozdelenim, new { @class = "switch-input", @id = "rbDM4NevzniklRozdelenim" })
+                <label class="switch-paddle" for="rbDM4NevzniklRozdelenim">
                     <span class="switch-active" aria-hidden="true">Ano</span>
                     <span class="switch-inactive" aria-hidden="true">Ne</span>
                 </label>
@@ -336,125 +341,127 @@
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label for="rbDM4VniklRozdelenim" class="middle">vznikl rozdělením níže uvedeného podniku</label>
+            <label for="rbDM4VzniklRozdelenim" class="middle">vznikl rozdělením níže uvedeného podniku</label>
         </div>
         <div class="large-2 columns">
             <div class="switch large">
-                @Html.RadioButtonFor(m => m.DM4Rozdeleni, DM4Rozdeleni.VzniklRozdelenim, new { @class = "switch-input", @id = "rbDM4VniklRozdelenim" })
-                <label class="switch-paddle" for="rbDM4VniklRozdelenim">
+                @Html.RadioButtonFor(m => m.DM4Rozdeleni, DM4Rozdeleni.VzniklRozdelenim, new {@class = "switch-input", @id = "rbDM4VzniklRozdelenim"})
+                <label class="switch-paddle" for="rbDM4VzniklRozdelenim">
                     <span class="switch-active" aria-hidden="true">Ano</span>
                     <span class="switch-inactive" aria-hidden="true">Ne</span>
                 </label>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DM41Jmeno)
-            @Html.EditorFor(m => m.DM41Jmeno)
-            @Html.ValidationMessageFor(m => m.DM41Jmeno)
-        </div>
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DM41IC)
-            @Html.EditorFor(m => m.DM41IC)
-            @Html.ValidationMessageFor(m => m.DM41IC)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
-            @Html.LabelWithAsterixFor(m => m.DM41Adresa)
-            @Html.EditorFor(m => m.DM41Adresa)
-            @Html.ValidationMessageFor(m => m.DM41Adresa)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
-            a převzal jeho činnosti, na něž byla dříve poskytnutá podpora de minimis použita ****. Podniku (žadateli) byly přiděleny následující (dříve poskytnuté) podpory
-            <br><br>
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-3 columns">
-            @Html.LabelWithAsterixFor(m => m.DM42DatumPoskytnuti1)
-            @Html.EditorFor(m => m.DM42DatumPoskytnuti1)
-            @Html.ValidationMessageFor(m => m.DM42DatumPoskytnuti1)
-        </div>
-        <div class="large-4 columns">
-            @Html.LabelWithAsterixFor(m => m.DM42Poskytovatel1)
-            @Html.EditorFor(m => m.DM42Poskytovatel1)
-            @Html.ValidationMessageFor(m => m.DM42Poskytovatel1)
-        </div>
-        <div class="large-3 columns">
-            @Html.LabelWithAsterixFor(m => m.DM42Castka1)
-            @Html.EditorFor(m => m.DM42Castka1)
-            @Html.ValidationMessageFor(m => m.DM42Castka1)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-3 columns">
-            @Html.LabelWithAsterixFor(m => m.DM42DatumPoskytnuti2)
-            @Html.EditorFor(m => m.DM42DatumPoskytnuti2)
-            @Html.ValidationMessageFor(m => m.DM42DatumPoskytnuti2)
-        </div>
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DM42Poskytovatel2)
-            @Html.EditorFor(m => m.DM42Poskytovatel2)
-            @Html.ValidationMessageFor(m => m.DM42Poskytovatel2)
-        </div>
-        <div class="large-3 columns">
-            @Html.LabelWithAsterixFor(m => m.DM42Castka2)
-            @Html.EditorFor(m => m.DM42Castka2)
-            @Html.ValidationMessageFor(m => m.DM42Castka2)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-3 columns">
-            @Html.LabelWithAsterixFor(m => m.DM42DatumPoskytnuti3)
-            @Html.EditorFor(m => m.DM42DatumPoskytnuti3)
-            @Html.ValidationMessageFor(m => m.DM42DatumPoskytnuti3)
-        </div>
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DM42Poskytovatel3)
-            @Html.EditorFor(m => m.DM42Poskytovatel3)
-            @Html.ValidationMessageFor(m => m.DM42Poskytovatel3)
-        </div>
-        <div class="large-3 columns">
-            @Html.LabelWithAsterixFor(m => m.DM42Castka3)
-            @Html.EditorFor(m => m.DM42Castka3)
-            @Html.ValidationMessageFor(m => m.DM42Castka3)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
-            Výše uvedené změny spočívající v rozdělení podniků
-            <br><br>
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-10 columns">
-            <label for="rbDM4CRNeniZohledneno" class="middle">nejsou zohledněny v Centrálním registru podpor malého rozsahu.</label>
-        </div>
-        <div class="large-2 columns">
-            <div class="switch large">
-                @Html.RadioButtonFor(m => m.DM4CentralniRegistr, DMCentralniRegistr.NeniZohledneno, new { @class = "switch-input", @id = "rbDM4CRNeniZohledneno" })
-                <label class="switch-paddle" for="rbDM4CRNeniZohledneno">
-                    <span class="switch-active" aria-hidden="true">Ano</span>
-                    <span class="switch-inactive" aria-hidden="true">Ne</span>
-                </label>
+    <div id="divDM4Vznikl" style="display: none">
+        <div class="row">
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.DM41Jmeno)
+                @Html.EditorFor(m => m.DM41Jmeno)
+                @Html.ValidationMessageFor(m => m.DM41Jmeno)
+            </div>
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.DM41IC)
+                @Html.EditorFor(m => m.DM41IC)
+                @Html.ValidationMessageFor(m => m.DM41IC)
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="large-10 columns">
-            <label for="rbDM4CRJeZohledneno" class="middle">jsou již zohledněny v Centrálním registru podpor malého rozsahu.</label>
+        <div class="row">
+            <div class="large-12 columns">
+                @Html.LabelWithAsterixFor(m => m.DM41Adresa)
+                @Html.EditorFor(m => m.DM41Adresa)
+                @Html.ValidationMessageFor(m => m.DM41Adresa)
+            </div>
         </div>
-        <div class="large-2 columns">
-            <div class="switch large">
-                @Html.RadioButtonFor(m => m.DM4CentralniRegistr, DMCentralniRegistr.JeZohledneno, new { @class = "switch-input", @id = "rbDM4CRJeZohledneno" })
-                <label class="switch-paddle" for="rbDM4CRJeZohledneno">
-                    <span class="switch-active" aria-hidden="true">Ano</span>
-                    <span class="switch-inactive" aria-hidden="true">Ne</span>
-                </label>
+        <div class="row">
+            <div class="large-12 columns">
+                a převzal jeho činnosti, na něž byla dříve poskytnutá podpora de minimis použita ****. Podniku (žadateli) byly přiděleny následující (dříve poskytnuté) podpory
+                <br><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-3 columns">
+                @Html.LabelWithAsterixFor(m => m.DM42DatumPoskytnuti1)
+                @Html.EditorFor(m => m.DM42DatumPoskytnuti1)
+                @Html.ValidationMessageFor(m => m.DM42DatumPoskytnuti1)
+            </div>
+            <div class="large-4 columns">
+                @Html.LabelWithAsterixFor(m => m.DM42Poskytovatel1)
+                @Html.EditorFor(m => m.DM42Poskytovatel1)
+                @Html.ValidationMessageFor(m => m.DM42Poskytovatel1)
+            </div>
+            <div class="large-3 columns">
+                @Html.LabelWithAsterixFor(m => m.DM42Castka1)
+                @Html.EditorFor(m => m.DM42Castka1)
+                @Html.ValidationMessageFor(m => m.DM42Castka1)
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-3 columns">
+                @Html.LabelWithAsterixFor(m => m.DM42DatumPoskytnuti2)
+                @Html.EditorFor(m => m.DM42DatumPoskytnuti2)
+                @Html.ValidationMessageFor(m => m.DM42DatumPoskytnuti2)
+            </div>
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.DM42Poskytovatel2)
+                @Html.EditorFor(m => m.DM42Poskytovatel2)
+                @Html.ValidationMessageFor(m => m.DM42Poskytovatel2)
+            </div>
+            <div class="large-3 columns">
+                @Html.LabelWithAsterixFor(m => m.DM42Castka2)
+                @Html.EditorFor(m => m.DM42Castka2)
+                @Html.ValidationMessageFor(m => m.DM42Castka2)
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-3 columns">
+                @Html.LabelWithAsterixFor(m => m.DM42DatumPoskytnuti3)
+                @Html.EditorFor(m => m.DM42DatumPoskytnuti3)
+                @Html.ValidationMessageFor(m => m.DM42DatumPoskytnuti3)
+            </div>
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.DM42Poskytovatel3)
+                @Html.EditorFor(m => m.DM42Poskytovatel3)
+                @Html.ValidationMessageFor(m => m.DM42Poskytovatel3)
+            </div>
+            <div class="large-3 columns">
+                @Html.LabelWithAsterixFor(m => m.DM42Castka3)
+                @Html.EditorFor(m => m.DM42Castka3)
+                @Html.ValidationMessageFor(m => m.DM42Castka3)
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-12 columns">
+                Výše uvedené změny spočívající v rozdělení podniků
+                <br><br>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-10 columns">
+                <label for="rbDM4CRNeniZohledneno" class="middle">nejsou zohledněny v Centrálním registru podpor malého rozsahu.</label>
+            </div>
+            <div class="large-2 columns">
+                <div class="switch large">
+                    @Html.RadioButtonFor(m => m.DM4CentralniRegistr, DMCentralniRegistr.NeniZohledneno, new { @class = "switch-input", @id = "rbDM4CRNeniZohledneno" })
+                    <label class="switch-paddle" for="rbDM4CRNeniZohledneno">
+                        <span class="switch-active" aria-hidden="true">Ano</span>
+                        <span class="switch-inactive" aria-hidden="true">Ne</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-10 columns">
+                <label for="rbDM4CRJeZohledneno" class="middle">jsou již zohledněny v Centrálním registru podpor malého rozsahu.</label>
+            </div>
+            <div class="large-2 columns">
+                <div class="switch large">
+                    @Html.RadioButtonFor(m => m.DM4CentralniRegistr, DMCentralniRegistr.JeZohledneno, new { @class = "switch-input", @id = "rbDM4CRJeZohledneno" })
+                    <label class="switch-paddle" for="rbDM4CRJeZohledneno">
+                        <span class="switch-active" aria-hidden="true">Ano</span>
+                        <span class="switch-inactive" aria-hidden="true">Ne</span>
+                    </label>
+                </div>
             </div>
         </div>
     </div>
@@ -462,7 +469,8 @@
     <!--část 5-->
     <div class="row">
         <div class="large-12 columns">
-            <h6>5) Žadatel níže svým podpisem</h6>
+            <br/>
+            <p>5) Žadatel níže svým podpisem</p>
         </div>
     </div>
     <div class="row">
@@ -473,12 +481,15 @@
         </div>
     </div>
     <div class="row">
-        <div class="large-10 columns">
+        <div class="large-6 columns">
             <label for="cbDMCestneProhlaseni">Souhlasím</label>
+        </div>
+        <div class="large-4 columns">
+            <label class="middle">@Html.ValidationMessageFor(m => m.DMCestneProhlaseni, string.Empty, new { @class = "switch-validation-error" })</label>
         </div>
         <div class="large-2 columns">
             <div class="switch large">
-                @Html.CheckBoxFor(m => m.DMCestneProhlaseni, new { @class = "switch-input", @id = "cbDMCestneProhlaseni" })
+                @Html.CheckBoxFor(m => m.DMCestneProhlaseni, new {@class = "switch-input", @id = "cbDMCestneProhlaseni"})
                 <label class="switch-paddle" for="cbDMCestneProhlaseni">
                     <span class="switch-active" aria-hidden="true">Ano</span>
                     <span class="switch-inactive" aria-hidden="true">Ne</span>
@@ -486,4 +497,5 @@
             </div>
         </div>
     </div>
+    
 </fieldset>

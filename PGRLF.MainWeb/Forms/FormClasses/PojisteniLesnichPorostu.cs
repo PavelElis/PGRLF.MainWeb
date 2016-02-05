@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics;
 using System.IO;
 using System.Web;
 using System.Web.UI.WebControls;
@@ -37,11 +38,11 @@ namespace PGRLF.MainWeb.Forms.FormClasses
         public PlanovaneUkonceni PlanovaneUkonceni { get; set; }
 
         public DeMinimis DeMinimis { get; set; }
-        
-        [MustBeTrue(ErrorMessage = "Musí být zaškrtnuto")]
+
+        [MustBeTrue(ErrorMessage = "Je potřeba souhlasit")]
         public bool CestneProhlaseni { get; set; }
 
-        [MustBeTrue(ErrorMessage = "Musí být zaškrtnuto")]
+        [MustBeTrue(ErrorMessage = "Je potřeba souhlasit")]
         public bool SouhlasSeZpracovanim { get; set; }
 
 

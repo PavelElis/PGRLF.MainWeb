@@ -4,6 +4,11 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
 {
     public class SvazekObci
     {
+        public SvazekObci() 
+        {
+            SidloSvazkuObci = new Adresa();
+        }
+
         [Display(ResourceType = typeof(FormResources), Name = "NazevSvazkuObci")]
         [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_NazevSvazkuObci")]
         public string NazevSvazkuObci { get; set; }

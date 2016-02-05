@@ -569,6 +569,15 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Je potřeba souhlasit.
+        /// </summary>
+        public static string Nevyplneno_Souhlas {
+            get {
+                return ResourceManager.GetString("Nevyplneno_Souhlas", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Není vyplněn kontaktní telefon.
         /// </summary>
         public static string Nevyplneno_Telefon {

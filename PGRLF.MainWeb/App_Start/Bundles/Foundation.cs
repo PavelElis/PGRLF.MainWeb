@@ -13,7 +13,8 @@ namespace PGRLF.MainWeb.App_Start.Bundles
         {
             return new StyleBundle("~/Content/foundation/css").Include(
                 "~/Content/foundation/app.css",
-                "~/Content/foundation/foundation-flex.css"
+                "~/Content/foundation/foundation-flex.css",
+                "~/Content/foundation/foundation-icons.css"
                 );
         }
 

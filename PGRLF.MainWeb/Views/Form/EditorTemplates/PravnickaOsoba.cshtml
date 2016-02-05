@@ -39,92 +39,9 @@
         </div>
     </div>
 
-    <h6>Zodpovědné osoby</h6>
-    <div class="row">
-        <div class="large-2 columns">
-            @Html.LabelWithAsterixFor(m => m.ZO1TitulPredJmenem)
-            @Html.EditorFor(m => m.ZO1TitulPredJmenem)
-            @Html.ValidationMessageFor(m => m.ZO1TitulPredJmenem)
-        </div>
-        <div class="large-3 columns">
-            @Html.LabelWithAsterixFor(m => m.ZO1Jmeno)
-            @Html.EditorFor(m => m.ZO1Jmeno)
-            @Html.ValidationMessageFor(m => m.ZO1Jmeno)
-        </div>
-        <div class="large-3 columns">
-            @Html.LabelWithAsterixFor(m => m.ZO1Prijmeni)
-            @Html.EditorFor(m => m.ZO1Prijmeni)
-            @Html.ValidationMessageFor(m => m.ZO1Prijmeni)
-        </div>
-        <div class="large-2 columns">
-            @Html.LabelWithAsterixFor(m => m.ZO1TitulZaJmenem)
-            @Html.EditorFor(m => m.ZO1TitulZaJmenem)
-            @Html.ValidationMessageFor(m => m.ZO1TitulZaJmenem)
-        </div>
-        <div class="large-2 columns">
-            @Html.LabelWithAsterixFor(m => m.ZO1Funkce)
-            @Html.EditorFor(m => m.ZO1Funkce)
-            @Html.ValidationMessageFor(m => m.ZO1Funkce)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-2 columns">
-            @Html.LabelWithAsterixFor(m => m.ZO2TitulPredJmenem)
-            @Html.EditorFor(m => m.ZO2TitulPredJmenem)
-            @Html.ValidationMessageFor(m => m.ZO2TitulPredJmenem)
-        </div>
-        <div class="large-3 columns">
-            @Html.LabelWithAsterixFor(m => m.ZO2Jmeno)
-            @Html.EditorFor(m => m.ZO2Jmeno)
-            @Html.ValidationMessageFor(m => m.ZO2Jmeno)
-        </div>
-        <div class="large-3 columns">
-            @Html.LabelWithAsterixFor(m => m.ZO2Prijmeni)
-            @Html.EditorFor(m => m.ZO2Prijmeni)
-            @Html.ValidationMessageFor(m => m.ZO2Prijmeni)
-        </div>
-        <div class="large-2 columns">
-            @Html.LabelWithAsterixFor(m => m.ZO2TitulZaJmenem)
-            @Html.EditorFor(m => m.ZO2TitulZaJmenem)
-            @Html.ValidationMessageFor(m => m.ZO2TitulZaJmenem)
-        </div>
-        <div class="large-2 columns">
-            @Html.LabelWithAsterixFor(m => m.ZO2Funkce)
-            @Html.EditorFor(m => m.ZO2Funkce)
-            @Html.ValidationMessageFor(m => m.ZO2Funkce)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-2 columns">
-            @Html.LabelWithAsterixFor(m => m.ZO2TitulPredJmenem)
-            @Html.EditorFor(m => m.ZO2TitulPredJmenem)
-            @Html.ValidationMessageFor(m => m.ZO2TitulPredJmenem)
-        </div>
-        <div class="large-3 columns">
-            @Html.LabelWithAsterixFor(m => m.ZO2Jmeno)
-            @Html.EditorFor(m => m.ZO2Jmeno)
-            @Html.ValidationMessageFor(m => m.ZO2Jmeno)
-        </div>
-        <div class="large-3 columns">
-            @Html.LabelWithAsterixFor(m => m.ZO2Prijmeni)
-            @Html.EditorFor(m => m.ZO2Prijmeni)
-            @Html.ValidationMessageFor(m => m.ZO2Prijmeni)
-        </div>
-        <div class="large-2 columns">
-            @Html.LabelWithAsterixFor(m => m.ZO2TitulZaJmenem)
-            @Html.EditorFor(m => m.ZO2TitulZaJmenem)
-            @Html.ValidationMessageFor(m => m.ZO2TitulZaJmenem)
-        </div>
-        <div class="large-2 columns">
-            @Html.LabelWithAsterixFor(m => m.ZO2Funkce)
-            @Html.EditorFor(m => m.ZO2Funkce)
-            @Html.ValidationMessageFor(m => m.ZO2Funkce)
-        </div>
-    </div>
-
 
     <h6>Adresa sídla společnosti</h6>
-    @Html.EditorFor(m => m.SidloSpolecnosti);
+    @Html.EditorFor(m => m.SidloSpolecnosti)
 
     <h6>Místo podnikání</h6>
     <div class="row">
@@ -144,4 +61,11 @@
     <div id="divPOMistoPodnikani" @if (Model.POJeMistoPodnikaniStejne) { @Html.Raw("style=\"display:none;\"") ; }>
         @Html.EditorFor(m => m.MistoPodnikani)
     </div>
+
+    <h6>Zodpovědné osoby</h6>
+    @for (var i = 0; i < Model.ZodpovednaOsoba.Count; i++)
+    {
+        @Html.EditorFor(m => m.ZodpovednaOsoba[i])
+    }
+
 </fieldset>

@@ -57,12 +57,12 @@
     <h6>Místo podnikání</h6>
     <div class="row">
         <div class="large-10 columns">
-            <label for="FOJeMistoPodnikaniStejne" class="middle">Je místo podnikání stejné jako "Adresa trvalého pobytu"?</label>
+            <label for="cbFOJeMistoPodnikaniStejne" class="middle">Je místo podnikání stejné jako "Adresa trvalého pobytu"?</label>
         </div>
         <div class="large-2 columns">
             <div class="switch large">
                 @Html.CheckBoxFor(m => m.FOJeMistoPodnikaniStejne, new { @class = "switch-input", @id = "cbFOJeMistoPodnikaniStejne" })
-                <label class="switch-paddle" for="FOJeMistoPodnikaniStejne">
+                <label class="switch-paddle">
                     <span class="switch-active" aria-hidden="true">Ano</span>
                     <span class="switch-inactive" aria-hidden="true">Ne</span>
                 </label>

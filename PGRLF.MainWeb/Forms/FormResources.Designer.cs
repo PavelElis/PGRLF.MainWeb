@@ -72,7 +72,7 @@ namespace PGRLF.MainWeb.Forms {
         /// <summary>
         ///   Looks up a localized string similar to Prohlašuji, že údaje uvedené v této žádosti o podporu Podpůrného garančního rolnického a lesnického fondu, a.s. a v jejích přílohách jsou pravdivé a že splňují všechny obecné podmínky pro poskytnutí Podpory. Jsem si vědom/vědoma právních následků případného uvedení nepravdivých nebo neúplných údajů.
         ///&lt;br&gt;&lt;br&gt;
-        ///Prohlašuji, že k níže uvedenému datu nemá žadatel nedoplatky vůči Státnímu zemědělskému intervenčnímu fondu, Ministerstvu zemědělství nebo vůči Státnímu pozemkovému úřadu. Svým podpisem zároveň poskytuj [rest of string was truncated]&quot;;.
+        ///Prohlašuji, že k níže uvedenému datu nemá žadatel nedoplatky vůči Státnímu zemědělskému intervenčnímu fondu, Ministerstvu zemědělství nebo vůči Státnímu pozemkovému úřadu. Svým podpisem zároveň poskyt [rest of string was truncated]&quot;;.
         /// </summary>
         public static string CestneProhlaseni {
             get {
@@ -86,6 +86,15 @@ namespace PGRLF.MainWeb.Forms {
         public static string Chyba_CisloUctu {
             get {
                 return ResourceManager.GetString("Chyba_CisloUctu", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Špatný formát datumu.
+        /// </summary>
+        public static string Chyba_DatumCisloLicenceERMA {
+            get {
+                return ResourceManager.GetString("Chyba_DatumCisloLicenceERMA", resourceCulture);
             }
         }
         
@@ -180,6 +189,15 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Číslo licence v evidenci dodavatelů reprodukčního materiálu(ERMA).
+        /// </summary>
+        public static string CisloLicenceERMA {
+            get {
+                return ResourceManager.GetString("CisloLicenceERMA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Orientační číslo.
         /// </summary>
         public static string CisloOrientacni {
@@ -216,6 +234,15 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Platnost licence od:.
+        /// </summary>
+        public static string DatumCisloLicenceERMA {
+            get {
+                return ResourceManager.GetString("DatumCisloLicenceERMA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Datum narození.
         /// </summary>
         public static string DatumNarozeni {
@@ -240,7 +267,7 @@ namespace PGRLF.MainWeb.Forms {
         ///&lt;br&gt;
         ///b) jeden subjekt má právo jmenovat nebo odvolat více než 50 % členů správního, řídícího nebo dozorčího orgánu jiného subjektu; 
         ///&lt;br&gt;
-        ///c) jeden subjekt má právo uplatňovat více než 50% vliv v jiném subjektu podle smlouvy uzavřené s daným subjektem ne [rest of string was truncated]&quot;;.
+        ///c) jeden subjekt má právo uplatňovat více než 50% vliv v jiném subjektu podle smlouvy uzavřené s daným subjek [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DeMinimis2 {
             get {
@@ -254,7 +281,7 @@ namespace PGRLF.MainWeb.Forms {
         ///se zavazuje k tomu, že v případě změny předmětných údajů v průběhu administrativního procesu poskytnutí podpory de minimis bude neprodleně informovat poskytovatele dané podpory o změnách, které u něj nastaly;
         ///&lt;br&gt;&lt;br&gt;
         ///&lt;b&gt;Prohlášení ke zpracování osobních údajů&lt;/b&gt;
-        ///Souhlasím se zpracováním osobních údajů obsažených v tomto prohlášení ve smyslu zákona č. 101/2000 Sb., o ochraně osobních údajů, ve znění p. p., za úč [rest of string was truncated]&quot;;.
+        ///Souhlasím se zpracováním osobních údajů obsažených v tomto prohlášení ve smyslu zákona č. 101/2000 Sb., o ochraně osobních údajů, ve znění p. p.,  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string DeMinimis5 {
             get {
@@ -304,6 +331,15 @@ namespace PGRLF.MainWeb.Forms {
         public static string DobaPodnikani {
             get {
                 return ResourceManager.GetString("DobaPodnikani", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Doba splatnosti úvěru (počet měsíců).
+        /// </summary>
+        public static string DobaSplatnostiUveru {
+            get {
+                return ResourceManager.GetString("DobaSplatnostiUveru", resourceCulture);
             }
         }
         
@@ -425,6 +461,15 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Číslo licence nebylo vyplněno.
+        /// </summary>
+        public static string Nevyplneno_CisloLicenceERMA {
+            get {
+                return ResourceManager.GetString("Nevyplneno_CisloLicenceERMA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Není vyplněno číslo popisné.
         /// </summary>
         public static string Nevyplneno_CisloPopisne {
@@ -448,6 +493,15 @@ namespace PGRLF.MainWeb.Forms {
         public static string Nevyplneno_CZNACE {
             get {
                 return ResourceManager.GetString("Nevyplneno_CZNACE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Datum vydání licence nebylo vyplněno.
+        /// </summary>
+        public static string Nevyplneno_DatumCisloLicenceERMA {
+            get {
+                return ResourceManager.GetString("Nevyplneno_DatumCisloLicenceERMA", resourceCulture);
             }
         }
         
@@ -484,6 +538,15 @@ namespace PGRLF.MainWeb.Forms {
         public static string Nevyplneno_DobaPodnikani {
             get {
                 return ResourceManager.GetString("Nevyplneno_DobaPodnikani", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněna doba splatnosti úvěru.
+        /// </summary>
+        public static string Nevyplneno_DobaSplatnostiUveru {
+            get {
+                return ResourceManager.GetString("Nevyplneno_DobaSplatnostiUveru", resourceCulture);
             }
         }
         
@@ -673,6 +736,15 @@ namespace PGRLF.MainWeb.Forms {
         public static string Nevyplneno_PohledavkyPredlonske {
             get {
                 return ResourceManager.GetString("Nevyplneno_PohledavkyPredlonske", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněna požadovana výše úvěru.
+        /// </summary>
+        public static string Nevyplneno_PozadovanaVyseUveru {
+            get {
+                return ResourceManager.GetString("Nevyplneno_PozadovanaVyseUveru", resourceCulture);
             }
         }
         
@@ -1761,6 +1833,15 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Požadovaná výše úvěru (kč).
+        /// </summary>
+        public static string PozadovanaVyseUveru {
+            get {
+                return ResourceManager.GetString("PozadovanaVyseUveru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Právnická osoba.
         /// </summary>
         public static string PravnickaOsoba {
@@ -1835,7 +1916,7 @@ namespace PGRLF.MainWeb.Forms {
         /// <summary>
         ///   Looks up a localized string similar to &lt;b&gt;I. Žadatel o poskytnutí podpory, jakožto fyzická osoba (dále jen jako „žadatel-fyzická osoba“),&lt;/b&gt;
         ///&lt;br&gt;&lt;br&gt;
-        ///tímto dává společnosti Podpůrný a garanční rolnický a lesnický fond, a.s., IČ: 492 41 494, se sídlem Praha 8 – Karlín, Za Poříčskou branou 6/č.p. 256, PSČ 186 00 (dále jen jako „Správce“), v souladu se zákonem č. 101/2000 Sb., o ochraně osobních údajů a o změně některých zákonů, ve znění pozdějších předpisů (dále jen jako „ZOOÚ“), souhlas k tomu, aby Správce zpracovával ve své databázi veškeré jeh [rest of string was truncated]&quot;;.
+        ///tímto dává společnosti Podpůrný a garanční rolnický a lesnický fond, a.s., IČ: 492 41 494, se sídlem Praha 8 – Karlín, Za Poříčskou branou 6/č.p. 256, PSČ 186 00 (dále jen jako „Správce“), v souladu se zákonem č. 101/2000 Sb., o ochraně osobních údajů a o změně některých zákonů, ve znění pozdějších předpisů (dále jen jako „ZOOÚ“), souhlas k tomu, aby Správce zpracovával ve své databázi veškeré j [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SouhlasSeZpracovanim {
             get {

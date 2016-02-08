@@ -1,14 +1,14 @@
 ﻿@using System.Web.UI.WebControls
 @using PGRLF.MainWeb.Forms.Enums
-@model PGRLF.MainWeb.Forms.FormClasses.PojisteniLesnichPorostu
+@model PGRLF.MainWeb.Forms.FormClasses.PodporaNakupTechnikyDrevo
 
 @{
-    ViewBag.Title = "Pojištění lesních porostů";
+    ViewBag.Title = "Podpora nakupu techniky drevo";
     Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
 
 <div class="text-center">
-    <h1>Program "Pojištění lesních porostů"</h1>
+    <h1>Podpora nákupu techniky a technologií pro dřevozpracující provozovny </h1>
 </div>
 <p>(* - Údaje označené hvězdičkou je nutné vyplnit.)</p>
 
@@ -68,18 +68,26 @@
     @Html.EditorFor(m => m.SvazekObci)
 </div>
 
+
+
 <fieldset class="fieldset">
     <legend>Společná část</legend>
+
     @Html.EditorFor(m => m.Kontakt)
     @Html.EditorFor(m => m.BankovniSpojeni)
-    <div id="divObchodniRejstrik">
+
+    <div id="divFyzickeAPravnicke">
         @Html.EditorFor(m => m.ObchodniRejstrik)
-    </div>
-    <div id="divPlanovaneUkonceni">
+        @Html.EditorFor(m => m.DPH)
+        @Html.EditorFor(m => m.CZNACEtabulka)
+        @Html.EditorFor(m => m.Zamestnanci)
         @Html.EditorFor(m => m.PlanovaneUkonceni)
     </div>
-</fieldset>
 
+    @Html.EditorFor(m => m.Rybolov)
+    @Html.EditorFor(m => m.SouhlasZasilani)
+
+</fieldset>
 
 <fieldset class="fieldset">
     <legend>Čestné prohlášení</legend>
@@ -179,23 +187,20 @@
                 hideElement('#divPravnickaOsoba');
                 hideElement('#divSvazekObci');
                 showElement('#divFyzickaOsoba');
-                showElement('#divObchodniRejstrik');
-                showElement('#divPlanovaneukonceni');
+                showElement('#divFyzickeAPravnicke');
             });
 
             $("input[id='rbPravnickaOsoba']").change(function() {
                 hideElement('#divFyzickaOsoba');
                 hideElement('#divSvazekObci');
                 showElement('#divPravnickaOsoba');
-                showElement('#divObchodniRejstrik');
-                showElement('#divPlanovaneukonceni');
+                showElement('#divFyzickeAPravnicke');
             });
 
             $("input[id='rbSvazekObci']").change(function() {
                 hideElement('#divFyzickaOsoba');
                 hideElement('#divPravnickaOsoba');
-                hideElement('#divObchodniRejstrik');
-                hideElement('#divPlanovaneukonceni');
+                hideElement('#divFyzickeAPravnicke');
                 showElement('#divSvazekObci');
             });
 

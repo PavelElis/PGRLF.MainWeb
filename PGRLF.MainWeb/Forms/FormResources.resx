@@ -775,4 +775,31 @@
   <data name="ZavazkyPredlonske" xml:space="preserve">
     <value>ke konci předminulého roku</value>
   </data>
+  <data name="Chyba_DatumCisloLicenceERMA" xml:space="preserve">
+    <value>Špatný formát datumu</value>
+  </data>
+  <data name="CisloLicenceERMA" xml:space="preserve">
+    <value>Číslo licence v evidenci dodavatelů reprodukčního materiálu(ERMA)</value>
+  </data>
+  <data name="DatumCisloLicenceERMA" xml:space="preserve">
+    <value>Platnost licence od:</value>
+  </data>
+  <data name="Nevyplneno_CisloLicenceERMA" xml:space="preserve">
+    <value>Číslo licence nebylo vyplněno</value>
+  </data>
+  <data name="Nevyplneno_DatumCisloLicenceERMA" xml:space="preserve">
+    <value>Datum vydání licence nebylo vyplněno</value>
+  </data>
+  <data name="DobaSplatnostiUveru" xml:space="preserve">
+    <value>Doba splatnosti úvěru (počet měsíců)</value>
+  </data>
+  <data name="Nevyplneno_DobaSplatnostiUveru" xml:space="preserve">
+    <value>Není vyplněna doba splatnosti úvěru</value>
+  </data>
+  <data name="Nevyplneno_PozadovanaVyseUveru" xml:space="preserve">
+    <value>Není vyplněna požadovana výše úvěru</value>
+  </data>
+  <data name="PozadovanaVyseUveru" xml:space="preserve">
+    <value>Požadovaná výše úvěru (kč)</value>
+  </data>
 </root>

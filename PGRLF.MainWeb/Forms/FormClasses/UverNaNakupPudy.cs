@@ -12,41 +12,41 @@ using PGRLF.MainWeb.Forms.FormClasses.Templates;
 namespace PGRLF.MainWeb.Forms.FormClasses
 {
     [Serializable]
-    public class PojisteniLesnichPorostu : AbstractForm
+    public class UverNaNakupPudy : AbstractForm
     {
 
-        public PojisteniLesnichPorostu()
+        public UverNaNakupPudy()
         {
             PravniForma = PravniForma.FyzickaOsoba;
             FyzickaOsoba = new FyzickaOsoba();
             PravnickaOsoba = new PravnickaOsoba();
-            SvazekObci = new SvazekObci();
             Kontakt = new Kontakt();
             BankovniSpojeni = new BankovniSpojeni();
             ObchodniRejstrik = new ObchodniRejstrik();
             DeMinimis = new DeMinimis();
+            DPH = new DPH();
+            PredmetPodnikani = new PredmetPodnikani();
+            Evidence = new Evidence();
+            PohledavkyZavazky = new PohledavkyZavazky();
+            CZNACEdotazy = new CZNACEdotazy();
+            PlanovaneUkonceni = new PlanovaneUkonceni();
+
+
         }
 
         public PravniForma PravniForma { get; set; }
 
         public FyzickaOsoba FyzickaOsoba { get; set; }
         public PravnickaOsoba PravnickaOsoba { get; set; }
-        public SvazekObci SvazekObci { get; set; }
         public Kontakt Kontakt { get; set; }
         public BankovniSpojeni BankovniSpojeni { get; set; }
         public ObchodniRejstrik ObchodniRejstrik { get; set; }
         public PlanovaneUkonceni PlanovaneUkonceni { get; set; }
-
-
-        // Temporary////////////////////////////////////////////////
-        public Evidence Evidence { get; set; }
         public DPH DPH { get; set; }
-        public Rybolov Rybolov { get; set; }
-        public Zamestnanci Zamestnanci { get; set; }
-        public SouhlasZasilani SouhlasZasilani { get; set; }
-        public PohledavkyZavazky PohledavkyZavazky { get; set; }
+        public PredmetPodnikani PredmetPodnikani { get; set; }
         public CZNACEdotazy CZNACEdotazy { get; set; }
-        /////////////////////////////////////////////////////////////
+        public PohledavkyZavazky PohledavkyZavazky { get; set; }
+        public Evidence Evidence { get; set; }
 
 
         public DeMinimis DeMinimis { get; set; }
@@ -57,6 +57,16 @@ namespace PGRLF.MainWeb.Forms.FormClasses
         [MustBeTrue(ErrorMessage = "Je potřeba souhlasit")]
         public bool SouhlasSeZpracovanim { get; set; }
 
+        public bool JeUrocnyUver { get; set; }
+        public bool JeSnizeniJistinyUveru { get; set; }
+
+        [Display(ResourceType = typeof(FormResources), Name = "DobaSplatnostiUveru")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_DobaSplatnostiUveru")]
+        public string DobaSplatnostiUveru { get; set; }
+
+        [Display(ResourceType = typeof(FormResources), Name = "PozadovanaVyseUveru")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_PozadovanaVyseUveru")]
+        public string PozadovanaVyseUveru { get; set; }
 
         public override string ApplicantEmail => Kontakt.Email;
 
@@ -68,7 +78,6 @@ namespace PGRLF.MainWeb.Forms.FormClasses
             }
             DatumPodani = DateTime.Now;
         }
-
 
         public override byte[] SavePDF()
         {

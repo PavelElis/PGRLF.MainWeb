@@ -12,10 +12,10 @@ using PGRLF.MainWeb.Forms.FormClasses.Templates;
 namespace PGRLF.MainWeb.Forms.FormClasses
 {
     [Serializable]
-    public class PojisteniLesnichPorostu : AbstractForm
+    public class PodporaSkolkarskychProvozoven : AbstractForm
     {
 
-        public PojisteniLesnichPorostu()
+        public PodporaSkolkarskychProvozoven()
         {
             PravniForma = PravniForma.FyzickaOsoba;
             FyzickaOsoba = new FyzickaOsoba();
@@ -25,6 +25,11 @@ namespace PGRLF.MainWeb.Forms.FormClasses
             BankovniSpojeni = new BankovniSpojeni();
             ObchodniRejstrik = new ObchodniRejstrik();
             DeMinimis = new DeMinimis();
+            DPH = new DPH();
+            PredmetPodnikani = new PredmetPodnikani();
+            Zamestnanci = new Zamestnanci();
+            SouhlasZasilani = new SouhlasZasilani();
+            Rybolov = new Rybolov();
         }
 
         public PravniForma PravniForma { get; set; }
@@ -36,17 +41,11 @@ namespace PGRLF.MainWeb.Forms.FormClasses
         public BankovniSpojeni BankovniSpojeni { get; set; }
         public ObchodniRejstrik ObchodniRejstrik { get; set; }
         public PlanovaneUkonceni PlanovaneUkonceni { get; set; }
-
-
-        // Temporary////////////////////////////////////////////////
-        public Evidence Evidence { get; set; }
         public DPH DPH { get; set; }
-        public Rybolov Rybolov { get; set; }
+        public PredmetPodnikani PredmetPodnikani { get; set; }
         public Zamestnanci Zamestnanci { get; set; }
         public SouhlasZasilani SouhlasZasilani { get; set; }
-        public PohledavkyZavazky PohledavkyZavazky { get; set; }
-        public CZNACEdotazy CZNACEdotazy { get; set; }
-        /////////////////////////////////////////////////////////////
+        public Rybolov Rybolov { get; set; }
 
 
         public DeMinimis DeMinimis { get; set; }
@@ -68,6 +67,19 @@ namespace PGRLF.MainWeb.Forms.FormClasses
             }
             DatumPodani = DateTime.Now;
         }
+
+
+        [Display(ResourceType = typeof(FormResources), Name = "CisloLicenceERMA")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_CisloLicenceERMA")]
+        public string CisloLicenceERMA { get; set; }
+
+        [Display(ResourceType = typeof(FormResources), Name = "DatumCisloLicenceERMA")]
+        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Date, ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Chyba_DatumCisloLicenceERMA")]
+        [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_DatumCisloLicenceERMA")]
+        public DateTime? DatumCisloLicenceERMA { get; set; }
+
+
 
 
         public override byte[] SavePDF()

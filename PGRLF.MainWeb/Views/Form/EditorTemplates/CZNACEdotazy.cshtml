@@ -1,0 +1,37 @@
+﻿@model PGRLF.MainWeb.Forms.FormClasses.Templates.CZNACEdotazy
+<div class="row">
+    <div class="large-6 columns">
+        @Html.LabelWithAsterixFor(m => m.CZNACE)
+        @Html.EditorFor(m => m.CZNACE)
+        @Html.ValidationMessageFor(m => m.CZNACE)
+    </div>
+    <div class="large-6 columns red">
+        @Html.LabelWithAsterixFor(m => m.DobaPodnikani)
+        @Html.EditorFor(m => m.DobaPodnikani)
+        @Html.ValidationMessageFor(m => m.DobaPodnikani)
+    </div>
+</div>
+<div class="row">
+    <div class="large-6 columns">
+        @Html.LabelWithAsterixFor(m => m.UkonceneObdobi)
+        @Html.EditorFor(m => m.UkonceneObdobi)
+        @Html.ValidationMessageFor(m => m.UkonceneObdobi)
+    </div>
+    <div class="large-6 columns red">
+        @Html.LabelWithAsterixFor(m => m.OdhadTrzeb)
+        @Html.EditorFor(m => m.OdhadTrzeb)
+        @Html.ValidationMessageFor(m => m.OdhadTrzeb)
+    </div>
+</div>
+<div class="row">
+    <div class="large-6 columns">
+        @Html.LabelWithAsterixFor(m => m.PrumernyPocetZamestnancu)
+        @Html.EditorFor(m => m.PrumernyPocetZamestnancu)
+        @Html.ValidationMessageFor(m => m.PrumernyPocetZamestnancu)
+    </div>
+    <div class="large-6 columns red">
+        @Html.LabelWithAsterixFor(m => m.PodilNejvetsihoOdberatele)
+        @Html.EditorFor(m => m.PodilNejvetsihoOdberatele)
+        @Html.ValidationMessageFor(m => m.PodilNejvetsihoOdberatele)
+    </div>
+</div>

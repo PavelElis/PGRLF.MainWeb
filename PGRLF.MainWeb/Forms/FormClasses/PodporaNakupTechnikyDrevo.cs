@@ -12,10 +12,10 @@ using PGRLF.MainWeb.Forms.FormClasses.Templates;
 namespace PGRLF.MainWeb.Forms.FormClasses
 {
     [Serializable]
-    public class PojisteniLesnichPorostu : AbstractForm
+    public class PodporaNakupTechnikyDrevo : AbstractForm
     {
 
-        public PojisteniLesnichPorostu()
+        public PodporaNakupTechnikyDrevo()
         {
             PravniForma = PravniForma.FyzickaOsoba;
             FyzickaOsoba = new FyzickaOsoba();
@@ -25,6 +25,11 @@ namespace PGRLF.MainWeb.Forms.FormClasses
             BankovniSpojeni = new BankovniSpojeni();
             ObchodniRejstrik = new ObchodniRejstrik();
             DeMinimis = new DeMinimis();
+            DPH = new DPH();
+            CZNACEtabulka = new CZNACEtabulka();
+            Zamestnanci = new Zamestnanci();
+            SouhlasZasilani = new SouhlasZasilani();
+            Rybolov = new Rybolov();
         }
 
         public PravniForma PravniForma { get; set; }
@@ -36,17 +41,11 @@ namespace PGRLF.MainWeb.Forms.FormClasses
         public BankovniSpojeni BankovniSpojeni { get; set; }
         public ObchodniRejstrik ObchodniRejstrik { get; set; }
         public PlanovaneUkonceni PlanovaneUkonceni { get; set; }
-
-
-        // Temporary////////////////////////////////////////////////
-        public Evidence Evidence { get; set; }
         public DPH DPH { get; set; }
-        public Rybolov Rybolov { get; set; }
+        public CZNACEtabulka CZNACEtabulka { get; set; }
         public Zamestnanci Zamestnanci { get; set; }
         public SouhlasZasilani SouhlasZasilani { get; set; }
-        public PohledavkyZavazky PohledavkyZavazky { get; set; }
-        public CZNACEdotazy CZNACEdotazy { get; set; }
-        /////////////////////////////////////////////////////////////
+        public Rybolov Rybolov { get; set; }
 
 
         public DeMinimis DeMinimis { get; set; }

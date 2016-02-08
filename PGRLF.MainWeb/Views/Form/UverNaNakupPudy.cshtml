@@ -1,16 +1,71 @@
 ﻿@using System.Web.UI.WebControls
 @using PGRLF.MainWeb.Forms.Enums
-@model PGRLF.MainWeb.Forms.FormClasses.PojisteniLesnichPorostu
+@model PGRLF.MainWeb.Forms.FormClasses.UverNaNakupPudy
 
 @{
-    ViewBag.Title = "Pojištění lesních porostů";
+    ViewBag.Title = "Úvěr na nákup půdy";
     Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
 
 <div class="text-center">
-    <h1>Program "Pojištění lesních porostů"</h1>
+    <h1>Program úvěry na nákup půdy</h1>
 </div>
 <p>(* - Údaje označené hvězdičkou je nutné vyplnit.)</p>
+
+<fieldset class="fieldset">
+    <legend>Žádost o podporu:</legend>
+    <div class="row">
+        <div class="large-10 columns">
+            <label for="rbUrocnyUver" class="middle">- úročného úvěru</label>
+        </div>
+        <div class="large-2 columns">
+            <div class="switch large">
+                @Html.CheckBoxFor(m => m.JeUrocnyUver, new { @class = "switch-input", @id = "rbUrocnyUver" })
+                <label class="switch-paddle">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-10 columns">
+            <label for="rbSnizeniJistinyUveru" class="middle">- snížení jistiny úvěru</label>
+        </div>
+        <div class="large-2 columns">
+            <div class="switch large">
+                @Html.CheckBoxFor(m => m.JeSnizeniJistinyUveru, new { @class = "switch-input", @id = "rbSnizeniJistinyUveru" })
+                <label class="switch-paddle">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="large-6 columns">
+            @Html.LabelWithAsterixFor(m => m.PozadovanaVyseUveru)
+            @Html.EditorFor(m => m.PozadovanaVyseUveru)
+            @Html.ValidationMessageFor(m => m.PozadovanaVyseUveru)
+        </div>
+        <div class="large-6 columns">
+            @Html.LabelWithAsterixFor(m => m.DobaSplatnostiUveru)
+            @Html.EditorFor(m => m.DobaSplatnostiUveru)
+            @Html.ValidationMessageFor(m => m.DobaSplatnostiUveru)
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+</fieldset>
+
 
 <fieldset class="fieldset">
     <legend>Právní forma</legend>
@@ -42,20 +97,6 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="large-10 columns">
-            <label for="rbSvazekObci" class="middle">Obec / svazek obcí</label>
-        </div>
-        <div class="large-2 columns">
-            <div class="switch large">
-                @Html.RadioButtonFor(m => m.PravniForma, PravniForma.SvazekObci, new { @class = "switch-input", @id = "rbSvazekObci" })
-                <label class="switch-paddle">
-                    <span class="switch-active" aria-hidden="true">Ano</span>
-                    <span class="switch-inactive" aria-hidden="true">Ne</span>
-                </label>
-            </div>
-        </div>
-    </div>
 </fieldset>
 
 <div id="divFyzickaOsoba">
@@ -64,22 +105,21 @@
 <div id="divPravnickaOsoba" style="display: none">
     @Html.EditorFor(m => m.PravnickaOsoba)
 </div>
-<div id="divSvazekObci" style="display: none">
-    @Html.EditorFor(m => m.SvazekObci)
-</div>
+
 
 <fieldset class="fieldset">
     <legend>Společná část</legend>
+
     @Html.EditorFor(m => m.Kontakt)
     @Html.EditorFor(m => m.BankovniSpojeni)
-    <div id="divObchodniRejstrik">
-        @Html.EditorFor(m => m.ObchodniRejstrik)
-    </div>
-    <div id="divPlanovaneUkonceni">
-        @Html.EditorFor(m => m.PlanovaneUkonceni)
-    </div>
-</fieldset>
+    @Html.EditorFor(m => m.ObchodniRejstrik)
+    @Html.EditorFor(m => m.Evidence)
+    @Html.EditorFor(m => m.PredmetPodnikani)
+    @Html.EditorFor(m => m.CZNACEdotazy)
+    @Html.EditorFor(m => m.PlanovaneUkonceni)
+    @Html.EditorFor(m => m.PohledavkyZavazky)
 
+</fieldset>
 
 <fieldset class="fieldset">
     <legend>Čestné prohlášení</legend>
@@ -179,23 +219,17 @@
                 hideElement('#divPravnickaOsoba');
                 hideElement('#divSvazekObci');
                 showElement('#divFyzickaOsoba');
-                showElement('#divObchodniRejstrik');
-                showElement('#divPlanovaneukonceni');
             });
 
             $("input[id='rbPravnickaOsoba']").change(function() {
                 hideElement('#divFyzickaOsoba');
                 hideElement('#divSvazekObci');
                 showElement('#divPravnickaOsoba');
-                showElement('#divObchodniRejstrik');
-                showElement('#divPlanovaneukonceni');
             });
 
             $("input[id='rbSvazekObci']").change(function() {
                 hideElement('#divFyzickaOsoba');
                 hideElement('#divPravnickaOsoba');
-                hideElement('#divObchodniRejstrik');
-                hideElement('#divPlanovaneukonceni');
                 showElement('#divSvazekObci');
             });
 

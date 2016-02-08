@@ -1,14 +1,14 @@
 ﻿@using System.Web.UI.WebControls
 @using PGRLF.MainWeb.Forms.Enums
-@model PGRLF.MainWeb.Forms.FormClasses.PojisteniLesnichPorostu
+@model PGRLF.MainWeb.Forms.FormClasses.PojisteniSkolky
 
 @{
-    ViewBag.Title = "Pojištění lesních porostů";
+    ViewBag.Title = "Žádost o podporu pojištění produkce školek";
     Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
 
 <div class="text-center">
-    <h1>Program "Pojištění lesních porostů"</h1>
+    <h1>Žádost o podporu pojištění produkce školek</h1>
 </div>
 <p>(* - Údaje označené hvězdičkou je nutné vyplnit.)</p>
 
@@ -42,20 +42,6 @@
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="large-10 columns">
-            <label for="rbSvazekObci" class="middle">Obec / svazek obcí</label>
-        </div>
-        <div class="large-2 columns">
-            <div class="switch large">
-                @Html.RadioButtonFor(m => m.PravniForma, PravniForma.SvazekObci, new { @class = "switch-input", @id = "rbSvazekObci" })
-                <label class="switch-paddle">
-                    <span class="switch-active" aria-hidden="true">Ano</span>
-                    <span class="switch-inactive" aria-hidden="true">Ne</span>
-                </label>
-            </div>
-        </div>
-    </div>
 </fieldset>
 
 <div id="divFyzickaOsoba">
@@ -63,9 +49,6 @@
 </div>
 <div id="divPravnickaOsoba" style="display: none">
     @Html.EditorFor(m => m.PravnickaOsoba)
-</div>
-<div id="divSvazekObci" style="display: none">
-    @Html.EditorFor(m => m.SvazekObci)
 </div>
 
 <fieldset class="fieldset">
@@ -75,11 +58,11 @@
     <div id="divObchodniRejstrik">
         @Html.EditorFor(m => m.ObchodniRejstrik)
     </div>
+    @Html.EditorFor(m => m.Evidence)
     <div id="divPlanovaneUkonceni">
         @Html.EditorFor(m => m.PlanovaneUkonceni)
     </div>
 </fieldset>
-
 
 <fieldset class="fieldset">
     <legend>Čestné prohlášení</legend>

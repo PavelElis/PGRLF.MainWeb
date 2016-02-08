@@ -12,15 +12,14 @@ using PGRLF.MainWeb.Forms.FormClasses.Templates;
 namespace PGRLF.MainWeb.Forms.FormClasses
 {
     [Serializable]
-    public class PojisteniLesnichPorostu : AbstractForm
+    public class PojisteniSkolky : AbstractForm
     {
 
-        public PojisteniLesnichPorostu()
+        public PojisteniSkolky()
         {
             PravniForma = PravniForma.FyzickaOsoba;
             FyzickaOsoba = new FyzickaOsoba();
             PravnickaOsoba = new PravnickaOsoba();
-            SvazekObci = new SvazekObci();
             Kontakt = new Kontakt();
             BankovniSpojeni = new BankovniSpojeni();
             ObchodniRejstrik = new ObchodniRejstrik();
@@ -28,27 +27,13 @@ namespace PGRLF.MainWeb.Forms.FormClasses
         }
 
         public PravniForma PravniForma { get; set; }
-
         public FyzickaOsoba FyzickaOsoba { get; set; }
         public PravnickaOsoba PravnickaOsoba { get; set; }
-        public SvazekObci SvazekObci { get; set; }
         public Kontakt Kontakt { get; set; }
         public BankovniSpojeni BankovniSpojeni { get; set; }
         public ObchodniRejstrik ObchodniRejstrik { get; set; }
         public PlanovaneUkonceni PlanovaneUkonceni { get; set; }
-
-
-        // Temporary////////////////////////////////////////////////
         public Evidence Evidence { get; set; }
-        public DPH DPH { get; set; }
-        public Rybolov Rybolov { get; set; }
-        public Zamestnanci Zamestnanci { get; set; }
-        public SouhlasZasilani SouhlasZasilani { get; set; }
-        public PohledavkyZavazky PohledavkyZavazky { get; set; }
-        public CZNACEdotazy CZNACEdotazy { get; set; }
-        /////////////////////////////////////////////////////////////
-
-
         public DeMinimis DeMinimis { get; set; }
 
         [MustBeTrue(ErrorMessage = "Je potřeba souhlasit")]

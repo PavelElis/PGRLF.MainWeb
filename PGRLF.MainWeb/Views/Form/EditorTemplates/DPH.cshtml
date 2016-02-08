@@ -1,0 +1,16 @@
+﻿@model PGRLF.MainWeb.Forms.FormClasses.Templates.DPH
+<div class="row">
+    <div class="large-10 columns">
+        <label for="cbJePlatceDPH" class="middle">Jsem plátce DPH</label>
+    </div>
+    <div class="large-2 columns">
+        <div class="switch large">
+            @Html.CheckBoxFor(m => m.JePlatceDPH, new { @class = "switch-input", @id = "cbJePlatceDPH" })
+            <label class="switch-paddle">
+                <span class="switch-active" aria-hidden="true">Ano</span>
+                <span class="switch-inactive" aria-hidden="true">Ne</span>
+            </label>
+        </div>
+    </div>
+</div>
+

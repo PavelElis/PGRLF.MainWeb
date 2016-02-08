@@ -1,4 +1,5 @@
-﻿@model PGRLF.MainWeb.Forms.FormClasses.Templates.PravnickaOsoba
+﻿@using PGRLF.MainWeb.Forms.FormClasses.Templates
+@model PGRLF.MainWeb.Forms.FormClasses.Templates.PravnickaOsoba
 
 <fieldset class="fieldset">
     <legend>Právnická osoba</legend>
@@ -8,7 +9,7 @@
             @Html.EditorFor(m => m.ObchodniJmeno)
             @Html.ValidationMessageFor(m => m.ObchodniJmeno)
         </div>
-        <div class="large-4 columns"> 
+        <div class="large-4 columns">
             @Html.LabelWithAsterixFor(m => m.TypPO)
             @Html.EditorFor(m => m.TypPO)
             @Html.ValidationMessageFor(m => m.TypPO)
@@ -40,17 +41,17 @@
     </div>
 
 
-    <h6>Adresa sídla společnosti</h6>
+    <p>Adresa sídla společnosti</p>
     @Html.EditorFor(m => m.SidloSpolecnosti)
 
-    <h6>Místo podnikání</h6>
+    <p>Místo podnikání</p>
     <div class="row">
         <div class="large-10 columns">
             <label for="cbPOJeMistoPodnikaniStejne" class="middle">Je místo podnikání stejné jako "Adresa sídla společnosti"?</label>
         </div>
         <div class="large-2 columns">
             <div class="switch large">
-                @Html.CheckBoxFor(m => m.POJeMistoPodnikaniStejne, new { @class = "switch-input", @id = "cbPOJeMistoPodnikaniStejne" })
+                @Html.CheckBoxFor(m => m.POJeMistoPodnikaniStejne, new {@class = "switch-input", @id = "cbPOJeMistoPodnikaniStejne"})
                 <label class="switch-paddle" for="FOJeMistoPodnikaniStejne">
                     <span class="switch-active" aria-hidden="true">Ano</span>
                     <span class="switch-inactive" aria-hidden="true">Ne</span>
@@ -58,14 +59,39 @@
             </div>
         </div>
     </div>
-    <div id="divPOMistoPodnikani" @if (Model.POJeMistoPodnikaniStejne) { @Html.Raw("style=\"display:none;\"") ; }>
+    <div id="divPOMistoPodnikani" @if (Model.POJeMistoPodnikaniStejne)
+                                  {
+                                      @Html.Raw("style=\"display:none;\"")
+                                      ;
+                                  }>
         @Html.EditorFor(m => m.MistoPodnikani)
     </div>
 
-    <h6>Zodpovědné osoby</h6>
-    @for (var i = 0; i < Model.ZodpovednaOsoba.Count; i++)
+    <p>Zodpovědné osoby</p>
+
+    @{
+        int i;
+    }
+    @for (i = 0; i < Model.ZodpovednaOsoba.Count; i++)
     {
         @Html.EditorFor(m => m.ZodpovednaOsoba[i])
     }
 
 </fieldset>
+
+<script>
+
+            $(".label.add").click(function() {
+                $.ajax({
+                    url: '@Url.Action("ZodpovednaOsoba","Form")',
+                    cache: false,
+                    success: function (html) { $(this).closest(".callout").append(html); }
+                });
+                return false;
+            });
+
+            $(".label.remove").click(function() {
+                $(this).closest(".callout").remove();
+            });
+
+</script>

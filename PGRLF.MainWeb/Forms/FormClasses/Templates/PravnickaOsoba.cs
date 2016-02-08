@@ -11,6 +11,8 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
             SidloSpolecnosti = new Adresa();
             MistoPodnikani = new Adresa();
             ZodpovednaOsoba = new List<ZodpovednaOsoba>() { new ZodpovednaOsoba()};
+            //ZodpovednaOsoba.Add(new ZodpovednaOsoba());
+            //ZodpovednaOsoba.Add(new ZodpovednaOsoba());
         }
 
         //Obecné údaje

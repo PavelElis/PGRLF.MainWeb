@@ -188,18 +188,9 @@ namespace PGRLF.MainWeb.Controllers
             }
         }
 
-        /*[CaptchaMvc.Attributes.CaptchaVerify("Captcha is not valid")]
-        [HttpPost]
-        public ActionResult MathCaptcha(string empty)
+        public ViewResult ZodpovednaOsoba()
         {
-            if (ModelState.IsValid)
-            {
-                TempData["Message"] = "Message: captcha is valid.";
-                return View("Load");
-            }
-
-            TempData["ErrorMessage"] = "Error: captcha is not valid.";
-            return View("Load");
-        }*/
+            return View("ZodpovednaOsoba");
+        }
     }
 }

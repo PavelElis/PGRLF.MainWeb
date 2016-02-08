@@ -1,5 +1,6 @@
 ﻿@using System.Web.UI.WebControls
 @using PGRLF.MainWeb.Forms.Enums
+@using PGRLF.MainWeb.Forms.FormClasses.Templates
 @model PGRLF.MainWeb.Forms.FormClasses.PojisteniLesnichPorostu
 
 @{
@@ -16,7 +17,7 @@
     <legend>Právní forma</legend>
     <div class="row">
         <div class="large-10 columns">
-            <label for="rbFyzickaOsoba" class="middle">Fyzická osoba</label>
+            <label class="middle">Fyzická osoba</label>
         </div>
         <div class="large-2 columns">
             <div class="switch large">
@@ -30,7 +31,7 @@
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label for="rbPravnickaOsoba" class="middle">Právnická osoba</label>
+            <label class="middle">Právnická osoba</label>
         </div>
         <div class="large-2 columns">
             <div class="switch large">
@@ -44,7 +45,7 @@
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label for="rbSvazekObci" class="middle">Obec / svazek obcí</label>
+            <label class="middle">Obec / svazek obcí</label>
         </div>
         <div class="large-2 columns">
             <div class="switch large">
@@ -91,7 +92,7 @@
     </div>
     <div class="row">
         <div class="large-6 columns">
-            <label for="cbCestneProhlaseni" class="middle">Souhlasím</label>
+            <label class="middle">Souhlasím</label>
         </div>
         <div class="large-4 columns">
             <label class="middle">@Html.ValidationMessageFor(m => m.CestneProhlaseni, string.Empty, new {@class="switch-validation-error"})</label>
@@ -121,7 +122,7 @@
     </div>
     <div class="row">
         <div class="large-6 columns">
-            <label for="cbSouhlasSeZpracovanim" class="middle">Souhlasím</label>
+            <label class="middle">Souhlasím</label>
         </div>
         <div class="large-4 columns">
             <label class="middle">@Html.ValidationMessageFor(m => m.SouhlasSeZpracovanim, string.Empty, new { @class = "switch-validation-error" })</label>
@@ -145,22 +146,22 @@
     <script>
 
         function hideElement(element) {
-            $(element).hide();
+            $(element).hide(500);
         }
 
         function showElement(element) {
-            $(element).show();
+            $(element).show(500);
         }
 
-        $.validator.addMethod("mustbetrue", function (value) {
+        $.validator.addMethod("mustbetrue", function(value) {
             return value;
         });
 
         $.validator.unobtrusive.adapters.addBool("mustbetrue");
 
 
-        $(document).ready(function () {
-            
+        $(document).ready(function() {
+
 
             $(".switch").click(function() {
                 var input = $(this).children("input[id]");
@@ -173,6 +174,7 @@
                     break;
                 }
             });
+
 
             $("input[id='rbFyzickaOsoba']").change(function() {
                 hideElement('#divPravnickaOsoba');

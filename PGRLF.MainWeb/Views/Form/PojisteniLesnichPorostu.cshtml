@@ -80,6 +80,22 @@
     </div>
 </fieldset>
 
+
+
+<fieldset class="fieldset">
+    <legend>Temporary</legend>
+    @Html.EditorFor(m => m.Evidence)
+    @Html.EditorFor(m => m.DPH)
+    @Html.EditorFor(m => m.Zamestnanci)
+    @Html.EditorFor(m => m.Rybolov)
+    @Html.EditorFor(m => m.SouhlasZasilani)
+    @Html.EditorFor(m => m.PohledavkyZavazky)
+    @Html.EditorFor(m => m.CZNACEdotazy)
+</fieldset>
+
+
+
+
 <fieldset class="fieldset">
     <legend>Čestné prohlášení</legend>
     <div class="row">
@@ -94,7 +110,7 @@
             <label for="cbCestneProhlaseni" class="middle">Souhlasím</label>
         </div>
         <div class="large-4 columns">
-            <label class="middle">@Html.ValidationMessageFor(m => m.CestneProhlaseni, string.Empty, new {@class="switch-validation-error"})</label>
+            <label class="middle">@Html.ValidationMessageFor(m => m.CestneProhlaseni, string.Empty, new { @class = "switch-validation-error" })</label>
         </div>
         <div class="large-2 columns">
             <div class="switch large">
@@ -160,7 +176,7 @@
 
 
         $(document).ready(function () {
-            
+
 
             $(".switch").click(function() {
                 var input = $(this).children("input[id]");
@@ -226,7 +242,7 @@
                 $('#divDM1UcetniObdobiZacatek').show();
                 $('#divDM1UcetniObdobiKonec').show();
             });
-            
+
             $("input[id='rbDM2NeniPropojen']").change(function () {
                 $('#divDM2Propojen').hide();
             });
@@ -234,7 +250,7 @@
             $("input[id='rbDM2JePropojen']").change(function () {
                 $('#divDM2Propojen').show();
             });
-            
+
             $("input[id='rbDM3NevzniklSpojenim']").change(function () {
                 $('#divDM3Spojen').hide();
             });

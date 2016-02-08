@@ -1,0 +1,13 @@
+﻿@model PGRLF.MainWeb.Forms.FormClasses.Templates.Evidence
+<div class="row">
+    <div class="large-8 columns">
+        @Html.LabelWithAsterixFor(m => m.EvidenceU)
+        @Html.EditorFor(m => m.EvidenceU)
+        @Html.ValidationMessageFor(m => m.EvidenceU)
+    </div>
+    <div class="large-4 columns">
+        @Html.LabelWithAsterixFor(m => m.DatumVydaniEvidence)
+        @Html.EditorFor(m => m.DatumVydaniEvidence)
+        @Html.ValidationMessageFor(m => m.DatumVydaniEvidence)
+    </div>
+</div>

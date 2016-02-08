@@ -1,0 +1,37 @@
+﻿@model PGRLF.MainWeb.Forms.FormClasses.Templates.PohledavkyZavazky
+<h6> Stav krátkodobých pohledávek po splatnosti více jak 180 dnů (v tis. Kč)</h6>
+<div class="row">
+    <div class="large-4 columns">
+        @Html.LabelWithAsterixFor(m => m.PohledavkyAktualni)
+        @Html.EditorFor(m => m.PohledavkyAktualni)
+        @Html.ValidationMessageFor(m => m.PohledavkyAktualni)
+    </div>
+    <div class="large-4 columns">
+        @Html.LabelWithAsterixFor(m => m.PohledavkyLonske)
+        @Html.EditorFor(m => m.PohledavkyLonske)
+        @Html.ValidationMessageFor(m => m.PohledavkyLonske)
+    </div>
+    <div class="large-4 columns">
+        @Html.LabelWithAsterixFor(m => m.PohledavkyPredlonske)
+        @Html.EditorFor(m => m.PohledavkyPredlonske)
+        @Html.ValidationMessageFor(m => m.PohledavkyPredlonske)
+    </div>
+</div>
+<h6> Stav krátkodobých závazků po splatnosti více jak 180 dnů (v tis. Kč)</h6>
+<div class="row">
+    <div class="large-4 columns">
+        @Html.LabelWithAsterixFor(m => m.ZavazkyAktualni)
+        @Html.EditorFor(m => m.ZavazkyAktualni)
+        @Html.ValidationMessageFor(m => m.ZavazkyAktualni)
+    </div>
+    <div class="large-4 columns">
+        @Html.LabelWithAsterixFor(m => m.ZavazkyLonske)
+        @Html.EditorFor(m => m.ZavazkyLonske)
+        @Html.ValidationMessageFor(m => m.ZavazkyLonske)
+    </div>
+    <div class="large-4 columns">
+        @Html.LabelWithAsterixFor(m => m.ZavazkyPredlonske)
+        @Html.EditorFor(m => m.ZavazkyPredlonske)
+        @Html.ValidationMessageFor(m => m.ZavazkyPredlonske)
+    </div>
+</div>

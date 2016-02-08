@@ -1,0 +1,16 @@
+﻿@model PGRLF.MainWeb.Forms.FormClasses.Templates.SouhlasZasilani
+<div class="row">
+    <div class="large-10 columns">
+        <label for="cbJePlatceDPH" class="middle">Souhlasím s elektronickým zasíláním protokolu z vyúčtování na výše uvedenou e-mailovou adresu </label>
+    </div>
+    <div class="large-2 columns">
+        <div class="switch large">
+            @Html.CheckBoxFor(m => m.JeSouhlasZasilani, new { @class = "switch-input", @id = "cbJeSouhlasZasilani" })
+            <label class="switch-paddle">
+                <span class="switch-active" aria-hidden="true">Ano</span>
+                <span class="switch-inactive" aria-hidden="true">Ne</span>
+            </label>
+        </div>
+    </div>
+</div>
+

@@ -670,4 +670,109 @@
   <data name="Nevyplneno_Souhlas" xml:space="preserve">
     <value>Je potřeba souhlasit</value>
   </data>
+  <data name="BilancniSuma" xml:space="preserve">
+    <value>Bilanční suma</value>
+  </data>
+  <data name="Chyba_DatumVydaniEvidence" xml:space="preserve">
+    <value>Datum je ve špatném formátu</value>
+  </data>
+  <data name="DatumVydaniEvidence" xml:space="preserve">
+    <value>Datum vydání</value>
+  </data>
+  <data name="EvidenceU" xml:space="preserve">
+    <value>U koho je podnikatel evidován</value>
+  </data>
+  <data name="Nevyplneno_BilancniSuma" xml:space="preserve">
+    <value>Není vyplněna Bilanční suma</value>
+  </data>
+  <data name="Nevyplneno_CZNACE" xml:space="preserve">
+    <value>Není vyplněno CZ-NACE</value>
+  </data>
+  <data name="Nevyplneno_DatumVydaniEvidence" xml:space="preserve">
+    <value>Není vyplněno datum evidence</value>
+  </data>
+  <data name="Nevyplneno_DobaPodnikani" xml:space="preserve">
+    <value>Není vyplněna doba podnikání</value>
+  </data>
+  <data name="Nevyplneno_EvidenceU" xml:space="preserve">
+    <value>Není vyplněno, kde je podnikatel evidován</value>
+  </data>
+  <data name="Nevyplneno_Obrat" xml:space="preserve">
+    <value>Není vyplněn obrat podniku</value>
+  </data>
+  <data name="Nevyplneno_OdhadTrzeb" xml:space="preserve">
+    <value>Není vyplněn odhad tržeb</value>
+  </data>
+  <data name="Nevyplneno_PocetZamestnancu" xml:space="preserve">
+    <value>Není vyplněn počet zaměstnanců</value>
+  </data>
+  <data name="Nevyplneno_PodilNejvetsihoOdberatele" xml:space="preserve">
+    <value>Není vyplněn podíl největšího odběratele</value>
+  </data>
+  <data name="Nevyplneno_PohledavkyAktualni" xml:space="preserve">
+    <value>Nejsou vyplněny pohledávky za aktuální ukončené období</value>
+  </data>
+  <data name="Nevyplneno_PohledavkyLonske" xml:space="preserve">
+    <value>Nejsou vyplněny pohledávky ke konci minulého roku</value>
+  </data>
+  <data name="Nevyplneno_PohledavkyPredlonske" xml:space="preserve">
+    <value>Nejsou vyplněny pohledávky ke konci předminulého roku</value>
+  </data>
+  <data name="Nevyplneno_PrumernyPocetZamestnancu" xml:space="preserve">
+    <value>Není vyplněn průměrný počet zaměstnanců</value>
+  </data>
+  <data name="Nevyplneno_UkonceneObdobi" xml:space="preserve">
+    <value>Neni vyplněno aktuální ukončené období</value>
+  </data>
+  <data name="Nevyplneno_VelikostPodniku" xml:space="preserve">
+    <value>Není vyplněna velikost podniku</value>
+  </data>
+  <data name="Nevyplneno_ZavazkyAktualni" xml:space="preserve">
+    <value>Nejsou vyplněny závazky za aktuální ukončené období</value>
+  </data>
+  <data name="Nevyplneno_ZavazkyLonske" xml:space="preserve">
+    <value>Nejsou vyplněny závazky ke konci minulého roku</value>
+  </data>
+  <data name="Nevyplneno_ZavazkyPredlonske" xml:space="preserve">
+    <value>Nejsou vyplněny závazky ke konci předminulého roku</value>
+  </data>
+  <data name="Obrat" xml:space="preserve">
+    <value>Obrat podniku</value>
+  </data>
+  <data name="OdhadTrzeb" xml:space="preserve">
+    <value>Odhad realizovaných tržeb ke konci aktuálního období (v % ročních tržeb)</value>
+  </data>
+  <data name="PocetZamestnancu" xml:space="preserve">
+    <value>Pocet zaměstnanců podniku</value>
+  </data>
+  <data name="PodilNejvetsihoOdberatele" xml:space="preserve">
+    <value>Podíl největšího odběratele na celkové produkci (v %) k aktuálnímu období</value>
+  </data>
+  <data name="PohledavkyAktualni" xml:space="preserve">
+    <value>za aktuální ukončené období</value>
+  </data>
+  <data name="PohledavkyLonske" xml:space="preserve">
+    <value>ke konci minulého roku</value>
+  </data>
+  <data name="PohledavkyPredlonske" xml:space="preserve">
+    <value>ke konci předminulého roku</value>
+  </data>
+  <data name="PrumernyPocetZamestnancu" xml:space="preserve">
+    <value>Průměrný počet zaměstnanců od počátku roku k aktuálnímu ukončenému období</value>
+  </data>
+  <data name="UkonceneObdobi" xml:space="preserve">
+    <value>Aktuální ukončené období (čtvrtletí, měsíc) s doloženými účetními výkazy</value>
+  </data>
+  <data name="VelikostPodniku" xml:space="preserve">
+    <value>Velikost podniku</value>
+  </data>
+  <data name="ZavazkyAktualni" xml:space="preserve">
+    <value>za aktuální ukončené období</value>
+  </data>
+  <data name="ZavazkyLonske" xml:space="preserve">
+    <value>ke konci minulého roku</value>
+  </data>
+  <data name="ZavazkyPredlonske" xml:space="preserve">
+    <value>ke konci předminulého roku</value>
+  </data>
 </root>

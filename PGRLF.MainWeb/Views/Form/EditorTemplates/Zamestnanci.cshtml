@@ -1,0 +1,25 @@
+﻿@model PGRLF.MainWeb.Forms.FormClasses.Templates.Zamestnanci
+<div class="row">
+    <div class="large-6 columns">
+        @Html.LabelWithAsterixFor(m => m.VelikostPodniku)
+        @Html.EditorFor(m => m.VelikostPodniku)
+        @Html.ValidationMessageFor(m => m.VelikostPodniku)
+    </div>
+    <div class="large-6 columns red">
+        @Html.LabelWithAsterixFor(m => m.PocetZamestnancu)
+        @Html.EditorFor(m => m.PocetZamestnancu)
+        @Html.ValidationMessageFor(m => m.PocetZamestnancu)
+    </div>
+</div>
+<div class="row">
+    <div class="large-6 columns">
+        @Html.LabelWithAsterixFor(m => m.Obrat)
+        @Html.EditorFor(m => m.Obrat)
+        @Html.ValidationMessageFor(m => m.Obrat)
+    </div>
+    <div class="large-6 columns">
+        @Html.LabelWithAsterixFor(m => m.BilancniSuma)
+        @Html.EditorFor(m => m.BilancniSuma)
+        @Html.ValidationMessageFor(m => m.BilancniSuma)
+    </div>
+</div>

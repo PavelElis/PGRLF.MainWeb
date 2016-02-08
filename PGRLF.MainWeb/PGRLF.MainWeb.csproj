@@ -408,20 +408,28 @@
     <Compile Include="Forms\Enums\PravniForma.cs" />
     <Compile Include="Forms\Enums\TypySpolecnosti.cs" />
     <Compile Include="Forms\Enums\Kraje.cs" />
+    <Compile Include="Forms\Enums\velikost.cs" />
     <Compile Include="Forms\FormClasses\PojisteniLesnichPorostu.cs" />
     <Compile Include="Forms\FormClasses\05.TechnikaLesy_ViewModel.cs" />
     <Compile Include="Forms\FormClasses\Templates\Adresa.cs" />
     <Compile Include="Forms\FormClasses\Templates\BankovniSpojeni.cs" />
+    <Compile Include="Forms\FormClasses\Templates\CZNACEdotazy.cs" />
     <Compile Include="Forms\FormClasses\Templates\DeMinimis.cs" />
+    <Compile Include="Forms\FormClasses\Templates\DPH.cs" />
     <Compile Include="Forms\FormClasses\Templates\DruhVyroby.cs" />
+    <Compile Include="Forms\FormClasses\Templates\Evidence.cs" />
     <Compile Include="Forms\FormClasses\Templates\FyzickaOsoba.cs" />
     <Compile Include="Forms\FormClasses\Templates\Kontakt.cs" />
     <Compile Include="Forms\FormClasses\Templates\ObchodniRejstrik.cs" />
     <Compile Include="Forms\FormClasses\Templates\PlanovaneUkonceni.cs" />
+    <Compile Include="Forms\FormClasses\Templates\PohledavkyZavazky.cs" />
     <Compile Include="Forms\FormClasses\Templates\Pojistovna.cs" />
     <Compile Include="Forms\FormClasses\Templates\PravnickaOsoba.cs" />
     <Compile Include="Forms\FormClasses\Templates\PredmetPodnikani.cs" />
+    <Compile Include="Forms\FormClasses\Templates\Rybolov.cs" />
+    <Compile Include="Forms\FormClasses\Templates\SouhlasZasilani.cs" />
     <Compile Include="Forms\FormClasses\Templates\SvazekObci.cs" />
+    <Compile Include="Forms\FormClasses\Templates\Zamestnanci.cs" />
     <Compile Include="Forms\FormClasses\Templates\ZodpovednaOsoba.cs" />
     <Compile Include="Forms\FormControllerFactory.cs" />
     <Compile Include="Forms\FormResources.Designer.cs">
@@ -781,6 +789,14 @@
     <Content Include="Views\Form\EditorTemplates\PlanovaneUkonceni.cshtml" />
     <Content Include="Views\Form\EditorTemplates\DeMinimis.cshtml" />
     <Content Include="Views\Form\EditorTemplates\ZodpovednaOsoba.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Velikosti.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\CZNACEdotazy.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\DPH.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\Evidence.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\PohledavkyZavazky.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\Rybolov.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\SouhlasZasilani.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\Zamestnanci.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

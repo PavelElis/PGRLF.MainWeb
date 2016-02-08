@@ -37,6 +37,18 @@ namespace PGRLF.MainWeb.Forms.FormClasses
         public ObchodniRejstrik ObchodniRejstrik { get; set; }
         public PlanovaneUkonceni PlanovaneUkonceni { get; set; }
 
+
+        // Temporary////////////////////////////////////////////////
+        public Evidence Evidence { get; set; }
+        public DPH DPH { get; set; }
+        public Rybolov Rybolov { get; set; }
+        public Zamestnanci Zamestnanci { get; set; }
+        public SouhlasZasilani SouhlasZasilani { get; set; }
+        public PohledavkyZavazky PohledavkyZavazky { get; set; }
+        public CZNACEdotazy CZNACEdotazy { get; set; }
+        /////////////////////////////////////////////////////////////
+
+
         public DeMinimis DeMinimis { get; set; }
 
         [MustBeTrue(ErrorMessage = "Je potřeba souhlasit")]
@@ -47,7 +59,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses
 
 
         public override string ApplicantEmail => Kontakt.Email;
-        
+
         public override void Process()
         {
             if (Identifikator == null || Identifikator == Guid.Empty)
@@ -56,7 +68,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses
             }
             DatumPodani = DateTime.Now;
         }
-        
+
 
         public override byte[] SavePDF()
         {

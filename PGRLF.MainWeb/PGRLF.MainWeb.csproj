@@ -409,12 +409,16 @@
     <Compile Include="Forms\Enums\TypySpolecnosti.cs" />
     <Compile Include="Forms\Enums\Kraje.cs" />
     <Compile Include="Forms\Enums\velikost.cs" />
+    <Compile Include="Forms\Enums\ZamereniVyroby.cs" />
     <Compile Include="Forms\FormClasses\PodporaNakupTechnikyDrevo.cs" />
+    <Compile Include="Forms\FormClasses\PodporaNakupuPudy.cs" />
     <Compile Include="Forms\FormClasses\PodporaSkolkarskychProvozoven.cs" />
+    <Compile Include="Forms\FormClasses\PodporaSocialniZemedelstvi.cs" />
     <Compile Include="Forms\FormClasses\PojisteniLesnichPorostu.cs" />
     <Compile Include="Forms\FormClasses\PodporaNakupTechniky.cs" />
     <Compile Include="Forms\FormClasses\PojisteniSkolky.cs" />
     <Compile Include="Forms\FormClasses\ProgramZpracovatel.cs" />
+    <Compile Include="Forms\FormClasses\SnizeniJistinyUveru.cs" />
     <Compile Include="Forms\FormClasses\Templates\Adresa.cs" />
     <Compile Include="Forms\FormClasses\Templates\BankovniSpojeni.cs" />
     <Compile Include="Forms\FormClasses\Templates\CZNACEdotazy.cs" />
@@ -427,6 +431,7 @@
     <Compile Include="Forms\FormClasses\Templates\Kontakt.cs" />
     <Compile Include="Forms\FormClasses\Templates\ObchodniRejstrik.cs" />
     <Compile Include="Forms\FormClasses\Templates\PlanovaneUkonceni.cs" />
+    <Compile Include="Forms\FormClasses\Templates\PodnikatelskyZamer.cs" />
     <Compile Include="Forms\FormClasses\Templates\PohledavkyZavazky.cs" />
     <Compile Include="Forms\FormClasses\Templates\Pojistovna.cs" />
     <Compile Include="Forms\FormClasses\Templates\PravnickaOsoba.cs" />
@@ -435,7 +440,9 @@
     <Compile Include="Forms\FormClasses\Templates\Rybolov.cs" />
     <Compile Include="Forms\FormClasses\Templates\SouhlasZasilani.cs" />
     <Compile Include="Forms\FormClasses\Templates\SvazekObci.cs" />
+    <Compile Include="Forms\FormClasses\Templates\VymeraPudy.cs" />
     <Compile Include="Forms\FormClasses\Templates\Zamestnanci.cs" />
+    <Compile Include="Forms\FormClasses\Templates\ZemedelskaVyroba.cs" />
     <Compile Include="Forms\FormClasses\Templates\ZodpovednaOsoba.cs" />
     <Compile Include="Forms\FormClasses\UverNaNakupPudy.cs" />
     <Compile Include="Forms\FormControllerFactory.cs" />
@@ -811,6 +818,13 @@
     <Content Include="Views\Form\ProgramZpracovatel.cshtml" />
     <Content Include="Views\Form\PodporaSkolkarskychProvozoven.cshtml" />
     <Content Include="Views\Form\UverNaNakupPudy.cshtml" />
+    <Content Include="Views\Form\PodporaSocialniZemedelstvi.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\VymeraPudy.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\PodnikatelskyZamer.cshtml" />
+    <Content Include="Views\Form\SnizeniJistinyUveru.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\ZamereniVyroby.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\ZemedelskaVyroba.cshtml" />
+    <Content Include="Views\Form\PodporaNakupuPudy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

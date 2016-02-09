@@ -412,7 +412,6 @@
     <Compile Include="Forms\FormClasses\PodporaNakupTechnikyDrevo.cs" />
     <Compile Include="Forms\FormClasses\PodporaSkolkarskychProvozoven.cs" />
     <Compile Include="Forms\FormClasses\PojisteniLesnichPorostu.cs" />
-    <Compile Include="Forms\FormClasses\PodporaNakupTechniky.cs" />
     <Compile Include="Forms\FormClasses\PojisteniSkolky.cs" />
     <Compile Include="Forms\FormClasses\ProgramZpracovatel.cs" />
     <Compile Include="Forms\FormClasses\Templates\Adresa.cs" />

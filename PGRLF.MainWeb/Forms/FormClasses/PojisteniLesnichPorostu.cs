@@ -35,18 +35,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses
         public Kontakt Kontakt { get; set; }
         public BankovniSpojeni BankovniSpojeni { get; set; }
         public ObchodniRejstrik ObchodniRejstrik { get; set; }
-        public PlanovaneUkonceni PlanovaneUkonceni { get; set; }
-
-
-        // Temporary////////////////////////////////////////////////
-        public Evidence Evidence { get; set; }
-        public DPH DPH { get; set; }
-        public Rybolov Rybolov { get; set; }
-        public Zamestnanci Zamestnanci { get; set; }
-        public SouhlasZasilani SouhlasZasilani { get; set; }
-        public PohledavkyZavazky PohledavkyZavazky { get; set; }
-        public CZNACEdotazy CZNACEdotazy { get; set; }
-        /////////////////////////////////////////////////////////////
+        public PlanovaneUkonceni PlanovaneUkonceni { get; set; } 
 
 
         public DeMinimis DeMinimis { get; set; }

@@ -802,4 +802,70 @@
   <data name="PozadovanaVyseUveru" xml:space="preserve">
     <value>Požadovaná výše úvěru (kč)</value>
   </data>
+  <data name="DobaSplatnostiInvesticnihoUveru" xml:space="preserve">
+    <value>Doba splatnosti investičního úvěru (měsíce)</value>
+  </data>
+  <data name="DobaSplatnostiProvoznihoUveru" xml:space="preserve">
+    <value>Doba splatnosti provozního úvěru (měsíce)</value>
+  </data>
+  <data name="Nevyplneno_PozadovanaVyseUveru1" xml:space="preserve">
+    <value>Není vyplněna požadovaná výše uvěru</value>
+  </data>
+  <data name="Nevyplneno_PozadovanaVyseUveru2" xml:space="preserve">
+    <value>Není vyplněna požadovaná výše uvěru</value>
+  </data>
+  <data name="Nevyplneno_DobaSplatnostiInvesticnihoUveru" xml:space="preserve">
+    <value>Není vyplněna doba splatnosti investičního úvěru</value>
+  </data>
+  <data name="Nevyplneno_DobaSplatnostiProvoznihoUveru" xml:space="preserve">
+    <value>Není vyplněna doba splatnosti provozního úvěru</value>
+  </data>
+  <data name="PozadovanaVyseUveru1" xml:space="preserve">
+    <value>Požadovaná výše investičního úvěru (Kč)</value>
+  </data>
+  <data name="PozadovanaVyseUveru2" xml:space="preserve">
+    <value>Požadovaná výše  provozního úvěru (Kč)</value>
+  </data>
+  <data name="KupniCena" xml:space="preserve">
+    <value>Celková kupní cena pozemku (Kč)</value>
+  </data>
+  <data name="Nevyplneno_KupniCena" xml:space="preserve">
+    <value>Není vyplněna kupní cena </value>
+  </data>
+  <data name="Nevyplneno_PudaCelkova" xml:space="preserve">
+    <value>Není vyplněna výměra půdy</value>
+  </data>
+  <data name="Nevyplneno_PudaCizi" xml:space="preserve">
+    <value>Není vyplňena pronajímaná půda</value>
+  </data>
+  <data name="Nevyplneno_PudaNakup" xml:space="preserve">
+    <value>Není vyplněna nakupovaná půda</value>
+  </data>
+  <data name="Nevyplneno_PudaVlastni" xml:space="preserve">
+    <value>Není vyplněna vlastní půda</value>
+  </data>
+  <data name="PudaCelkova" xml:space="preserve">
+    <value>Výměra obhospodařované půdy celkem (ha)</value>
+  </data>
+  <data name="PudaCizi" xml:space="preserve">
+    <value>2) Výměra půdy pronajímané či využívané na základě jiného dokumentu (ha)</value>
+  </data>
+  <data name="PudaNakup" xml:space="preserve">
+    <value>Celková nakupovaná půda (m2)</value>
+  </data>
+  <data name="PudaVlastni" xml:space="preserve">
+    <value>1) Výměra půdy vlastní (ha)</value>
+  </data>
+  <data name="Nevyplneno_Vyroba" xml:space="preserve">
+    <value>Není označena zemědělská výroba</value>
+  </data>
+  <data name="Nevyplneno_VyrobaJine" xml:space="preserve">
+    <value>Není vyplnena jiná zemědělská výroba</value>
+  </data>
+  <data name="Vyroba" xml:space="preserve">
+    <value>Zaměření zemědělské výroby</value>
+  </data>
+  <data name="VyrobaJine" xml:space="preserve">
+    <value>Uveďte zemědělskou výrobu</value>
+  </data>
 </root>

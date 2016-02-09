@@ -1,0 +1,343 @@
+﻿@using System.Web.UI.WebControls
+@using PGRLF.MainWeb.Forms.Enums
+@model PGRLF.MainWeb.Forms.FormClasses.PodporaSocialniZemedelstvi
+
+@{
+    ViewBag.Title = "Podpora Socialni Zemedelstvi";
+    Layout = "~/Views/Shared/_LayoutForm.cshtml";
+}
+
+<div class="text-center">
+    <h1>Program sociální zemědělství</h1>
+</div>
+<p>(* - Údaje označené hvězdičkou je nutné vyplnit.)</p>
+
+
+<fieldset class="fieldset">
+    <legend>Žádost o podporu</legend>
+    <div class="row">
+        <div class="large-10 columns">
+            <label for="rbUrocnyInvesticniUver" class="middle">1) Úročného investičního úvěru</label>
+        </div>
+        <div class="large-2 columns">
+            <div class="switch large">
+                @Html.CheckBoxFor(m => m.JeUrocnyInvesticniUver, new { @class = "switch-input", @id = "rbUrocnyInvesticniUver" })
+                <label class="switch-paddle">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-10 columns">
+            <label for="rbUrocnyProvozniUver" class="middle">2) Úročného provozního úvěru</label>
+        </div>
+        <div class="large-2 columns">
+            <div class="switch large">
+                @Html.CheckBoxFor(m => m.JeUrocnyProvozniUver, new { @class = "switch-input", @id = "rbUrocnyProvozniUver" })
+                <label class="switch-paddle">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-10 columns">
+            <label for="rbSnizeniJistinyInvesticniUver" class="middle">3) Snížení jistiny investičního úvěru</label>
+        </div>
+        <div class="large-2 columns">
+            <div class="switch large">
+                @Html.CheckBoxFor(m => m.JeSnizeniJistinyInvesticniUver, new { @class = "switch-input", @id = "rbSnizeniJistinyInvesticniUver" })
+                <label class="switch-paddle">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-10 columns">
+            <label for="rbSnizeniJistinyProvozniUver" class="middle">4) Snížení jistiny provozního úvěru</label>
+        </div>
+        <div class="large-2 columns">
+            <div class="switch large">
+                @Html.CheckBoxFor(m => m.JeSnizeniJistinyProvozniUver, new { @class = "switch-input", @id = "rbSnizeniJistinyProvozniUver" })
+                <label class="switch-paddle">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+    <div id="divInvesticniUver" class="row">
+        <div class="large-6 columns">
+            @Html.LabelWithAsterixFor(m => m.PozadovanaVyseUveru1)
+            @Html.EditorFor(m => m.PozadovanaVyseUveru1)
+            @Html.ValidationMessageFor(m => m.PozadovanaVyseUveru1)
+        </div>
+        <div class="large-6 columns">
+            @Html.LabelWithAsterixFor(m => m.DobaSplatnostiInvesticnihoUveru)
+            @Html.EditorFor(m => m.DobaSplatnostiInvesticnihoUveru)
+            @Html.ValidationMessageFor(m => m.DobaSplatnostiInvesticnihoUveru)
+        </div>
+    </div>
+
+    <div id="divProvozniUver" class="row">
+        <div class="large-6 columns">
+            @Html.LabelWithAsterixFor(m => m.PozadovanaVyseUveru2)
+            @Html.EditorFor(m => m.PozadovanaVyseUveru2)
+            @Html.ValidationMessageFor(m => m.PozadovanaVyseUveru2)
+        </div>
+        <div class="large-6 columns">
+            @Html.LabelWithAsterixFor(m => m.DobaSplatnostiProvoznihoUveru)
+            @Html.EditorFor(m => m.DobaSplatnostiProvoznihoUveru)
+            @Html.ValidationMessageFor(m => m.DobaSplatnostiProvoznihoUveru)
+        </div>
+    </div>
+
+
+
+</fieldset>
+
+<fieldset class="fieldset">
+    <legend>Právní forma</legend>
+    <div class="row">
+        <div class="large-10 columns">
+            <label for="rbFyzickaOsoba" class="middle">Fyzická osoba</label>
+        </div>
+        <div class="large-2 columns">
+            <div class="switch large">
+                @Html.RadioButtonFor(m => m.PravniForma, PravniForma.FyzickaOsoba, new { @class = "switch-input", @id = "rbFyzickaOsoba" })
+                <label class="switch-paddle">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-10 columns">
+            <label for="rbPravnickaOsoba" class="middle">Právnická osoba</label>
+        </div>
+        <div class="large-2 columns">
+            <div class="switch large">
+                @Html.RadioButtonFor(m => m.PravniForma, PravniForma.PravnickaOsoba, new { @class = "switch-input", @id = "rbPravnickaOsoba" })
+                <label class="switch-paddle">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
+            </div>
+        </div>
+    </div>
+</fieldset>
+
+<div id="divFyzickaOsoba">
+    @Html.EditorFor(m => m.FyzickaOsoba)
+</div>
+<div id="divPravnickaOsoba" style="display: none">
+    @Html.EditorFor(m => m.PravnickaOsoba)
+</div>
+
+
+
+<fieldset class="fieldset">
+    <legend>Společná část</legend>
+
+    @Html.EditorFor(m => m.Kontakt)
+    @Html.EditorFor(m => m.BankovniSpojeni)
+    @Html.EditorFor(m => m.ObchodniRejstrik)
+    @Html.EditorFor(m => m.Evidence)
+    @Html.EditorFor(m => m.PlanovaneUkonceni)
+    @Html.EditorFor(m => m.PrijmyTabulka)
+    @Html.EditorFor(m => m.PredmetPodnikani)
+    @Html.EditorFor(m => m.CZNACEdotazy)
+    @Html.EditorFor(m => m.PohledavkyZavazky)
+
+</fieldset>
+
+<fieldset class="fieldset">
+    <legend>Čestné prohlášení</legend>
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="callout primary">
+                @Html.Raw(@PGRLF.MainWeb.Forms.FormResources.CestneProhlaseni)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-6 columns">
+            <label for="cbCestneProhlaseni" class="middle">Souhlasím</label>
+        </div>
+        <div class="large-4 columns">
+            <label class="middle">@Html.ValidationMessageFor(m => m.CestneProhlaseni, string.Empty, new { @class = "switch-validation-error" })</label>
+        </div>
+        <div class="large-2 columns">
+            <div class="switch large">
+                @Html.CheckBoxFor(m => m.CestneProhlaseni, new { @class = "switch-input", @id = "cbCestneProhlaseni" })
+                <label class="switch-paddle" for="cbCestneProhlaseni">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
+            </div>
+        </div>
+    </div>
+</fieldset>
+
+@Html.EditorFor(m => m.DeMinimis)
+
+<fieldset class="fieldset">
+    <legend>Souhlas se zpracováním údajů</legend>
+    <div class="row">
+        <div class="large-12 columns">
+            <div class="callout primary">
+                @Html.Raw(@PGRLF.MainWeb.Forms.FormResources.SouhlasSeZpracovanim)
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-6 columns">
+            <label for="cbSouhlasSeZpracovanim" class="middle">Souhlasím</label>
+        </div>
+        <div class="large-4 columns">
+            <label class="middle">@Html.ValidationMessageFor(m => m.SouhlasSeZpracovanim, string.Empty, new { @class = "switch-validation-error" })</label>
+        </div>
+        <div class="large-2 columns">
+            <div class="switch large">
+                @Html.CheckBoxFor(m => m.SouhlasSeZpracovanim, new { @class = "switch-input", @id = "cbSouhlasSeZpracovanim" })
+                <label class="switch-paddle" for="cbSouhlasSeZpracovanim">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
+            </div>
+        </div>
+    </div>
+</fieldset>
+
+
+
+@section Scripts
+{
+    <script>
+
+        function hideElement(element) {
+            $(element).hide();
+        }
+
+        function showElement(element) {
+            $(element).show();
+        }
+
+        $.validator.addMethod("mustbetrue", function (value) {
+            return value;
+        });
+
+        $.validator.unobtrusive.adapters.addBool("mustbetrue");
+
+
+        $(document).ready(function () {
+
+
+            $(".switch").click(function() {
+                var input = $(this).children("input[id]");
+                switch ($(input).prop("type")) {
+                case "radio":
+                    $(input).prop("checked", true).change();
+                    break;
+                case "checkbox":
+                    $(input).prop("checked") ? input.prop("checked", false).change() : input.prop("checked", true).change();
+                    break;
+                }
+            });
+
+            hideElement('#divInvesticniUver');
+            hideElement('#divProvozniUver');
+
+            $("input[id='rbFyzickaOsoba']").change(function() {
+                hideElement('#divPravnickaOsoba');
+                hideElement('#divSvazekObci');
+                showElement('#divFyzickaOsoba');
+                showElement('#divFyzickeAPravnicke');
+            });
+
+            $("input[id='rbPravnickaOsoba']").change(function() {
+                hideElement('#divFyzickaOsoba');
+                hideElement('#divSvazekObci');
+                showElement('#divPravnickaOsoba');
+                showElement('#divFyzickeAPravnicke');
+            });
+
+            $("input[id='rbSvazekObci']").change(function() {
+                hideElement('#divFyzickaOsoba');
+                hideElement('#divPravnickaOsoba');
+                hideElement('#divFyzickeAPravnicke');
+                showElement('#divSvazekObci');
+            });
+
+            $("input[id='rbUrocnyInvesticniUver']").change(function () {
+                $('#divInvesticniUver').toggle();
+            });
+
+            $("input[id='rbUrocnyProvozniUver']").change(function () {
+                $('#divProvozniUver').toggle();
+            });
+
+            $("input[id='cbFOJeMistoPodnikaniStejne']").change(function () {
+                $('#divFOMistoPodnikani').toggle();
+            });
+
+            $("input[id='cbPOJeMistoPodnikaniStejne']").change(function () {
+                $('#divPOMistoPodnikani').toggle();
+            });
+
+            $("input[id='cbProdejPodniku']").change(function () {
+                $('#divProdejPodnikuDatum').toggle();
+            });
+
+            $("input[id='cbUkonceniCinnosti']").change(function () {
+                $('#divUkoceniCinnostiDatum').toggle();
+            });
+
+
+            //DeMinims
+
+            $("input[id='rbDM1UcetniObdobiKR']").change(function () {
+                $('#divDM1UcetniObdobiZacatek').hide();
+                $('#divDM1UcetniObdobiKonec').hide();
+            });
+
+            $("input[id='rbDM1UcetniObdobiHR']").change(function () {
+                $('#divDM1UcetniObdobiZacatek').show();
+                $('#divDM1UcetniObdobiKonec').show();
+            });
+
+            $("input[id='rbDM2NeniPropojen']").change(function () {
+                $('#divDM2Propojen').hide();
+            });
+
+            $("input[id='rbDM2JePropojen']").change(function () {
+                $('#divDM2Propojen').show();
+            });
+
+            $("input[id='rbDM3NevzniklSpojenim']").change(function () {
+                $('#divDM3Spojen').hide();
+            });
+
+            $("input[id='rbDM3Prevzal'], input[id='rbDM3VzniklSpojenim']").change(function () {
+                $('#divDM3Spojen').show();
+            });
+
+            $("input[id='rbDM4NevzniklRozdelenim']").change(function () {
+                $('#divDM4Vznikl').hide();
+            });
+
+            $("input[id='rbDM4VzniklRozdelenim']").change(function () {
+                $('#divDM4Vznikl').show();
+            });
+
+        });
+
+    </script>
+}

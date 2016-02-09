@@ -335,6 +335,24 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Doba splatnosti investičního úvěru (měsíce).
+        /// </summary>
+        public static string DobaSplatnostiInvesticnihoUveru {
+            get {
+                return ResourceManager.GetString("DobaSplatnostiInvesticnihoUveru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Doba splatnosti provozního úvěru (měsíce).
+        /// </summary>
+        public static string DobaSplatnostiProvoznihoUveru {
+            get {
+                return ResourceManager.GetString("DobaSplatnostiProvoznihoUveru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Doba splatnosti úvěru (počet měsíců).
         /// </summary>
         public static string DobaSplatnostiUveru {
@@ -430,6 +448,15 @@ namespace PGRLF.MainWeb.Forms {
         public static string KrestniJmeno {
             get {
                 return ResourceManager.GetString("KrestniJmeno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Celková kupní cena pozemku (Kč).
+        /// </summary>
+        public static string KupniCena {
+            get {
+                return ResourceManager.GetString("KupniCena", resourceCulture);
             }
         }
         
@@ -542,6 +569,24 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Není vyplněna doba splatnosti investičního úvěru.
+        /// </summary>
+        public static string Nevyplneno_DobaSplatnostiInvesticnihoUveru {
+            get {
+                return ResourceManager.GetString("Nevyplneno_DobaSplatnostiInvesticnihoUveru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněna doba splatnosti provozního úvěru.
+        /// </summary>
+        public static string Nevyplneno_DobaSplatnostiProvoznihoUveru {
+            get {
+                return ResourceManager.GetString("Nevyplneno_DobaSplatnostiProvoznihoUveru", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Není vyplněna doba splatnosti úvěru.
         /// </summary>
         public static string Nevyplneno_DobaSplatnostiUveru {
@@ -610,6 +655,15 @@ namespace PGRLF.MainWeb.Forms {
         public static string Nevyplneno_Kraj {
             get {
                 return ResourceManager.GetString("Nevyplneno_Kraj", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněna kupní cena .
+        /// </summary>
+        public static string Nevyplneno_KupniCena {
+            get {
+                return ResourceManager.GetString("Nevyplneno_KupniCena", resourceCulture);
             }
         }
         
@@ -749,6 +803,24 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Není vyplněna požadovaná výše uvěru.
+        /// </summary>
+        public static string Nevyplneno_PozadovanaVyseUveru1 {
+            get {
+                return ResourceManager.GetString("Nevyplneno_PozadovanaVyseUveru1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněna požadovaná výše uvěru.
+        /// </summary>
+        public static string Nevyplneno_PozadovanaVyseUveru2 {
+            get {
+                return ResourceManager.GetString("Nevyplneno_PozadovanaVyseUveru2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Není vyplněno přijímení.
         /// </summary>
         public static string Nevyplneno_Prijmeni {
@@ -781,6 +853,42 @@ namespace PGRLF.MainWeb.Forms {
         public static string Nevyplneno_PSC {
             get {
                 return ResourceManager.GetString("Nevyplneno_PSC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněna výměra půdy.
+        /// </summary>
+        public static string Nevyplneno_PudaCelkova {
+            get {
+                return ResourceManager.GetString("Nevyplneno_PudaCelkova", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplňena pronajímaná půda.
+        /// </summary>
+        public static string Nevyplneno_PudaCizi {
+            get {
+                return ResourceManager.GetString("Nevyplneno_PudaCizi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněna nakupovaná půda.
+        /// </summary>
+        public static string Nevyplneno_PudaNakup {
+            get {
+                return ResourceManager.GetString("Nevyplneno_PudaNakup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplněna vlastní půda.
+        /// </summary>
+        public static string Nevyplneno_PudaVlastni {
+            get {
+                return ResourceManager.GetString("Nevyplneno_PudaVlastni", resourceCulture);
             }
         }
         
@@ -853,6 +961,24 @@ namespace PGRLF.MainWeb.Forms {
         public static string Nevyplneno_VelikostPodniku {
             get {
                 return ResourceManager.GetString("Nevyplneno_VelikostPodniku", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není označena zemědělská výroba.
+        /// </summary>
+        public static string Nevyplneno_Vyroba {
+            get {
+                return ResourceManager.GetString("Nevyplneno_Vyroba", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Není vyplnena jiná zemědělská výroba.
+        /// </summary>
+        public static string Nevyplneno_VyrobaJine {
+            get {
+                return ResourceManager.GetString("Nevyplneno_VyrobaJine", resourceCulture);
             }
         }
         
@@ -1842,6 +1968,24 @@ namespace PGRLF.MainWeb.Forms {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Požadovaná výše investičního úvěru (Kč).
+        /// </summary>
+        public static string PozadovanaVyseUveru1 {
+            get {
+                return ResourceManager.GetString("PozadovanaVyseUveru1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Požadovaná výše  provozního úvěru (Kč).
+        /// </summary>
+        public static string PozadovanaVyseUveru2 {
+            get {
+                return ResourceManager.GetString("PozadovanaVyseUveru2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Právnická osoba.
         /// </summary>
         public static string PravnickaOsoba {
@@ -1901,6 +2045,42 @@ namespace PGRLF.MainWeb.Forms {
         public static string PSC {
             get {
                 return ResourceManager.GetString("PSC", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Výměra obhospodařované půdy celkem (ha).
+        /// </summary>
+        public static string PudaCelkova {
+            get {
+                return ResourceManager.GetString("PudaCelkova", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 2) Výměra půdy pronajímané či využívané na základě jiného dokumentu (ha).
+        /// </summary>
+        public static string PudaCizi {
+            get {
+                return ResourceManager.GetString("PudaCizi", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Celková nakupovaná půda (m2).
+        /// </summary>
+        public static string PudaNakup {
+            get {
+                return ResourceManager.GetString("PudaNakup", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 1) Výměra půdy vlastní (ha).
+        /// </summary>
+        public static string PudaVlastni {
+            get {
+                return ResourceManager.GetString("PudaVlastni", resourceCulture);
             }
         }
         
@@ -2092,6 +2272,24 @@ namespace PGRLF.MainWeb.Forms {
         public static string VyberVariant {
             get {
                 return ResourceManager.GetString("VyberVariant", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Zaměření zemědělské výroby.
+        /// </summary>
+        public static string Vyroba {
+            get {
+                return ResourceManager.GetString("Vyroba", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Uveďte zemědělskou výrobu.
+        /// </summary>
+        public static string VyrobaJine {
+            get {
+                return ResourceManager.GetString("VyrobaJine", resourceCulture);
             }
         }
         

@@ -1,0 +1,36 @@
+﻿@model PGRLF.MainWeb.Forms.FormClasses.Templates.VymeraPudy
+<h6>Obhospodářovaná půda </h6>    
+<div class="row">
+    <div class="large-12 columns">
+        @Html.LabelWithAsterixFor(m => m.PudaCelkova)
+        @Html.EditorFor(m => m.PudaCelkova)
+        @Html.ValidationMessageFor(m => m.PudaCelkova)
+    </div>
+</div>
+<h7>Z toho: </h7> 
+<div class="row">
+    <div class="large-12 columns">
+        @Html.LabelWithAsterixFor(m => m.PudaVlastni)
+        @Html.EditorFor(m => m.PudaVlastni)
+        @Html.ValidationMessageFor(m => m.PudaVlastni)
+    </div>
+</div>
+<div class="row">
+    <div class="large-12 columns">
+        @Html.LabelWithAsterixFor(m => m.PudaCizi)
+        @Html.EditorFor(m => m.PudaCizi)
+        @Html.ValidationMessageFor(m => m.PudaCizi)
+    </div>
+</div>
+ <div class="row">
+    <div class="large-6 columns">
+        @Html.LabelWithAsterixFor(m => m.PudaNakup)
+        @Html.EditorFor(m => m.PudaNakup)
+        @Html.ValidationMessageFor(m => m.PudaNakup)
+    </div>
+    <div class="large-6 columns">
+        @Html.LabelWithAsterixFor(m => m.KupniCena)
+        @Html.EditorFor(m => m.KupniCena)
+        @Html.ValidationMessageFor(m => m.KupniCena)
+    </div>
+</div>

@@ -51,12 +51,14 @@ namespace PGRLF.MainWeb.Forms
                     var form = azureStorage.GetForm(formTechName);
 
                     var controller = (IController) Activator.CreateInstance(controllerType);
-                    var viewNameField = controller.GetType().GetField("ViewName");
-                    var formNameField = controller.GetType().GetField("FormName");
+                    
+                    
                     var formIdField = controller.GetType().GetField("FormID");
+                    var formNameField = controller.GetType().GetField("FormName");
+                    var formTechNameField = controller.GetType().GetField("FormTechName");
 
 
-                    viewNameField.SetValue(controller, form.TechName);
+                    formTechNameField.SetValue(controller, form.TechName);
                     formIdField.SetValue(controller, form.Id);
                     formNameField.SetValue(controller, form.Name);
 

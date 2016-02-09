@@ -15,18 +15,18 @@ namespace PGRLF.MainWeb.Controllers
 {
     public class FormController<T> : Controller where T : class, new()
     {
-        private readonly Storage azureStorage = new Storage();
         public Guid FormID;
         public string FormName;
-        public string ViewName;
+        public string FormTechName;
         //
         // GET: /Form/
         public ActionResult Show()
         {
             ViewBag.FormID = FormID.ToString();
             ViewBag.FormName = FormName;
+            ViewBag.FormTechName = FormTechName;
             var viewModel = new T();
-            return View(ViewName, viewModel);
+            return View(FormTechName, viewModel);
         }
 
         [HttpPost]
@@ -34,22 +34,23 @@ namespace PGRLF.MainWeb.Controllers
         {
             ViewBag.FormID = FormID.ToString();
             ViewBag.FormName = FormName;
-            
+            ViewBag.FormTechName = FormTechName;
+
             ((IForm) viewModel).Process();
             ModelState.Clear();
             TryValidateModel(viewModel);
             ViewBag.IsValidationSuccessful = ModelState.IsValid;
-            return View(ViewName, viewModel);
+            return View(FormTechName, viewModel);
         }
 
         [HttpPost]
         public ActionResult Submit(T viewModel, HttpPostedFileBase[] files)
         {
             
-
-
             ViewBag.FormID = FormID.ToString();
             ViewBag.FormName = FormName;
+            ViewBag.FormTechName = FormTechName;
+
             var form = ((IForm) viewModel);
             form.Process();
             ModelState.Clear();
@@ -120,7 +121,7 @@ namespace PGRLF.MainWeb.Controllers
                 }
                 return View("Sent", viewModel);
             }
-            return View(ViewName, viewModel);
+            return View(FormTechName, viewModel);
 
         }
 
@@ -129,6 +130,8 @@ namespace PGRLF.MainWeb.Controllers
         {
             ViewBag.FormID = FormID.ToString();
             ViewBag.FormName = FormName;
+            ViewBag.FormTechName = FormTechName;
+
             var form = (IForm) viewModel;
             form.Process();
 
@@ -145,6 +148,8 @@ namespace PGRLF.MainWeb.Controllers
         {
             ViewBag.FormID = FormID.ToString();
             ViewBag.FormName = FormName;
+            ViewBag.FormTechName = FormTechName;
+
             var model = ((IForm) viewModel);
             model.Process();
 
@@ -160,6 +165,7 @@ namespace PGRLF.MainWeb.Controllers
         {
             ViewBag.FormID = FormID.ToString();
             ViewBag.FormName = FormName;
+            ViewBag.FormTechName = FormTechName;
 
             return View("Load");
         }
@@ -169,6 +175,8 @@ namespace PGRLF.MainWeb.Controllers
         {
             ViewBag.FormID = FormID.ToString();
             ViewBag.FormName = FormName;
+            ViewBag.FormTechName = FormTechName;
+
             try
             {
                 // Verify that the user selected a file
@@ -179,7 +187,7 @@ namespace PGRLF.MainWeb.Controllers
                 }
                 ((IForm) viewModel).Process();
                 // redirect back to the index action to show the form once again
-                return View(ViewName, viewModel);
+                return View(FormTechName, viewModel);
             }
             catch
             {

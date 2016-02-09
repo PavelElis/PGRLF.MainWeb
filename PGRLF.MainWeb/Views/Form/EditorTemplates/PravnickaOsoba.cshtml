@@ -81,17 +81,17 @@
 
 <script>
 
-            $(".label.add").click(function() {
-                $.ajax({
-                    url: '@Url.Action("ZodpovednaOsoba","Form")',
-                    cache: false,
-                    success: function (html) { $(this).closest(".callout").append(html); }
-                });
-                return false;
-            });
+    $(".label.add").click(function() {
+        @{
+            var j = @Model.ZodpovednaOsoba.Count();
+            Model.ZodpovednaOsoba.Add(new ZodpovednaOsoba());
+        }
+        var html = (@Html.EditorFor(m => m.ZodpovednaOsoba[j])).outerHTML();
+        $(this).closest(".callout").append(html);
+    });
 
-            $(".label.remove").click(function() {
-                $(this).closest(".callout").remove();
-            });
+    $(".label.remove").click(function () {
+        $(this).closest(".callout").remove();
+    });
 
 </script>

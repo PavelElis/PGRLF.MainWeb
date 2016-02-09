@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using PGRLF.MainWeb.Forms.Enums;
 
 namespace PGRLF.MainWeb.Forms.FormClasses.Templates
 {
@@ -10,8 +11,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
         public string CisloUctu { get; set; }
 
         [Display(ResourceType = typeof(FormResources), Name = "KodBanky")]
-        [DataType("Banka")]
         [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_KodBanky")]
-        public string KodBanky { get; set; }
+        public Banka? KodBanky { get; set; }
     }
 }

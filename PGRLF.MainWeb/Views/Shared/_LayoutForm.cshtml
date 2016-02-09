@@ -61,7 +61,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="columns">
-                                            <button id="previewPdf" type="submit" class="expanded button">Máhled žádosti</button>
+                                            <button id="previewPdf" type="submit" class="expanded button">Náhled žádosti</button>
                                         </div>
                                     </div>
                                     <div class="row">
@@ -96,7 +96,7 @@
             }
         </div>
         <script>
-        
+
             $().ready(function () {
 
                 $('#jsEnabled').show();
@@ -150,40 +150,40 @@
 
             });
 
-            $("button#validate").click(function() {
+            $("button#validate").click(function () {
                 var form = $("form");
-                form.attr("action", "/Form/Validate/@ViewBag.FormID");
-                form.submit(function() {
+                form.attr("action", "/Form/Validate/@ViewBag.FormName");
+                form.submit(function () {
                     return true;
                 });
             });
 
-            $("button#send").click(function() {
+            $("button#send").click(function () {
                 var form = $("form");
-                form.attr("action", "/Form/Submit/@ViewBag.FormID");
-                form.submit(function() {
+                form.attr("action", "/Form/Submit/@ViewBag.FormName");
+                form.submit(function () {
                     return true;
                 });
             });
 
-            $("button#save").click(function() {
+            $("button#save").click(function () {
                 var form = $("form");
-                form.attr("action", "/Form/Save/@ViewBag.FormID");
+                form.attr("action", "/Form/Save/@ViewBag.FormName");
                 form.attr("target", "_blank");
-                form.submit(function() {
+                form.submit(function () {
                     return true;
                 });
             });
-            $("button#pdfPreview").click(function() {
+            $("button#pdfPreview").click(function () {
                 var form = $("form");
-                form.attr("action", "/Form/PdfPreview/@ViewBag.FormID");
+                form.attr("action", "/Form/PdfPreview/@ViewBag.FormName");
                 form.attr("target", "_blank");
-                form.submit(function() {
+                form.submit(function () {
                     return true;
                 });
             });
-            $("button#load").click(function() {
-                window.location.href = "/Form/Load/@ViewBag.FormID";
+            $("button#load").click(function () {
+                window.location.href = "/Form/Load/@ViewBag.FormName";
                 return false;
             });
 

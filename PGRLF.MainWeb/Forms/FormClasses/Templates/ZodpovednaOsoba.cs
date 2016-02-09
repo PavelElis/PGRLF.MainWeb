@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Security.AccessControl;
 using System.Web;
+using PGRLF.MainWeb.Forms.Enums;
 
 namespace PGRLF.MainWeb.Forms.FormClasses.Templates
 {
@@ -26,8 +27,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
 
         [Display(ResourceType = typeof(FormResources), Name = "Funkce")]
         [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Funkce")]
-        [DataType("FunkceVSpolecnosti")]
-        public string Funkce { get; set; }
+        public FunkceVSpolecnosti? FunkceVSpolecnosti { get; set; }
 
     }
 }

@@ -15,9 +15,15 @@ namespace PGRLF.MainWeb
 
             routes.MapRoute(
                 name: "Default",
+                url: "{controller}/{action}/{techname}",
+                defaults: new { controller = "Home", action = "Index", techname = UrlParameter.Optional }
+            );
+
+            /*routes.MapRoute(
+                name: "Id",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+            );*/
 
         }
     }

@@ -397,18 +397,18 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmailResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Enums\Banky.cs" />
+    <Compile Include="Forms\Enums\Banka.cs" />
     <Compile Include="Forms\Enums\DM3Spojeni.cs" />
     <Compile Include="Forms\Enums\DM1UcetniObdobi.cs" />
     <Compile Include="Forms\Enums\DM2Propojeni.cs" />
     <Compile Include="Forms\Enums\DM4Rozdeleni.cs" />
     <Compile Include="Forms\Enums\DMCentralniRegistr.cs" />
     <Compile Include="Forms\Enums\FunkceVSpolecnosti.cs" />
-    <Compile Include="Forms\Enums\Pojistovny.cs" />
+    <Compile Include="Forms\Enums\Pojistovna.cs" />
     <Compile Include="Forms\Enums\PravniForma.cs" />
-    <Compile Include="Forms\Enums\TypySpolecnosti.cs" />
-    <Compile Include="Forms\Enums\Kraje.cs" />
-    <Compile Include="Forms\Enums\velikost.cs" />
+    <Compile Include="Forms\Enums\TypSpolecnosti.cs" />
+    <Compile Include="Forms\Enums\Kraj.cs" />
+    <Compile Include="Forms\Enums\Velikost.cs" />
     <Compile Include="Forms\Enums\ZamereniVyroby.cs" />
     <Compile Include="Forms\FormClasses\PodporaNakupTechnikyDrevo.cs" />
     <Compile Include="Forms\FormClasses\PodporaNakupuPudy.cs" />
@@ -781,15 +781,8 @@
     <Content Include="Views\Form\Load.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\FunkceVSpolecnosti.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Kraj.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\TypSpolecnosti.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Pojistovna.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Banka.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Enum.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Textarea.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Year.cshtml" />
-    <Content Include="Views\Form\PodporaNakupTechniky.cshtml" />
     <Content Include="Views\Form\EditorTemplates\FyzickaOsoba.cshtml" />
     <Content Include="AppSettings.config" />
     <Content Include="Views\Form\EditorTemplates\PravnickaOsoba.cshtml" />
@@ -802,7 +795,6 @@
     <Content Include="Views\Form\EditorTemplates\PlanovaneUkonceni.cshtml" />
     <Content Include="Views\Form\EditorTemplates\DeMinimis.cshtml" />
     <Content Include="Views\Form\EditorTemplates\ZodpovednaOsoba.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Velikosti.cshtml" />
     <Content Include="Views\Form\EditorTemplates\CZNACEdotazy.cshtml" />
     <Content Include="Views\Form\EditorTemplates\DPH.cshtml" />
     <Content Include="Views\Form\EditorTemplates\Evidence.cshtml" />
@@ -821,7 +813,6 @@
     <Content Include="Views\Form\EditorTemplates\VymeraPudy.cshtml" />
     <Content Include="Views\Form\EditorTemplates\PodnikatelskyZamer.cshtml" />
     <Content Include="Views\Form\SnizeniJistinyUveru.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\ZamereniVyroby.cshtml" />
     <Content Include="Views\Form\EditorTemplates\ZemedelskaVyroba.cshtml" />
     <Content Include="Views\Form\PodporaNakupuPudy.cshtml" />
   </ItemGroup>

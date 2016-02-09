@@ -17,8 +17,12 @@ namespace PGRLF.MainWeb.Forms
             if (controllerName.ToLowerInvariant() == "Form".ToLowerInvariant())
             {
                 //override for typed form controller with viewModel
-                var formId = new Guid(requestContext.RouteData.GetRequiredString("id"));
-                var form = azureStorage.GetForm(formId);
+
+                //var formId = new Guid(requestContext.RouteData.GetRequiredString("id"));
+                //var form = azureStorage.GetForm(formId);
+                var formTechName = requestContext.RouteData.GetRequiredString("techname");
+                var form = azureStorage.GetForm(formTechName);
+
                 var viewModelType = Type.GetType("PGRLF.MainWeb.Forms.FormClasses." + form.TechName);
 
                 var controllerType = typeof (FormController<>);
@@ -41,8 +45,10 @@ namespace PGRLF.MainWeb.Forms
             {
                 if (controllerType.GetGenericTypeDefinition() == typeof (FormController<>))
                 {
-                    var formId = new Guid(requestContext.RouteData.GetRequiredString("id"));
-                    var form = azureStorage.GetForm(formId);
+                    //var formId = new Guid(requestContext.RouteData.GetRequiredString("id"));
+                    //var form = azureStorage.GetForm(formId);
+                    var formTechName = requestContext.RouteData.GetRequiredString("techname");
+                    var form = azureStorage.GetForm(formTechName);
 
                     var controller = (IController) Activator.CreateInstance(controllerType);
                     var viewNameField = controller.GetType().GetField("ViewName");

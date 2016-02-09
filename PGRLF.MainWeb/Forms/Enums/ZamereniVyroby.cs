@@ -1,25 +1,16 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
 namespace PGRLF.MainWeb.Forms.Enums
 {
-    public static class ZamereniVyroby
+    public enum ZamereniVyroby
     {
-        public static IEnumerable<SelectListItem> GetList()
-        {
-            var vyroba = new string[]
-            {
-                "Rostlinná výroba",
-                "Živočišná výroba",
-                "Jiná",
-            };
-            var returnList = new List<SelectListItem>();
-
-            foreach (var vel in vyroba)
-            {
-                returnList.Add(new SelectListItem() { Text = vel, Value = vel });
-            }
-            return returnList;
-        }
+        [Display(Name = "Rostlinná výroba")]
+        Rostlinna,
+        [Display(Name = "Živočišná výroba")]
+        Zivocisna,
+        [Display(Name = "Jiná")]
+        Jina
     }
 }

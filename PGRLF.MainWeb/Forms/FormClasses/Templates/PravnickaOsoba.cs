@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using iTextSharp.text;
+using PGRLF.MainWeb.Forms.Enums;
 
 namespace PGRLF.MainWeb.Forms.FormClasses.Templates
 {
@@ -22,9 +23,8 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
         public string ObchodniJmeno { get; set; }
 
         [Display(ResourceType = typeof(FormResources), Name = "TypSpolecnosti")]
-        [DataType("TypSpolecnosti")]
         [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_TypSpolecnosti")]
-        public string TypPO { get; set; }
+        public TypSpolecnosti? TypPO { get; set; }
 
         [Display(ResourceType = typeof(FormResources), Name = "IC")]
         [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_IC")]

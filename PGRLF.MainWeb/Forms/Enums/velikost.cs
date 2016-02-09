@@ -1,25 +1,16 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Web.Mvc;
 
 namespace PGRLF.MainWeb.Forms.Enums
 {
-    public static class Velikost
+    public enum Velikost
     {
-        public static IEnumerable<SelectListItem> GetList()
-        {
-            var velikost = new string[]
-            {
-                "Malý",
-                "Střední",
-                "Velký",
-            };
-            var returnList = new List<SelectListItem>();
-
-            foreach (var vel in velikost)
-            {
-                returnList.Add(new SelectListItem() { Text = vel, Value = vel });
-            }
-            return returnList;
-        }
+        [Display(Name = "Malý")]
+        Maly,
+        [Display(Name = "Střední")]
+        Stredni,
+        [Display(Name = "Velký")]
+        Velky
     }
 }

@@ -9,7 +9,7 @@
     </div>
     <div class="large-4 columns">
         @Html.LabelWithAsterixFor(m => m.KodBanky)
-        @Html.EditorFor(m => m.KodBanky)
+        @Html.EnumDropDownListFor(m => m.KodBanky)
         @Html.ValidationMessageFor(m => m.KodBanky)
     </div>
 </div>

@@ -9,6 +9,7 @@
     @Styles.Render("~/Content/jqueryui/css")
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("HeadContent", false)
 </head>
 <body style="padding-left:30px;">
     @RenderBody()
@@ -19,6 +20,6 @@
     <script>
         $(document).foundation();
     </script>
-    @RenderSection("Scripts", required: false)
+    @RenderSection("Scripts", false)
 </body>
 </html>

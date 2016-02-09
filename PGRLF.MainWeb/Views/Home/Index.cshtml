@@ -15,7 +15,7 @@
 {
     <div class="listLinks">
         <span>
-            @Html.ActionLink(form.Name, "Show", "Form", new { id = form.Id }, null)
+            @Html.ActionLink(form.Name, "Show", "Form", new { /*id = form.Id , */techname = form.TechName}, null)
         </span>
         <span style="margin-left: 60px;">
             <a href="@form.LinkToDescription">Vše o programu</a>

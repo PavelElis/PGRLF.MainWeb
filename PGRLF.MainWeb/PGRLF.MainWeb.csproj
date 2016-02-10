@@ -404,10 +404,9 @@
     <Compile Include="Forms\Enums\DM4Rozdeleni.cs" />
     <Compile Include="Forms\Enums\DMCentralniRegistr.cs" />
     <Compile Include="Forms\Enums\FunkceVSpolecnosti.cs" />
-    <Compile Include="Forms\Enums\Pojistovna.cs" />
+    <Compile Include="Forms\Enums\Kraj.cs" />
     <Compile Include="Forms\Enums\PravniForma.cs" />
     <Compile Include="Forms\Enums\TypSpolecnosti.cs" />
-    <Compile Include="Forms\Enums\Kraj.cs" />
     <Compile Include="Forms\Enums\Velikost.cs" />
     <Compile Include="Forms\Enums\ZamereniVyroby.cs" />
     <Compile Include="Forms\FormClasses\PodporaNakupTechnikyDrevo.cs" />

@@ -11,7 +11,7 @@
         </div>
         <div class="large-4 columns">
             @Html.LabelWithAsterixFor(m => m.TypPO)
-            @Html.EditorFor(m => m.TypPO)
+            @Html.EnumDropDownListFor(m => m.TypPO)
             @Html.ValidationMessageFor(m => m.TypPO)
         </div>
     </div>
@@ -68,30 +68,8 @@
     </div>
 
     <p>Zodpovědné osoby</p>
-
-    @{
-        int i;
-    }
-    @for (i = 0; i < Model.ZodpovednaOsoba.Count; i++)
-    {
-        @Html.EditorFor(m => m.ZodpovednaOsoba[i])
-    }
+    <div id="divZodpovednaOsobaList">
+        @Html.EditorForMany(m => m.ZodpovednaOsobaList, m => m.Index)
+    </div>
 
 </fieldset>
-
-<script>
-
-    $(".label.add").click(function() {
-        @{
-            var j = @Model.ZodpovednaOsoba.Count();
-            Model.ZodpovednaOsoba.Add(new ZodpovednaOsoba());
-        }
-        var html = (@Html.EditorFor(m => m.ZodpovednaOsoba[j])).outerHTML();
-        $(this).closest(".callout").append(html);
-    });
-
-    $(".label.remove").click(function () {
-        $(this).closest(".callout").remove();
-    });
-
-</script>

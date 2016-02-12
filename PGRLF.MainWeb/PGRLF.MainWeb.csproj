@@ -456,6 +456,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\EditorForMany.cs" />
     <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Helpers\ReCaptcha.cs" />
     <Compile Include="Forms\Validation\MustBeTrue.cs" />
@@ -814,6 +815,7 @@
     <Content Include="Views\Form\SnizeniJistinyUveru.cshtml" />
     <Content Include="Views\Form\EditorTemplates\ZemedelskaVyroba.cshtml" />
     <Content Include="Views\Form\PodporaNakupuPudy.cshtml" />
+    <Content Include="Views\Form\AddZodpovednaOsoba.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -4,7 +4,7 @@
 @model PGRLF.MainWeb.Forms.FormClasses.PojisteniLesnichPorostu
 
 @{
-    ViewBag.Title = "Pojištění lesních porostů";
+    ViewBag.Title = ViewBag.FormName;
     Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
 
@@ -250,6 +250,47 @@
 
             $("input[id='rbDM4VzniklRozdelenim']").change(function () {
                 $('#divDM4Vznikl').show();
+            });
+
+            //AddZO
+
+            function showLabelAdd() {
+                var labelAdd = $("#divZodpovednaOsobaList > .callout").last().find(".label.add");
+                labelAdd.show();
+            }
+
+            $("#divZodpovednaOsobaList").on("click", ".label.add", function () {
+                var label = $(this);
+                label.hide();
+                $.ajax({
+                    url: "@Url.Action("Show", "Form")" + "/AddZodpovednaOsoba",
+                    type: "POST",
+                    dataType: "html",
+                    success: function (view) {
+                        $("#divZodpovednaOsobaList").append(view);
+                    },
+                    error: function () {
+                        label.show();
+                    },
+                    complete: function() {
+                        $("form").removeData("validator");
+                        $("form").removeData("unobtrusiveValidation");
+                        $.validator.unobtrusive.parse("form");
+                    }
+                });
+            });
+
+            $("#divZodpovednaOsobaList").on("click", ".label.remove", function () {
+                var size = $("#divZodpovednaOsobaList").children("div.callout").size();
+                if (size > 1) {
+                    $(this).closest("input[type=hidden]").remove();
+                    $(this).closest("input[type=hidden]").remove();
+                    $(this).closest(".callout").remove();
+                }
+                $("form").removeData("validator");
+                $("form").removeData("unobtrusiveValidation");
+                $.validator.unobtrusive.parse("form");
+                showLabelAdd();
             });
 
         });

@@ -13,16 +13,16 @@ namespace PGRLF.MainWeb
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
+            /*routes.MapRoute(
                 name: "FormShow",
                 url: "Form/{techname}",
                 defaults: new { controller = "Form", action = "Show", techname = UrlParameter.Optional }
-            );
+            );*/
 
             routes.MapRoute(
                 name: "FormAction",
-                url: "Form/{action}/{techname}",
-                defaults: new { controller = "Form", action = "Index", techname = UrlParameter.Optional }
+                url: "Form/{techname}/{action}",
+                defaults: new { controller = "Form", action = "Show", techname = UrlParameter.Optional }
             );
 
             routes.MapRoute(

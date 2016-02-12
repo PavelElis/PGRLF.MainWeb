@@ -10,6 +10,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
 {
     public class ZodpovednaOsoba
     {
+        public string Index { get; set; }
 
         [Display(ResourceType = typeof(FormResources), Name = "TitulPredJmenem")]
         public string TitulPredJmenem { get; set; }

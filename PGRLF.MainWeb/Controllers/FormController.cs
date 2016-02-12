@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Web;
@@ -7,6 +8,7 @@ using CaptchaMvc.Attributes;
 using CaptchaMvc.HtmlHelpers;
 using PGRLF.AzureStorageProvider;
 using PGRLF.MainWeb.Forms;
+using PGRLF.MainWeb.Forms.FormClasses.Templates;
 using PGRLF.MainWeb.Helpers;
 using Recaptcha.Web;
 using Recaptcha.Web.Mvc;
@@ -56,14 +58,12 @@ namespace PGRLF.MainWeb.Controllers
             ModelState.Clear();
             TryValidateModel(viewModel);
 
-            //bool valid = this.IsCaptchaValid("Kontrolní kód je nesprávný");
-
             string EncodedResponse = Request.Form["g-Recaptcha-Response"];
-            bool IsCaptchaValid = ReCaptcha.Validate(EncodedResponse) == "True";
+            bool IsCaptchaValid = ReCaptcha.Validate(EncodedResponse) == "true";
 
             if (!IsCaptchaValid)
             {
-                ModelState.AddModelError("", "Invalid Captcha Code!");
+                ModelState.AddModelError("", "Neplatná captcha!");
             }
 
             TryValidateModel(viewModel);
@@ -196,9 +196,11 @@ namespace PGRLF.MainWeb.Controllers
             }
         }
 
-        public ViewResult ZodpovednaOsoba()
+        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "*")]
+        public ActionResult AddZodpovednaOsoba()
         {
-            return View("ZodpovednaOsoba");
+            var model = new PravnickaOsoba();
+            return PartialView(model);
         }
     }
 }

@@ -11,9 +11,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
         {
             SidloSpolecnosti = new Adresa();
             MistoPodnikani = new Adresa();
-            ZodpovednaOsoba = new List<ZodpovednaOsoba>() { new ZodpovednaOsoba()};
-            //ZodpovednaOsoba.Add(new ZodpovednaOsoba());
-            //ZodpovednaOsoba.Add(new ZodpovednaOsoba());
+            ZodpovednaOsobaList = new List<ZodpovednaOsoba>() { new ZodpovednaOsoba()};
         }
 
         //Obecné údaje
@@ -44,7 +42,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
         [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_ZakladniKapital")]
         public int? ZakladniKapital { get; set; }
 
-        public List<ZodpovednaOsoba> ZodpovednaOsoba { get; set; }
+        public List<ZodpovednaOsoba> ZodpovednaOsobaList { get; set; }
 
         public Adresa SidloSpolecnosti { get; set; }
 
@@ -52,6 +50,15 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
 
         public Adresa MistoPodnikani { get; set; }
 
+        public void AddZodpovednaOsoba()
+        {
+            ZodpovednaOsobaList.Add(new ZodpovednaOsoba());
+        }
+
+        public void RemoveZodpovednaOsoba(int index)
+        {
+            ZodpovednaOsobaList.RemoveAt(index);
+        }
 
     }
 }

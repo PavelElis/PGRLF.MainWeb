@@ -1,0 +1,7 @@
+﻿@model PGRLF.MainWeb.Forms.FormClasses.Templates.PravnickaOsoba
+
+@{
+    ViewContext.ViewData.TemplateInfo.HtmlFieldPrefix = "PravnickaOsoba";
+}
+
+@Html.EditorForMany(x => x.ZodpovednaOsobaList, x => x.Index)

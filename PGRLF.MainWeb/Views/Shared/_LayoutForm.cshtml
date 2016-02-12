@@ -152,7 +152,7 @@
 
             $("button#validate").click(function () {
                 var form = $("form");
-                form.attr("action", "/Form/Validate/@ViewBag.FormName");
+                form.attr("action", "/Form/@ViewBag.FormTechName/Validate");
                 form.submit(function () {
                     return true;
                 });
@@ -160,7 +160,7 @@
 
             $("button#send").click(function () {
                 var form = $("form");
-                form.attr("action", "/Form/Submit/@ViewBag.FormName");
+                form.attr("action", "/Form/@ViewBag.FormTechName/Submit");
                 form.submit(function () {
                     return true;
                 });
@@ -168,7 +168,7 @@
 
             $("button#save").click(function () {
                 var form = $("form");
-                form.attr("action", "/Form/Save/@ViewBag.FormName");
+                form.attr("action", "/Form/@ViewBag.FormTechName/Save");
                 form.attr("target", "_blank");
                 form.submit(function () {
                     return true;
@@ -176,14 +176,14 @@
             });
             $("button#pdfPreview").click(function () {
                 var form = $("form");
-                form.attr("action", "/Form/PdfPreview/@ViewBag.FormName");
+                form.attr("action", "/Form/@ViewBag.FormTechName/PdfPreview");
                 form.attr("target", "_blank");
                 form.submit(function () {
                     return true;
                 });
             });
             $("button#load").click(function () {
-                window.location.href = "/Form/Load/@ViewBag.FormName";
+                window.location.href = "/Form/@ViewBag.FormTechName/Load";
                 return false;
             });
 

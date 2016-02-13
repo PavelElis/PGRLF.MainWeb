@@ -197,10 +197,30 @@ namespace PGRLF.MainWeb.Controllers
             }
         }
 
-        [OutputCache(NoStore = true, Duration = 0, VaryByParam = "*")]
         public ActionResult AddZodpovednaOsoba()
         {
             var model = new PravnickaOsoba();
+            model.Init();
+            return PartialView(model);
+        }
+
+        public ActionResult AddDM2PropojeniOsoba()
+        {
+            var model = new DeMinimis();
+            model.Init();
+            return PartialView(model);
+        }
+
+        public ActionResult AddDM3SpojeniOsoba()
+        {
+            var model = new DeMinimis();
+            model.Init();
+            return PartialView(model);
+        }
+
+        public ActionResult AddDM4RozdeleniPodpora()
+        {
+            var model = new DeMinimis();
             model.Init();
             return PartialView(model);
         }

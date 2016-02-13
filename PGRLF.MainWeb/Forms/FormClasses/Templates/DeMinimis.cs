@@ -18,16 +18,30 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
             DM3CentralniRegistr = DMCentralniRegistr.NeniZohledneno;
             DM4Rozdeleni = DM4Rozdeleni.NevniklRozdelenim;
             DM4CentralniRegistr = DMCentralniRegistr.NeniZohledneno;
+            DM2PropojeniList = new List<DeMinimisOsoba>();
+            DM3SpojeniList = new List<DeMinimisOsoba>();
+            DM4RozdeleniPodporaList = new List<DeMinimisPodpora>();
         }
 
-        [Required(ErrorMessage = "Musí být vyplněno")]
-        public string DMJmeno { get; set; }
-        [Required(ErrorMessage = "Musí být vyplněno")]
-        public string DMAdresa { get; set; }
-        [Required(ErrorMessage = "Musí být vyplněno")]
-        public string DMIC { get; set; }
+        public void Init()
+        {
+            if (!DM2PropojeniList.Any())
+            {
+                DM2PropojeniList.Add(new DeMinimisOsoba());
+            }
+            if (!DM3SpojeniList.Any())
+            {
+                DM3SpojeniList.Add(new DeMinimisOsoba());
+            }
+            if (!DM4RozdeleniPodporaList.Any())
+            {
+                DM4RozdeleniPodporaList.Add(new DeMinimisPodpora());
+            }
+        }
 
-        #region DM1
+        public DeMinimisOsoba DM0Osoba { get; set; }
+
+
         public DM1UcetniObdobi DM1UcetniObdobi { get; set; }
 
         [Required(ErrorMessage = "Musí být vyplněno")]
@@ -38,71 +52,21 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
         [Required(ErrorMessage = "Musí být vyplněno")]
         public DateTime? DM1HRKonec { get; set; }
 
-        #endregion
 
-        #region DM2
         public DM2Propojeni DM2Propojeni { get; set; }
-
-        public string DM2Jmeno1 { get; set; }
-        public string DM2Adresa1 { get; set; }
-        public string DM2IC1 { get; set; }
-
-        public string DM2Jmeno2 { get; set; }
-        public string DM2Adresa2 { get; set; }
-        public string DM2IC2 { get; set; }
-
-        public string DM2Jmeno3 { get; set; }
-        public string DM2Adresa3 { get; set; }
-        public string DM2IC3 { get; set; }
-
-        #endregion
-
-        #region DM3
+        public List<DeMinimisOsoba> DM2PropojeniList { get; set; }
+        
 
         public DM3Spojeni DM3Spojeni { get; set; }
-
-        public string DM3Jmeno1 { get; set; }
-        public string DM3Adresa1 { get; set; }
-        public string DM3IC1 { get; set; }
-
-        public string DM3Jmeno2 { get; set; }
-        public string DM3Adresa2 { get; set; }
-        public string DM3IC2 { get; set; }
-
-        public string DM3Jmeno3 { get; set; }
-        public string DM3Adresa3 { get; set; }
-        public string DM3IC3 { get; set; }
-
+        public List<DeMinimisOsoba> DM3SpojeniList { get; set; }
         public DMCentralniRegistr DM3CentralniRegistr { get; set; }
 
-        #endregion
-
-        #region DM4
 
         public DM4Rozdeleni DM4Rozdeleni { get; set; }
-
-        public string DM41Jmeno { get; set; }
-        public string DM41Adresa { get; set; }
-        public string DM41IC { get; set; }
-
-        [DataType(DataType.Date, ErrorMessage = "Chybný datum")]
-        public string DM42DatumPoskytnuti1 { get; set; }
-        public string DM42Poskytovatel1 { get; set; }
-        public string DM42Castka1 { get; set; }
-
-        [DataType(DataType.Date, ErrorMessage = "Chybný datum")]
-        public string DM42DatumPoskytnuti2 { get; set; }
-        public string DM42Poskytovatel2 { get; set; }
-        public string DM42Castka2 { get; set; }
-
-        [DataType(DataType.Date, ErrorMessage = "Chybný datum")]
-        public string DM42DatumPoskytnuti3 { get; set; }
-        public string DM42Poskytovatel3 { get; set; }
-        public string DM42Castka3 { get; set; }
-
+        public DeMinimisOsoba DM4RozdeleniOsoba { get; set; }
+        public List<DeMinimisPodpora> DM4RozdeleniPodporaList { get; set; }
         public DMCentralniRegistr DM4CentralniRegistr { get; set; }
 
-        #endregion
 
         [MustBeTrue(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Souhlas")]
         public bool DMCestneProhlaseni { get; set; }

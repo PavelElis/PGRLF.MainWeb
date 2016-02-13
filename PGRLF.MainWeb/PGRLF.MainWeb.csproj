@@ -422,6 +422,8 @@
     <Compile Include="Forms\FormClasses\Templates\CZNACEdotazy.cs" />
     <Compile Include="Forms\FormClasses\Templates\CZNACEtabulka.cs" />
     <Compile Include="Forms\FormClasses\Templates\DeMinimis.cs" />
+    <Compile Include="Forms\FormClasses\Templates\DeMinimisOsoba.cs" />
+    <Compile Include="Forms\FormClasses\Templates\DeMinimisPodpora.cs" />
     <Compile Include="Forms\FormClasses\Templates\DPH.cs" />
     <Compile Include="Forms\FormClasses\Templates\DruhVyroby.cs" />
     <Compile Include="Forms\FormClasses\Templates\Evidence.cs" />
@@ -816,6 +818,11 @@
     <Content Include="Views\Form\EditorTemplates\ZemedelskaVyroba.cshtml" />
     <Content Include="Views\Form\PodporaNakupuPudy.cshtml" />
     <Content Include="Views\Form\AddZodpovednaOsoba.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\DeMinimisOsoba.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\DeMinimisPodpora.cshtml" />
+    <Content Include="Views\Form\AddDM2PropojeniOsoba.cshtml" />
+    <Content Include="Views\Form\AddDM4RozdeleniPodpora.cshtml" />
+    <Content Include="Views\Form\AddDM3SpojeniOsoba.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

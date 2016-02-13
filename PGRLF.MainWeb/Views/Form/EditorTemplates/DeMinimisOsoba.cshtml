@@ -1,0 +1,30 @@
+﻿@model PGRLF.MainWeb.Forms.FormClasses.Templates.DeMinimisOsoba
+
+<div class='callout'>
+    <div class='row'>
+        <div class='large-11 columns'>
+            <div class='row'>
+                <div class='large-6 columns'>
+                    @Html.LabelWithAsterixFor(m => m.Jmeno)
+                    @Html.EditorFor(m => m.Jmeno)
+                    @Html.ValidationMessageFor(m => m.Jmeno)
+                </div>
+                <div class='large-6 columns'>
+                    @Html.LabelWithAsterixFor(m => m.IC)
+                    @Html.EditorFor(m => m.IC)
+                    @Html.ValidationMessageFor(m => m.IC)
+                </div>
+            </div>
+
+            @Html.EditorFor(m => m.Adresa)
+        </div>
+        <div class='large-1 columns'>
+            <div class='row'>
+                <span class='label remove'><i class='fi-minus'></i></span>
+            </div>
+            <div class='row'>
+                <span class='label add' style="display: none"><i class='fi-plus'></i></span>
+            </div>
+        </div>
+    </div>
+</div>

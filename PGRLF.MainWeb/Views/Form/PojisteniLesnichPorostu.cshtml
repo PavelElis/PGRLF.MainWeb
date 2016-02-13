@@ -143,18 +143,18 @@
             $(element).show(500);
         }
 
-        function showLastLabelAdd() {
-            var labelAdd = $("#divZodpovednaOsobaList > .callout").last().find(".label.add");
+        function showLastLabelAdd(div) {
+            var labelAdd = $(div + " > .callout").last().find(".label.add");
             showElement(labelAdd);
         }
 
         function updateFyzickaOsoba() {
             hideElement('#divPravnickaOsoba');
             hideElement('#divSvazekObci');
+            hideElement('#divPlanovaneUkonceni');
 
             showElement('#divFyzickaOsoba');
             showElement('#divObchodniRejstrik');
-            showElement('#divPlanovaneUkonceni');
             updateFOMistoPodnikani();
             updateProdejPodniku();
             updateUkonceniCinnosti();
@@ -167,7 +167,7 @@
             showElement('#divPravnickaOsoba');
             showElement('#divObchodniRejstrik');
             showElement('#divPlanovaneUkonceni');
-            updateZodpovednaOsobaList();
+            showLastLabelAdd('#divZodpovednaOsobaList');
             updatePOMistoPodnikani();
             updateProdejPodniku();
             updateUkonceniCinnosti();
@@ -196,10 +196,6 @@
             } else {
                 showElement('#divPOMistoPodnikani');
             }
-        }
-
-        function updateZodpovednaOsobaList() {
-            showLastLabelAdd();
         }
         
         function updateProdejPodniku() {
@@ -232,8 +228,53 @@
             }
         }
 
+        function updateDeMinimis() {
+            switch ($('input[name=DeMinimis\\.DM1UcetniObdobi]:checked').prop('id')) {
+                case "rbDM1UcetniObdobiKR":
+                    hideElement('#divDM1UcetniObdobiZacatek');
+                    hideElement('#divDM1UcetniObdobiKonec');
+                    break;
+                case "rbDM1UcetniObdobiHR":
+                    showElement('#divDM1UcetniObdobiZacatek');
+                    showElement('#divDM1UcetniObdobiKonec');
+                    break;
+            }
+            switch ($('input[name=DeMinimis\\.DM2Propojeni]:checked').prop('id')) {
+                case "rbDM2NeniPropojen":
+                    hideElement('#divDM2Propojeni');
+                    break;
+                case "rbDM2JePropojen":
+                    showElement('#divDM2Propojeni');
+                    showLastLabelAdd('#divDM2PropojeniList');
+                    break;
+            }
+            switch ($('input[name=DeMinimis\\.DM3Spojeni]:checked').prop('id')) {
+                case "rbDM3NevzniklSpojenim":
+                    hideElement('#divDM3Spojeni');
+                    break;
+                case "rbDM3VzniklSpojenim":
+                    showElement('#divDM3Spojeni');
+                    showLastLabelAdd('#divDM3SpojeniList');
+                    break;
+                case "rbDM3Prevzal":
+                    showElement('#divDM3Spojeni');
+                    showLastLabelAdd('#divDM3SpojeniList');
+                    break;
+            }
+            switch ($('input[name=DeMinimis\\.DM4Rozdeleni]:checked').prop('id')) {
+                case "rbDM4NevzniklRozdelenim":
+                    hideElement('#divDM4Rozdeleni');
+                    break;
+                case "rbDM4VzniklRozdelenim":
+                    showElement('#divDM4Rozdeleni');
+                    showLastLabelAdd('#DM4RozdeleniPodporaList');
+                    break;
+            }
+        }
+
         function updateView() {
             updatePravniForma();
+            updateDeMinimis();
         }
 
         $.validator.addMethod("mustbetrue", function(value) {
@@ -249,34 +290,6 @@
             $("input[type=radio], input[type=checkbox]").change(updateView);
 
 
-            //DeMinims
-
-            $("input[id='rbDM1UcetniObdobiKR']").change(function () {
-                $('#divDM1UcetniObdobiZacatek').hide();
-                $('#divDM1UcetniObdobiKonec').hide();
-            });
-
-            $("input[id='rbDM1UcetniObdobiHR']").change(function () {
-                $('#divDM1UcetniObdobiZacatek').show();
-                $('#divDM1UcetniObdobiKonec').show();
-            });
-
-            $("input[id='rbDM2NeniPropojen']").change(function () {
-                $('#divDM2Propojen').hide();
-            });
-
-            $("input[id='rbDM2JePropojen']").change(function () {
-                $('#divDM2Propojen').show();
-            });
-
-            $("input[id='rbDM3NevzniklSpojenim']").change(function () {
-                $('#divDM3Spojen').hide();
-            });
-
-            $("input[id='rbDM3Prevzal'], input[id='rbDM3VzniklSpojenim']").change(function () {
-                $('#divDM3Spojen').show();
-            });
-
             $("input[id='rbDM4NevzniklRozdelenim']").change(function () {
                 $('#divDM4Vznikl').hide();
             });
@@ -285,7 +298,7 @@
                 $('#divDM4Vznikl').show();
             });
 
-            //AddZO
+            //AddZodpovednaOsoba
 
             $("#divZodpovednaOsobaList").on("click", ".label.add", function () {
                 var label = $(this);
@@ -301,7 +314,7 @@
                         $("form").removeData("validator");
                         $("form").removeData("unobtrusiveValidation");
                         $.validator.unobtrusive.parse("form");
-                        showLastLabelAdd();
+                        showLastLabelAdd('#divZodpovednaOsobaList');
                     }
                 });
             });
@@ -316,7 +329,109 @@
                 $("form").removeData("validator");
                 $("form").removeData("unobtrusiveValidation");
                 $.validator.unobtrusive.parse("form");
-                showLastLabelAdd();
+                showLastLabelAdd('#divZodpovednaOsobaList');
+            });
+
+            //AddDM2PropojeniOsoba
+
+            $("#divDM2PropojeniList").on("click", ".label.add", function () {
+                var label = $(this);
+                hideElement(label);
+                $.ajax({
+                    url: "@Url.Action("Show", "Form")" + "/AddDM2PropojeniOsoba",
+                    type: "POST",
+                    dataType: "html",
+                    success: function (view) {
+                        $("#divDM2PropojeniList").append(view);
+                    },
+                    complete: function() {
+                        $("form").removeData("validator");
+                        $("form").removeData("unobtrusiveValidation");
+                        $.validator.unobtrusive.parse("form");
+                        showLastLabelAdd('#divDM2PropojeniList');
+                    }
+                });
+            });
+
+            $("#divDM2PropojeniList").on("click", ".label.remove", function () {
+                var size = $("#divDM2PropojeniList").children("div.callout").size();
+                if (size > 1) {
+                    $(this).closest("input[type=hidden]").remove();
+                    $(this).closest("input[type=hidden]").remove();
+                    $(this).closest(".callout").remove();
+                }
+                $("form").removeData("validator");
+                $("form").removeData("unobtrusiveValidation");
+                $.validator.unobtrusive.parse("form");
+                showLastLabelAdd("#divDM2PropojeniList");
+            });
+
+            //AddDM3SpojeniOsoba
+
+            $("#divDM3SpojeniList").on("click", ".label.add", function () {
+                var label = $(this);
+                hideElement(label);
+                $.ajax({
+                    url: "@Url.Action("Show", "Form")" + "/AddDM3SpojeniOsoba",
+                    type: "POST",
+                    dataType: "html",
+                    success: function (view) {
+                        $("#divDM3SpojeniList").append(view);
+                    },
+                    complete: function() {
+                        $("form").removeData("validator");
+                        $("form").removeData("unobtrusiveValidation");
+                        $.validator.unobtrusive.parse("form");
+                        showLastLabelAdd("#divDM3SpojeniList");
+                    }
+                });
+            });
+
+            $("#divDM3SpojeniList").on("click", ".label.remove", function () {
+                var size = $("#divDM3SpojeniList").children("div.callout").size();
+                if (size > 1) {
+                    $(this).closest("input[type=hidden]").remove();
+                    $(this).closest("input[type=hidden]").remove();
+                    $(this).closest(".callout").remove();
+                }
+                $("form").removeData("validator");
+                $("form").removeData("unobtrusiveValidation");
+                $.validator.unobtrusive.parse("form");
+                showLastLabelAdd("#divDM3SpojeniList");
+            });
+
+            //AddDM4RozpojeniOsoba
+
+            $("#DM4RozdeleniPodporaList").on("click", ".label.add", function () {
+                var label = $(this);
+                hideElement(label);
+                $.ajax({
+                    url: "@Url.Action("Show", "Form")" + "/AddDM4RozdeleniPodpora",
+                    type: "POST",
+                    dataType: "html",
+                    success: function (view) {
+                        $("#DM4RozdeleniPodporaList").append(view);
+                    },
+                    complete: function() {
+                        $("form").removeData("validator");
+                        $("form").removeData("unobtrusiveValidation");
+                        $.validator.unobtrusive.parse("form");
+                        showLastLabelAdd("#DM4RozdeleniPodporaList");
+                    }
+                });
+            });
+
+            $("#DM4RozdeleniPodporaList").on("click", ".label.remove", function () {
+                var size = $("#DM4RozdeleniPodporaList").children("div.callout").size();
+                if (size > 1) {
+                    $(this).closest("input[type=hidden]").remove();
+                    $(this).closest("input[type=hidden]").remove();
+                    $(this).closest(".callout").remove();
+                }
+                $("form").removeData("validator");
+                $("form").removeData("unobtrusiveValidation");
+                $.validator.unobtrusive.parse("form");
+                showLastLabelAdd("#DM4RozdeleniPodporaList");
             });
 
         });

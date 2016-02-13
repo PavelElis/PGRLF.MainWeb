@@ -31,6 +31,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses
         public override void Init()
         {
             PravnickaOsoba.Init();
+            DeMinimis.Init();
         }
 
         public PravniForma PravniForma { get; set; }

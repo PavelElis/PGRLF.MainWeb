@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using iTextSharp.text;
 using PGRLF.MainWeb.Forms.Enums;
 
@@ -11,7 +12,14 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
         {
             SidloSpolecnosti = new Adresa();
             MistoPodnikani = new Adresa();
-            ZodpovednaOsobaList = new List<ZodpovednaOsoba>() { new ZodpovednaOsoba()};
+            ZodpovednaOsobaList = new List<ZodpovednaOsoba>();
+        }
+
+        public void Init()
+        {
+            if (!ZodpovednaOsobaList.Any()) { 
+                ZodpovednaOsobaList.Add(new ZodpovednaOsoba());
+            }
         }
 
         //Obecné údaje

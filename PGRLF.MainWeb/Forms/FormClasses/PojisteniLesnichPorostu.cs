@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Web;
 using System.Web.UI.WebControls;
 using PGRLF.MainWeb.Forms.Enums;
@@ -25,6 +26,11 @@ namespace PGRLF.MainWeb.Forms.FormClasses
             BankovniSpojeni = new BankovniSpojeni();
             ObchodniRejstrik = new ObchodniRejstrik();
             DeMinimis = new DeMinimis();
+        }
+
+        public override void Init()
+        {
+            PravnickaOsoba.Init();
         }
 
         public PravniForma PravniForma { get; set; }

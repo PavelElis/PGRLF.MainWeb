@@ -143,6 +143,11 @@
             $(element).show(500);
         }
 
+        function showLastLabelAdd() {
+            var labelAdd = $("#divZodpovednaOsobaList > .callout").last().find(".label.add");
+            showElement(labelAdd);
+        }
+
         function updateFyzickaOsoba() {
             hideElement('#divPravnickaOsoba');
             hideElement('#divSvazekObci');
@@ -162,6 +167,7 @@
             showElement('#divPravnickaOsoba');
             showElement('#divObchodniRejstrik');
             showElement('#divPlanovaneUkonceni');
+            updateZodpovednaOsobaList();
             updatePOMistoPodnikani();
             updateProdejPodniku();
             updateUkonceniCinnosti();
@@ -190,6 +196,10 @@
             } else {
                 showElement('#divPOMistoPodnikani');
             }
+        }
+
+        function updateZodpovednaOsobaList() {
+            showLastLabelAdd();
         }
         
         function updateProdejPodniku() {
@@ -277,14 +287,9 @@
 
             //AddZO
 
-            function showLabelAdd() {
-                var labelAdd = $("#divZodpovednaOsobaList > .callout").last().find(".label.add");
-                labelAdd.show();
-            }
-
             $("#divZodpovednaOsobaList").on("click", ".label.add", function () {
                 var label = $(this);
-                label.hide();
+                hideElement(label);
                 $.ajax({
                     url: "@Url.Action("Show", "Form")" + "/AddZodpovednaOsoba",
                     type: "POST",
@@ -292,13 +297,11 @@
                     success: function (view) {
                         $("#divZodpovednaOsobaList").append(view);
                     },
-                    error: function () {
-                        label.show();
-                    },
                     complete: function() {
                         $("form").removeData("validator");
                         $("form").removeData("unobtrusiveValidation");
                         $.validator.unobtrusive.parse("form");
+                        showLastLabelAdd();
                     }
                 });
             });
@@ -313,7 +316,7 @@
                 $("form").removeData("validator");
                 $("form").removeData("unobtrusiveValidation");
                 $.validator.unobtrusive.parse("form");
-                showLabelAdd();
+                showLastLabelAdd();
             });
 
         });

@@ -28,6 +28,7 @@ namespace PGRLF.MainWeb.Controllers
             ViewBag.FormName = FormName;
             ViewBag.FormTechName = FormTechName;
             var viewModel = new T();
+            ((IForm) viewModel).Init();
             return View(FormTechName, viewModel);
         }
 
@@ -200,6 +201,7 @@ namespace PGRLF.MainWeb.Controllers
         public ActionResult AddZodpovednaOsoba()
         {
             var model = new PravnickaOsoba();
+            model.Init();
             return PartialView(model);
         }
     }

@@ -46,19 +46,9 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
 
         public Adresa SidloSpolecnosti { get; set; }
 
-        public bool POJeMistoPodnikaniStejne { get; set; }
+        public bool JeMistoPodnikaniStejne { get; set; }
 
         public Adresa MistoPodnikani { get; set; }
-
-        public void AddZodpovednaOsoba()
-        {
-            ZodpovednaOsobaList.Add(new ZodpovednaOsoba());
-        }
-
-        public void RemoveZodpovednaOsoba(int index)
-        {
-            ZodpovednaOsobaList.RemoveAt(index);
-        }
 
     }
 }

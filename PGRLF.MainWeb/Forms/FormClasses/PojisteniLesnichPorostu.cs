@@ -51,7 +51,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses
 
         public override void Process()
         {
-            switch (PravniForma)
+            /*switch (PravniForma)
             {
                 case PravniForma.FyzickaOsoba:
                     PravnickaOsoba = null;
@@ -65,7 +65,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses
                     FyzickaOsoba = null;
                     PravnickaOsoba = null;
                     break;
-            }
+            }*/
             if (Identifikator == null || Identifikator == Guid.Empty)
             {
                 Identifikator = Guid.NewGuid();

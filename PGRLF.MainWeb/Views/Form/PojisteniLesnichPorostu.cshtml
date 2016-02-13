@@ -17,12 +17,12 @@
     <legend>Právní forma</legend>
     <div class="row">
         <div class="large-10 columns">
-            <label class="middle">Fyzická osoba</label>
+            <label class="middle" for="rbFyzickaOsoba">Fyzická osoba</label>
         </div>
         <div class="large-2 columns">
             <div class="switch large">
                 @Html.RadioButtonFor(m => m.PravniForma, PravniForma.FyzickaOsoba, new { @class = "switch-input", @id = "rbFyzickaOsoba" })
-                <label class="switch-paddle">
+                <label class="switch-paddle" for="rbFyzickaOsoba">
                     <span class="switch-active" aria-hidden="true">Ano</span>
                     <span class="switch-inactive" aria-hidden="true">Ne</span>
                 </label>
@@ -31,12 +31,12 @@
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label class="middle">Právnická osoba</label>
+            <label class="middle" for="rbPravnickaOsoba">Právnická osoba</label>
         </div>
         <div class="large-2 columns">
             <div class="switch large">
                 @Html.RadioButtonFor(m => m.PravniForma, PravniForma.PravnickaOsoba, new { @class = "switch-input", @id = "rbPravnickaOsoba" })
-                <label class="switch-paddle">
+                <label class="switch-paddle" for="rbPravnickaOsoba">
                     <span class="switch-active" aria-hidden="true">Ano</span>
                     <span class="switch-inactive" aria-hidden="true">Ne</span>
                 </label>
@@ -45,12 +45,12 @@
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label class="middle">Obec / svazek obcí</label>
+            <label class="middle" for="rbSvazekObci">Obec / svazek obcí</label>
         </div>
         <div class="large-2 columns">
             <div class="switch large">
                 @Html.RadioButtonFor(m => m.PravniForma, PravniForma.SvazekObci, new { @class = "switch-input", @id = "rbSvazekObci" })
-                <label class="switch-paddle">
+                <label class="switch-paddle" for="rbSvazekObci">
                     <span class="switch-active" aria-hidden="true">Ano</span>
                     <span class="switch-inactive" aria-hidden="true">Ne</span>
                 </label>
@@ -59,26 +59,16 @@
     </div>
 </fieldset>
 
-<div id="divFyzickaOsoba">
-    @Html.EditorFor(m => m.FyzickaOsoba)
-</div>
-<div id="divPravnickaOsoba" style="display: none">
-    @Html.EditorFor(m => m.PravnickaOsoba)
-</div>
-<div id="divSvazekObci" style="display: none">
-    @Html.EditorFor(m => m.SvazekObci)
-</div>
+@Html.EditorFor(m => m.FyzickaOsoba)
+@Html.EditorFor(m => m.PravnickaOsoba)
+@Html.EditorFor(m => m.SvazekObci)
 
 <fieldset class="fieldset">
     <legend>Společná část</legend>
     @Html.EditorFor(m => m.Kontakt)
     @Html.EditorFor(m => m.BankovniSpojeni)
-    <div id="divObchodniRejstrik">
-        @Html.EditorFor(m => m.ObchodniRejstrik)
-    </div>
-    <div id="divPlanovaneUkonceni">
-        @Html.EditorFor(m => m.PlanovaneUkonceni)
-    </div>
+    @Html.EditorFor(m => m.ObchodniRejstrik)
+    @Html.EditorFor(m => m.PlanovaneUkonceni)
 </fieldset>
 
 <fieldset class="fieldset">
@@ -153,67 +143,100 @@
             $(element).show(500);
         }
 
+        function updateFyzickaOsoba() {
+            hideElement('#divPravnickaOsoba');
+            hideElement('#divSvazekObci');
+
+            showElement('#divFyzickaOsoba');
+            showElement('#divObchodniRejstrik');
+            showElement('#divPlanovaneUkonceni');
+            updateFOMistoPodnikani();
+            updateProdejPodniku();
+            updateUkonceniCinnosti();
+        }
+
+        function updatePravnickaOsoba() {
+            hideElement('#divFyzickaOsoba');
+            hideElement('#divSvazekObci');
+
+            showElement('#divPravnickaOsoba');
+            showElement('#divObchodniRejstrik');
+            showElement('#divPlanovaneUkonceni');
+            updatePOMistoPodnikani();
+            updateProdejPodniku();
+            updateUkonceniCinnosti();
+        }
+
+        function updateSvazekObci() {
+            hideElement('#divFyzickaOsoba');
+            hideElement('#divPravnickaOsoba');
+            hideElement('#divObchodniRejstrik');
+            hideElement('#divPlanovaneUkonceni');
+
+            showElement('#divSvazekObci');
+        }
+
+        function updateFOMistoPodnikani() {
+            if ($('#cbFOMistoPodnikani').prop("checked")) {
+                hideElement('#divFOMistoPodnikani');
+            } else {
+                showElement('#divFOMistoPodnikani');
+            }
+        }
+
+        function updatePOMistoPodnikani() {
+            if ($('#cbPOMistoPodnikani').prop("checked")) {
+                hideElement('#divPOMistoPodnikani');
+            } else {
+                showElement('#divPOMistoPodnikani');
+            }
+        }
+        
+        function updateProdejPodniku() {
+            if ($('#cbProdejPodniku').prop("checked")) {
+                showElement('#divProdejPodnikuDatum');
+            } else {
+                hideElement('#divProdejPodnikuDatum');
+            }
+        }
+
+        function updateUkonceniCinnosti() {
+            if ($('#cbUkonceniCinnosti').prop("checked")) {
+                showElement('#divUkonceniCinnostiDatum');
+            } else {
+                hideElement('#divUkonceniCinnostiDatum');
+            }
+        }
+
+        function updatePravniForma() {
+            switch ($('input[name=PravniForma]:checked').prop('id')) {
+                case "rbFyzickaOsoba":
+                    updateFyzickaOsoba();
+                    break;
+                case "rbPravnickaOsoba":
+                    updatePravnickaOsoba();
+                    break;
+                case "rbSvazekObci":
+                    updateSvazekObci();
+                    break;
+            }
+        }
+
+        function updateView() {
+            updatePravniForma();
+        }
+
         $.validator.addMethod("mustbetrue", function(value) {
             return value;
         });
 
         $.validator.unobtrusive.adapters.addBool("mustbetrue");
 
+        $(document).ready(function () {
 
-        $(document).ready(function() {
+            updateView();
 
-
-            $(".switch").click(function() {
-                var input = $(this).children("input[id]");
-                switch ($(input).prop("type")) {
-                case "radio":
-                    $(input).prop("checked", true).change();
-                    break;
-                case "checkbox":
-                    $(input).prop("checked") ? input.prop("checked", false).change() : input.prop("checked", true).change();
-                    break;
-                }
-            });
-
-            $("input[id='rbFyzickaOsoba']").change(function() {
-                hideElement('#divPravnickaOsoba');
-                hideElement('#divSvazekObci');
-                showElement('#divFyzickaOsoba');
-                showElement('#divObchodniRejstrik');
-                showElement('#divPlanovaneukonceni');
-            });
-
-            $("input[id='rbPravnickaOsoba']").change(function() {
-                hideElement('#divFyzickaOsoba');
-                hideElement('#divSvazekObci');
-                showElement('#divPravnickaOsoba');
-                showElement('#divObchodniRejstrik');
-                showElement('#divPlanovaneukonceni');
-            });
-
-            $("input[id='rbSvazekObci']").change(function() {
-                hideElement('#divFyzickaOsoba');
-                hideElement('#divPravnickaOsoba');
-                hideElement('#divObchodniRejstrik');
-                hideElement('#divPlanovaneukonceni');
-                showElement('#divSvazekObci');
-            });
-
-            $("input[id='cbFOJeMistoPodnikaniStejne']").change(function () {
-                $('#divFOMistoPodnikani').toggle();
-            });
-
-            $("input[id='cbPOJeMistoPodnikaniStejne']").change(function () {
-                $('#divPOMistoPodnikani').toggle();
-            });
-
-            $("input[id='cbProdejPodniku']").change(function () {
-                $('#divProdejPodnikuDatum').toggle();
-            });
-
-            $("input[id='cbUkonceniCinnosti']").change(function () {
-                $('#divUkoceniCinnostiDatum').toggle();
-            });
+            $("input[type=radio], input[type=checkbox]").change(updateView);
 
 
             //DeMinims
@@ -227,7 +250,7 @@
                 $('#divDM1UcetniObdobiZacatek').show();
                 $('#divDM1UcetniObdobiKonec').show();
             });
-            
+
             $("input[id='rbDM2NeniPropojen']").change(function () {
                 $('#divDM2Propojen').hide();
             });
@@ -235,7 +258,7 @@
             $("input[id='rbDM2JePropojen']").change(function () {
                 $('#divDM2Propojen').show();
             });
-            
+
             $("input[id='rbDM3NevzniklSpojenim']").change(function () {
                 $('#divDM3Spojen').hide();
             });

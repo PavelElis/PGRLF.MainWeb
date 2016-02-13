@@ -1,75 +1,73 @@
 ﻿@using PGRLF.MainWeb.Forms.FormClasses.Templates
 @model PGRLF.MainWeb.Forms.FormClasses.Templates.PravnickaOsoba
 
-<fieldset class="fieldset">
-    <legend>Právnická osoba</legend>
-    <div class="row">
-        <div class="large-8 columns">
-            @Html.LabelWithAsterixFor(m => m.ObchodniJmeno)
-            @Html.EditorFor(m => m.ObchodniJmeno)
-            @Html.ValidationMessageFor(m => m.ObchodniJmeno)
-        </div>
-        <div class="large-4 columns">
-            @Html.LabelWithAsterixFor(m => m.TypPO)
-            @Html.EnumDropDownListFor(m => m.TypPO)
-            @Html.ValidationMessageFor(m => m.TypPO)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.IC)
-            @Html.EditorFor(m => m.IC)
-            @Html.ValidationMessageFor(m => m.IC)
-        </div>
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DIC)
-            @Html.EditorFor(m => m.DIC)
-            @Html.ValidationMessageFor(m => m.DIC)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.PocetSpolecniku)
-            @Html.EditorFor(m => m.PocetSpolecniku)
-            @Html.ValidationMessageFor(m => m.PocetSpolecniku)
-        </div>
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.ZakladniKapital)
-            @Html.EditorFor(m => m.ZakladniKapital)
-            @Html.ValidationMessageFor(m => m.ZakladniKapital)
-        </div>
-    </div>
-
-
-    <p>Adresa sídla společnosti</p>
-    @Html.EditorFor(m => m.SidloSpolecnosti)
-
-    <p>Místo podnikání</p>
-    <div class="row">
-        <div class="large-10 columns">
-            <label for="cbPOJeMistoPodnikaniStejne" class="middle">Je místo podnikání stejné jako "Adresa sídla společnosti"?</label>
-        </div>
-        <div class="large-2 columns">
-            <div class="switch large">
-                @Html.CheckBoxFor(m => m.POJeMistoPodnikaniStejne, new {@class = "switch-input", @id = "cbPOJeMistoPodnikaniStejne"})
-                <label class="switch-paddle" for="FOJeMistoPodnikaniStejne">
-                    <span class="switch-active" aria-hidden="true">Ano</span>
-                    <span class="switch-inactive" aria-hidden="true">Ne</span>
-                </label>
+<div id="divPravnickaOsoba">
+    <fieldset class="fieldset">
+        <legend>Právnická osoba</legend>
+        <div class="row">
+            <div class="large-8 columns">
+                @Html.LabelWithAsterixFor(m => m.ObchodniJmeno)
+                @Html.EditorFor(m => m.ObchodniJmeno)
+                @Html.ValidationMessageFor(m => m.ObchodniJmeno)
+            </div>
+            <div class="large-4 columns">
+                @Html.LabelWithAsterixFor(m => m.TypPO)
+                @Html.EnumDropDownListFor(m => m.TypPO)
+                @Html.ValidationMessageFor(m => m.TypPO)
             </div>
         </div>
-    </div>
-    <div id="divPOMistoPodnikani" @if (Model.POJeMistoPodnikaniStejne)
-                                  {
-                                      @Html.Raw("style=\"display:none;\"")
-                                      ;
-                                  }>
-        @Html.EditorFor(m => m.MistoPodnikani)
-    </div>
+        <div class="row">
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.IC)
+                @Html.EditorFor(m => m.IC)
+                @Html.ValidationMessageFor(m => m.IC)
+            </div>
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.DIC)
+                @Html.EditorFor(m => m.DIC)
+                @Html.ValidationMessageFor(m => m.DIC)
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.PocetSpolecniku)
+                @Html.EditorFor(m => m.PocetSpolecniku)
+                @Html.ValidationMessageFor(m => m.PocetSpolecniku)
+            </div>
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.ZakladniKapital)
+                @Html.EditorFor(m => m.ZakladniKapital)
+                @Html.ValidationMessageFor(m => m.ZakladniKapital)
+            </div>
+        </div>
 
-    <p>Zodpovědné osoby</p>
-    <div id="divZodpovednaOsobaList">
-        @Html.EditorForMany(m => m.ZodpovednaOsobaList, m => m.Index)
-    </div>
 
-</fieldset>
+        <p>Adresa sídla společnosti</p>
+        @Html.EditorFor(m => m.SidloSpolecnosti)
+
+        <p>Místo podnikání</p>
+        <div class="row">
+            <div class="large-10 columns">
+                <label for="cbPOMistoPodnikani" class="middle">Je místo podnikání stejné jako "Adresa sídla společnosti"?</label>
+            </div>
+            <div class="large-2 columns">
+                <div class="switch large">
+                    @Html.CheckBoxFor(m => m.JeMistoPodnikaniStejne, new {@class = "switch-input", @id = "cbPOMistoPodnikani" })
+                    <label class="switch-paddle" for="cbPOMistoPodnikani">
+                        <span class="switch-active" aria-hidden="true">Ano</span>
+                        <span class="switch-inactive" aria-hidden="true">Ne</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div id="divPOMistoPodnikani">
+            @Html.EditorFor(m => m.MistoPodnikani)
+        </div>
+
+        <p>Zodpovědné osoby</p>
+        <div id="divZodpovednaOsobaList">
+            @Html.EditorForMany(m => m.ZodpovednaOsobaList, m => m.Index)
+        </div>
+
+    </fieldset>
+</div>

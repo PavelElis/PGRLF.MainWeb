@@ -151,7 +151,7 @@ namespace PGRLF.MainWeb.Controllers
             ViewBag.FormTechName = FormTechName;
 
             var model = ((IForm) viewModel);
-            model.Process();
+            //model.Process();
 
             FileResult result = new FileContentResult(model.SavePDF(), "application/pdf")
             {
@@ -185,7 +185,7 @@ namespace PGRLF.MainWeb.Controllers
                 {
                     viewModel = ((IForm) viewModel).Load(new StreamReader(file.InputStream).ReadToEnd()) as T;
                 }
-                ((IForm) viewModel).Process();
+                //((IForm) viewModel).Process();
                 // redirect back to the index action to show the form once again
                 return View(FormTechName, viewModel);
             }

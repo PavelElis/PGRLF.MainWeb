@@ -670,7 +670,6 @@
     <Content Include="Content\2013.2.611\Windows7\slider-v.gif" />
     <Content Include="Content\2013.2.611\Windows7\sprite-vertical.png" />
     <Content Include="Content\2013.2.611\Windows7\sprite.png" />
-    <Content Include="Content\foundation\app.css" />
     <Content Include="Content\foundation\foundation-flex.css" />
     <Content Include="Content\foundation\foundation.css" />
     <Content Include="Content\foundation\foundation-icons.css" />
@@ -699,7 +698,6 @@
     <Content Include="Content\jquery-ui.theme.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
-    <Content Include="Content\SiteBackup.css" />
     <Content Include="Content\foundation\foundation-icons.eot" />
     <Content Include="Content\foundation\foundation-icons.ttf" />
     <Content Include="Content\foundation\foundation-icons.woff" />
@@ -748,6 +746,7 @@
     <None Include="Properties\PublishProfiles\pgrlf-test - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\pgrlf-test - Web Deploy.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\formscripts.js" />
     <Content Include="Scripts\foundation\app.js" />
     <Content Include="Scripts\foundation\foundation.js" />
     <Content Include="Scripts\foundation\vendor\jquery.min.js" />

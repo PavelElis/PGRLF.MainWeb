@@ -20,6 +20,10 @@ namespace PGRLF.MainWeb
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                  "~/Scripts/modernizr-*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/formscripts").Include(
+                 "~/Scripts/formscripts.js"));
+
+
             bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/Site.css"));
 

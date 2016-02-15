@@ -1,0 +1,33 @@
+﻿@model PGRLF.MainWeb.Forms.FormClasses.Templates.DeMinimisPodpora
+
+<div class='callout'>
+    <div class='row'>
+        <div class='large-11 columns'>
+            <div class='row'>
+                <div class='large-6 columns'>
+                    @Html.LabelWithAsterixFor(m => m.Poskytovatel)
+                    @Html.EditorFor(m => m.Poskytovatel)
+                    @Html.ValidationMessageFor(m => m.Poskytovatel)
+                </div>
+                <div class='large-3 columns'>
+                    @Html.LabelWithAsterixFor(m => m.DatumPoskytnuti)
+                    @Html.EditorFor(m => m.DatumPoskytnuti)
+                    @Html.ValidationMessageFor(m => m.DatumPoskytnuti)
+                </div>
+                <div class='large-3 columns'>
+                    @Html.LabelWithAsterixFor(m => m.Castka)
+                    @Html.EditorFor(m => m.Castka)
+                    @Html.ValidationMessageFor(m => m.Castka)
+                </div>
+            </div>
+        </div>
+        <div class='large-1 columns'>
+            <div class='row'>
+                <span class='label remove'><i class='fi-minus'></i></span>
+            </div>
+            <div class='row'>
+                <span class='label add' style="display: none"><i class='fi-plus'></i></span>
+            </div>
+        </div>
+    </div>
+</div>

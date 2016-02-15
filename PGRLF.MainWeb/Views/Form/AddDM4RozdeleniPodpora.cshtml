@@ -1,0 +1,7 @@
+﻿@model PGRLF.MainWeb.Forms.FormClasses.Templates.DeMinimis
+
+@{
+    ViewContext.ViewData.TemplateInfo.HtmlFieldPrefix = "DeMinimis";
+}
+
+@Html.EditorForMany(x => x.DM4RozdeleniPodporaList, x => x.Index)

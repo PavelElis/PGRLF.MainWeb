@@ -1,44 +1,44 @@
 ﻿@model PGRLF.MainWeb.Forms.FormClasses.Templates.ZodpovednaOsoba
 
-<div class="callout">
-    <div class="row">
-        <div class="large-11 columns">
-            <div class="row">
-                <div class="large-6 columns">
-                    @Html.LabelWithAsterixFor(m => m.Funkce)
-                    @Html.EditorFor(m => m.Funkce)
-                    @Html.ValidationMessageFor(m => m.Funkce)
+<div class='callout'>
+    <div class='row'>
+        <div class='large-11 columns'>
+            <div class='row'>
+                <div class='large-6 columns'>
+                    @Html.LabelWithAsterixFor(m => m.FunkceVSpolecnosti)
+                    @Html.EnumDropDownListFor(m => m.FunkceVSpolecnosti)
+                    @Html.ValidationMessageFor(m => m.FunkceVSpolecnosti)
                 </div>
-                <div class="large-3 columns">
+                <div class='large-3 columns'>
                     @Html.LabelWithAsterixFor(m => m.TitulPredJmenem)
                     @Html.EditorFor(m => m.TitulPredJmenem)
                     @Html.ValidationMessageFor(m => m.TitulPredJmenem)
                 </div>
-                <div class="large-3 columns">
+                <div class='large-3 columns'>
                     @Html.LabelWithAsterixFor(m => m.TitulZaJmenem)
                     @Html.EditorFor(m => m.TitulZaJmenem)
                     @Html.ValidationMessageFor(m => m.TitulZaJmenem)
                 </div>
             </div>
-            <div class="row">
-                <div class="large-6 columns">
+            <div class='row'>
+                <div class='large-6 columns'>
                     @Html.LabelWithAsterixFor(m => m.Jmeno)
                     @Html.EditorFor(m => m.Jmeno)
                     @Html.ValidationMessageFor(m => m.Jmeno)
                 </div>
-                <div class="large-6 columns">
+                <div class='large-6 columns'>
                     @Html.LabelWithAsterixFor(m => m.Prijmeni)
                     @Html.EditorFor(m => m.Prijmeni)
                     @Html.ValidationMessageFor(m => m.Prijmeni)
                 </div>
             </div>
         </div>
-        <div class="large-1 columns">
-            <div class="row">
-                <span class="add label"><i class="fi-plus"></i></span>
+        <div class='large-1 columns'>
+            <div class='row'>
+                <span class='label remove'><i class='fi-minus'></i></span>
             </div>
-            <div class="row">
-                <span class="remove label"><i class="fi-minus"></i></span>
+            <div class='row'>
+                <span class='label add' style="display: none"><i class='fi-plus'></i></span>
             </div>
         </div>
     </div>

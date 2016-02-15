@@ -1,38 +1,40 @@
 ﻿@model PGRLF.MainWeb.Forms.FormClasses.Templates.PlanovaneUkonceni
 
-<h6>Plánované skončení</h6>
-<div class="row">
-    <div class="large-4 columns">
-        @Html.LabelFor(m => m.ProdejPodniku)
-        <div class="switch">
-            @Html.CheckBoxFor(m => m.ProdejPodniku, new { @class = "switch-input", @id = "cbProdejPodniku" })
-            <label class="switch-paddle" for="cbProdejPodniku">
-                <span class="switch-active" aria-hidden="true">Ano</span>
-                <span class="switch-inactive" aria-hidden="true">Ne</span>
-            </label>
+<div id="divPlanovaneUkonceni">
+    <h6>Plánované skončení</h6>
+    <div class="row">
+        <div class="large-4 columns">
+            @Html.LabelFor(m => m.ProdejPodniku)
+            <div class="switch">
+                @Html.CheckBoxFor(m => m.ProdejPodniku, new { @class = "switch-input", @id = "cbProdejPodniku" })
+                <label class="switch-paddle" for="cbProdejPodniku">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
+            </div>
+        </div>
+        <div id="divProdejPodnikuDatum" class="large-4 columns" style="display:none">
+            @Html.LabelWithAsterixFor(m => m.ProdejPodnikuDatum)
+            @Html.EditorFor(m => m.ProdejPodnikuDatum)
+            @Html.ValidationMessageFor(m => m.ProdejPodnikuDatum)
         </div>
     </div>
-    <div id="divProdejPodnikuDatum" class="large-4 columns" style="display:none">
-        @Html.LabelWithAsterixFor(m => m.ProdejPodnikuDatum)
-        @Html.EditorFor(m => m.ProdejPodnikuDatum)
-        @Html.ValidationMessageFor(m => m.ProdejPodnikuDatum)
-    </div>
-</div>
 
-<div class="row">
-    <div class="large-4 columns">
-        @Html.LabelFor(m => m.UkonceniCinnosti)
-        <div class="switch">
-            @Html.CheckBoxFor(m => m.UkonceniCinnosti, new { @class = "switch-input", @id = "cbUkonceniCinnosti" })
-            <label class="switch-paddle" for="cbUkonceniCinnosti">
-                <span class="switch-active" aria-hidden="true">Ano</span>
-                <span class="switch-inactive" aria-hidden="true">Ne</span>
-            </label>
+    <div class="row">
+        <div class="large-4 columns">
+            @Html.LabelFor(m => m.UkonceniCinnosti)
+            <div class="switch">
+                @Html.CheckBoxFor(m => m.UkonceniCinnosti, new {@class = "switch-input", @id = "cbUkonceniCinnosti"})
+                <label class="switch-paddle" for="cbUkonceniCinnosti">
+                    <span class="switch-active" aria-hidden="true">Ano</span>
+                    <span class="switch-inactive" aria-hidden="true">Ne</span>
+                </label>
+            </div>
         </div>
-    </div>
-    <div id="divUkoceniCinnostiDatum" class="large-4 columns" style="display: none">
-        @Html.LabelWithAsterixFor(m => m.UkonceniCinnostiDatum)
-        @Html.EditorFor(m => m.UkonceniCinnostiDatum)
-        @Html.ValidationMessageFor(m => m.UkonceniCinnostiDatum)
+        <div id="divUkonceniCinnostiDatum" class="large-4 columns" style="display: none">
+            @Html.LabelWithAsterixFor(m => m.UkonceniCinnostiDatum)
+            @Html.EditorFor(m => m.UkonceniCinnostiDatum)
+            @Html.ValidationMessageFor(m => m.UkonceniCinnostiDatum)
+        </div>
     </div>
 </div>

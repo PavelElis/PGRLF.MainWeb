@@ -1,54 +1,56 @@
 ﻿@model PGRLF.MainWeb.Forms.FormClasses.Templates.SvazekObci
 
-<fieldset class="fieldset">
-    <legend>Obec / svazek obcí</legend>
-    <div class="row">
-        <div class="large-12 columns">
-            @Html.LabelWithAsterixFor(m => m.NazevSvazkuObci)
-            @Html.EditorFor(m => m.NazevSvazkuObci)
-            @Html.ValidationMessageFor(m => m.NazevSvazkuObci)
+<div id="divSvazekObci">
+    <fieldset class="fieldset">
+        <legend>Obec / svazek obcí</legend>
+        <div class="row">
+            <div class="large-12 columns">
+                @Html.LabelWithAsterixFor(m => m.NazevSvazkuObci)
+                @Html.EditorFor(m => m.NazevSvazkuObci)
+                @Html.ValidationMessageFor(m => m.NazevSvazkuObci)
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.IC)
-            @Html.EditorFor(m => m.IC)
-            @Html.ValidationMessageFor(m => m.IC)
+        <div class="row">
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.IC)
+                @Html.EditorFor(m => m.IC)
+                @Html.ValidationMessageFor(m => m.IC)
+            </div>
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.DIC)
+                @Html.EditorFor(m => m.DIC)
+                @Html.ValidationMessageFor(m => m.DIC)
+            </div>
         </div>
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DIC)
-            @Html.EditorFor(m => m.DIC)
-            @Html.ValidationMessageFor(m => m.DIC)
-        </div>
-    </div>
 
-    <h6>Adresa</h6>
-    @Html.EditorFor(m => m.SidloSvazkuObci)
+        <h6>Adresa</h6>
+        @Html.EditorFor(m => m.SidloSvazkuObci)
 
-    <h6>Kontaktní osoba</h6>
-    <div class="row">
-        <div class="large-4 columns">
-            @Html.LabelWithAsterixFor(m => m.TitulPredJmenem)
-            @Html.EditorFor(m => m.TitulPredJmenem)
-            @Html.ValidationMessageFor(m => m.TitulPredJmenem)
+        <h6>Kontaktní osoba</h6>
+        <div class="row">
+            <div class="large-4 columns">
+                @Html.LabelWithAsterixFor(m => m.TitulPredJmenem)
+                @Html.EditorFor(m => m.TitulPredJmenem)
+                @Html.ValidationMessageFor(m => m.TitulPredJmenem)
+            </div>
+            <div class="large-8 columns">
+                @Html.LabelWithAsterixFor(m => m.Jmeno)
+                @Html.EditorFor(m => m.Jmeno)
+                @Html.ValidationMessageFor(m => m.Jmeno)
+            </div>
         </div>
-        <div class="large-8 columns">
-            @Html.LabelWithAsterixFor(m => m.Jmeno)
-            @Html.EditorFor(m => m.Jmeno)
-            @Html.ValidationMessageFor(m => m.Jmeno)
+        <div class="row">
+            <div class="large-8 columns">
+                @Html.LabelWithAsterixFor(m => m.Prijmeni)
+                @Html.EditorFor(m => m.Prijmeni)
+                @Html.ValidationMessageFor(m => m.Prijmeni)
+            </div>
+            <div class="large-4 columns">
+                @Html.LabelWithAsterixFor(m => m.TitulZaJmenem)
+                @Html.EditorFor(m => m.TitulZaJmenem)
+                @Html.ValidationMessageFor(m => m.TitulZaJmenem)
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="large-8 columns">
-            @Html.LabelWithAsterixFor(m => m.Prijmeni)
-            @Html.EditorFor(m => m.Prijmeni)
-            @Html.ValidationMessageFor(m => m.Prijmeni)
-        </div>
-        <div class="large-4 columns">
-            @Html.LabelWithAsterixFor(m => m.TitulZaJmenem)
-            @Html.EditorFor(m => m.TitulZaJmenem)
-            @Html.ValidationMessageFor(m => m.TitulZaJmenem)
-        </div>
-    </div>
 
-</fieldset>
+    </fieldset>
+</div>

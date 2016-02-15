@@ -1,4 +1,8 @@
-﻿[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],
+﻿h1 {
+    font-size: 2rem;
+}
+
+[type='text'], [type='password'], [type='date'], [type='datetime'], [type='datetime-local'], [type='month'], [type='week'], [type='email'], [type='number'], [type='search'], [type='tel'], [type='time'], [type='url'], [type='color'],
 textarea, select {
     height: 2rem;
     padding: 0.3rem;
@@ -41,12 +45,12 @@ input[type=checkbox]:checked + label > .switch-inactive {
 
 .add {
     background-color: #3adb76;
+     bottom: 1rem;
     right: 0.9375rem
 }
 
 .remove {
     background-color: #ec5840;
-    bottom: 1rem;
     right: 0.9375rem
 }
 

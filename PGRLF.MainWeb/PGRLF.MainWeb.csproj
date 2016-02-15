@@ -397,25 +397,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>EmailResources.resx</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Enums\Banky.cs" />
+    <Compile Include="Forms\Enums\Banka.cs" />
     <Compile Include="Forms\Enums\DM3Spojeni.cs" />
     <Compile Include="Forms\Enums\DM1UcetniObdobi.cs" />
     <Compile Include="Forms\Enums\DM2Propojeni.cs" />
     <Compile Include="Forms\Enums\DM4Rozdeleni.cs" />
     <Compile Include="Forms\Enums\DMCentralniRegistr.cs" />
     <Compile Include="Forms\Enums\FunkceVSpolecnosti.cs" />
-    <Compile Include="Forms\Enums\Pojistovny.cs" />
+    <Compile Include="Forms\Enums\Kraj.cs" />
     <Compile Include="Forms\Enums\PravniForma.cs" />
-    <Compile Include="Forms\Enums\TypySpolecnosti.cs" />
-    <Compile Include="Forms\Enums\Kraje.cs" />
-    <Compile Include="Forms\Enums\velikost.cs" />
+    <Compile Include="Forms\Enums\TypSpolecnosti.cs" />
+    <Compile Include="Forms\Enums\Velikost.cs" />
     <Compile Include="Forms\Enums\ZamereniVyroby.cs" />
     <Compile Include="Forms\FormClasses\PodporaNakupTechnikyDrevo.cs" />
     <Compile Include="Forms\FormClasses\PodporaNakupuPudy.cs" />
     <Compile Include="Forms\FormClasses\PodporaSkolkarskychProvozoven.cs" />
     <Compile Include="Forms\FormClasses\PodporaSocialniZemedelstvi.cs" />
     <Compile Include="Forms\FormClasses\PojisteniLesnichPorostu.cs" />
-    <Compile Include="Forms\FormClasses\PodporaNakupTechniky.cs" />
     <Compile Include="Forms\FormClasses\PojisteniSkolky.cs" />
     <Compile Include="Forms\FormClasses\ProgramZpracovatel.cs" />
     <Compile Include="Forms\FormClasses\SnizeniJistinyUveru.cs" />
@@ -424,6 +422,8 @@
     <Compile Include="Forms\FormClasses\Templates\CZNACEdotazy.cs" />
     <Compile Include="Forms\FormClasses\Templates\CZNACEtabulka.cs" />
     <Compile Include="Forms\FormClasses\Templates\DeMinimis.cs" />
+    <Compile Include="Forms\FormClasses\Templates\DeMinimisOsoba.cs" />
+    <Compile Include="Forms\FormClasses\Templates\DeMinimisPodpora.cs" />
     <Compile Include="Forms\FormClasses\Templates\DPH.cs" />
     <Compile Include="Forms\FormClasses\Templates\DruhVyroby.cs" />
     <Compile Include="Forms\FormClasses\Templates\Evidence.cs" />
@@ -458,6 +458,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\EditorForMany.cs" />
     <Compile Include="Helpers\Helpers.cs" />
     <Compile Include="Helpers\ReCaptcha.cs" />
     <Compile Include="Forms\Validation\MustBeTrue.cs" />
@@ -669,7 +670,6 @@
     <Content Include="Content\2013.2.611\Windows7\slider-v.gif" />
     <Content Include="Content\2013.2.611\Windows7\sprite-vertical.png" />
     <Content Include="Content\2013.2.611\Windows7\sprite.png" />
-    <Content Include="Content\foundation\app.css" />
     <Content Include="Content\foundation\foundation-flex.css" />
     <Content Include="Content\foundation\foundation.css" />
     <Content Include="Content\foundation\foundation-icons.css" />
@@ -698,7 +698,6 @@
     <Content Include="Content\jquery-ui.theme.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Global.asax" />
-    <Content Include="Content\SiteBackup.css" />
     <Content Include="Content\foundation\foundation-icons.eot" />
     <Content Include="Content\foundation\foundation-icons.ttf" />
     <Content Include="Content\foundation\foundation-icons.woff" />
@@ -747,6 +746,7 @@
     <None Include="Properties\PublishProfiles\pgrlf-test - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\pgrlf-test - Web Deploy.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\formscripts.js" />
     <Content Include="Scripts\foundation\app.js" />
     <Content Include="Scripts\foundation\foundation.js" />
     <Content Include="Scripts\foundation\vendor\jquery.min.js" />
@@ -782,15 +782,8 @@
     <Content Include="Views\Form\Load.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\FunkceVSpolecnosti.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Kraj.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\TypSpolecnosti.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Pojistovna.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Banka.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Enum.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Textarea.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\Year.cshtml" />
-    <Content Include="Views\Form\PodporaNakupTechniky.cshtml" />
     <Content Include="Views\Form\EditorTemplates\FyzickaOsoba.cshtml" />
     <Content Include="AppSettings.config" />
     <Content Include="Views\Form\EditorTemplates\PravnickaOsoba.cshtml" />
@@ -803,7 +796,6 @@
     <Content Include="Views\Form\EditorTemplates\PlanovaneUkonceni.cshtml" />
     <Content Include="Views\Form\EditorTemplates\DeMinimis.cshtml" />
     <Content Include="Views\Form\EditorTemplates\ZodpovednaOsoba.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\Velikosti.cshtml" />
     <Content Include="Views\Form\EditorTemplates\CZNACEdotazy.cshtml" />
     <Content Include="Views\Form\EditorTemplates\DPH.cshtml" />
     <Content Include="Views\Form\EditorTemplates\Evidence.cshtml" />
@@ -822,9 +814,14 @@
     <Content Include="Views\Form\EditorTemplates\VymeraPudy.cshtml" />
     <Content Include="Views\Form\EditorTemplates\PodnikatelskyZamer.cshtml" />
     <Content Include="Views\Form\SnizeniJistinyUveru.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\ZamereniVyroby.cshtml" />
     <Content Include="Views\Form\EditorTemplates\ZemedelskaVyroba.cshtml" />
     <Content Include="Views\Form\PodporaNakupuPudy.cshtml" />
+    <Content Include="Views\Form\AddZodpovednaOsoba.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\DeMinimisOsoba.cshtml" />
+    <Content Include="Views\Form\EditorTemplates\DeMinimisPodpora.cshtml" />
+    <Content Include="Views\Form\AddDM2PropojeniOsoba.cshtml" />
+    <Content Include="Views\Form\AddDM4RozdeleniPodpora.cshtml" />
+    <Content Include="Views\Form\AddDM3SpojeniOsoba.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

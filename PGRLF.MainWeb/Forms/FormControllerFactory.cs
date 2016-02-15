@@ -17,8 +17,12 @@ namespace PGRLF.MainWeb.Forms
             if (controllerName.ToLowerInvariant() == "Form".ToLowerInvariant())
             {
                 //override for typed form controller with viewModel
-                var formId = new Guid(requestContext.RouteData.GetRequiredString("id"));
-                var form = azureStorage.GetForm(formId);
+
+                //var formId = new Guid(requestContext.RouteData.GetRequiredString("id"));
+                //var form = azureStorage.GetForm(formId);
+                var formTechName = requestContext.RouteData.GetRequiredString("techname");
+                var form = azureStorage.GetForm(formTechName);
+
                 var viewModelType = Type.GetType("PGRLF.MainWeb.Forms.FormClasses." + form.TechName);
 
                 var controllerType = typeof (FormController<>);
@@ -41,16 +45,20 @@ namespace PGRLF.MainWeb.Forms
             {
                 if (controllerType.GetGenericTypeDefinition() == typeof (FormController<>))
                 {
-                    var formId = new Guid(requestContext.RouteData.GetRequiredString("id"));
-                    var form = azureStorage.GetForm(formId);
+                    //var formId = new Guid(requestContext.RouteData.GetRequiredString("id"));
+                    //var form = azureStorage.GetForm(formId);
+                    var formTechName = requestContext.RouteData.GetRequiredString("techname");
+                    var form = azureStorage.GetForm(formTechName);
 
                     var controller = (IController) Activator.CreateInstance(controllerType);
-                    var viewNameField = controller.GetType().GetField("ViewName");
-                    var formNameField = controller.GetType().GetField("FormName");
+                    
+                    
                     var formIdField = controller.GetType().GetField("FormID");
+                    var formNameField = controller.GetType().GetField("FormName");
+                    var formTechNameField = controller.GetType().GetField("FormTechName");
 
 
-                    viewNameField.SetValue(controller, form.TechName);
+                    formTechNameField.SetValue(controller, form.TechName);
                     formIdField.SetValue(controller, form.Id);
                     formNameField.SetValue(controller, form.Name);
 

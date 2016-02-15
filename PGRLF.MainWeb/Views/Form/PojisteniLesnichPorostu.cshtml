@@ -1,9 +1,10 @@
 ﻿@using System.Web.UI.WebControls
 @using PGRLF.MainWeb.Forms.Enums
+@using PGRLF.MainWeb.Forms.FormClasses.Templates
 @model PGRLF.MainWeb.Forms.FormClasses.PojisteniLesnichPorostu
 
 @{
-    ViewBag.Title = "Pojištění lesních porostů";
+    ViewBag.Title = ViewBag.FormName;
     Layout = "~/Views/Shared/_LayoutForm.cshtml";
 }
 
@@ -16,12 +17,12 @@
     <legend>Právní forma</legend>
     <div class="row">
         <div class="large-10 columns">
-            <label for="rbFyzickaOsoba" class="middle">Fyzická osoba</label>
+            <label class="middle" for="rbFyzickaOsoba">Fyzická osoba</label>
         </div>
         <div class="large-2 columns">
             <div class="switch large">
                 @Html.RadioButtonFor(m => m.PravniForma, PravniForma.FyzickaOsoba, new { @class = "switch-input", @id = "rbFyzickaOsoba" })
-                <label class="switch-paddle">
+                <label class="switch-paddle" for="rbFyzickaOsoba">
                     <span class="switch-active" aria-hidden="true">Ano</span>
                     <span class="switch-inactive" aria-hidden="true">Ne</span>
                 </label>
@@ -30,12 +31,12 @@
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label for="rbPravnickaOsoba" class="middle">Právnická osoba</label>
+            <label class="middle" for="rbPravnickaOsoba">Právnická osoba</label>
         </div>
         <div class="large-2 columns">
             <div class="switch large">
                 @Html.RadioButtonFor(m => m.PravniForma, PravniForma.PravnickaOsoba, new { @class = "switch-input", @id = "rbPravnickaOsoba" })
-                <label class="switch-paddle">
+                <label class="switch-paddle" for="rbPravnickaOsoba">
                     <span class="switch-active" aria-hidden="true">Ano</span>
                     <span class="switch-inactive" aria-hidden="true">Ne</span>
                 </label>
@@ -44,12 +45,12 @@
     </div>
     <div class="row">
         <div class="large-10 columns">
-            <label for="rbSvazekObci" class="middle">Obec / svazek obcí</label>
+            <label class="middle" for="rbSvazekObci">Obec / svazek obcí</label>
         </div>
         <div class="large-2 columns">
             <div class="switch large">
                 @Html.RadioButtonFor(m => m.PravniForma, PravniForma.SvazekObci, new { @class = "switch-input", @id = "rbSvazekObci" })
-                <label class="switch-paddle">
+                <label class="switch-paddle" for="rbSvazekObci">
                     <span class="switch-active" aria-hidden="true">Ano</span>
                     <span class="switch-inactive" aria-hidden="true">Ne</span>
                 </label>
@@ -58,28 +59,17 @@
     </div>
 </fieldset>
 
-<div id="divFyzickaOsoba">
-    @Html.EditorFor(m => m.FyzickaOsoba)
-</div>
-<div id="divPravnickaOsoba" style="display: none">
-    @Html.EditorFor(m => m.PravnickaOsoba)
-</div>
-<div id="divSvazekObci" style="display: none">
-    @Html.EditorFor(m => m.SvazekObci)
-</div>
+@Html.EditorFor(m => m.FyzickaOsoba)
+@Html.EditorFor(m => m.PravnickaOsoba)
+@Html.EditorFor(m => m.SvazekObci)
 
 <fieldset class="fieldset">
     <legend>Společná část</legend>
     @Html.EditorFor(m => m.Kontakt)
     @Html.EditorFor(m => m.BankovniSpojeni)
-    <div id="divObchodniRejstrik">
-        @Html.EditorFor(m => m.ObchodniRejstrik)
-    </div>
-    <div id="divPlanovaneUkonceni">
-        @Html.EditorFor(m => m.PlanovaneUkonceni)
-    </div>
+    @Html.EditorFor(m => m.ObchodniRejstrik)
+    @Html.EditorFor(m => m.PlanovaneUkonceni)
 </fieldset>
-
 
 <fieldset class="fieldset">
     <legend>Čestné prohlášení</legend>
@@ -92,10 +82,10 @@
     </div>
     <div class="row">
         <div class="large-6 columns">
-            <label for="cbCestneProhlaseni" class="middle">Souhlasím</label>
+            <label class="middle">Souhlasím</label>
         </div>
         <div class="large-4 columns">
-            <label class="middle">@Html.ValidationMessageFor(m => m.CestneProhlaseni, string.Empty, new { @class = "switch-validation-error" })</label>
+            <label class="middle">@Html.ValidationMessageFor(m => m.CestneProhlaseni, string.Empty, new {@class="switch-validation-error"})</label>
         </div>
         <div class="large-2 columns">
             <div class="switch large">
@@ -122,7 +112,7 @@
     </div>
     <div class="row">
         <div class="large-6 columns">
-            <label for="cbSouhlasSeZpracovanim" class="middle">Souhlasím</label>
+            <label class="middle">Souhlasím</label>
         </div>
         <div class="large-4 columns">
             <label class="middle">@Html.ValidationMessageFor(m => m.SouhlasSeZpracovanim, string.Empty, new { @class = "switch-validation-error" })</label>
@@ -145,111 +135,147 @@
 {
     <script>
 
-        function hideElement(element) {
-            $(element).hide();
-        }
-
-        function showElement(element) {
-            $(element).show();
-        }
-
-        $.validator.addMethod("mustbetrue", function (value) {
-            return value;
-        });
-
-        $.validator.unobtrusive.adapters.addBool("mustbetrue");
-
-
         $(document).ready(function () {
 
+            updateView();
 
-            $(".switch").click(function() {
-                var input = $(this).children("input[id]");
-                switch ($(input).prop("type")) {
-                case "radio":
-                    $(input).prop("checked", true).change();
-                    break;
-                case "checkbox":
-                    $(input).prop("checked") ? input.prop("checked", false).change() : input.prop("checked", true).change();
-                    break;
+            $("input[type=radio], input[type=checkbox]").change(updateView);
+
+
+            //AddZodpovednaOsoba
+
+            $("#divZodpovednaOsobaList").on("click", ".label.add", function () {
+                var label = $(this);
+                hideElement(label);
+                $.ajax({
+                    url: "@Url.Action("Show", "Form")" + "/AddZodpovednaOsoba",
+                    type: "POST",
+                    dataType: "html",
+                    success: function (view) {
+                        $("#divZodpovednaOsobaList").append(view);
+                    },
+                    complete: function() {
+                        $("form").removeData("validator");
+                        $("form").removeData("unobtrusiveValidation");
+                        $.validator.unobtrusive.parse("form");
+                        showLastLabelAdd('#divZodpovednaOsobaList');
+                    }
+                });
+            });
+
+            $("#divZodpovednaOsobaList").on("click", ".label.remove", function () {
+                var size = $("#divZodpovednaOsobaList").children("div.callout").size();
+                if (size > 1) {
+                    $(this).closest("input[type=hidden]").remove();
+                    $(this).closest("input[type=hidden]").remove();
+                    $(this).closest(".callout").remove();
                 }
+                $("form").removeData("validator");
+                $("form").removeData("unobtrusiveValidation");
+                $.validator.unobtrusive.parse("form");
+                showLastLabelAdd('#divZodpovednaOsobaList');
             });
 
-            $("input[id='rbFyzickaOsoba']").change(function() {
-                hideElement('#divPravnickaOsoba');
-                hideElement('#divSvazekObci');
-                showElement('#divFyzickaOsoba');
-                showElement('#divObchodniRejstrik');
-                showElement('#divPlanovaneukonceni');
+            //AddDM2PropojeniOsoba
+
+            $("#divDM2PropojeniList").on("click", ".label.add", function () {
+                var label = $(this);
+                hideElement(label);
+                $.ajax({
+                    url: "@Url.Action("Show", "Form")" + "/AddDM2PropojeniOsoba",
+                    type: "POST",
+                    dataType: "html",
+                    success: function (view) {
+                        $("#divDM2PropojeniList").append(view);
+                    },
+                    complete: function() {
+                        $("form").removeData("validator");
+                        $("form").removeData("unobtrusiveValidation");
+                        $.validator.unobtrusive.parse("form");
+                        showLastLabelAdd('#divDM2PropojeniList');
+                    }
+                });
             });
 
-            $("input[id='rbPravnickaOsoba']").change(function() {
-                hideElement('#divFyzickaOsoba');
-                hideElement('#divSvazekObci');
-                showElement('#divPravnickaOsoba');
-                showElement('#divObchodniRejstrik');
-                showElement('#divPlanovaneukonceni');
+            $("#divDM2PropojeniList").on("click", ".label.remove", function () {
+                var size = $("#divDM2PropojeniList").children("div.callout").size();
+                if (size > 1) {
+                    $(this).closest("input[type=hidden]").remove();
+                    $(this).closest("input[type=hidden]").remove();
+                    $(this).closest(".callout").remove();
+                }
+                $("form").removeData("validator");
+                $("form").removeData("unobtrusiveValidation");
+                $.validator.unobtrusive.parse("form");
+                showLastLabelAdd("#divDM2PropojeniList");
             });
 
-            $("input[id='rbSvazekObci']").change(function() {
-                hideElement('#divFyzickaOsoba');
-                hideElement('#divPravnickaOsoba');
-                hideElement('#divObchodniRejstrik');
-                hideElement('#divPlanovaneukonceni');
-                showElement('#divSvazekObci');
+            //AddDM3SpojeniOsoba
+
+            $("#divDM3SpojeniList").on("click", ".label.add", function () {
+                var label = $(this);
+                hideElement(label);
+                $.ajax({
+                    url: "@Url.Action("Show", "Form")" + "/AddDM3SpojeniOsoba",
+                    type: "POST",
+                    dataType: "html",
+                    success: function (view) {
+                        $("#divDM3SpojeniList").append(view);
+                    },
+                    complete: function() {
+                        $("form").removeData("validator");
+                        $("form").removeData("unobtrusiveValidation");
+                        $.validator.unobtrusive.parse("form");
+                        showLastLabelAdd("#divDM3SpojeniList");
+                    }
+                });
             });
 
-            $("input[id='cbFOJeMistoPodnikaniStejne']").change(function () {
-                $('#divFOMistoPodnikani').toggle();
+            $("#divDM3SpojeniList").on("click", ".label.remove", function () {
+                var size = $("#divDM3SpojeniList").children("div.callout").size();
+                if (size > 1) {
+                    $(this).closest("input[type=hidden]").remove();
+                    $(this).closest("input[type=hidden]").remove();
+                    $(this).closest(".callout").remove();
+                }
+                $("form").removeData("validator");
+                $("form").removeData("unobtrusiveValidation");
+                $.validator.unobtrusive.parse("form");
+                showLastLabelAdd("#divDM3SpojeniList");
             });
 
-            $("input[id='cbPOJeMistoPodnikaniStejne']").change(function () {
-                $('#divPOMistoPodnikani').toggle();
+            //AddDM4RozpojeniOsoba
+
+            $("#DM4RozdeleniPodporaList").on("click", ".label.add", function () {
+                var label = $(this);
+                hideElement(label);
+                $.ajax({
+                    url: "@Url.Action("Show", "Form")" + "/AddDM4RozdeleniPodpora",
+                    type: "POST",
+                    dataType: "html",
+                    success: function (view) {
+                        $("#DM4RozdeleniPodporaList").append(view);
+                    },
+                    complete: function() {
+                        $("form").removeData("validator");
+                        $("form").removeData("unobtrusiveValidation");
+                        $.validator.unobtrusive.parse("form");
+                        showLastLabelAdd("#DM4RozdeleniPodporaList");
+                    }
+                });
             });
 
-            $("input[id='cbProdejPodniku']").change(function () {
-                $('#divProdejPodnikuDatum').toggle();
-            });
-
-            $("input[id='cbUkonceniCinnosti']").change(function () {
-                $('#divUkoceniCinnostiDatum').toggle();
-            });
-
-
-            //DeMinims
-
-            $("input[id='rbDM1UcetniObdobiKR']").change(function () {
-                $('#divDM1UcetniObdobiZacatek').hide();
-                $('#divDM1UcetniObdobiKonec').hide();
-            });
-
-            $("input[id='rbDM1UcetniObdobiHR']").change(function () {
-                $('#divDM1UcetniObdobiZacatek').show();
-                $('#divDM1UcetniObdobiKonec').show();
-            });
-
-            $("input[id='rbDM2NeniPropojen']").change(function () {
-                $('#divDM2Propojen').hide();
-            });
-
-            $("input[id='rbDM2JePropojen']").change(function () {
-                $('#divDM2Propojen').show();
-            });
-
-            $("input[id='rbDM3NevzniklSpojenim']").change(function () {
-                $('#divDM3Spojen').hide();
-            });
-
-            $("input[id='rbDM3Prevzal'], input[id='rbDM3VzniklSpojenim']").change(function () {
-                $('#divDM3Spojen').show();
-            });
-
-            $("input[id='rbDM4NevzniklRozdelenim']").change(function () {
-                $('#divDM4Vznikl').hide();
-            });
-
-            $("input[id='rbDM4VzniklRozdelenim']").change(function () {
-                $('#divDM4Vznikl').show();
+            $("#DM4RozdeleniPodporaList").on("click", ".label.remove", function () {
+                var size = $("#DM4RozdeleniPodporaList").children("div.callout").size();
+                if (size > 1) {
+                    $(this).closest("input[type=hidden]").remove();
+                    $(this).closest("input[type=hidden]").remove();
+                    $(this).closest(".callout").remove();
+                }
+                $("form").removeData("validator");
+                $("form").removeData("unobtrusiveValidation");
+                $.validator.unobtrusive.parse("form");
+                showLastLabelAdd("#DM4RozdeleniPodporaList");
             });
 
         });

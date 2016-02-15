@@ -1,75 +1,77 @@
 ﻿@model PGRLF.MainWeb.Forms.FormClasses.Templates.FyzickaOsoba
 
-<fieldset class="fieldset">
-    <legend>Fyzická osoba</legend>
-    <div class="row">
-        <div class="large-4 columns">
-            @Html.LabelWithAsterixFor(m => m.TitulPredJmenem)
-            @Html.EditorFor(m => m.TitulPredJmenem)
-            @Html.ValidationMessageFor(m => m.TitulPredJmenem)
-        </div>
-        <div class="large-8 columns">
-            @Html.LabelWithAsterixFor(m => m.Jmeno)
-            @Html.EditorFor(m => m.Jmeno)
-            @Html.ValidationMessageFor(m => m.Jmeno)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-8 columns">
-            @Html.LabelWithAsterixFor(m => m.Prijmeni)
-            @Html.EditorFor(m => m.Prijmeni)
-            @Html.ValidationMessageFor(m => m.Prijmeni)
-        </div>
-        <div class="large-4 columns">
-            @Html.LabelWithAsterixFor(m => m.TitulZaJmenem)
-            @Html.EditorFor(m => m.TitulZaJmenem)
-            @Html.ValidationMessageFor(m => m.TitulZaJmenem)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.IC)
-            @Html.EditorFor(m => m.IC)
-            @Html.ValidationMessageFor(m => m.IC)
-        </div>
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DIC)
-            @Html.EditorFor(m => m.DIC)
-            @Html.ValidationMessageFor(m => m.DIC)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DatumNarozeni)
-            @Html.EditorFor(m => m.DatumNarozeni)
-            @Html.ValidationMessageFor(m => m.DatumNarozeni)
-        </div>
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.RodneCislo)
-            @Html.EditorFor(m => m.RodneCislo)
-            @Html.ValidationMessageFor(m => m.RodneCislo)
-        </div>
-    </div>
-
-    <h6>Adresa trvalého pobytu</h6>
-    @Html.EditorFor(m => m.TrvalyPobyt)
-
-    <h6>Místo podnikání</h6>
-    <div class="row">
-        <div class="large-10 columns">
-            <label for="cbFOJeMistoPodnikaniStejne" class="middle">Je místo podnikání stejné jako "Adresa trvalého pobytu"?</label>
-        </div>
-        <div class="large-2 columns">
-            <div class="switch large">
-                @Html.CheckBoxFor(m => m.FOJeMistoPodnikaniStejne, new { @class = "switch-input", @id = "cbFOJeMistoPodnikaniStejne" })
-                <label class="switch-paddle">
-                    <span class="switch-active" aria-hidden="true">Ano</span>
-                    <span class="switch-inactive" aria-hidden="true">Ne</span>
-                </label>
+<div id="divFyzickaOsoba">
+    <fieldset class="fieldset">
+        <legend>Fyzická osoba</legend>
+        <div class="row">
+            <div class="large-4 columns">
+                @Html.LabelWithAsterixFor(m => m.TitulPredJmenem)
+                @Html.EditorFor(m => m.TitulPredJmenem)
+                @Html.ValidationMessageFor(m => m.TitulPredJmenem)
+            </div>
+            <div class="large-8 columns">
+                @Html.LabelWithAsterixFor(m => m.Jmeno)
+                @Html.EditorFor(m => m.Jmeno)
+                @Html.ValidationMessageFor(m => m.Jmeno)
             </div>
         </div>
-    </div>
-    <div id="divFOMistoPodnikani" @if (Model.FOJeMistoPodnikaniStejne) { @Html.Raw("style=\"display:none;\"") }>
-        @Html.EditorFor(m => m.MistoPodnikani)
-    </div>
-</fieldset>
+        <div class="row">
+            <div class="large-8 columns">
+                @Html.LabelWithAsterixFor(m => m.Prijmeni)
+                @Html.EditorFor(m => m.Prijmeni)
+                @Html.ValidationMessageFor(m => m.Prijmeni)
+            </div>
+            <div class="large-4 columns">
+                @Html.LabelWithAsterixFor(m => m.TitulZaJmenem)
+                @Html.EditorFor(m => m.TitulZaJmenem)
+                @Html.ValidationMessageFor(m => m.TitulZaJmenem)
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.IC)
+                @Html.EditorFor(m => m.IC)
+                @Html.ValidationMessageFor(m => m.IC)
+            </div>
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.DIC)
+                @Html.EditorFor(m => m.DIC)
+                @Html.ValidationMessageFor(m => m.DIC)
+            </div>
+        </div>
+        <div class="row">
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.DatumNarozeni)
+                @Html.EditorFor(m => m.DatumNarozeni)
+                @Html.ValidationMessageFor(m => m.DatumNarozeni)
+            </div>
+            <div class="large-6 columns">
+                @Html.LabelWithAsterixFor(m => m.RodneCislo)
+                @Html.EditorFor(m => m.RodneCislo)
+                @Html.ValidationMessageFor(m => m.RodneCislo)
+            </div>
+        </div>
+
+        <h6>Adresa trvalého pobytu</h6>
+        @Html.EditorFor(m => m.TrvalyPobyt)
+
+        <h6>Místo podnikání</h6>
+        <div class="row">
+            <div class="large-10 columns">
+                <label for="cbFOMistoPodnikani" class="middle">Je místo podnikání stejné jako "Adresa trvalého pobytu"?</label>
+            </div>
+            <div class="large-2 columns">
+                <div class="switch large">
+                    @Html.CheckBoxFor(m => m.JeMistoPodnikaniStejne, new {@class = "switch-input", @id = "cbFOMistoPodnikani"})
+                    <label class="switch-paddle" for="cbFOMistoPodnikani">
+                        <span class="switch-active" aria-hidden="true">Ano</span>
+                        <span class="switch-inactive" aria-hidden="true">Ne</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div id="divFOMistoPodnikani">
+            @Html.EditorFor(m => m.MistoPodnikani)
+        </div>
+    </fieldset>
+</div>

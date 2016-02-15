@@ -54,7 +54,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
 
         public Adresa TrvalyPobyt { get; set; }
 
-        public bool FOJeMistoPodnikaniStejne { get; set; }
+        public bool JeMistoPodnikaniStejne { get; set; }
 
         public Adresa MistoPodnikani { get; set; }
 

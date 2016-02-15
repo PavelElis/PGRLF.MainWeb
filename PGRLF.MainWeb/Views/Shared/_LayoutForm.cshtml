@@ -20,6 +20,7 @@
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/foundation")
     @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/formscripts")
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
     <body>
@@ -51,24 +52,24 @@
                                     </div>
                                     <div class="row">
                                         <div class="columns">
-                                            <button id="save" type="submit" class="expanded button">Uložit koncept</button>
+                                            <button id="save" type="submit" class="expanded button" formnovalidate>Uložit koncept</button>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="columns">
-                                            <button id="load" type="submit" class="expanded button">Nahrát koncept</button>
+                                            <button id="load" type="submit" class="expanded button" formnovalidate>Nahrát koncept</button>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="columns">
-                                            <button id="previewPdf" type="submit" class="expanded button">Máhled žádosti</button>
+                                            <button id="previewPdf" type="submit" class="expanded button" formnovalidate>Náhled žádosti</button>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="columns">
                                             @if (ViewBag.IsValidationSuccessful != null && ViewBag.IsValidationSuccessful)
                                             {@:
-                                                <p>Validace proběhla úspěšně</p>
+                                                            <p>Validace proběhla úspěšně</p>
                                             }
                                             <button id="validate" type="submit" class="expanded button">Zkontrolovat žádost</button>
                                         </div>
@@ -96,7 +97,7 @@
             }
         </div>
         <script>
-        
+
             $().ready(function () {
 
                 $('#jsEnabled').show();
@@ -150,40 +151,40 @@
 
             });
 
-            $("button#validate").click(function() {
+            $("button#validate").click(function () {
                 var form = $("form");
-                form.attr("action", "/Form/Validate/@ViewBag.FormID");
-                form.submit(function() {
+                form.attr("action", "/Form/@ViewBag.FormTechName/Validate");
+                form.submit(function () {
                     return true;
                 });
             });
 
-            $("button#send").click(function() {
+            $("button#send").click(function () {
                 var form = $("form");
-                form.attr("action", "/Form/Submit/@ViewBag.FormID");
-                form.submit(function() {
+                form.attr("action", "/Form/@ViewBag.FormTechName/Submit");
+                form.submit(function () {
                     return true;
                 });
             });
 
-            $("button#save").click(function() {
+            $("button#save").click(function () {
                 var form = $("form");
-                form.attr("action", "/Form/Save/@ViewBag.FormID");
+                form.attr("action", "/Form/@ViewBag.FormTechName/Save");
                 form.attr("target", "_blank");
-                form.submit(function() {
+                form.submit(function () {
                     return true;
                 });
             });
-            $("button#pdfPreview").click(function() {
+            $("button#pdfPreview").click(function () {
                 var form = $("form");
-                form.attr("action", "/Form/PdfPreview/@ViewBag.FormID");
+                form.attr("action", "/Form/@ViewBag.FormTechName/PdfPreview");
                 form.attr("target", "_blank");
-                form.submit(function() {
+                form.submit(function () {
                     return true;
                 });
             });
-            $("button#load").click(function() {
-                window.location.href = "/Form/Load/@ViewBag.FormID";
+            $("button#load").click(function () {
+                window.location.href = "/Form/@ViewBag.FormTechName/Load";
                 return false;
             });
 

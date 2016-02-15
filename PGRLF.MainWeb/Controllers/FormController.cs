@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Web;
@@ -7,6 +8,7 @@ using CaptchaMvc.Attributes;
 using CaptchaMvc.HtmlHelpers;
 using PGRLF.AzureStorageProvider;
 using PGRLF.MainWeb.Forms;
+using PGRLF.MainWeb.Forms.FormClasses.Templates;
 using PGRLF.MainWeb.Helpers;
 using Recaptcha.Web;
 using Recaptcha.Web.Mvc;
@@ -15,18 +17,19 @@ namespace PGRLF.MainWeb.Controllers
 {
     public class FormController<T> : Controller where T : class, new()
     {
-        private readonly Storage azureStorage = new Storage();
         public Guid FormID;
         public string FormName;
-        public string ViewName;
+        public string FormTechName;
         //
         // GET: /Form/
         public ActionResult Show()
         {
             ViewBag.FormID = FormID.ToString();
             ViewBag.FormName = FormName;
+            ViewBag.FormTechName = FormTechName;
             var viewModel = new T();
-            return View(ViewName, viewModel);
+            ((IForm) viewModel).Init();
+            return View(FormTechName, viewModel);
         }
 
         [HttpPost]
@@ -34,35 +37,34 @@ namespace PGRLF.MainWeb.Controllers
         {
             ViewBag.FormID = FormID.ToString();
             ViewBag.FormName = FormName;
-            
+            ViewBag.FormTechName = FormTechName;
+
             ((IForm) viewModel).Process();
             ModelState.Clear();
             TryValidateModel(viewModel);
             ViewBag.IsValidationSuccessful = ModelState.IsValid;
-            return View(ViewName, viewModel);
+            return View(FormTechName, viewModel);
         }
 
         [HttpPost]
         public ActionResult Submit(T viewModel, HttpPostedFileBase[] files)
         {
             
-
-
             ViewBag.FormID = FormID.ToString();
             ViewBag.FormName = FormName;
+            ViewBag.FormTechName = FormTechName;
+
             var form = ((IForm) viewModel);
             form.Process();
             ModelState.Clear();
             TryValidateModel(viewModel);
 
-            //bool valid = this.IsCaptchaValid("Kontrolní kód je nesprávný");
-
             string EncodedResponse = Request.Form["g-Recaptcha-Response"];
-            bool IsCaptchaValid = ReCaptcha.Validate(EncodedResponse) == "True";
+            bool IsCaptchaValid = ReCaptcha.Validate(EncodedResponse) == "true";
 
             if (!IsCaptchaValid)
             {
-                ModelState.AddModelError("", "Invalid Captcha Code!");
+                ModelState.AddModelError("", "Neplatná captcha!");
             }
 
             TryValidateModel(viewModel);
@@ -120,7 +122,7 @@ namespace PGRLF.MainWeb.Controllers
                 }
                 return View("Sent", viewModel);
             }
-            return View(ViewName, viewModel);
+            return View(FormTechName, viewModel);
 
         }
 
@@ -129,6 +131,8 @@ namespace PGRLF.MainWeb.Controllers
         {
             ViewBag.FormID = FormID.ToString();
             ViewBag.FormName = FormName;
+            ViewBag.FormTechName = FormTechName;
+
             var form = (IForm) viewModel;
             form.Process();
 
@@ -145,8 +149,10 @@ namespace PGRLF.MainWeb.Controllers
         {
             ViewBag.FormID = FormID.ToString();
             ViewBag.FormName = FormName;
+            ViewBag.FormTechName = FormTechName;
+
             var model = ((IForm) viewModel);
-            model.Process();
+            //model.Process();
 
             FileResult result = new FileContentResult(model.SavePDF(), "application/pdf")
             {
@@ -160,6 +166,7 @@ namespace PGRLF.MainWeb.Controllers
         {
             ViewBag.FormID = FormID.ToString();
             ViewBag.FormName = FormName;
+            ViewBag.FormTechName = FormTechName;
 
             return View("Load");
         }
@@ -169,6 +176,8 @@ namespace PGRLF.MainWeb.Controllers
         {
             ViewBag.FormID = FormID.ToString();
             ViewBag.FormName = FormName;
+            ViewBag.FormTechName = FormTechName;
+
             try
             {
                 // Verify that the user selected a file
@@ -177,9 +186,9 @@ namespace PGRLF.MainWeb.Controllers
                 {
                     viewModel = ((IForm) viewModel).Load(new StreamReader(file.InputStream).ReadToEnd()) as T;
                 }
-                ((IForm) viewModel).Process();
+                //((IForm) viewModel).Process();
                 // redirect back to the index action to show the form once again
-                return View(ViewName, viewModel);
+                return View(FormTechName, viewModel);
             }
             catch
             {
@@ -188,18 +197,32 @@ namespace PGRLF.MainWeb.Controllers
             }
         }
 
-        /*[CaptchaMvc.Attributes.CaptchaVerify("Captcha is not valid")]
-        [HttpPost]
-        public ActionResult MathCaptcha(string empty)
+        public ActionResult AddZodpovednaOsoba()
         {
-            if (ModelState.IsValid)
-            {
-                TempData["Message"] = "Message: captcha is valid.";
-                return View("Load");
-            }
+            var model = new PravnickaOsoba();
+            model.Init();
+            return PartialView(model);
+        }
 
-            TempData["ErrorMessage"] = "Error: captcha is not valid.";
-            return View("Load");
-        }*/
+        public ActionResult AddDM2PropojeniOsoba()
+        {
+            var model = new DeMinimis();
+            model.Init();
+            return PartialView(model);
+        }
+
+        public ActionResult AddDM3SpojeniOsoba()
+        {
+            var model = new DeMinimis();
+            model.Init();
+            return PartialView(model);
+        }
+
+        public ActionResult AddDM4RozdeleniPodpora()
+        {
+            var model = new DeMinimis();
+            model.Init();
+            return PartialView(model);
+        }
     }
 }

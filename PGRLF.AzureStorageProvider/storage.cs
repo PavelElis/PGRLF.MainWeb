@@ -97,6 +97,7 @@ namespace PGRLF.AzureStorageProvider
                 form.Id = Guid.NewGuid();
             }
             form.RowKey = form.Id.ToString();
+            //form.RowKey = form.TechName;
             var formTable = _tableClient.GetTableReference("form");
             formTable.Execute(TableOperation.InsertOrReplace(form));
         }
@@ -107,6 +108,21 @@ namespace PGRLF.AzureStorageProvider
 
             var item = formTable.Execute(TableOperation.Retrieve<Form>("forms", formId.ToString())).Result as Form;
             return item;
+        }
+
+        public Form GetForm(string formTechName)
+        {
+            CloudTable table = _tableClient.GetTableReference("form");
+            TableQuery<Form> query = new TableQuery<Form>().Where(TableQuery.GenerateFilterCondition("PartitionKey", QueryComparisons.Equal, "forms"));
+            Form form = null;
+            foreach (Form entity in table.ExecuteQuery(query))
+            {
+                if (entity.TechName.Equals(formTechName))
+                {
+                    form = entity;
+                }
+            }
+            return form;
         }
 
         public void DeleteForm(Guid formId)

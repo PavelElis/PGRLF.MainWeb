@@ -30,7 +30,7 @@
     </div>
     <div class="large-4 columns">
         @Html.LabelWithAsterixFor(m => m.Kraj)
-        @Html.EditorFor(m => m.Kraj)
+        @Html.EnumDropDownListFor(m => m.Kraj)
         @Html.ValidationMessageFor(m => m.Kraj)
     </div>
 </div>

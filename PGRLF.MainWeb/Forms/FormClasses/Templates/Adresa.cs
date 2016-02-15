@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using PGRLF.MainWeb.Forms.Enums;
 
 namespace PGRLF.MainWeb.Forms.FormClasses.Templates
 {
@@ -34,6 +35,6 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
         [Display(ResourceType = typeof(FormResources), Name = "Kraj")]
         [DataType("Kraj")]
         [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_Kraj")]
-        public string Kraj { get; set; }
+        public Kraj? Kraj { get; set; }
     }
 }

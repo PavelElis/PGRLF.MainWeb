@@ -1,6 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using iTextSharp.text;
+using PGRLF.MainWeb.Forms.Enums;
 
 namespace PGRLF.MainWeb.Forms.FormClasses.Templates
 {
@@ -10,7 +12,14 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
         {
             SidloSpolecnosti = new Adresa();
             MistoPodnikani = new Adresa();
-            ZodpovednaOsoba = new List<ZodpovednaOsoba>() { new ZodpovednaOsoba()};
+            ZodpovednaOsobaList = new List<ZodpovednaOsoba>();
+        }
+
+        public void Init()
+        {
+            if (!ZodpovednaOsobaList.Any()) { 
+                ZodpovednaOsobaList.Add(new ZodpovednaOsoba());
+            }
         }
 
         //Obecné údaje
@@ -20,9 +29,8 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
         public string ObchodniJmeno { get; set; }
 
         [Display(ResourceType = typeof(FormResources), Name = "TypSpolecnosti")]
-        [DataType("TypSpolecnosti")]
         [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_TypSpolecnosti")]
-        public string TypPO { get; set; }
+        public TypSpolecnosti? TypPO { get; set; }
 
         [Display(ResourceType = typeof(FormResources), Name = "IC")]
         [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_IC")]
@@ -42,14 +50,13 @@ namespace PGRLF.MainWeb.Forms.FormClasses.Templates
         [Required(ErrorMessageResourceType = typeof(FormResources), ErrorMessageResourceName = "Nevyplneno_ZakladniKapital")]
         public int? ZakladniKapital { get; set; }
 
-        public List<ZodpovednaOsoba> ZodpovednaOsoba { get; set; }
+        public List<ZodpovednaOsoba> ZodpovednaOsobaList { get; set; }
 
         public Adresa SidloSpolecnosti { get; set; }
 
-        public bool POJeMistoPodnikaniStejne { get; set; }
+        public bool JeMistoPodnikaniStejne { get; set; }
 
         public Adresa MistoPodnikani { get; set; }
-
 
     }
 }

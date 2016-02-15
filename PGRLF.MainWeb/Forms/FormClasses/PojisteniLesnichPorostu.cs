@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 using System.Web;
 using System.Web.UI.WebControls;
 using PGRLF.MainWeb.Forms.Enums;
@@ -27,6 +28,12 @@ namespace PGRLF.MainWeb.Forms.FormClasses
             DeMinimis = new DeMinimis();
         }
 
+        public override void Init()
+        {
+            PravnickaOsoba.Init();
+            DeMinimis.Init();
+        }
+
         public PravniForma PravniForma { get; set; }
 
         public FyzickaOsoba FyzickaOsoba { get; set; }
@@ -35,18 +42,7 @@ namespace PGRLF.MainWeb.Forms.FormClasses
         public Kontakt Kontakt { get; set; }
         public BankovniSpojeni BankovniSpojeni { get; set; }
         public ObchodniRejstrik ObchodniRejstrik { get; set; }
-        public PlanovaneUkonceni PlanovaneUkonceni { get; set; }
-
-
-        // Temporary////////////////////////////////////////////////
-        public Evidence Evidence { get; set; }
-        public DPH DPH { get; set; }
-        public Rybolov Rybolov { get; set; }
-        public Zamestnanci Zamestnanci { get; set; }
-        public SouhlasZasilani SouhlasZasilani { get; set; }
-        public PohledavkyZavazky PohledavkyZavazky { get; set; }
-        public CZNACEdotazy CZNACEdotazy { get; set; }
-        /////////////////////////////////////////////////////////////
+        public PlanovaneUkonceni PlanovaneUkonceni { get; set; } 
 
 
         public DeMinimis DeMinimis { get; set; }
@@ -62,6 +58,21 @@ namespace PGRLF.MainWeb.Forms.FormClasses
 
         public override void Process()
         {
+            /*switch (PravniForma)
+            {
+                case PravniForma.FyzickaOsoba:
+                    PravnickaOsoba = null;
+                    SvazekObci = null;
+                    break;
+                case PravniForma.PravnickaOsoba:
+                    FyzickaOsoba = null;
+                    SvazekObci = null;
+                    break;
+                case PravniForma.SvazekObci:
+                    FyzickaOsoba = null;
+                    PravnickaOsoba = null;
+                    break;
+            }*/
             if (Identifikator == null || Identifikator == Guid.Empty)
             {
                 Identifikator = Guid.NewGuid();

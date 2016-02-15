@@ -27,6 +27,8 @@ namespace PGRLF.MainWeb.Forms
             return rd.ReadToEnd();
         }
 
+        public abstract void Init();
+
         public abstract byte[] SavePDF();
 
         public virtual string SaveXML()

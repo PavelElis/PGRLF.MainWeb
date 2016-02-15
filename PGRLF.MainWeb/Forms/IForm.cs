@@ -8,6 +8,7 @@ namespace PGRLF.MainWeb.Forms
         string Save();
         byte[] SavePDF();
         string SaveXML();
+        void Init();
         void Process();
         string ApplicantEmail { get; }
         Guid? Identifikator { get; }

@@ -6,25 +6,20 @@
     <legend>Čestné prohlášení <i>de minimis</i></legend>
 
     <!--část 1-->
-    <div class="row">
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DMJmeno)
-            @Html.EditorFor(m => m.DMJmeno)
-            @Html.ValidationMessageFor(m => m.DMJmeno)
+    <div class='row'>
+        <div class='large-6 columns'>
+            @Html.LabelWithAsterixFor(m => m.DM0Osoba.Jmeno)
+            @Html.EditorFor(m => m.DM0Osoba.Jmeno)
+            @Html.ValidationMessageFor(m => m.DM0Osoba.Jmeno)
         </div>
-        <div class="large-6 columns">
-            @Html.LabelWithAsterixFor(m => m.DMIC)
-            @Html.EditorFor(m => m.DMIC)
-            @Html.ValidationMessageFor(m => m.DMIC)
-        </div>
-    </div>
-    <div class="row">
-        <div class="large-12 columns">
-            @Html.LabelWithAsterixFor(m => m.DMAdresa)
-            @Html.EditorFor(m => m.DMAdresa)
-            @Html.ValidationMessageFor(m => m.DMAdresa)
+        <div class='large-6 columns'>
+            @Html.LabelWithAsterixFor(m => m.DM0Osoba.IC)
+            @Html.EditorFor(m => m.DM0Osoba.IC)
+            @Html.ValidationMessageFor(m => m.DM0Osoba.IC)
         </div>
     </div>
+    @Html.EditorFor(m => m.DM0Osoba.Adresa)
+
 
     <div class="row">
         <div class="large-12 columns">
@@ -114,64 +109,9 @@
             </div>
         </div>
     </div>
-
-    <div id="divDM2Propojen" style="display: none">
-        <div class="row">
-            <div class="large-6 columns">
-                @Html.LabelWithAsterixFor(m => m.DM2Jmeno1)
-                @Html.EditorFor(m => m.DM2Jmeno1)
-                @Html.ValidationMessageFor(m => m.DM2Jmeno1)
-            </div>
-            <div class="large-6 columns">
-                @Html.LabelWithAsterixFor(m => m.DM2IC1)
-                @Html.EditorFor(m => m.DM2IC1)
-                @Html.ValidationMessageFor(m => m.DM2IC1)
-            </div>
-        </div>
-        <div class="row">
-            <div class="large-12 columns">
-                @Html.LabelWithAsterixFor(m => m.DM2Adresa1)
-                @Html.EditorFor(m => m.DM2Adresa1)
-                @Html.ValidationMessageFor(m => m.DM2Adresa1)
-            </div>
-        </div>
-        <div class="row">
-            <div class="large-6 columns">
-                @Html.LabelWithAsterixFor(m => m.DM2Jmeno2)
-                @Html.EditorFor(m => m.DM2Jmeno2)
-                @Html.ValidationMessageFor(m => m.DM2Jmeno2)
-            </div>
-            <div class="large-6 columns">
-                @Html.LabelWithAsterixFor(m => m.DM2IC2)
-                @Html.EditorFor(m => m.DM2IC2)
-                @Html.ValidationMessageFor(m => m.DM2IC2)
-            </div>
-        </div>
-        <div class="row">
-            <div class="large-12 columns">
-                @Html.LabelWithAsterixFor(m => m.DM2Adresa2)
-                @Html.EditorFor(m => m.DM2Adresa2)
-                @Html.ValidationMessageFor(m => m.DM2Adresa2)
-            </div>
-        </div>
-        <div class="row">
-            <div class="large-6 columns">
-                @Html.LabelWithAsterixFor(m => m.DM2Jmeno3)
-                @Html.EditorFor(m => m.DM2Jmeno3)
-                @Html.ValidationMessageFor(m => m.DM2Jmeno3)
-            </div>
-            <div class="large-6 columns">
-                @Html.LabelWithAsterixFor(m => m.DM2IC3)
-                @Html.EditorFor(m => m.DM2IC3)
-                @Html.ValidationMessageFor(m => m.DM2IC3)
-            </div>
-        </div>
-        <div class="row">
-            <div class="large-12 columns">
-                @Html.LabelWithAsterixFor(m => m.DM2Adresa3)
-                @Html.EditorFor(m => m.DM2Adresa3)
-                @Html.ValidationMessageFor(m => m.DM2Adresa3)
-            </div>
+    <div id="divDM2Propojeni">
+        <div id="divDM2PropojeniList">
+            @Html.EditorForMany(m => m.DM2PropojeniList, m => m.Index)
         </div>
     </div>
 
@@ -224,63 +164,9 @@
             </div>
         </div>
     </div>
-    <div id="divDM3Spojen" style="display: none">
-        <div class="row">
-            <div class="large-6 columns">
-                @Html.LabelWithAsterixFor(m => m.DM3Jmeno1)
-                @Html.EditorFor(m => m.DM3Jmeno1)
-                @Html.ValidationMessageFor(m => m.DM3Jmeno1)
-            </div>
-            <div class="large-6 columns">
-                @Html.LabelWithAsterixFor(m => m.DM3IC1)
-                @Html.EditorFor(m => m.DM3IC1)
-                @Html.ValidationMessageFor(m => m.DM3IC1)
-            </div>
-        </div>
-        <div class="row">
-            <div class="large-12 columns">
-                @Html.LabelWithAsterixFor(m => m.DM3Adresa1)
-                @Html.EditorFor(m => m.DM3Adresa1)
-                @Html.ValidationMessageFor(m => m.DM3Adresa1)
-            </div>
-        </div>
-        <div class="row">
-            <div class="large-6 columns">
-                @Html.LabelWithAsterixFor(m => m.DM3Jmeno2)
-                @Html.EditorFor(m => m.DM3Jmeno2)
-                @Html.ValidationMessageFor(m => m.DM3Jmeno2)
-            </div>
-            <div class="large-6 columns">
-                @Html.LabelWithAsterixFor(m => m.DM3IC2)
-                @Html.EditorFor(m => m.DM3IC2)
-                @Html.ValidationMessageFor(m => m.DM3IC2)
-            </div>
-        </div>
-        <div class="row">
-            <div class="large-12 columns">
-                @Html.LabelWithAsterixFor(m => m.DM3Adresa2)
-                @Html.EditorFor(m => m.DM3Adresa2)
-                @Html.ValidationMessageFor(m => m.DM3Adresa2)
-            </div>
-        </div>
-        <div class="row">
-            <div class="large-6 columns">
-                @Html.LabelWithAsterixFor(m => m.DM3Jmeno3)
-                @Html.EditorFor(m => m.DM3Jmeno3)
-                @Html.ValidationMessageFor(m => m.DM3Jmeno3)
-            </div>
-            <div class="large-6 columns">
-                @Html.LabelWithAsterixFor(m => m.DM3IC3)
-                @Html.EditorFor(m => m.DM3IC3)
-                @Html.ValidationMessageFor(m => m.DM3IC3)
-            </div>
-        </div>
-        <div class="row">
-            <div class="large-12 columns">
-                @Html.LabelWithAsterixFor(m => m.DM3Adresa3)
-                @Html.EditorFor(m => m.DM3Adresa3)
-                @Html.ValidationMessageFor(m => m.DM3Adresa3)
-            </div>
+    <div id="divDM3Spojeni">
+        <div id="divDM3SpojeniList">
+            @Html.EditorForMany(m => m.DM3SpojeniList, m => m.Index)
         </div>
         <div class="row">
             <div class="large-12 columns">
@@ -308,7 +194,7 @@
             </div>
             <div class="large-2 columns">
                 <div class="switch large">
-                    @Html.RadioButtonFor(m => m.DM3CentralniRegistr, DMCentralniRegistr.JeZohledneno, new {@class = "switch-input", @id = "rbDM3CRJeZohledneno"})
+                    @Html.RadioButtonFor(m => m.DM3CentralniRegistr, DMCentralniRegistr.JeZohledneno, new { @class = "switch-input", @id = "rbDM3CRJeZohledneno" })
                     <label class="switch-paddle" for="rbDM3CRJeZohledneno">
                         <span class="switch-active" aria-hidden="true">Ano</span>
                         <span class="switch-inactive" aria-hidden="true">Ne</span>
@@ -345,7 +231,7 @@
         </div>
         <div class="large-2 columns">
             <div class="switch large">
-                @Html.RadioButtonFor(m => m.DM4Rozdeleni, DM4Rozdeleni.VzniklRozdelenim, new {@class = "switch-input", @id = "rbDM4VzniklRozdelenim"})
+                @Html.RadioButtonFor(m => m.DM4Rozdeleni, DM4Rozdeleni.VzniklRozdelenim, new { @class = "switch-input", @id = "rbDM4VzniklRozdelenim" })
                 <label class="switch-paddle" for="rbDM4VzniklRozdelenim">
                     <span class="switch-active" aria-hidden="true">Ano</span>
                     <span class="switch-inactive" aria-hidden="true">Ne</span>
@@ -353,82 +239,9 @@
             </div>
         </div>
     </div>
-    <div id="divDM4Vznikl" style="display: none">
-        <div class="row">
-            <div class="large-6 columns">
-                @Html.LabelWithAsterixFor(m => m.DM41Jmeno)
-                @Html.EditorFor(m => m.DM41Jmeno)
-                @Html.ValidationMessageFor(m => m.DM41Jmeno)
-            </div>
-            <div class="large-6 columns">
-                @Html.LabelWithAsterixFor(m => m.DM41IC)
-                @Html.EditorFor(m => m.DM41IC)
-                @Html.ValidationMessageFor(m => m.DM41IC)
-            </div>
-        </div>
-        <div class="row">
-            <div class="large-12 columns">
-                @Html.LabelWithAsterixFor(m => m.DM41Adresa)
-                @Html.EditorFor(m => m.DM41Adresa)
-                @Html.ValidationMessageFor(m => m.DM41Adresa)
-            </div>
-        </div>
-        <div class="row">
-            <div class="large-12 columns">
-                a převzal jeho činnosti, na něž byla dříve poskytnutá podpora de minimis použita ****. Podniku (žadateli) byly přiděleny následující (dříve poskytnuté) podpory
-                <br><br>
-            </div>
-        </div>
-        <div class="row">
-            <div class="large-3 columns">
-                @Html.LabelWithAsterixFor(m => m.DM42DatumPoskytnuti1)
-                @Html.EditorFor(m => m.DM42DatumPoskytnuti1)
-                @Html.ValidationMessageFor(m => m.DM42DatumPoskytnuti1)
-            </div>
-            <div class="large-4 columns">
-                @Html.LabelWithAsterixFor(m => m.DM42Poskytovatel1)
-                @Html.EditorFor(m => m.DM42Poskytovatel1)
-                @Html.ValidationMessageFor(m => m.DM42Poskytovatel1)
-            </div>
-            <div class="large-3 columns">
-                @Html.LabelWithAsterixFor(m => m.DM42Castka1)
-                @Html.EditorFor(m => m.DM42Castka1)
-                @Html.ValidationMessageFor(m => m.DM42Castka1)
-            </div>
-        </div>
-        <div class="row">
-            <div class="large-3 columns">
-                @Html.LabelWithAsterixFor(m => m.DM42DatumPoskytnuti2)
-                @Html.EditorFor(m => m.DM42DatumPoskytnuti2)
-                @Html.ValidationMessageFor(m => m.DM42DatumPoskytnuti2)
-            </div>
-            <div class="large-6 columns">
-                @Html.LabelWithAsterixFor(m => m.DM42Poskytovatel2)
-                @Html.EditorFor(m => m.DM42Poskytovatel2)
-                @Html.ValidationMessageFor(m => m.DM42Poskytovatel2)
-            </div>
-            <div class="large-3 columns">
-                @Html.LabelWithAsterixFor(m => m.DM42Castka2)
-                @Html.EditorFor(m => m.DM42Castka2)
-                @Html.ValidationMessageFor(m => m.DM42Castka2)
-            </div>
-        </div>
-        <div class="row">
-            <div class="large-3 columns">
-                @Html.LabelWithAsterixFor(m => m.DM42DatumPoskytnuti3)
-                @Html.EditorFor(m => m.DM42DatumPoskytnuti3)
-                @Html.ValidationMessageFor(m => m.DM42DatumPoskytnuti3)
-            </div>
-            <div class="large-6 columns">
-                @Html.LabelWithAsterixFor(m => m.DM42Poskytovatel3)
-                @Html.EditorFor(m => m.DM42Poskytovatel3)
-                @Html.ValidationMessageFor(m => m.DM42Poskytovatel3)
-            </div>
-            <div class="large-3 columns">
-                @Html.LabelWithAsterixFor(m => m.DM42Castka3)
-                @Html.EditorFor(m => m.DM42Castka3)
-                @Html.ValidationMessageFor(m => m.DM42Castka3)
-            </div>
+    <div id="divDM4Rozdeleni">
+        <div id="DM4RozdeleniPodporaList">
+            @Html.EditorForMany(m => m.DM4RozdeleniPodporaList, m => m.Index)
         </div>
         <div class="row">
             <div class="large-12 columns">
@@ -469,7 +282,7 @@
     <!--část 5-->
     <div class="row">
         <div class="large-12 columns">
-            <br/>
+            <br />
             <p>5) Žadatel níže svým podpisem</p>
         </div>
     </div>
@@ -482,14 +295,14 @@
     </div>
     <div class="row">
         <div class="large-6 columns">
-            <label for="cbDMCestneProhlaseni">Souhlasím</label>
+            <label for="cbDMCestneProhlaseni" class="middle">Souhlasím</label>
         </div>
         <div class="large-4 columns">
             <label class="middle">@Html.ValidationMessageFor(m => m.DMCestneProhlaseni, string.Empty, new { @class = "switch-validation-error" })</label>
         </div>
         <div class="large-2 columns">
             <div class="switch large">
-                @Html.CheckBoxFor(m => m.DMCestneProhlaseni, new {@class = "switch-input", @id = "cbDMCestneProhlaseni"})
+                @Html.CheckBoxFor(m => m.DMCestneProhlaseni, new { @class = "switch-input", @id = "cbDMCestneProhlaseni" })
                 <label class="switch-paddle" for="cbDMCestneProhlaseni">
                     <span class="switch-active" aria-hidden="true">Ano</span>
                     <span class="switch-inactive" aria-hidden="true">Ne</span>
@@ -497,5 +310,5 @@
             </div>
         </div>
     </div>
-    
+
 </fieldset>
